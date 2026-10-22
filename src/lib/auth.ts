@@ -7,6 +7,12 @@ import { prisma } from "@/lib/db";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
+  // Auth.js only auto-trusts the request Host header on platforms it
+  // recognizes (Vercel) or outside production. Render terminates TLS and
+  // proxies to this single container under our own NEXTAUTH_URL, the same
+  // trust model Vercel gets automatically — without this, every request
+  // fails with "UntrustedHost" before auth logic even runs.
+  trustHost: true,
   // JWT strategy, deliberately. The Credentials provider's callback route
   // always writes a JWT-encoded session cookie, regardless of the configured
   // strategy (verified directly in @auth/core's source, not documented).
