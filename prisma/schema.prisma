@@ -243,7 +243,7 @@ model OrderLine {
   order         Order        @relation(fields: [orderId], references: [id])
   destinationId String?
   destination   Destination? @relation(fields: [destinationId], references: [id])
-  priceId       String
+  priceKey      String?
   amountCents   Int
   label         String
 }

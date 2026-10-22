@@ -21,3 +21,12 @@ export async function entitledDestinationIds(userId: string | undefined | null):
   });
   return entitlements.map((e) => e.destinationId!);
 }
+
+/** The country-wide "kit" entitlement is the row with destinationId = null. */
+export async function hasKit(userId: string | undefined | null): Promise<boolean> {
+  if (!userId) return false;
+  const entitlement = await prisma.entitlement.findFirst({
+    where: { userId, destinationId: null },
+  });
+  return entitlement !== null;
+}

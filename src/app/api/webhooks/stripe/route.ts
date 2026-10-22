@@ -1,0 +1,119 @@
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/db";
+import { getStripe } from "@/lib/stripe";
+import type Stripe from "stripe";
+
+export async function POST(request: Request) {
+  const signature = request.headers.get("stripe-signature");
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!signature || !webhookSecret) {
+    return NextResponse.json({ error: "Webhook non configuré." }, { status: 400 });
+  }
+
+  const rawBody = await request.text();
+  let event: Stripe.Event;
+  try {
+    event = getStripe().webhooks.constructEvent(rawBody, signature, webhookSecret);
+  } catch {
+    return NextResponse.json({ error: "Signature invalide." }, { status: 400 });
+  }
+
+  if (event.type === "checkout.session.completed") {
+    await handleCheckoutCompleted(event.data.object as Stripe.Checkout.Session);
+  } else if (event.type === "charge.refunded") {
+    await handleRefund(event.data.object as Stripe.Charge);
+  }
+
+  return NextResponse.json({ received: true });
+}
+
+async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
+  // Idempotency: a retried webhook delivery for an already-processed
+  // session is a no-op, never a duplicate order.
+  const existing = await prisma.order.findUnique({ where: { stripeSessionId: session.id } });
+  if (existing) return;
+
+  const userId = session.metadata?.userId;
+  if (!userId) return;
+
+  const destinationIds = (session.metadata?.destinationIds ?? "").split(",").filter(Boolean);
+
+  const lineItems = await getStripe().checkout.sessions.listLineItems(session.id, { limit: 100 });
+  const items = lineItems.data;
+
+  await prisma.$transaction(async (tx) => {
+    const order = await tx.order.create({
+      data: {
+        userId,
+        stripeSessionId: session.id,
+        stripePaymentIntentId:
+          typeof session.payment_intent === "string" ? session.payment_intent : (session.payment_intent?.id ?? null),
+        status: "SUCCEEDED",
+        amountCents: session.amount_total ?? 0,
+        currency: (session.currency ?? "eur").toUpperCase(),
+      },
+    });
+
+    // Line items were created in the same order as destinationIds, with
+    // the Thailand kit (if any) always last — see computeCartLines().
+    for (let i = 0; i < destinationIds.length; i++) {
+      const destinationId = destinationIds[i];
+      const item = items[i];
+      const destination = await tx.destination.findUnique({
+        where: { id: destinationId },
+        include: { priceOverride: true },
+      });
+      const priceKey = destination?.priceOverride?.key ?? (destination?.size === "LARGE" ? "destination-large" : "destination-small");
+      await tx.orderLine.create({
+        data: {
+          orderId: order.id,
+          destinationId,
+          priceKey,
+          amountCents: item?.amount_total ?? 0,
+          label: item?.description ?? destinationId,
+        },
+      });
+
+      const alreadyHas = await tx.entitlement.findUnique({
+        where: { userId_destinationId: { userId, destinationId } },
+      });
+      if (!alreadyHas) {
+        await tx.entitlement.create({ data: { userId, destinationId, orderId: order.id } });
+      }
+    }
+
+    if (items.length > destinationIds.length) {
+      const kitItem = items[destinationIds.length];
+      await tx.orderLine.create({
+        data: {
+          orderId: order.id,
+          destinationId: null,
+          priceKey: "kit-thailande",
+          amountCents: kitItem?.amount_total ?? 0,
+          label: kitItem?.description ?? "Kit essentiel",
+        },
+      });
+
+      const alreadyHasKit = await tx.entitlement.findFirst({ where: { userId, destinationId: null } });
+      if (!alreadyHasKit) {
+        await tx.entitlement.create({ data: { userId, destinationId: null, orderId: order.id } });
+      }
+    }
+
+    await tx.pdfJob.create({ data: { orderId: order.id, status: "QUEUED" } });
+    await tx.emailJob.create({ data: { orderId: order.id, status: "QUEUED" } });
+  });
+}
+
+async function handleRefund(charge: Stripe.Charge) {
+  const paymentIntentId = typeof charge.payment_intent === "string" ? charge.payment_intent : charge.payment_intent?.id;
+  if (!paymentIntentId) return;
+
+  const order = await prisma.order.findFirst({ where: { stripePaymentIntentId: paymentIntentId } });
+  if (!order) return;
+
+  await prisma.$transaction([
+    prisma.order.update({ where: { id: order.id }, data: { status: "REFUNDED" } }),
+    prisma.entitlement.deleteMany({ where: { orderId: order.id } }),
+  ]);
+}
