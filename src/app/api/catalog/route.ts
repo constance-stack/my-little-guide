@@ -13,6 +13,11 @@ export async function GET() {
       include: { priceOverride: true },
       orderBy: { name: "asc" },
     }),
+    // Deliberately NOT passing role here: this "owned" flag drives the
+    // shop's own "déjà acheté" badge and cart totals, which should reflect
+    // real purchases so the shop/checkout flow itself stays testable —
+    // the preview bypass belongs to content access (guide/carte/favoris),
+    // not to what the shop believes you own.
     entitledDestinationIds(session?.user?.id),
     hasKit(session?.user?.id),
   ]);

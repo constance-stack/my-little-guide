@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Lieu introuvable." }, { status: 404 });
   }
 
-  const allowed = await hasAccess(session.user.id, place.destinationId);
+  const allowed = await hasAccess(session.user.id, place.destinationId, session.user.role);
   if (!allowed) {
     return NextResponse.json({ error: "Destination non achetée." }, { status: 403 });
   }

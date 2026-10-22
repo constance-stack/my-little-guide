@@ -11,7 +11,7 @@ export default async function LieuPage({ params }: { params: Promise<{ placeSlug
   const session = await auth();
   if (!session?.user) redirect(`/connexion?callbackUrl=/lieu/${placeSlug}`);
 
-  const place = await getPlaceForGuide(placeSlug, session.user.id);
+  const place = await getPlaceForGuide(placeSlug, session.user.id, session.user.role);
   if (!place) notFound();
 
   const favorite = await prisma.favorite.findUnique({

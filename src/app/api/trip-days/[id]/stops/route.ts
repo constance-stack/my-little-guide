@@ -25,7 +25,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   const place = await prisma.place.findUnique({ where: { id: placeId } });
   if (!place) return NextResponse.json({ error: "Lieu introuvable." }, { status: 404 });
 
-  const allowed = await hasAccess(session.user.id, place.destinationId);
+  const allowed = await hasAccess(session.user.id, place.destinationId, session.user.role);
   if (!allowed) return NextResponse.json({ error: "Destination non achetée." }, { status: 403 });
 
   const count = await prisma.tripStop.count({ where: { tripDayId: id } });

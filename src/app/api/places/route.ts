@@ -10,7 +10,7 @@ import { entitledDestinationIds } from "@/lib/entitlements";
  */
 export async function GET(request: Request) {
   const session = await auth();
-  const ownedDestinationIds = await entitledDestinationIds(session?.user?.id);
+  const ownedDestinationIds = await entitledDestinationIds(session?.user?.id, session?.user?.role);
 
   if (ownedDestinationIds.length === 0) {
     return NextResponse.json({ type: "FeatureCollection", features: [] });

@@ -19,7 +19,7 @@ export default async function GuideDestinationPage({
 
   if (!session?.user) redirect(`/connexion?callbackUrl=/guide/${destinationSlug}`);
 
-  const allowed = await hasAccess(session.user.id, destinationRow.id);
+  const allowed = await hasAccess(session.user.id, destinationRow.id, session.user.role);
   if (!allowed) {
     return (
       <main className="mx-auto max-w-lg px-4 py-20 text-center">
@@ -34,7 +34,7 @@ export default async function GuideDestinationPage({
     );
   }
 
-  const destination = await getDestinationForGuide(destinationSlug, session.user.id);
+  const destination = await getDestinationForGuide(destinationSlug, session.user.id, session.user.role);
   if (!destination) redirect("/");
 
   const allPlaces = destination.zones.flatMap((zone) =>

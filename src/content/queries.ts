@@ -7,7 +7,11 @@ import { hasAccess } from "@/lib/entitlements";
  * exactly the same data through exactly the same access check, or the PDF
  * and the web guide risk drifting apart.
  */
-export async function getPlaceForGuide(slug: string, userId: string | undefined | null) {
+export async function getPlaceForGuide(
+  slug: string,
+  userId: string | undefined | null,
+  role?: "USER" | "ADMIN" | null
+) {
   const place = await prisma.place.findUnique({
     where: { slug, status: "PUBLISHED" },
     include: {
@@ -19,7 +23,7 @@ export async function getPlaceForGuide(slug: string, userId: string | undefined 
   });
   if (!place) return null;
 
-  const allowed = await hasAccess(userId, place.destinationId);
+  const allowed = await hasAccess(userId, place.destinationId, role);
   if (!allowed) return null;
 
   return place;
@@ -27,7 +31,11 @@ export async function getPlaceForGuide(slug: string, userId: string | undefined 
 
 export type GuidePlace = NonNullable<Awaited<ReturnType<typeof getPlaceForGuide>>>;
 
-export async function getDestinationForGuide(slug: string, userId: string | undefined | null) {
+export async function getDestinationForGuide(
+  slug: string,
+  userId: string | undefined | null,
+  role?: "USER" | "ADMIN" | null
+) {
   const destination = await prisma.destination.findUnique({
     where: { slug, status: "PUBLISHED" },
     include: {
@@ -44,7 +52,7 @@ export async function getDestinationForGuide(slug: string, userId: string | unde
   });
   if (!destination) return null;
 
-  const allowed = await hasAccess(userId, destination.id);
+  const allowed = await hasAccess(userId, destination.id, role);
   if (!allowed) return null;
 
   return destination;

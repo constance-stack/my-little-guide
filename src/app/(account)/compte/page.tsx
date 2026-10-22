@@ -17,7 +17,7 @@ export default async function ComptePage() {
       include: { lines: { include: { destination: true } }, pdfJobs: true },
       orderBy: { createdAt: "desc" },
     }),
-    entitledDestinationIds(session.user.id),
+    entitledDestinationIds(session.user.id, session.user.role),
   ]);
 
   const ownedDestinations = await prisma.destination.findMany({ where: { id: { in: ownedIds } } });
