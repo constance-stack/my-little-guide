@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { auth, signOut } from "@/lib/auth";
 import { prisma } from "@/lib/db";
+import { entitledDestinationIds } from "@/lib/entitlements";
 
 export default async function ComptePage() {
   const session = await auth();
@@ -8,17 +10,51 @@ export default async function ComptePage() {
     redirect("/connexion");
   }
 
-  const orders = await prisma.order.findMany({
-    where: { userId: session.user.id },
-    include: { lines: { include: { destination: true } } },
-    orderBy: { createdAt: "desc" },
-  });
+  const [orders, ownedIds] = await Promise.all([
+    prisma.order.findMany({
+      where: { userId: session.user.id },
+      include: { lines: { include: { destination: true } } },
+      orderBy: { createdAt: "desc" },
+    }),
+    entitledDestinationIds(session.user.id),
+  ]);
+
+  const ownedDestinations = await prisma.destination.findMany({ where: { id: { in: ownedIds } } });
 
   return (
-    <main className="min-h-screen bg-background px-4 py-16">
+    <main className="px-4 py-16">
       <div className="mx-auto max-w-2xl">
         <h1 className="mb-2 font-serif text-2xl text-sage-dark">Mes guides</h1>
-        <p className="mb-8 text-sm text-foreground/60">Connecté en tant que {session.user.email}</p>
+        <p className="mb-6 text-sm text-foreground/60">Connecté en tant que {session.user.email}</p>
+
+        <nav className="mb-8 flex gap-4 text-sm text-sage-dark">
+          <Link href="/compte/favoris" className="underline">
+            Mes favoris
+          </Link>
+          <Link href="/compte/itineraire" className="underline">
+            Mon itinéraire
+          </Link>
+          <Link href="/carte" className="underline">
+            Ma carte
+          </Link>
+        </nav>
+
+        {ownedDestinations.length > 0 && (
+          <div className="mb-8">
+            <h2 className="mb-2 text-sm font-medium text-foreground/70">Mes destinations</h2>
+            <div className="flex flex-wrap gap-2">
+              {ownedDestinations.map((d) => (
+                <Link
+                  key={d.id}
+                  href={`/guide/${d.slug}`}
+                  className="rounded border border-line bg-sand px-3 py-1.5 text-sm hover:border-sage-dark"
+                >
+                  Guide {d.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         {orders.length === 0 ? (
           <p className="text-sm text-foreground/70">Vous n&apos;avez pas encore de commande.</p>

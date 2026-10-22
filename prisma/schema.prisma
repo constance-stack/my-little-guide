@@ -288,7 +288,7 @@ model TripDay {
 model TripStop {
   id        String  @id @default(cuid())
   tripDayId String
-  tripDay   TripDay @relation(fields: [tripDayId], references: [id])
+  tripDay   TripDay @relation(fields: [tripDayId], references: [id], onDelete: Cascade)
   placeId   String
   place     Place   @relation(fields: [placeId], references: [id])
   sortOrder Int
