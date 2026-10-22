@@ -1,0 +1,363 @@
+// My Little Guide — Bangkok pilot data model.
+// Every entity below is generic (not Bangkok-specific); adding a new
+// destination later is data entry, not a schema change.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum PublishStatus {
+  DRAFT
+  REVIEW
+  PUBLISHED
+}
+
+enum DestinationKind {
+  CITY
+  ISLAND
+}
+
+enum DestinationSize {
+  SMALL
+  LARGE
+}
+
+enum OrderStatus {
+  SUCCEEDED
+  REFUNDED
+}
+
+enum JobStatus {
+  QUEUED
+  RUNNING
+  DONE
+  FAILED
+}
+
+model Country {
+  id           String        @id @default(cuid())
+  slug         String        @unique
+  name         String
+  destinations Destination[]
+}
+
+model Destination {
+  id        String          @id @default(cuid())
+  countryId String
+  country   Country         @relation(fields: [countryId], references: [id])
+  slug      String          @unique
+  name      String
+  kind      DestinationKind
+  size      DestinationSize
+  status    PublishStatus   @default(DRAFT)
+
+  heroPhotoId String?
+  heroPhoto   Photo?  @relation("DestinationHeroPhoto", fields: [heroPhotoId], references: [id])
+
+  zones         Zone[]
+  places        Place[]
+  categories    Category[]     @relation("DestinationExtraCategories")
+  priceOverride Price?
+  guideVersions GuideVersion[]
+  orderLines    OrderLine[]
+  entitlements  Entitlement[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// Neighborhood (city) or beach/sector (island) — the "Où dormir ?" unit.
+model Zone {
+  id            String @id @default(cuid())
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id])
+  slug          String
+  name          String
+
+  vibeText        String
+  prosText        String
+  consText        String
+  transportText   String
+  nearbyText      String
+  profileFitText  String
+  hotelAdviceText String
+  mapColor        String
+
+  places Place[]
+
+  @@unique([destinationId, slug])
+}
+
+model Category {
+  id       String  @id @default(cuid())
+  slug     String  @unique
+  name     String
+  icon     String
+  color    String
+  isGlobal Boolean @default(true)
+
+  // Set only for a destination-specific extra category (isGlobal = false).
+  destinations Destination[] @relation("DestinationExtraCategories")
+
+  places PlaceCategory[]
+}
+
+model Place {
+  id            String      @id @default(cuid())
+  slug          String      @unique
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id])
+  zoneId        String?
+  zone          Zone?       @relation(fields: [zoneId], references: [id])
+
+  name   String
+  status PublishStatus @default(DRAFT)
+
+  lat Decimal @db.Decimal(9, 6)
+  lng Decimal @db.Decimal(9, 6)
+
+  description        String
+  whyVisit            String
+  littleTip           String?
+  indicativePrice     String?
+  indicativeDuration  String?
+  officialHours       String?
+  officialUrl         String?
+
+  /// true = seed/demo placeholder, never real verified content.
+  isFictionalDemo Boolean @default(false)
+
+  categories PlaceCategory[]
+  photos     PlacePhoto[]
+  favorites  Favorite[]
+  tripStops  TripStop[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PlaceCategory {
+  placeId    String
+  place      Place    @relation(fields: [placeId], references: [id])
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  @@id([placeId, categoryId])
+}
+
+model Photo {
+  id       String @id @default(cuid())
+  storageKey String
+
+  photographer    String
+  sourceName      String
+  sourceUrl       String
+  licenseType     String
+  verifiedAt      DateTime?
+  commercialOk    Boolean   @default(false)
+  attributionText String?
+  altText         String
+
+  places              PlacePhoto[]
+  destinationHeroesOf Destination[] @relation("DestinationHeroPhoto")
+
+  createdAt DateTime @default(now())
+}
+
+model PlacePhoto {
+  placeId   String
+  place     Place  @relation(fields: [placeId], references: [id])
+  photoId   String
+  photo     Photo  @relation(fields: [photoId], references: [id])
+  sortOrder Int    @default(0)
+
+  @@id([placeId, photoId])
+}
+
+model User {
+  id           String  @id @default(cuid())
+  email        String  @unique
+  passwordHash String?
+  role         Role    @default(USER)
+
+  emailVerified DateTime?
+  name          String?
+  image         String?
+
+  accounts  NextAuthAccount[]
+  sessions  NextAuthSession[]
+  orders       Order[]
+  entitlements Entitlement[]
+  favorites    Favorite[]
+  tripDays     TripDay[]
+
+  deletedAt DateTime?
+  createdAt DateTime  @default(now())
+}
+
+/// Admin-editable pricing, e.g. "kit-thailande", "destination-small", "destination-large".
+model Price {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  label       String
+  amountCents Int
+  currency    String   @default("EUR")
+  active      Boolean  @default(true)
+
+  destinationId String?      @unique
+  destination   Destination? @relation(fields: [destinationId], references: [id])
+}
+
+model Order {
+  id                    String      @id @default(cuid())
+  userId                String
+  user                  User        @relation(fields: [userId], references: [id])
+  stripeSessionId       String      @unique
+  stripePaymentIntentId String?
+  status                OrderStatus @default(SUCCEEDED)
+  amountCents           Int
+  currency              String
+
+  lines        OrderLine[]
+  entitlements Entitlement[]
+  pdfJobs      PdfJob[]
+  emailJobs    EmailJob[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model OrderLine {
+  id            String       @id @default(cuid())
+  orderId       String
+  order         Order        @relation(fields: [orderId], references: [id])
+  destinationId String?
+  destination   Destination? @relation(fields: [destinationId], references: [id])
+  priceId       String
+  amountCents   Int
+  label         String
+}
+
+/// Grants access to a destination's content, or to the country-wide "kit"
+/// when destinationId is null. Unique per [userId, destinationId] — this is
+/// what makes "never pay twice" structurally true rather than app logic.
+model Entitlement {
+  id            String       @id @default(cuid())
+  userId        String
+  user          User         @relation(fields: [userId], references: [id])
+  destinationId String?
+  destination   Destination? @relation(fields: [destinationId], references: [id])
+  orderId       String
+  order         Order        @relation(fields: [orderId], references: [id])
+  grantedAt     DateTime     @default(now())
+
+  @@unique([userId, destinationId])
+}
+
+model Favorite {
+  userId    String
+  user      User   @relation(fields: [userId], references: [id])
+  placeId   String
+  place     Place  @relation(fields: [placeId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@id([userId, placeId])
+}
+
+model TripDay {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+  date      DateTime?
+  label     String
+  sortOrder Int
+
+  stops TripStop[]
+}
+
+model TripStop {
+  id        String  @id @default(cuid())
+  tripDayId String
+  tripDay   TripDay @relation(fields: [tripDayId], references: [id])
+  placeId   String
+  place     Place   @relation(fields: [placeId], references: [id])
+  sortOrder Int
+}
+
+/// A published snapshot marker so "new edition available" can be detected.
+model GuideVersion {
+  id            String      @id @default(cuid())
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id])
+  publishedAt   DateTime    @default(now())
+  contentHash   String
+}
+
+model PdfJob {
+  id         String    @id @default(cuid())
+  orderId    String
+  order      Order     @relation(fields: [orderId], references: [id])
+  status     JobStatus @default(QUEUED)
+  storageKey String?
+  error      String?
+  attempts   Int       @default(0)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+model EmailJob {
+  id        String    @id @default(cuid())
+  orderId   String
+  order     Order     @relation(fields: [orderId], references: [id])
+  status    JobStatus @default(QUEUED)
+  error     String?
+  attempts  Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+// --- Auth.js (NextAuth) Prisma adapter models ---
+
+model NextAuthAccount {
+  id                String  @id @default(cuid())
+  userId            String
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  @@unique([provider, providerAccountId])
+}
+
+model NextAuthSession {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expires      DateTime
+}
+
+model NextAuthVerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
