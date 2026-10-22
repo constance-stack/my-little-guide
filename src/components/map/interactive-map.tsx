@@ -6,6 +6,7 @@ import * as maplibregl from "maplibre-gl";
 import type { Map as MapLibreMap, MapGeoJSONFeature } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { getMapStyle } from "./map-style";
+import { categoryIconEmoji } from "./category-icons";
 
 export type PlaceFeatureCollection = GeoJSON.FeatureCollection<
   GeoJSON.Point,
@@ -100,6 +101,22 @@ export function InteractiveMap({
         },
       });
 
+      // One small category glyph per marker, on top of the colored dot —
+      // rendered as text (an emoji) so no sprite sheet / addImage() is
+      // needed for a simple per-category icon.
+      map.addLayer({
+        id: "unclustered-point-icon",
+        type: "symbol",
+        source: "places",
+        filter: ["!", ["has", "point_count"]],
+        layout: {
+          "text-field": ["get", "icon"],
+          "text-size": 10,
+          "text-allow-overlap": true,
+          "text-ignore-placement": true,
+        },
+      });
+
       map.on("click", "clusters", (e) => {
         const features = map.queryRenderedFeatures(e.point, { layers: ["clusters"] });
         const clusterId = features[0]?.properties?.cluster_id;
@@ -111,18 +128,22 @@ export function InteractiveMap({
         });
       });
 
-      map.on("click", "unclustered-point", (e) => {
+      const selectFeatureAt = (e: maplibregl.MapLayerMouseEvent) => {
         const feature = e.features?.[0] as MapGeoJSONFeature | undefined;
         if (!feature) return;
         onSelectPlaceRef.current(feature.properties.id as string);
-      });
+      };
+      map.on("click", "unclustered-point", selectFeatureAt);
+      map.on("click", "unclustered-point-icon", selectFeatureAt);
 
-      map.on("mouseenter", "unclustered-point", () => {
-        map.getCanvas().style.cursor = "pointer";
-      });
-      map.on("mouseleave", "unclustered-point", () => {
-        map.getCanvas().style.cursor = "";
-      });
+      for (const layer of ["unclustered-point", "unclustered-point-icon"]) {
+        map.on("mouseenter", layer, () => {
+          map.getCanvas().style.cursor = "pointer";
+        });
+        map.on("mouseleave", layer, () => {
+          map.getCanvas().style.cursor = "";
+        });
+      }
     });
 
     return () => {
@@ -144,7 +165,11 @@ export function InteractiveMap({
         ...data,
         features: data.features.map((f) => ({
           ...f,
-          properties: { ...f.properties, color: f.properties.categories[0]?.color ?? "#4a7c59" },
+          properties: {
+            ...f.properties,
+            color: f.properties.categories[0]?.color ?? "#4a7c59",
+            icon: categoryIconEmoji(f.properties.categories[0]?.icon ?? ""),
+          },
         })),
       };
       source.setData(withColor as unknown as GeoJSON.FeatureCollection);
