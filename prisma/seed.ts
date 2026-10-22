@@ -25,35 +25,34 @@ const prisma = new PrismaClient({ adapter });
 // this list (no two muddy browns/beiges next to each other) since these
 // render as small map markers — hue alone, not just saturation/lightness,
 // has to carry the distinction at that size.
+// Consolidated from an earlier 20-category list: temples merged with
+// museums (both "heritage to visit"), walks merged with parks/nature
+// (both "outdoor, no entry fee"), and bars merged with nightlife (near-
+// total overlap in practice). "plages" and "conseils-transports" were
+// dropped outright — the kit essentiel already covers transport advice,
+// and Bangkok has no beaches. See prisma/migrate-consolidate-categories.ts
+// for the one-time data migration that retired the old slugs.
 const GLOBAL_CATEGORIES = [
   { slug: "incontournables", name: "Incontournables", icon: "star", color: "#c9972e" },
-  { slug: "temples-patrimoine", name: "Temples et patrimoine", icon: "temple", color: "#a8422c" },
-  { slug: "culture-musees", name: "Culture et musées", icon: "museum", color: "#6b4fa0" },
-  { slug: "quartiers-balades", name: "Quartiers et balades", icon: "walk", color: "#3f8c5a" },
+  { slug: "temples-patrimoine", name: "Temples, patrimoine et musées", icon: "temple", color: "#a8422c" },
+  { slug: "quartiers-balades", name: "Balades et nature", icon: "walk", color: "#3f8c5a" },
   { slug: "experiences-insolites", name: "Expériences insolites", icon: "sparkle", color: "#d6479a" },
   { slug: "activites-famille", name: "Activités en famille", icon: "family", color: "#2e86ab" },
   { slug: "restaurants", name: "Restaurants", icon: "fork", color: "#8f2d2d" },
   { slug: "street-food", name: "Street food", icon: "noodles", color: "#e8821e" },
   { slug: "cafes-brunchs", name: "Cafés et brunchs", icon: "coffee", color: "#6b3f2a" },
-  { slug: "bars-rooftops", name: "Bars et rooftops", icon: "cocktail", color: "#4a2e7a" },
+  { slug: "bars-rooftops", name: "Bars et vie nocturne", icon: "cocktail", color: "#4a2e7a" },
   { slug: "marches", name: "Marchés", icon: "basket", color: "#c2641f" },
   { slug: "shopping", name: "Shopping", icon: "bag", color: "#b03e7a" },
-  { slug: "plages", name: "Plages", icon: "beach", color: "#1fa2b5" },
-  { slug: "nature-randonnees", name: "Nature et randonnées", icon: "trail", color: "#5a9e3d" },
   { slug: "excursions", name: "Excursions", icon: "compass", color: "#3457a6" },
   { slug: "bien-etre-spas", name: "Bien-être et spas", icon: "lotus", color: "#6fae7c" },
   { slug: "hotels-hebergements", name: "Hôtels et hébergements", icon: "bed", color: "#8a6ba0" },
   { slug: "points-de-vue", name: "Points de vue", icon: "view", color: "#2a7a8c" },
-  { slug: "vie-nocturne", name: "Vie nocturne", icon: "moon", color: "#2e1f54" },
-  { slug: "conseils-transports", name: "Conseils et transports", icon: "transport", color: "#5c6066" },
 ];
 
-// Bangkok enables a realistic, non-exhaustive subset — not every category
-// fits every destination (e.g. no "plages" for a landlocked city).
 const BANGKOK_ENABLED_CATEGORIES = [
   "incontournables",
   "temples-patrimoine",
-  "culture-musees",
   "quartiers-balades",
   "experiences-insolites",
   "activites-famille",
@@ -63,13 +62,10 @@ const BANGKOK_ENABLED_CATEGORIES = [
   "bars-rooftops",
   "marches",
   "shopping",
-  "nature-randonnees",
   "excursions",
   "bien-etre-spas",
   "hotels-hebergements",
   "points-de-vue",
-  "vie-nocturne",
-  "conseils-transports",
 ];
 
 async function main() {

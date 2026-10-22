@@ -22,8 +22,14 @@ COPY . .
 # storage/ is gitignored (dev-local file store) and dockerignored, so the
 # free-tier container — which has no persistent disk — would otherwise
 # start with no photos at all. Bake the real seed photos in at build time
-# instead of relying on a runtime copy step.
-RUN mkdir -p storage/photos && cp seed-assets/bangkok-photos/*.jpg seed-assets/bangkok-photos-wave2/*.jpg seed-assets/bangkok-photos-wave3/*.jpg seed-assets/bangkok-photos-wave4/*.jpg seed-assets/bangkok-photos-wave5/*.jpg seed-assets/bangkok-photos-wave6/*.jpg seed-assets/bangkok-photos-wave7/*.jpg seed-assets/bangkok-photos-wave8/*.jpg seed-assets/bangkok-photos-wave9/*.jpg seed-assets/bangkok-photos-wave10/*.jpg seed-assets/bangkok-photos-wave11/*.jpg seed-assets/bangkok-photos-wave11/*.jpeg storage/photos/
+# instead of relying on a runtime copy step. Every seed-assets/bangkok-
+# photos-wave* folder is swept automatically — no need to remember to
+# list a new wave folder here each time one is added. Each file must be
+# named <place-slug>.<ext> (matching Photo.storageKey, not the Wikimedia
+# search key used only inside the fetch manifest) or it 404s in prod
+# while still working locally, where the seed script's own copyFile()
+# does that rename itself.
+RUN mkdir -p storage/photos && find seed-assets -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec cp {} storage/photos/ \;
 
 # Cache Components stays off (see next.config.ts) — this app gates
 # content by purchase entitlement and must render per-request.
