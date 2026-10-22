@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db";
+import { regeneratePdf, resendEmail } from "./actions";
 
 export default async function AdminOrdersPage() {
   const orders = await prisma.order.findMany({
@@ -21,21 +22,40 @@ export default async function AdminOrdersPage() {
               <th className="py-2">Statut</th>
               <th className="py-2">PDF</th>
               <th className="py-2">E-mail</th>
+              <th className="py-2">Actions</th>
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
-              <tr key={order.id} className="border-b border-line/60">
-                <td className="py-2">{order.createdAt.toLocaleString("fr-FR")}</td>
-                <td className="py-2">{order.user.email}</td>
-                <td className="py-2">
-                  {(order.amountCents / 100).toFixed(2)} {order.currency}
-                </td>
-                <td className="py-2">{order.status}</td>
-                <td className="py-2">{order.pdfJobs[0]?.status ?? "—"}</td>
-                <td className="py-2">{order.emailJobs[0]?.status ?? "—"}</td>
-              </tr>
-            ))}
+            {orders.map((order) => {
+              const regenerate = regeneratePdf.bind(null, order.id);
+              const resend = resendEmail.bind(null, order.id);
+              return (
+                <tr key={order.id} className="border-b border-line/60">
+                  <td className="py-2">{order.createdAt.toLocaleString("fr-FR")}</td>
+                  <td className="py-2">{order.user.email}</td>
+                  <td className="py-2">
+                    {(order.amountCents / 100).toFixed(2)} {order.currency}
+                  </td>
+                  <td className="py-2">{order.status}</td>
+                  <td className="py-2">{order.pdfJobs[0]?.status ?? "—"}</td>
+                  <td className="py-2">{order.emailJobs[0]?.status ?? "—"}</td>
+                  <td className="py-2">
+                    <div className="flex gap-2">
+                      <form action={regenerate}>
+                        <button type="submit" className="text-xs text-sage-dark underline">
+                          Régénérer le PDF
+                        </button>
+                      </form>
+                      <form action={resend}>
+                        <button type="submit" className="text-xs text-sage-dark underline">
+                          Renvoyer l&apos;e-mail
+                        </button>
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       )}

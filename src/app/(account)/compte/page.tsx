@@ -13,7 +13,7 @@ export default async function ComptePage() {
   const [orders, ownedIds] = await Promise.all([
     prisma.order.findMany({
       where: { userId: session.user.id },
-      include: { lines: { include: { destination: true } } },
+      include: { lines: { include: { destination: true } }, pdfJobs: true },
       orderBy: { createdAt: "desc" },
     }),
     entitledDestinationIds(session.user.id),
@@ -70,6 +70,7 @@ export default async function ComptePage() {
                     <li key={line.id}>{line.label}</li>
                   ))}
                 </ul>
+                <PdfStatus pdfJob={order.pdfJobs[0]} />
               </li>
             ))}
           </ul>
@@ -89,4 +90,22 @@ export default async function ComptePage() {
       </div>
     </main>
   );
+}
+
+function PdfStatus({ pdfJob }: { pdfJob?: { status: string; storageKey: string | null } }) {
+  if (!pdfJob) return null;
+
+  if (pdfJob.status === "DONE" && pdfJob.storageKey) {
+    return (
+      <a href={`/api/storage/${pdfJob.storageKey}`} className="mt-2 inline-block text-sm text-sage-dark underline">
+        Télécharger mon PDF
+      </a>
+    );
+  }
+
+  if (pdfJob.status === "FAILED") {
+    return <p className="mt-2 text-sm text-red-700">La génération du PDF a échoué. Contactez-nous pour le régénérer.</p>;
+  }
+
+  return <p className="mt-2 text-sm text-foreground/50">Préparation de votre PDF en cours…</p>;
 }
