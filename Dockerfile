@@ -23,7 +23,7 @@ COPY . .
 # free-tier container — which has no persistent disk — would otherwise
 # start with no photos at all. Bake the real seed photos in at build time
 # instead of relying on a runtime copy step.
-RUN mkdir -p storage/photos && cp seed-assets/bangkok-photos/*.jpg seed-assets/bangkok-photos-wave2/*.jpg seed-assets/bangkok-photos-wave3/*.jpg seed-assets/bangkok-photos-wave4/*.jpg seed-assets/bangkok-photos-wave5/*.jpg seed-assets/bangkok-photos-wave6/*.jpg seed-assets/bangkok-photos-wave7/*.jpg storage/photos/
+RUN mkdir -p storage/photos && cp seed-assets/bangkok-photos/*.jpg seed-assets/bangkok-photos-wave2/*.jpg seed-assets/bangkok-photos-wave3/*.jpg seed-assets/bangkok-photos-wave4/*.jpg seed-assets/bangkok-photos-wave5/*.jpg seed-assets/bangkok-photos-wave6/*.jpg seed-assets/bangkok-photos-wave7/*.jpg seed-assets/bangkok-photos-wave8/*.jpg storage/photos/
 
 # Cache Components stays off (see next.config.ts) — this app gates
 # content by purchase entitlement and must render per-request.
