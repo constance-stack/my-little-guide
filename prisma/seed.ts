@@ -17,7 +17,7 @@ import { PrismaClient } from "../src/generated/prisma/client";
 // "User was denied access" error that has nothing to do with permissions.
 const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false },
+  ssl: process.env.DATABASE_URL?.includes("localhost") ? undefined : { rejectUnauthorized: false },
 });
 const prisma = new PrismaClient({ adapter });
 
@@ -49,11 +49,22 @@ const GLOBAL_CATEGORIES = [
 const BANGKOK_ENABLED_CATEGORIES = [
   "incontournables",
   "temples-patrimoine",
+  "culture-musees",
   "quartiers-balades",
+  "experiences-insolites",
+  "activites-famille",
   "restaurants",
   "street-food",
+  "cafes-brunchs",
   "bars-rooftops",
   "marches",
+  "shopping",
+  "nature-randonnees",
+  "excursions",
+  "bien-etre-spas",
+  "hotels-hebergements",
+  "points-de-vue",
+  "vie-nocturne",
   "conseils-transports",
 ];
 
