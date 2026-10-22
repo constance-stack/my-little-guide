@@ -14,7 +14,10 @@ import type { StyleSpecification } from "maplibre-gl";
 export function getMapStyle(): StyleSpecification | string {
   const key = process.env.NEXT_PUBLIC_MAPTILER_KEY;
   if (key) {
-    return `https://api.maptiler.com/maps/streets-v2/style.json?key=${key}`;
+    // "hybrid" = satellite imagery with street/place labels on top, as
+    // requested — plain "satellite" has no labels at all, which makes
+    // clicking a specific place much harder.
+    return `https://api.maptiler.com/maps/hybrid/style.json?key=${key}`;
   }
 
   return {

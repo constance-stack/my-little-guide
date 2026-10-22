@@ -49,6 +49,23 @@ model Country {
   slug         String        @unique
   name         String
   destinations Destination[]
+  kitSections  KitSection[]
+}
+
+/// A section of the mandatory country-wide "kit essentiel" (visa, monnaie,
+/// transport, sécurité...) — shown in both the web guide and the PDF kit
+/// chapter, admin-editable like a Zone's text fields.
+model KitSection {
+  id        String   @id @default(cuid())
+  countryId String
+  country   Country  @relation(fields: [countryId], references: [id])
+  slug      String
+  title     String
+  content   String
+  sortOrder Int      @default(0)
+  status    PublishStatus @default(DRAFT)
+
+  @@unique([countryId, slug])
 }
 
 model Destination {

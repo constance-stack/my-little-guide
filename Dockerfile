@@ -12,6 +12,12 @@ RUN npm ci --legacy-peer-deps
 
 COPY . .
 
+# storage/ is gitignored (dev-local file store) and dockerignored, so the
+# free-tier container — which has no persistent disk — would otherwise
+# start with no photos at all. Bake the real seed photos in at build time
+# instead of relying on a runtime copy step.
+RUN mkdir -p storage/photos && cp seed-assets/bangkok-photos/*.jpg storage/photos/
+
 # Cache Components stays off (see next.config.ts) — this app gates
 # content by purchase entitlement and must render per-request.
 RUN npx prisma generate

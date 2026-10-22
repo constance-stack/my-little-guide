@@ -59,3 +59,21 @@ export async function getDestinationForGuide(
 }
 
 export type GuideDestination = NonNullable<Awaited<ReturnType<typeof getDestinationForGuide>>>;
+
+/**
+ * The mandatory country-wide "kit essentiel" — no entitlement check here,
+ * since every purchase in that country includes it automatically and it's
+ * meant to be seen before buying too (via the shop's preview).
+ */
+export async function getKitSections(countrySlug: string) {
+  const country = await prisma.country.findUnique({
+    where: { slug: countrySlug },
+    include: {
+      kitSections: {
+        where: { status: "PUBLISHED" },
+        orderBy: { sortOrder: "asc" },
+      },
+    },
+  });
+  return country?.kitSections ?? [];
+}

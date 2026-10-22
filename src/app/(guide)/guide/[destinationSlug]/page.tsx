@@ -14,7 +14,10 @@ export default async function GuideDestinationPage({
   const { destinationSlug } = await params;
   const session = await auth();
 
-  const destinationRow = await prisma.destination.findUnique({ where: { slug: destinationSlug } });
+  const destinationRow = await prisma.destination.findUnique({
+    where: { slug: destinationSlug },
+    include: { country: true },
+  });
   if (!destinationRow) redirect("/");
 
   if (!session?.user) redirect(`/connexion?callbackUrl=/guide/${destinationSlug}`);
@@ -49,9 +52,15 @@ export default async function GuideDestinationPage({
   return (
     <main className="mx-auto max-w-2xl px-4 py-12">
       <h1 className="mb-1 font-serif text-3xl text-sage-dark">Guide {destination.name}</h1>
-      <p className="mb-8 text-sm text-foreground/60">
+      <p className="mb-2 text-sm text-foreground/60">
         {allPlaces.length} lieux · {destination.zones.length} quartiers
       </p>
+      <Link
+        href={`/guide/${destinationRow.country.slug}/kit`}
+        className="mb-8 inline-block text-sm text-sage-dark underline"
+      >
+        Kit essentiel {destinationRow.country.name} →
+      </Link>
 
       <GuideSearch places={allPlaces} />
 

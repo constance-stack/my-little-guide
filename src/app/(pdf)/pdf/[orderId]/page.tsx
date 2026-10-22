@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { verifyPdfToken } from "@/lib/pdf-token";
-import { getDestinationForGuide } from "@/content/queries";
+import { getDestinationForGuide, getKitSections } from "@/content/queries";
 import { PlaceDetail } from "@/content/render/place-detail";
 
 // Print-mode route: this IS the web guide, rendered for Playwright rather
@@ -25,7 +25,7 @@ export default async function PdfOrderPage({
 
   const order = await prisma.order.findUnique({
     where: { id: orderId },
-    include: { user: true, lines: { include: { destination: true } } },
+    include: { user: true, lines: { include: { destination: { include: { country: true } } } } },
   });
   if (!order) notFound();
 
@@ -33,10 +33,14 @@ export default async function PdfOrderPage({
   const destinationSlugs = Array.from(
     new Set(order.lines.map((l) => l.destination?.slug).filter((s): s is string => Boolean(s)))
   );
+  const countrySlug = order.lines.find((l) => l.destination)?.destination?.country.slug;
 
-  const destinations = (
-    await Promise.all(destinationSlugs.map((slug) => getDestinationForGuide(slug, order.userId)))
-  ).filter((d): d is NonNullable<typeof d> => d !== null);
+  const [destinations, kitSections] = await Promise.all([
+    Promise.all(destinationSlugs.map((slug) => getDestinationForGuide(slug, order.userId))).then((ds) =>
+      ds.filter((d): d is NonNullable<typeof d> => d !== null)
+    ),
+    countrySlug ? getKitSections(countrySlug) : Promise.resolve([]),
+  ]);
 
   return (
     <div className="bg-ivory text-foreground">
@@ -82,11 +86,13 @@ export default async function PdfOrderPage({
 
       {/* Kit essentiel */}
       <section id="kit-essentiel" className="min-h-[400px] px-16 py-12" style={{ breakAfter: "page" }}>
-        <h2 className="mb-4 font-serif text-2xl text-sage-dark">Kit essentiel</h2>
-        <p className="text-sm text-foreground/80">
-          [Contenu provisoire] Conseils pratiques généraux (visas, monnaie, transports, sécurité) à
-          rédiger depuis l&apos;administration.
-        </p>
+        <h2 className="mb-6 font-serif text-2xl text-sage-dark">Kit essentiel</h2>
+        {kitSections.map((section) => (
+          <div key={section.id} className="mb-6" style={{ breakInside: "avoid" }}>
+            <h3 className="mb-1 font-serif text-lg text-foreground">{section.title}</h3>
+            <p className="text-sm leading-relaxed text-foreground/80 whitespace-pre-line">{section.content}</p>
+          </div>
+        ))}
       </section>
 
       {/* One chapter per destination */}
