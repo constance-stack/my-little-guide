@@ -31,7 +31,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         if (typeof email !== "string" || typeof password !== "string") return null;
 
         const user = await prisma.user.findUnique({ where: { email } });
-        if (!user?.passwordHash) return null;
+        if (!user?.passwordHash || user.deletedAt) return null;
 
         const valid = await bcrypt.compare(password, user.passwordHash);
         if (!valid) return null;
@@ -51,6 +51,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
   ],
   callbacks: {
+    // Belt-and-suspenders: Credentials already rejects a deleted account in
+    // authorize(), but the magic-link (Nodemailer) flow goes through the
+    // adapter's own user lookup instead, which this callback also covers.
+    signIn: async ({ user }) => {
+      if (!user?.email) return true;
+      const dbUser = await prisma.user.findUnique({ where: { email: user.email } });
+      return !dbUser?.deletedAt;
+    },
     jwt: async ({ token, user }) => {
       if (user) {
         token.id = user.id;

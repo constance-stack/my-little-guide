@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { auth, signOut } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { entitledDestinationIds } from "@/lib/entitlements";
+import { DeleteAccountButton } from "@/components/account/delete-account-button";
 
 export default async function ComptePage() {
   const session = await auth();
@@ -87,6 +88,10 @@ export default async function ComptePage() {
             Se déconnecter
           </button>
         </form>
+
+        <div className="mt-6">
+          <DeleteAccountButton />
+        </div>
       </div>
     </main>
   );
