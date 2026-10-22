@@ -10,6 +10,13 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --legacy-peer-deps
 
+# Render only forwards a service's env vars into the Docker build as
+# build args for ARGs explicitly declared here — needed because Next.js
+# inlines NEXT_PUBLIC_* vars into the client bundle at build time, not
+# read at container runtime like every other env var in this app.
+ARG NEXT_PUBLIC_MAPTILER_KEY
+ENV NEXT_PUBLIC_MAPTILER_KEY=$NEXT_PUBLIC_MAPTILER_KEY
+
 COPY . .
 
 # storage/ is gitignored (dev-local file store) and dockerignored, so the
