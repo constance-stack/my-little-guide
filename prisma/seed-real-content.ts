@@ -30,26 +30,45 @@ async function main() {
     {
       slug: "visa-entree",
       title: "Visa et entrée sur le territoire",
-      content:
-        "Les ressortissants de nombreux pays (dont la France, la Belgique, la Suisse et le Canada) peuvent entrer en Thaïlande sans visa pour un séjour touristique de courte durée. La durée exacte autorisée et les conditions (passeport valide au moins 6 mois, preuve de billet retour, parfois preuve de fonds) évoluent régulièrement : vérifiez toujours les règles en vigueur sur le site de l'ambassade de Thaïlande avant de partir, idéalement quelques semaines avant le départ. Depuis 2024, l'enregistrement électronique Thailand Digital Arrival Card (TDAC) est demandé avant l'arrivée pour la plupart des voyageurs.",
+      content: [
+        "Les ressortissants de nombreux pays (dont la France, la Belgique, la Suisse et le Canada) peuvent entrer en Thaïlande sans visa pour un séjour touristique de courte durée.",
+        "Passeport valide au moins 6 mois, preuve de billet retour et parfois preuve de fonds peuvent être demandés à l'arrivée.",
+        "La durée exacte autorisée et les conditions évoluent régulièrement : vérifiez-les sur le site de l'ambassade de Thaïlande avant de partir, idéalement quelques semaines avant le départ.",
+        "Depuis 2024, l'enregistrement électronique Thailand Digital Arrival Card (TDAC) est demandé avant l'arrivée pour la plupart des voyageurs.",
+      ].join("\n"),
     },
     {
       slug: "monnaie",
       title: "Monnaie et paiements",
-      content:
-        "La monnaie locale est le baht thaïlandais (THB). Les distributeurs automatiques sont nombreux à Bangkok mais appliquent presque tous des frais fixes par retrait (généralement autour de 200 THB), en plus des frais éventuels de votre propre banque — mieux vaut retirer des sommes plus importantes moins souvent. Les cartes bancaires internationales sont largement acceptées dans les hôtels, centres commerciaux et restaurants de catégorie moyenne à élevée, mais le cash reste indispensable pour les marchés, le street food, les tuk-tuks et les petites échoppes. Le pourboire n'est pas obligatoire mais est de plus en plus apprécié dans la restauration et pour les guides.",
+      content: [
+        "La monnaie locale est le baht thaïlandais (THB).",
+        "Les distributeurs sont nombreux à Bangkok mais appliquent presque tous des frais fixes par retrait (environ 200 THB) — mieux vaut retirer des sommes plus importantes, moins souvent.",
+        "Les cartes bancaires internationales sont largement acceptées dans les hôtels, centres commerciaux et restaurants de catégorie moyenne à élevée.",
+        "Le cash reste indispensable pour les marchés, le street food, les tuk-tuks et les petites échoppes.",
+        "Le pourboire n'est pas obligatoire mais est de plus en plus apprécié dans la restauration et pour les guides.",
+      ].join("\n"),
     },
     {
       slug: "transports",
       title: "Se déplacer",
-      content:
-        "Bangkok dispose d'un réseau de transport en commun efficace et bon marché : le BTS Skytrain (aérien) et le MRT (métro souterrain) couvrent une grande partie des quartiers touristiques et évitent les embouteillages fréquents de la capitale. Une carte rechargeable (Rabbit Card pour le BTS) facilite les trajets. Pour les zones non couvertes, les applications Grab (équivalent local d'Uber, voitures et motos-taxis) sont la solution la plus simple et la plus fiable pour éviter les négociations de prix. Les taxis au compteur existent mais certains chauffeurs refusent de l'activer avec les touristes : insistez pour le compteur (\"meter, please\") ou utilisez Grab directement. Le long du fleuve Chao Phraya, les bateaux-taxis (Chao Phraya Express Boat) sont un moyen pratique et pittoresque de relier plusieurs sites, dont Wat Arun et le quartier de Chinatown.",
+      content: [
+        "Le BTS Skytrain (aérien) et le MRT (métro souterrain) couvrent une grande partie des quartiers touristiques et évitent les embouteillages fréquents de la capitale.",
+        "Une carte rechargeable (Rabbit Card) facilite les trajets sur le BTS.",
+        "L'application Grab (voitures et motos-taxis) est la solution la plus simple et la plus fiable pour les zones non couvertes par le rail.",
+        "Les taxis au compteur existent, mais certains chauffeurs refusent de l'activer avec les touristes : insistez (\"meter, please\") ou passez par Grab directement.",
+        "Les bateaux-taxis du Chao Phraya Express Boat relient plusieurs sites majeurs, dont Wat Arun et Chinatown.",
+      ].join("\n"),
     },
     {
       slug: "securite-sante",
       title: "Sécurité et santé",
-      content:
-        "La Thaïlande est globalement une destination sûre pour les voyageurs, avec une criminalité violente rare envers les touristes. Les principaux points de vigilance concernent les arnaques touristiques classiques (gemmes, excursions \"trop belles pour être vraies\" proposées dans la rue, tuk-tuks détournant vers des boutiques partenaires) : privilégiez les agences reconnues et méfiez-vous des sollicitations trop insistantes près des grands sites. L'eau du robinet n'est pas potable à Bangkok : préférez l'eau en bouteille, largement disponible. Aucune vaccination n'est obligatoire pour un séjour touristique standard, mais il est recommandé de vérifier les recommandations sanitaires à jour auprès d'un centre de vaccination international avant le départ. Une assurance voyage couvrant les frais médicaux est vivement conseillée.",
+      content: [
+        "La Thaïlande est globalement une destination sûre pour les voyageurs, avec une criminalité violente rare envers les touristes.",
+        "Méfiez-vous des arnaques touristiques classiques (gemmes, excursions \"trop belles pour être vraies\", tuk-tuks détournant vers des boutiques partenaires) et des sollicitations trop insistantes près des grands sites.",
+        "L'eau du robinet n'est pas potable à Bangkok : préférez l'eau en bouteille, largement disponible.",
+        "Aucune vaccination n'est obligatoire pour un séjour touristique standard, mais vérifiez les recommandations sanitaires à jour auprès d'un centre de vaccination international avant le départ.",
+        "Une assurance voyage couvrant les frais médicaux est vivement conseillée.",
+      ].join("\n"),
     },
   ];
 

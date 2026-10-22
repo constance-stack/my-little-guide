@@ -3,6 +3,8 @@ import { prisma } from "@/lib/db";
 import { verifyPdfToken } from "@/lib/pdf-token";
 import { getDestinationForGuide, getKitSections } from "@/content/queries";
 import { PlaceDetail } from "@/content/render/place-detail";
+import { ZonesMap, ZoneSwatch } from "@/content/render/zones-map";
+import { KitSectionBody } from "@/content/render/kit-section";
 
 // Print-mode route: this IS the web guide, rendered for Playwright rather
 // than a browser tab. It intentionally reuses getDestinationForGuide() and
@@ -56,6 +58,29 @@ export default async function PdfOrderPage({
         <p className="mt-1 text-sm text-foreground/60">{order.createdAt.toLocaleDateString("fr-FR")}</p>
       </section>
 
+      {/* Introduction + colored neighborhood map — required at the start
+          of the PDF per the editorial brief, shared with the web guide so
+          both show the exact same illustration. */}
+      {destinations.some((d) => d.slug === "bangkok") && (
+        <section className="min-h-[600px] px-16 py-12" style={{ breakAfter: "page" }}>
+          <h2 className="mb-4 font-serif text-2xl text-sage-dark">Introduction</h2>
+          <p className="mb-6 text-sm leading-relaxed text-foreground/80">
+            Bangkok est une ville de contrastes : temples majestueux, quartiers historiques,
+            gratte-ciel, marchés animés et street food se côtoient à quelques rues d&apos;intervalle.
+            Elle se découvre autant au fil du Chao Phraya que dans ses petites ruelles — mais
+            Bangkok est immense, et le secret pour en profiter est de regrouper ses visites par
+            quartier plutôt que de traverser la ville dans tous les sens.
+          </p>
+          <div className="mb-6 rounded border border-line bg-sage-dark/5 px-4 py-3 text-sm text-foreground/80">
+            <span className="font-medium text-sage-dark">Little Tip — </span>
+            Un hôtel qui paraît proche d&apos;une attraction sur une carte peut en réalité
+            nécessiter un long trajet. Privilégiez les stations BTS/MRT, les embarcadères, et
+            regroupez vos visites par quartier.
+          </div>
+          <ZonesMap zones={destinations.find((d) => d.slug === "bangkok")!.zones} />
+        </section>
+      )}
+
       {/* Table of contents */}
       <section className="min-h-[600px] px-16 py-12" style={{ breakAfter: "page" }}>
         <h2 className="mb-6 font-serif text-2xl text-sage-dark">Sommaire</h2>
@@ -89,8 +114,8 @@ export default async function PdfOrderPage({
         <h2 className="mb-6 font-serif text-2xl text-sage-dark">Kit essentiel</h2>
         {kitSections.map((section) => (
           <div key={section.id} className="mb-6" style={{ breakInside: "avoid" }}>
-            <h3 className="mb-1 font-serif text-lg text-foreground">{section.title}</h3>
-            <p className="text-sm leading-relaxed text-foreground/80 whitespace-pre-line">{section.content}</p>
+            <h3 className="mb-2 font-serif text-lg text-foreground">{section.title}</h3>
+            <KitSectionBody content={section.content} />
           </div>
         ))}
       </section>
@@ -102,7 +127,10 @@ export default async function PdfOrderPage({
 
           {destination.zones.map((zone) => (
             <div key={zone.id} id={`zone-${zone.id}`} className="mb-10" style={{ breakInside: "avoid" }}>
-              <h3 className="mb-1 font-serif text-xl text-foreground">Où dormir — {zone.name}</h3>
+              <h3 className="mb-1 flex items-center gap-2 font-serif text-xl text-foreground">
+                <ZoneSwatch color={zone.mapColor} />
+                Où dormir — {zone.name}
+              </h3>
               <p className="mb-6 text-sm text-foreground/70">{zone.vibeText}</p>
 
               {zone.places.map((place) => (

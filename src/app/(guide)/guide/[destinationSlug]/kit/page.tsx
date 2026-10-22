@@ -4,6 +4,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { hasKit } from "@/lib/entitlements";
 import { getKitSections } from "@/content/queries";
+import { KitSectionBody } from "@/content/render/kit-section";
 
 // Reuses the [destinationSlug] segment as a country slug (e.g.
 // /guide/thailande/kit) — the kit is country-wide, not per-destination,
@@ -44,7 +45,7 @@ export default async function KitPage({ params }: { params: Promise<{ destinatio
         {sections.map((section) => (
           <section key={section.id}>
             <h2 className="mb-2 font-serif text-xl text-foreground">{section.title}</h2>
-            <p className="whitespace-pre-line text-sm leading-relaxed text-foreground/80">{section.content}</p>
+            <KitSectionBody content={section.content} />
           </section>
         ))}
       </div>
