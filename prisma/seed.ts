@@ -9,7 +9,16 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import bcrypt from "bcryptjs";
 import { PrismaClient } from "../src/generated/prisma/client";
 
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
+// rejectUnauthorized: false matters when this runs against a remote
+// managed Postgres (e.g. seeding a Render database from a laptop) — the
+// deployed app itself connects over Render's internal network and never
+// hits this path, but an external connection needs SSL explicitly
+// negotiated or the pg adapter silently fails every query with a generic
+// "User was denied access" error that has nothing to do with permissions.
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
+});
 const prisma = new PrismaClient({ adapter });
 
 const GLOBAL_CATEGORIES = [
