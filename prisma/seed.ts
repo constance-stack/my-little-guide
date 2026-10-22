@@ -21,27 +21,31 @@ const adapter = new PrismaPg({
 });
 const prisma = new PrismaClient({ adapter });
 
+// Each color is picked to stay visually distinct from every other one on
+// this list (no two muddy browns/beiges next to each other) since these
+// render as small map markers — hue alone, not just saturation/lightness,
+// has to carry the distinction at that size.
 const GLOBAL_CATEGORIES = [
-  { slug: "incontournables", name: "Incontournables", icon: "star", color: "#c9a227" },
-  { slug: "temples-patrimoine", name: "Temples et patrimoine", icon: "temple", color: "#8a6d3b" },
-  { slug: "culture-musees", name: "Culture et musées", icon: "museum", color: "#6b5b95" },
-  { slug: "quartiers-balades", name: "Quartiers et balades", icon: "walk", color: "#4a7c59" },
-  { slug: "experiences-insolites", name: "Expériences insolites", icon: "sparkle", color: "#b5538a" },
-  { slug: "activites-famille", name: "Activités en famille", icon: "family", color: "#3f8ea8" },
-  { slug: "restaurants", name: "Restaurants", icon: "fork", color: "#c1440e" },
-  { slug: "street-food", name: "Street food", icon: "noodles", color: "#d9822b" },
-  { slug: "cafes-brunchs", name: "Cafés et brunchs", icon: "coffee", color: "#8d6748" },
-  { slug: "bars-rooftops", name: "Bars et rooftops", icon: "cocktail", color: "#5a3e85" },
-  { slug: "marches", name: "Marchés", icon: "basket", color: "#a46a2a" },
-  { slug: "shopping", name: "Shopping", icon: "bag", color: "#9c6b9e" },
-  { slug: "plages", name: "Plages", icon: "beach", color: "#2f9bb0" },
-  { slug: "nature-randonnees", name: "Nature et randonnées", icon: "trail", color: "#3f7a44" },
-  { slug: "excursions", name: "Excursions", icon: "compass", color: "#4068a0" },
-  { slug: "bien-etre-spas", name: "Bien-être et spas", icon: "lotus", color: "#7fa06b" },
-  { slug: "hotels-hebergements", name: "Hôtels et hébergements", icon: "bed", color: "#6d5a44" },
-  { slug: "points-de-vue", name: "Points de vue", icon: "view", color: "#3a6b7a" },
-  { slug: "vie-nocturne", name: "Vie nocturne", icon: "moon", color: "#4a3f6b" },
-  { slug: "conseils-transports", name: "Conseils et transports", icon: "transport", color: "#555555" },
+  { slug: "incontournables", name: "Incontournables", icon: "star", color: "#c9972e" },
+  { slug: "temples-patrimoine", name: "Temples et patrimoine", icon: "temple", color: "#a8422c" },
+  { slug: "culture-musees", name: "Culture et musées", icon: "museum", color: "#6b4fa0" },
+  { slug: "quartiers-balades", name: "Quartiers et balades", icon: "walk", color: "#3f8c5a" },
+  { slug: "experiences-insolites", name: "Expériences insolites", icon: "sparkle", color: "#d6479a" },
+  { slug: "activites-famille", name: "Activités en famille", icon: "family", color: "#2e86ab" },
+  { slug: "restaurants", name: "Restaurants", icon: "fork", color: "#8f2d2d" },
+  { slug: "street-food", name: "Street food", icon: "noodles", color: "#e8821e" },
+  { slug: "cafes-brunchs", name: "Cafés et brunchs", icon: "coffee", color: "#6b3f2a" },
+  { slug: "bars-rooftops", name: "Bars et rooftops", icon: "cocktail", color: "#4a2e7a" },
+  { slug: "marches", name: "Marchés", icon: "basket", color: "#c2641f" },
+  { slug: "shopping", name: "Shopping", icon: "bag", color: "#b03e7a" },
+  { slug: "plages", name: "Plages", icon: "beach", color: "#1fa2b5" },
+  { slug: "nature-randonnees", name: "Nature et randonnées", icon: "trail", color: "#5a9e3d" },
+  { slug: "excursions", name: "Excursions", icon: "compass", color: "#3457a6" },
+  { slug: "bien-etre-spas", name: "Bien-être et spas", icon: "lotus", color: "#6fae7c" },
+  { slug: "hotels-hebergements", name: "Hôtels et hébergements", icon: "bed", color: "#8a6ba0" },
+  { slug: "points-de-vue", name: "Points de vue", icon: "view", color: "#2a7a8c" },
+  { slug: "vie-nocturne", name: "Vie nocturne", icon: "moon", color: "#2e1f54" },
+  { slug: "conseils-transports", name: "Conseils et transports", icon: "transport", color: "#5c6066" },
 ];
 
 // Bangkok enables a realistic, non-exhaustive subset — not every category
@@ -113,7 +117,7 @@ async function main() {
   for (const cat of GLOBAL_CATEGORIES) {
     const created = await prisma.category.upsert({
       where: { slug: cat.slug },
-      update: {},
+      update: { name: cat.name, icon: cat.icon, color: cat.color },
       create: cat,
     });
     categoryBySlug.set(cat.slug, created);

@@ -21,7 +21,7 @@ const ICON_EMOJI: Record<string, string> = {
   compass: "🧭",
   lotus: "🪷",
   bed: "🛏️",
-  view: "🔭",
+  view: "🌄",
   moon: "🌙",
   transport: "🚉",
 };
