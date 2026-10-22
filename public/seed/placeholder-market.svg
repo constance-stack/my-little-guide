@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f6f1e6"/>
+  <rect x="40" y="40" width="720" height="520" fill="none" stroke="#cdbf9b" stroke-width="2"/>
+  <text x="400" y="280" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#8a7a3f">Exemple fictif</text>
+  <text x="400" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#a89b7d">Photo de remplacement — non reelle</text>
+</svg>

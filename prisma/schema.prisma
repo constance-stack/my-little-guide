@@ -194,8 +194,8 @@ model User {
   name          String?
   image         String?
 
-  accounts  NextAuthAccount[]
-  sessions  NextAuthSession[]
+  accounts  Account[]
+  sessions  Session[]
   orders       Order[]
   entitlements Entitlement[]
   favorites    Favorite[]
@@ -328,7 +328,7 @@ model EmailJob {
 
 // --- Auth.js (NextAuth) Prisma adapter models ---
 
-model NextAuthAccount {
+model Account {
   id                String  @id @default(cuid())
   userId            String
   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -346,7 +346,7 @@ model NextAuthAccount {
   @@unique([provider, providerAccountId])
 }
 
-model NextAuthSession {
+model Session {
   id           String   @id @default(cuid())
   sessionToken String   @unique
   userId       String
@@ -354,7 +354,7 @@ model NextAuthSession {
   expires      DateTime
 }
 
-model NextAuthVerificationToken {
+model VerificationToken {
   identifier String
   token      String   @unique
   expires    DateTime

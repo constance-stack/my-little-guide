@@ -1,23 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf8f3; /* blanc cassé */
+  --foreground: #3a4a3e; /* vert profond, pour le texte */
+  --color-ivory: #faf8f3;
+  --color-sand: #f3ede0; /* beige sable */
+  --color-sage: #9fae9a; /* vert sauge */
+  --color-sage-dark: #4a7c59; /* vert profond, accents */
+  --color-line: #e3dcc8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-ivory: var(--color-ivory);
+  --color-sand: var(--color-sand);
+  --color-sage: var(--color-sage);
+  --color-sage-dark: var(--color-sage-dark);
+  --color-line: var(--color-line);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Intentionally no dark-mode override: this is a light, airy, print-magazine
+   palette (ivory / sand / sage) by design, not a dark/light adaptive theme. */
 
 body {
   background: var(--background);
