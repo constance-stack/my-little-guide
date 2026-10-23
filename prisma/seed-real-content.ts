@@ -70,6 +70,25 @@ async function main() {
         "Une assurance voyage couvrant les frais médicaux est vivement conseillée.",
       ].join("\n"),
     },
+    {
+      slug: "vocabulaire",
+      title: "Quelques mots de thaï utiles",
+      content: [
+        "Le thaï ajoute une particule de politesse en fin de phrase selon le genre du locuteur : \"khrap\" (ครับ) pour un homme, \"kha\" (ค่ะ) pour une femme — on l'entend partout, même glissée après un simple \"oui\".",
+        "Bonjour / au revoir : sawasdee (ครับ/ค่ะ) — สวัสดี — le mot passe-partout, accompagné d'un wai (mains jointes) dans les contextes formels.",
+        "Merci : khop khun (ครับ/ค่ะ) — ขอบคุณ",
+        "Oui / non : chai / mai chai — ใช่ / ไม่ใช่",
+        "S'il vous plaît / excusez-moi : khor thot — ขอโทษ — sert aussi à s'excuser.",
+        "Combien ça coûte ? : tao rai — เท่าไหร่ — utile sur les marchés.",
+        "Délicieux : aroi — อร่อย — toujours appréciée après un repas.",
+        "Épicé / pas épicé : phet / mai phet — เผ็ด / ไม่เผ็ด — précieux pour doser le piment.",
+        "Pas sucré / moins sucré : mai wan — ไม่หวาน — pour les boissons, souvent très sucrées par défaut.",
+        "Eau : nam — น้ำ",
+        "Toilettes : hong nam — ห้องน้ำ",
+        "L'addition, s'il vous plaît : check bin — เช็คบิล — se dit aussi presque tel quel en anglais.",
+        "Bonne chance / santé (pour trinquer) : chok dee — โชคดี",
+      ].join("\n"),
+    },
   ];
 
   for (let i = 0; i < kitSections.length; i++) {

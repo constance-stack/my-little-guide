@@ -7,23 +7,41 @@ export default async function HomePage() {
     orderBy: { name: "asc" },
   });
 
+  // Hero photo: Wat Arun, one of the free-preview places (see
+  // src/lib/demo.ts), so its photo is already public via
+  // /api/storage — no new licensing/visibility exception needed.
+  const heroPhoto = await prisma.photo.findFirst({ where: { storageKey: "/api/storage/photos/wat-arun.jpg" } });
+
   return (
     <main>
-      <section className="mx-auto max-w-3xl px-4 py-20 text-center">
-        <p className="mb-3 text-xs uppercase tracking-widest text-sage-dark">Guides de voyage numériques</p>
-        <h1 className="mb-6 font-serif text-4xl text-foreground sm:text-5xl">
-          Composez votre propre guide, destination par destination
-        </h1>
-        <p className="mx-auto mb-10 max-w-xl text-foreground/70">
-          Un guide premium — PDF personnalisé et guide interactif — associé à une carte privée regroupant
-          toutes vos adresses, pour un voyage réellement préparé.
-        </p>
-        <Link
-          href="/pays/thailande"
-          className="inline-block rounded bg-sage-dark px-6 py-3 text-sm text-ivory hover:opacity-90"
-        >
-          Découvrir la Thaïlande
-        </Link>
+      <section className="relative mx-auto max-w-5xl overflow-hidden sm:mx-6 sm:mt-6 sm:rounded-lg lg:mx-auto">
+        {heroPhoto && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={heroPhoto.storageKey} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        )}
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(180deg, rgba(42,51,38,0.55) 0%, rgba(42,51,38,0.78) 100%)" }}
+        />
+        <div className="relative px-4 py-20 text-center sm:py-28">
+          <p className="mb-3 text-xs uppercase tracking-widest text-ivory/80">Guides de voyage numériques</p>
+          <h1 className="mx-auto mb-6 max-w-2xl font-serif text-4xl text-ivory sm:text-5xl">
+            Composez votre propre guide, destination par destination
+          </h1>
+          <p className="mx-auto mb-10 max-w-xl text-ivory/85">
+            Un guide premium — PDF personnalisé et guide interactif — associé à une carte privée regroupant
+            toutes vos adresses, pour un voyage réellement préparé.
+          </p>
+          <Link
+            href="/pays/thailande"
+            className="inline-block rounded bg-ivory px-6 py-3 text-sm text-sage-dark hover:opacity-90"
+          >
+            Découvrir la Thaïlande
+          </Link>
+        </div>
+        {heroPhoto?.attributionText && (
+          <p className="absolute bottom-2 right-3 text-[10px] text-ivory/60">{heroPhoto.attributionText}</p>
+        )}
       </section>
 
       <section className="mx-auto max-w-4xl px-4 py-16">
