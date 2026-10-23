@@ -318,6 +318,7 @@ export function MapPageClient({
           placingPin={placingPin}
           onMapClickForPin={handleMapClickForPin}
           onSelectPersonalPin={setSelectedPersonalPinId}
+          clusterEnabled={!demo}
         />
         {selectedPlaceSlug && (
           <PlaceSheet

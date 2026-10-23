@@ -50,6 +50,7 @@ export function InteractiveMap({
   placingPin = false,
   onMapClickForPin,
   onSelectPersonalPin,
+  clusterEnabled = true,
 }: {
   data: PlaceFeatureCollection;
   selectedPlaceId: string | null;
@@ -59,9 +60,17 @@ export function InteractiveMap({
   placingPin?: boolean;
   onMapClickForPin?: (lng: number, lat: number) => void;
   onSelectPersonalPin?: (id: string) => void;
+  // Off for the free map demo: with only ~10 fixed places scattered
+  // across a whole city, clustering mostly hides them behind a couple of
+  // flat green count bubbles (clusters never show category color/icon,
+  // by design — they mix categories) instead of showing off the colored,
+  // iconed markers the demo exists to show. Read once at mount, since the
+  // GeoJSON source's cluster option can't change after creation.
+  clusterEnabled?: boolean;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
+  const clusterEnabledRef = useRef(clusterEnabled);
   // Latest-value refs for callbacks/flags read from inside MapLibre event
   // handlers registered once in the map-creation effect below — kept in
   // sync after every render (not during render, which React's hooks lint
@@ -103,7 +112,7 @@ export function InteractiveMap({
       map.addSource("places", {
         type: "geojson",
         data: { type: "FeatureCollection", features: [] },
-        cluster: true,
+        cluster: clusterEnabledRef.current,
         clusterMaxZoom: 14,
         clusterRadius: 50,
       });
