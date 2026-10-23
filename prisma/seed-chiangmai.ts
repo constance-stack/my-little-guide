@@ -39,12 +39,12 @@ type PhotoManifestEntry = {
 const GOOD_KEYS = new Set([
   // photos_cm1
   "doi-suthep", "wat-chedi-luang", "wat-phra-singh", "tha-phae-gate", "wat-umong",
-  "khao-soi-khun-yai", "akha-ama-coffee", "elephant-nature-park", "jing-jai-market",
+  "khao-soi-khun-yai", "akha-ama-coffee", "jing-jai-market",
   "doi-inthanon",
   // photos_cm2
   "wat-suan-dok", "wat-chiang-man", "wat-phan-tao", "wat-lok-moli", "wiang-kum-kam",
   "wat-ket-karam", "doi-pui-hmong-village", "royal-park-rajapruek", "night-bazaar-cm",
-  "warorot-market", "one-nimman", "lamphun", "mae-sa-valley", "chiang-mai-zoo",
+  "warorot-market", "one-nimman", "lamphun", "mae-sa-valley",
 ]);
 
 type PlaceDef = {
@@ -789,18 +789,22 @@ const PLACES: PlaceDef[] = [
   },
 
   // ---------- Expériences insolites ----------
+  // Elephant Nature Park deliberately excluded: despite its genuine
+  // conservation record, its visitor program still includes feeding and
+  // sometimes bathing the elephants. Chang Chill below is strictly
+  // observation-only (no riding, no feeding, no bathing by visitors),
+  // developed with World Animal Protection — the bar this guide holds
+  // elephant experiences to.
   {
-    slug: "elephant-nature-park",
-    name: "Elephant Nature Park",
+    slug: "chang-chill",
+    name: "Chang Chill",
     zone: "excursions-cm",
-    categories: ["experiences-insolites", "activites-famille"],
-    lat: 19.2167, lng: 98.8167,
-    description: "Un sanctuaire pionnier dans la réhabilitation d'éléphants retraités de l'industrie du bois et du tourisme, fonctionnant sans chevauchée ni spectacle : les visiteurs observent, nourrissent et parfois baignent les éléphants dans leur environnement naturel.",
-    whyVisit: "La référence la plus reconnue pour une rencontre éthique avec des éléphants dans le nord de la Thaïlande.",
-    littleTip: "Réservez plusieurs semaines à l'avance — les créneaux de visite sont limités et se remplissent vite.",
-    indicativeDuration: "journée complète (trajet depuis Chiang Mai : environ 1h)",
-    photoKey: "elephant-nature-park",
-    altText: "Éléphants dans leur environnement naturel au sanctuaire Elephant Nature Park",
+    categories: ["experiences-insolites"],
+    lat: 18.5667, lng: 98.5333,
+    description: "Un sanctuaire d'éléphants dans la vallée de Mae Wang, conçu avec l'ONG World Animal Protection selon un modèle strictement \"sans contact\" : les visiteurs observent les éléphants évoluer en semi-liberté depuis des plateformes dédiées, sans les nourrir à la main ni les baigner. Les éléphants suivent leur propre rythme plutôt qu'un programme organisé autour des visiteurs.",
+    whyVisit: "L'un des rares sanctuaires de la région à exclure totalement le nourrissage et le bain par les visiteurs — une rencontre vraiment respectueuse du bien-être animal.",
+    littleTip: "Le modèle \"observation uniquement\" signifie moins d'interaction directe qu'ailleurs — c'est un choix assumé, pas un manque : les éléphants ne sont jamais sollicités pour les visiteurs.",
+    indicativeDuration: "demi-journée à journée complète (trajet depuis Chiang Mai : environ 1h30)",
   },
   {
     slug: "monk-chat",
@@ -883,30 +887,11 @@ const PLACES: PlaceDef[] = [
   },
 
   // ---------- Activités en famille ----------
-  {
-    slug: "chiang-mai-zoo",
-    name: "Chiang Mai Zoo",
-    zone: "doi-suthep-nature",
-    categories: ["activites-famille"],
-    lat: 18.8102, lng: 98.9308,
-    description: "Le grand zoo de la ville, aménagé sur les pentes boisées du Doi Suthep, abritant notamment des pandas géants et un aquarium, avec suffisamment d'espace et d'ombre pour une sortie familiale sur une demi-journée.",
-    whyVisit: "La sortie familiale classique de Chiang Mai, avec un cadre boisé agréable même en pleine chaleur.",
-    littleTip: "Le site est en pente et assez étendu — un petit tram interne permet de se déplacer sans trop marcher.",
-    indicativeDuration: "2h à 3h",
-    photoKey: "chiang-mai-zoo",
-    altText: "Enclos du zoo de Chiang Mai sur les pentes boisées du Doi Suthep",
-  },
-  {
-    slug: "chiang-mai-night-safari",
-    name: "Chiang Mai Night Safari",
-    zone: "doi-suthep-nature",
-    categories: ["activites-famille", "experiences-insolites"],
-    lat: 18.7937, lng: 98.9206,
-    description: "Un parc animalier organisé autour de circuits en tram de nuit, permettant d'observer des animaux normalement actifs à la tombée du jour dans un cadre pensé pour l'observation nocturne, avec aussi un volet diurne plus classique.",
-    whyVisit: "Une façon originale de voir les animaux d'Asie et d'Afrique dans une mise en scène nocturne plutôt qu'un zoo classique de jour.",
-    littleTip: "Les circuits en tram du soir sont les plus demandés — réserver un peu à l'avance évite l'attente aux heures de pointe.",
-    indicativeDuration: "2h à 3h",
-  },
+  // Chiang Mai Zoo and Chiang Mai Night Safari intentionally excluded:
+  // both are captive-animal parks (zoo enclosures, nocturnal tram viewing
+  // of caged wildlife) — not the ethical bar this guide holds animal
+  // attractions to. See Chang Chill above for the one elephant experience
+  // kept, chosen specifically for its no-feeding, no-bathing policy.
   {
     slug: "grand-canyon-water-park",
     name: "Grand Canyon Water Park",

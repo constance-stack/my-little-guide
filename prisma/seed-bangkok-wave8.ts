@@ -157,21 +157,10 @@ const PLACES: PlaceDef[] = [
     photoKey: "bangkok-planetarium",
     altText: "Façade du Bangkok Planetarium avec son dôme caractéristique et une réplique de module lunaire",
   },
-  {
-    slug: "safari-world",
-    name: "Safari World",
-    zone: "sukhumvit-asok-phrom-phong",
-    categories: ["activites-famille"],
-    lat: 13.8264,
-    lng: 100.7203,
-    description:
-      "Un grand parc animalier à l'est de Bangkok, combinant un safari en voiture parmi des animaux en semi-liberté (girafes, zèbres, lions) et un \"Marine Park\" avec spectacles d'animaux. C'est l'une des plus grandes attractions animalières de la région, mais elle a aussi fait l'objet de critiques sur le bien-être animal, comme beaucoup de parcs de ce type en Asie du Sud-Est — un point à prendre en compte selon votre sensibilité.",
-    whyVisit: "Une sortie en famille à grande échelle, pour qui est à l'aise avec le format parc animalier et spectacles.",
-    littleTip: "Le parc est assez excentré, à l'est de la ville — comptez un trajet d'environ une heure depuis le centre et prévoyez d'y passer une demi-journée complète pour amortir le déplacement.",
-    indicativeDuration: "demi-journée",
-    photoKey: "safari-world",
-    altText: "Perroquet coloré nourri à la main dans le parc animalier Safari World à Bangkok",
-  },
+  // Safari World intentionally removed (and deleted from the live DB): a
+  // captive-animal park with recurring animal-welfare criticism, not the
+  // kind of place this guide recommends — see the Chiang Mai equivalent
+  // decision in seed-chiangmai.ts for the same policy.
 ];
 
 async function main() {

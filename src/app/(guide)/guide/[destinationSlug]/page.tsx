@@ -58,9 +58,22 @@ export default async function GuideDestinationPage({
       </p>
       <Link
         href={`/guide/${destinationRow.country.slug}/kit`}
-        className="mb-8 inline-block text-sm text-sage-dark underline"
+        className="mb-6 inline-block text-sm text-sage-dark underline"
       >
         Kit essentiel {destinationRow.country.name} →
+      </Link>
+
+      <Link
+        href={`/carte?destination=${destination.slug}`}
+        className="mb-8 flex items-center justify-between rounded border border-line bg-sand px-5 py-4 transition hover:border-sage-dark"
+      >
+        <span>
+          <span className="block font-serif text-lg text-sage-dark">Voir la carte</span>
+          <span className="block text-sm text-foreground/60">
+            Repérez les lieux sur la carte interactive, ou parcourez la liste ci-dessous.
+          </span>
+        </span>
+        <span className="text-sage-dark">→</span>
       </Link>
 
       {destination.slug === "bangkok" && (
