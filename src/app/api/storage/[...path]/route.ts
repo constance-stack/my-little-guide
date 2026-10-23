@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { get } from "@/lib/storage";
+import { DEMO_BANGKOK_SLUGS } from "@/lib/demo";
 
 const CONTENT_TYPES: Record<string, string> = {
   jpg: "image/jpeg",
@@ -20,22 +21,33 @@ const CONTENT_TYPES: Record<string, string> = {
 // signed in — otherwise any logged-in user could guess another customer's
 // orderId and download their guide.
 export async function GET(_request: Request, { params }: { params: Promise<{ path: string[] }> }) {
-  const session = await auth();
-  if (!session?.user) {
-    return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
-  }
-
   const { path } = await params;
   const key = path.join("/");
   const extension = key.split(".").pop()?.toLowerCase() ?? "";
 
-  if (key.startsWith("pdfs/")) {
-    const orderId = key.slice("pdfs/".length).replace(/\.pdf$/, "");
-    const order = await prisma.order.findUnique({ where: { id: orderId } });
-    const isOwner = order?.userId === session.user.id;
-    const isAdmin = session.user.role === "ADMIN";
-    if (!order || (!isOwner && !isAdmin)) {
-      return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
+  // Photos of the fixed free-preview places are public, so the no-account
+  // map demo and PDF preview can actually display them. Every other photo,
+  // and anything else under storage/, stays behind the sign-in check below.
+  const isDemoPhoto =
+    key.startsWith("photos/") &&
+    (await prisma.placePhoto.findFirst({
+      where: { photo: { storageKey: `/api/storage/${key}` }, place: { slug: { in: [...DEMO_BANGKOK_SLUGS] } } },
+    }));
+
+  if (!isDemoPhoto) {
+    const session = await auth();
+    if (!session?.user) {
+      return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
+    }
+
+    if (key.startsWith("pdfs/")) {
+      const orderId = key.slice("pdfs/".length).replace(/\.pdf$/, "");
+      const order = await prisma.order.findUnique({ where: { id: orderId } });
+      const isOwner = order?.userId === session.user.id;
+      const isAdmin = session.user.role === "ADMIN";
+      if (!order || (!isOwner && !isAdmin)) {
+        return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
+      }
     }
   }
 

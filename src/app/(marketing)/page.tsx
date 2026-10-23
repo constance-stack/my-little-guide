@@ -45,6 +45,40 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* The actual product, tried live — 10 free Bangkok places, no
+          account needed. Same DEMO_BANGKOK_SLUGS list that backs the
+          sample PDF (see src/lib/demo.ts). */}
+      <section className="mx-auto max-w-4xl px-4 py-16">
+        <div className="overflow-hidden rounded border border-line bg-sand">
+          <div className="px-6 pt-6 text-center sm:px-10 sm:pt-8">
+            <p className="mb-2 text-xs uppercase tracking-widest text-sage-dark">À essayer tout de suite</p>
+            <h2 className="mb-3 font-serif text-2xl text-foreground">Testez la carte interactive</h2>
+            <p className="mx-auto mb-6 max-w-lg text-sm text-foreground/70">
+              10 lieux de Bangkok en libre accès, directement sur la vraie carte du produit — sans créer de
+              compte.
+            </p>
+          </div>
+          <Link
+            href="/carte/demo"
+            className="group relative block h-72 border-t border-line bg-ivory sm:h-96"
+            aria-label="Ouvrir la carte interactive de démonstration"
+          >
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-sage-dark/5 transition group-hover:bg-sage-dark/10">
+              <span className="rounded-full bg-sage-dark px-5 py-2.5 text-sm text-ivory shadow">
+                Ouvrir la carte de démonstration →
+              </span>
+              <span className="text-xs text-foreground/50">Carte satellite · filtres par catégorie · fiches lieux</span>
+            </div>
+          </Link>
+          <div className="flex flex-col items-center gap-2 px-6 py-5 text-center sm:flex-row sm:justify-between sm:px-10">
+            <p className="text-sm text-foreground/70">Vous préférez lire sur papier ou hors-ligne ?</p>
+            <a href="/demo/bangkok-apercu.pdf" target="_blank" rel="noreferrer" className="text-sm text-sage-dark underline">
+              Télécharger l&apos;aperçu PDF gratuit →
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-4xl px-4 py-16">
         <h2 className="mb-6 font-serif text-2xl text-sage-dark">Destinations disponibles</h2>
         <div className="flex flex-wrap gap-3">

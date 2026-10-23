@@ -11,10 +11,12 @@ export function MapPageClient({
   initialDestinationSlug,
   initialPlaceSlug,
   initialCategorySlug,
+  demo = false,
 }: {
   initialDestinationSlug: string | null;
   initialPlaceSlug: string | null;
   initialCategorySlug: string | null;
+  demo?: boolean;
 }) {
   const router = useRouter();
   const [destinations, setDestinations] = useState<OwnedDestination[]>([]);
@@ -28,8 +30,10 @@ export function MapPageClient({
   const [favoriteIds, setFavoriteIds] = useState<Set<string>>(new Set());
   const [search, setSearch] = useState("");
 
-  // Owned destinations, for the selector.
+  // Owned destinations, for the selector. Skipped in demo mode: there's
+  // nothing "owned" to pick from, just the one fixed free place list.
   useEffect(() => {
+    if (demo) return;
     fetch("/api/catalog")
       .then((r) => r.json())
       .then((payload: { destinations: (OwnedDestination & { owned: boolean })[] }) => {
@@ -38,22 +42,31 @@ export function MapPageClient({
         if (!destinationSlug && owned[0]) setDestinationSlug(owned[0].slug);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [demo]);
 
-  // Favorites, for the "mes favoris" filter.
+  // Favorites, for the "mes favoris" filter — not available to anonymous
+  // demo visitors.
   useEffect(() => {
+    if (demo) return;
     fetch("/api/favorites")
       .then((r) => r.json())
       .then((payload: { favorites: { placeId: string }[] }) => setFavoriteIds(new Set(payload.favorites.map((f) => f.placeId))));
-  }, []);
+  }, [demo]);
 
-  // Place data for the selected destination.
+  // Place data: the fixed free-preview list in demo mode, otherwise the
+  // selected owned destination.
   useEffect(() => {
+    if (demo) {
+      fetch(`/api/places?demo=1`)
+        .then((r) => r.json())
+        .then((fc: PlaceFeatureCollection) => setData(fc));
+      return;
+    }
     if (!destinationSlug) return;
     fetch(`/api/places?destination=${destinationSlug}`)
       .then((r) => r.json())
       .then((fc: PlaceFeatureCollection) => setData(fc));
-  }, [destinationSlug]);
+  }, [demo, destinationSlug]);
 
   // Resolve an initial place slug (from a deep-link) to its id + coordinates
   // once the data for that destination has loaded.
@@ -95,12 +108,12 @@ export function MapPageClient({
       const dest = next.destination !== undefined ? next.destination : destinationSlug;
       const place = next.place !== undefined ? next.place : selectedPlaceSlug;
       const cat = next.cat !== undefined ? next.cat : categoryFilter;
-      if (dest) params.set("destination", dest);
+      if (!demo && dest) params.set("destination", dest);
       if (place) params.set("place", place);
       if (cat) params.set("cat", cat);
-      router.replace(`/carte?${params.toString()}`, { scroll: false });
+      router.replace(`${demo ? "/carte/demo" : "/carte"}?${params.toString()}`, { scroll: false });
     },
-    [destinationSlug, selectedPlaceSlug, categoryFilter, router]
+    [demo, destinationSlug, selectedPlaceSlug, categoryFilter, router]
   );
 
   function handleSelectPlace(placeId: string) {
@@ -174,14 +187,23 @@ export function MapPageClient({
         </div>
 
         <div className="mb-4 flex items-center justify-between">
-          <label className="flex items-center gap-2 text-sm text-foreground/70">
-            <input type="checkbox" checked={favoritesOnly} onChange={(e) => setFavoritesOnly(e.target.checked)} />
-            Mes favoris uniquement
-          </label>
+          {!demo && (
+            <label className="flex items-center gap-2 text-sm text-foreground/70">
+              <input type="checkbox" checked={favoritesOnly} onChange={(e) => setFavoritesOnly(e.target.checked)} />
+              Mes favoris uniquement
+            </label>
+          )}
           <button type="button" onClick={handleGeolocate} className="text-xs text-sage-dark underline">
             Me localiser
           </button>
         </div>
+
+        {demo && (
+          <p className="mb-4 rounded border border-sage bg-sand p-3 text-xs text-foreground/70">
+            Aperçu gratuit — {data.features.length} lieux de Bangkok. Le guide complet en compte bien plus, avec
+            toutes les catégories, vos favoris et votre PDF personnalisé.
+          </p>
+        )}
 
         <ul className="divide-y divide-line">
           {filtered.features.map((f) => (
@@ -207,6 +229,7 @@ export function MapPageClient({
         {selectedPlaceSlug && (
           <PlaceSheet
             slug={selectedPlaceSlug}
+            demo={demo}
             onClose={() => {
               setSelectedPlaceId(null);
               setSelectedPlaceSlug(null);

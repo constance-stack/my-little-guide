@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { hasAccess } from "@/lib/entitlements";
+import { isDemoPlaceSlug } from "@/lib/demo";
 
 export async function GET(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -21,7 +22,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
     return NextResponse.json({ error: "Lieu introuvable." }, { status: 404 });
   }
 
-  const allowed = await hasAccess(session?.user?.id, place.destinationId, session?.user?.role);
+  const allowed = isDemoPlaceSlug(place.slug) || (await hasAccess(session?.user?.id, place.destinationId, session?.user?.role));
   if (!allowed) {
     return NextResponse.json({ error: "Ce lieu fait partie d'une destination non achetée." }, { status: 403 });
   }

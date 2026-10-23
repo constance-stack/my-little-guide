@@ -23,7 +23,7 @@ type PlaceDetail = {
   isFavorite: boolean;
 };
 
-export function PlaceSheet({ slug, onClose }: { slug: string; onClose: () => void }) {
+export function PlaceSheet({ slug, onClose, demo = false }: { slug: string; onClose: () => void; demo?: boolean }) {
   const [place, setPlace] = useState<PlaceDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [favPending, setFavPending] = useState(false);
@@ -87,16 +87,18 @@ export function PlaceSheet({ slug, onClose }: { slug: string; onClose: () => voi
           )}
 
           <div className="flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={toggleFavorite}
-              disabled={favPending}
-              className={`rounded px-3 py-1.5 text-xs ${
-                place.isFavorite ? "bg-sage-dark text-ivory" : "border border-line text-foreground/70"
-              }`}
-            >
-              {place.isFavorite ? "★ Favori" : "☆ Favori"}
-            </button>
+            {!demo && (
+              <button
+                type="button"
+                onClick={toggleFavorite}
+                disabled={favPending}
+                className={`rounded px-3 py-1.5 text-xs ${
+                  place.isFavorite ? "bg-sage-dark text-ivory" : "border border-line text-foreground/70"
+                }`}
+              >
+                {place.isFavorite ? "★ Favori" : "☆ Favori"}
+              </button>
+            )}
             <a
               href={`https://www.google.com/maps/dir/?api=1&destination=${place.lat},${place.lng}`}
               target="_blank"
@@ -105,9 +107,15 @@ export function PlaceSheet({ slug, onClose }: { slug: string; onClose: () => voi
             >
               Itinéraire
             </a>
-            <Link href={`/lieu/${place.slug}`} className="rounded border border-line px-3 py-1.5 text-xs text-foreground/70 hover:border-sage-dark">
-              Lire dans mon guide
-            </Link>
+            {demo ? (
+              <Link href="/pays/thailande" className="rounded bg-sage-dark px-3 py-1.5 text-xs text-ivory hover:opacity-90">
+                Débloquer le guide complet →
+              </Link>
+            ) : (
+              <Link href={`/lieu/${place.slug}`} className="rounded border border-line px-3 py-1.5 text-xs text-foreground/70 hover:border-sage-dark">
+                Lire dans mon guide
+              </Link>
+            )}
           </div>
         </div>
       )}
