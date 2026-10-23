@@ -8,6 +8,23 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { getMapStyle } from "./map-style";
 import { categoryIconEmoji } from "./category-icons";
 
+// Renders one emoji to a small raster image via a 2D canvas — canvas text
+// uses the browser's normal (color) font rendering, unlike MapLibre's own
+// monochrome SDF glyphs, so this is what actually makes the emoji show up
+// as a map icon. Registered once per distinct emoji via addImage(), keyed
+// by the emoji string itself.
+function emojiToImageData(emoji: string, size = 48): ImageData {
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d")!;
+  ctx.font = `${Math.round(size * 0.75)}px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(emoji, size / 2, size / 2 + 2);
+  return ctx.getImageData(0, 0, size, size);
+}
+
 export type PlaceFeatureCollection = GeoJSON.FeatureCollection<
   GeoJSON.Point,
   {
@@ -101,19 +118,23 @@ export function InteractiveMap({
         },
       });
 
-      // One small category glyph per marker, on top of the colored dot —
-      // rendered as text (an emoji) so no sprite sheet / addImage() is
-      // needed for a simple per-category icon.
+      // One small category glyph per marker, on top of the colored dot.
+      // MapLibre's text-field renders glyphs from the style's own
+      // single-color SDF font, which has no emoji coverage — an emoji
+      // character in text-field silently renders as nothing. Icons are
+      // instead pre-rendered to raster images via emojiToImageData() (see
+      // below) and registered with addImage(), then referenced here as
+      // icon-image, which is a normal raster icon and renders emoji fine.
       map.addLayer({
         id: "unclustered-point-icon",
         type: "symbol",
         source: "places",
         filter: ["!", ["has", "point_count"]],
         layout: {
-          "text-field": ["get", "icon"],
-          "text-size": 10,
-          "text-allow-overlap": true,
-          "text-ignore-placement": true,
+          "icon-image": ["get", "icon"],
+          "icon-size": 0.5,
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
         },
       });
 
@@ -161,6 +182,18 @@ export function InteractiveMap({
     const update = () => {
       const source = map.getSource("places") as maplibregl.GeoJSONSource | undefined;
       if (!source) return;
+
+      // Register a map image for every distinct emoji used by this
+      // dataset before setting the data that references it — addImage()
+      // is idempotent to call again, but hasImage() avoids redrawing one
+      // that's already registered.
+      const emojis = new Set(data.features.map((f) => categoryIconEmoji(f.properties.categories[0]?.icon ?? "")));
+      for (const emoji of emojis) {
+        if (!map.hasImage(emoji)) {
+          map.addImage(emoji, emojiToImageData(emoji));
+        }
+      }
+
       const withColor: PlaceFeatureCollection = {
         ...data,
         features: data.features.map((f) => ({
