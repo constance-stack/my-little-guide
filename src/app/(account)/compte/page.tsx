@@ -5,13 +5,23 @@ import { prisma } from "@/lib/db";
 import { entitledDestinationIds } from "@/lib/entitlements";
 import { DeleteAccountButton } from "@/components/account/delete-account-button";
 
-export default async function ComptePage() {
+export default async function ComptePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ view?: string }>;
+}) {
   const session = await auth();
   if (!session?.user) {
     redirect("/connexion");
   }
 
-  if (session.user.role === "ADMIN") {
+  const { view } = await searchParams;
+
+  // An admin normally lands on the admin home (below) instead of the
+  // customer "Mes guides" page — but still needs a way to see the account
+  // exactly as a buyer would (orders, favorites, PDF download) to verify
+  // the real customer experience. ?view=client switches back to it.
+  if (session.user.role === "ADMIN" && view !== "client") {
     return <AdminHome email={session.user.email ?? ""} />;
   }
 
@@ -30,7 +40,17 @@ export default async function ComptePage() {
     <main className="px-4 py-16">
       <div className="mx-auto max-w-2xl">
         <h1 className="mb-2 font-serif text-2xl text-sage-dark">Mes guides</h1>
-        <p className="mb-6 text-sm text-foreground/60">Connecté en tant que {session.user.email}</p>
+        <p className="mb-6 text-sm text-foreground/60">
+          Connecté en tant que {session.user.email}
+          {session.user.role === "ADMIN" && (
+            <>
+              {" · "}
+              <Link href="/compte" className="underline">
+                Retour à l&apos;espace admin
+              </Link>
+            </>
+          )}
+        </p>
 
         <nav className="mb-8 flex gap-4 text-sm text-sage-dark">
           <Link href="/compte/favoris" className="underline">
@@ -116,6 +136,7 @@ function AdminHome({ email }: { email: string }) {
     { href: "/admin/orders", label: "Commandes" },
     { href: "/admin/photos", label: "Photos" },
     { href: "/admin/pricing", label: "Tarifs" },
+    { href: "/compte?view=client", label: "Voir mon espace comme un client" },
   ];
 
   return (
