@@ -240,7 +240,7 @@ model User {
   createdAt DateTime  @default(now())
 }
 
-/// Admin-editable pricing, e.g. "kit-thailande", "destination-small", "destination-large".
+/// Admin-editable pricing, e.g. "kit-thailande", "destination-tier1".."destination-tier4".
 model Price {
   id          String  @id @default(cuid())
   key         String  @unique

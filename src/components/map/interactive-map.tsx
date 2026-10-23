@@ -61,8 +61,6 @@ export function InteractiveMap({
   onSelectPlace,
   centerOn,
   personalPins = [],
-  placingPin = false,
-  onMapClickForPin,
   onSelectPersonalPin,
   clusterEnabled = true,
 }: {
@@ -71,8 +69,6 @@ export function InteractiveMap({
   onSelectPlace: (placeId: string) => void;
   centerOn: [number, number] | null;
   personalPins?: PersonalPinData[];
-  placingPin?: boolean;
-  onMapClickForPin?: (lng: number, lat: number) => void;
   onSelectPersonalPin?: (id: string) => void;
   // Off for the free map demo: with only ~10 fixed places scattered
   // across a whole city, clustering mostly hides them behind a couple of
@@ -85,19 +81,15 @@ export function InteractiveMap({
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const clusterEnabledRef = useRef(clusterEnabled);
-  // Latest-value refs for callbacks/flags read from inside MapLibre event
+  // Latest-value refs for callbacks read from inside MapLibre event
   // handlers registered once in the map-creation effect below — kept in
   // sync after every render (not during render, which React's hooks lint
   // rule forbids) rather than re-registering the handlers on every change.
   const onSelectPlaceRef = useRef(onSelectPlace);
   const onSelectPersonalPinRef = useRef(onSelectPersonalPin);
-  const placingPinRef = useRef(placingPin);
-  const onMapClickForPinRef = useRef(onMapClickForPin);
   useEffect(() => {
     onSelectPlaceRef.current = onSelectPlace;
     onSelectPersonalPinRef.current = onSelectPersonalPin;
-    placingPinRef.current = placingPin;
-    onMapClickForPinRef.current = onMapClickForPin;
   });
 
   // Map instance: created once.
@@ -251,20 +243,9 @@ export function InteractiveMap({
           map.getCanvas().style.cursor = "pointer";
         });
         map.on("mouseleave", layer, () => {
-          map.getCanvas().style.cursor = placingPinRef.current ? "crosshair" : "";
+          map.getCanvas().style.cursor = "";
         });
       }
-
-      // "Add a personal pin" mode: the next plain map click (not on an
-      // existing marker) drops a pin there instead of doing nothing.
-      map.on("click", (e) => {
-        if (!placingPinRef.current) return;
-        const hits = map.queryRenderedFeatures(e.point, {
-          layers: ["unclustered-point", "unclustered-point-icon", "clusters", "personal-pin-point", "personal-pin-icon"],
-        });
-        if (hits.length > 0) return;
-        onMapClickForPinRef.current?.(e.lngLat.lng, e.lngLat.lat);
-      });
     });
 
     return () => {
@@ -336,16 +317,6 @@ export function InteractiveMap({
     if (map.isStyleLoaded()) update();
     else map.once("load", update);
   }, [personalPins]);
-
-  // Placing-pin mode: a crosshair cursor over the whole map as a hint,
-  // overridden back to pointer while actually hovering a marker (handled
-  // by the per-layer mouseenter/mouseleave handlers above).
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map) return;
-    const canvas = map.getCanvas();
-    canvas.style.cursor = placingPin ? "crosshair" : "";
-  }, [placingPin]);
 
   // Center on a specific point (deep-link / list click) without changing
   // which place is selected.

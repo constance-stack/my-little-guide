@@ -33,10 +33,15 @@ export function MapPageClient({
   // Personal pins: the visitor's own points on this destination's map
   // (hotel, meeting spot…) — not part of the editorial content, not
   // available in demo mode (requires an account and that destination).
+  // Added by typing an address (geocoded via /api/geocode) rather than
+  // clicking the map, so it works without needing to find the exact spot
+  // visually first.
   const [personalPins, setPersonalPins] = useState<PersonalPinData[]>([]);
-  const [placingPin, setPlacingPin] = useState(false);
-  const [pendingPin, setPendingPin] = useState<{ lng: number; lat: number } | null>(null);
-  const [pendingLabel, setPendingLabel] = useState("");
+  const [addingPin, setAddingPin] = useState(false);
+  const [addressQuery, setAddressQuery] = useState("");
+  const [addressResults, setAddressResults] = useState<{ label: string; lat: number; lng: number }[] | null>(null);
+  const [addressSearching, setAddressSearching] = useState(false);
+  const [pinError, setPinError] = useState<string | null>(null);
   const [selectedPersonalPinId, setSelectedPersonalPinId] = useState<string | null>(null);
 
   // Owned destinations, for the selector. Skipped in demo mode: there's
@@ -73,25 +78,38 @@ export function MapPageClient({
       .then((payload: { pins: PersonalPinData[] }) => setPersonalPins(payload.pins ?? []));
   }, [demo, destinationSlug]);
 
-  function handleMapClickForPin(lng: number, lat: number) {
-    setPlacingPin(false);
-    setPendingPin({ lng, lat });
-    setPendingLabel("");
+  async function searchAddress() {
+    if (!addressQuery.trim()) return;
+    setAddressSearching(true);
+    setPinError(null);
+    const res = await fetch(`/api/geocode?q=${encodeURIComponent(addressQuery.trim())}`);
+    const data = await res.json().catch(() => null);
+    setAddressSearching(false);
+    if (!res.ok) {
+      setPinError(data?.error ?? "Recherche d'adresse impossible.");
+      setAddressResults(null);
+      return;
+    }
+    setAddressResults(data.results ?? []);
   }
 
-  async function submitPendingPin() {
-    if (!pendingPin || !destinationSlug || !pendingLabel.trim()) return;
+  async function savePersonalPin(result: { label: string; lat: number; lng: number }) {
+    if (!destinationSlug) return;
+    setPinError(null);
     const res = await fetch("/api/personal-pins", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ destinationSlug, label: pendingLabel.trim(), lat: pendingPin.lat, lng: pendingPin.lng }),
+      body: JSON.stringify({ destinationSlug, label: result.label, lat: result.lat, lng: result.lng }),
     });
-    if (res.ok) {
-      const pin: PersonalPinData = await res.json();
-      setPersonalPins((prev) => [...prev, pin]);
+    const data = await res.json().catch(() => null);
+    if (!res.ok) {
+      setPinError(data?.error ?? "Impossible d'enregistrer ce point.");
+      return;
     }
-    setPendingPin(null);
-    setPendingLabel("");
+    setPersonalPins((prev) => [...prev, data as PersonalPinData]);
+    setAddingPin(false);
+    setAddressQuery("");
+    setAddressResults(null);
   }
 
   async function deletePersonalPin(id: string) {
@@ -254,17 +272,66 @@ export function MapPageClient({
 
         {!demo && (
           <div className="mb-4">
-            {placingPin ? (
-              <div className="rounded border border-sage-dark bg-sand p-3 text-xs text-foreground/70">
-                Cliquez sur la carte pour placer votre point (hôtel, rendez-vous…).
-                <button type="button" onClick={() => setPlacingPin(false)} className="ml-2 text-sage-dark underline">
+            {addingPin ? (
+              <div className="rounded border border-sage-dark bg-sand p-3">
+                <div className="mb-2 flex gap-1.5">
+                  <input
+                    type="text"
+                    autoFocus
+                    value={addressQuery}
+                    onChange={(e) => setAddressQuery(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && searchAddress()}
+                    placeholder="Ex. Riverside Suites Bangkok"
+                    className="flex-1 rounded border border-line bg-ivory px-2 py-1.5 text-xs outline-none focus:border-sage-dark"
+                  />
+                  <button
+                    type="button"
+                    onClick={searchAddress}
+                    disabled={addressSearching || !addressQuery.trim()}
+                    className="rounded bg-sage-dark px-3 py-1.5 text-xs text-ivory disabled:opacity-50"
+                  >
+                    {addressSearching ? "…" : "Chercher"}
+                  </button>
+                </div>
+
+                {pinError && <p className="mb-2 text-xs text-red-700">{pinError}</p>}
+
+                {addressResults && (
+                  <ul className="mb-2 divide-y divide-line rounded border border-line bg-ivory">
+                    {addressResults.length === 0 && (
+                      <li className="px-2 py-2 text-xs text-foreground/50">Aucune adresse trouvée.</li>
+                    )}
+                    {addressResults.map((r, i) => (
+                      <li key={i}>
+                        <button
+                          type="button"
+                          onClick={() => savePersonalPin(r)}
+                          className="block w-full px-2 py-2 text-left text-xs text-foreground/70 hover:text-sage-dark"
+                        >
+                          {r.label}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAddingPin(false);
+                    setAddressQuery("");
+                    setAddressResults(null);
+                    setPinError(null);
+                  }}
+                  className="text-xs text-sage-dark underline"
+                >
                   Annuler
                 </button>
               </div>
             ) : (
               <button
                 type="button"
-                onClick={() => setPlacingPin(true)}
+                onClick={() => setAddingPin(true)}
                 className="w-full rounded border border-line px-3 py-2 text-left text-xs text-foreground/70 hover:border-sage-dark"
               >
                 📍 Ajouter une adresse perso (hôtel, rendez-vous…)
@@ -315,8 +382,6 @@ export function MapPageClient({
           onSelectPlace={handleSelectPlace}
           centerOn={centerOn}
           personalPins={personalPins}
-          placingPin={placingPin}
-          onMapClickForPin={handleMapClickForPin}
           onSelectPersonalPin={setSelectedPersonalPinId}
           clusterEnabled={!demo}
         />
@@ -330,41 +395,6 @@ export function MapPageClient({
               updateUrl({ place: null });
             }}
           />
-        )}
-
-        {pendingPin && (
-          <div className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border border-line bg-ivory p-4 shadow-lg sm:right-auto sm:w-80">
-            <p className="mb-2 text-sm font-medium text-foreground">Nommer ce point</p>
-            <input
-              type="text"
-              autoFocus
-              value={pendingLabel}
-              onChange={(e) => setPendingLabel(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && submitPendingPin()}
-              placeholder="Ex. Mon hôtel, Rendez-vous avec Léa…"
-              className="mb-3 w-full rounded border border-line bg-ivory px-3 py-2 text-sm outline-none focus:border-sage-dark"
-            />
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={submitPendingPin}
-                disabled={!pendingLabel.trim()}
-                className="rounded bg-sage-dark px-3 py-1.5 text-xs text-ivory hover:opacity-90 disabled:opacity-50"
-              >
-                Enregistrer
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setPendingPin(null);
-                  setPendingLabel("");
-                }}
-                className="rounded border border-line px-3 py-1.5 text-xs text-foreground/70"
-              >
-                Annuler
-              </button>
-            </div>
-          </div>
         )}
 
         {selectedPersonalPinId && (

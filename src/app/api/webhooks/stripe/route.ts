@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getStripe } from "@/lib/stripe";
+import { tierKeyForPlaceCount } from "@/lib/pricing";
 import type Stripe from "stripe";
 
 export async function POST(request: Request) {
@@ -61,9 +62,9 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
       const item = items[i];
       const destination = await tx.destination.findUnique({
         where: { id: destinationId },
-        include: { priceOverride: true },
+        include: { priceOverride: true, _count: { select: { places: { where: { status: "PUBLISHED" } } } } },
       });
-      const priceKey = destination?.priceOverride?.key ?? (destination?.size === "LARGE" ? "destination-large" : "destination-small");
+      const priceKey = destination?.priceOverride?.key ?? tierKeyForPlaceCount(destination?._count.places ?? 0);
       await tx.orderLine.create({
         data: {
           orderId: order.id,

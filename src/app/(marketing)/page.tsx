@@ -29,23 +29,25 @@ export default async function HomePage() {
             </radialGradient>
           </defs>
           <rect width="1200" height="420" fill="url(#heroGlow)" />
-          <g stroke="#faf8f3" strokeWidth="1" fill="none" opacity="0.3">
-            <path d="M -40 320 Q 300 120 620 230 T 1260 140" strokeDasharray="2 7" />
-            <path d="M -40 120 Q 260 260 560 90 T 1260 260" strokeDasharray="2 7" />
-            <path d="M 80 420 Q 420 60 760 300 T 1240 60" strokeDasharray="2 7" />
+          {/* Paths and dots are kept to the outer margins (top/bottom
+              strips and far left/right edges) — the first version put
+              waypoint dots right behind the centered headline/subtext,
+              which fought with reading the text. */}
+          <g stroke="#faf8f3" strokeWidth="1" fill="none" opacity="0.25">
+            <path d="M -40 60 Q 300 10 620 55 T 1260 30" strokeDasharray="2 7" />
+            <path d="M -40 380 Q 320 410 640 375 T 1260 400" strokeDasharray="2 7" />
           </g>
           <g fill="#faf8f3">
-            <circle cx="140" cy="300" r="3.5" opacity="0.6" />
-            <circle cx="430" cy="150" r="4.5" opacity="0.75" />
-            <circle cx="620" cy="230" r="3.5" opacity="0.6" />
-            <circle cx="845" cy="110" r="3.5" opacity="0.55" />
-            <circle cx="1020" cy="245" r="4.5" opacity="0.75" />
-            <circle cx="1150" cy="130" r="3" opacity="0.5" />
-            <circle cx="300" cy="340" r="3" opacity="0.5" />
+            <circle cx="70" cy="55" r="3" opacity="0.45" />
+            <circle cx="965" cy="45" r="3.5" opacity="0.5" />
+            <circle cx="1150" cy="90" r="3" opacity="0.4" />
+            <circle cx="110" cy="365" r="3" opacity="0.45" />
+            <circle cx="1100" cy="375" r="4" opacity="0.6" />
+            <circle cx="40" cy="220" r="2.5" opacity="0.35" />
+            <circle cx="1165" cy="230" r="2.5" opacity="0.35" />
           </g>
-          <g stroke="#faf8f3" fill="none" opacity="0.35">
-            <circle cx="430" cy="150" r="10" strokeWidth="1" />
-            <circle cx="1020" cy="245" r="10" strokeWidth="1" />
+          <g stroke="#faf8f3" fill="none" opacity="0.3">
+            <circle cx="1100" cy="375" r="9" strokeWidth="1" />
           </g>
         </svg>
         <div className="relative px-4 py-20 text-center sm:py-28">

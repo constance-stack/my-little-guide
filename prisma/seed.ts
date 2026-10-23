@@ -79,16 +79,25 @@ async function main() {
     update: { amountCents: 0 },
     create: { key: "kit-thailande", label: "Kit essentiel Thaïlande", amountCents: 0 },
   });
-  await prisma.price.upsert({
-    where: { key: "destination-small" },
-    update: {},
-    create: { key: "destination-small", label: "Petite destination", amountCents: 190 },
-  });
-  await prisma.price.upsert({
-    where: { key: "destination-large" },
-    update: {},
-    create: { key: "destination-large", label: "Grande destination", amountCents: 290 },
-  });
+  // Destination price tiers, selected by live published-place count (see
+  // PLACE_COUNT_TIERS in src/lib/pricing.ts) rather than a fixed
+  // SMALL/LARGE field — a destination reprices itself automatically as
+  // its content grows.
+  const tierDefs = [
+    { key: "destination-tier1", label: "Destination — moins de 50 lieux", amountCents: 190 },
+    { key: "destination-tier2", label: "Destination — 50 à 100 lieux", amountCents: 290 },
+    { key: "destination-tier3", label: "Destination — plus de 100 lieux", amountCents: 390 },
+    { key: "destination-tier4", label: "Destination — plus de 200 lieux", amountCents: 490 },
+  ];
+  for (const t of tierDefs) {
+    await prisma.price.upsert({
+      where: { key: t.key },
+      update: { label: t.label, amountCents: t.amountCents },
+      create: t,
+    });
+  }
+  // Retired in favor of the place-count tiers above.
+  await prisma.price.deleteMany({ where: { key: { in: ["destination-small", "destination-large"] } } });
 
   // --- Country + Destination ---
   const thailand = await prisma.country.upsert({

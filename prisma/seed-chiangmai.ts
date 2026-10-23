@@ -1012,11 +1012,10 @@ async function main() {
     },
   });
 
-  await prisma.price.upsert({
-    where: { key: "destination-large" },
-    update: {},
-    create: { key: "destination-large", label: "Grande destination", amountCents: 290 },
-  });
+  // No per-destination Price row to seed here: pricing is driven by live
+  // published-place count (see PLACE_COUNT_TIERS in src/lib/pricing.ts),
+  // not a fixed SMALL/LARGE field — the four shared tier rows come from
+  // prisma/seed.ts.
 
   const categories = await prisma.category.findMany();
   const categoryBySlug = new Map(categories.map((c) => [c.slug, c]));

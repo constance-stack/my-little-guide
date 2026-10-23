@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { entitledDestinationIds, hasKit } from "@/lib/entitlements";
-import { computeCartLines, sumCents } from "@/lib/pricing";
+import { computeCartLines, sumCents, fetchTierPrices, resolveDestinationPrice } from "@/lib/pricing";
 
 export async function GET() {
   const session = await auth();
@@ -10,7 +10,7 @@ export async function GET() {
   const [destinations, owned, ownsKit] = await Promise.all([
     prisma.destination.findMany({
       where: { status: "PUBLISHED" },
-      include: { priceOverride: true },
+      include: { priceOverride: true, _count: { select: { places: { where: { status: "PUBLISHED" } } } } },
       orderBy: { name: "asc" },
     }),
     // Deliberately NOT passing role here: this "owned" flag drives the
@@ -22,9 +22,8 @@ export async function GET() {
     hasKit(session?.user?.id),
   ]);
 
-  const [smallPrice, largePrice, kitPrice] = await Promise.all([
-    prisma.price.findUnique({ where: { key: "destination-small" } }),
-    prisma.price.findUnique({ where: { key: "destination-large" } }),
+  const [tierPrices, kitPrice] = await Promise.all([
+    fetchTierPrices(),
     prisma.price.findUnique({ where: { key: "kit-thailande" } }),
   ]);
 
@@ -34,7 +33,7 @@ export async function GET() {
       slug: d.slug,
       name: d.name,
       size: d.size,
-      amountCents: (d.priceOverride ?? (d.size === "LARGE" ? largePrice : smallPrice))?.amountCents ?? 0,
+      amountCents: resolveDestinationPrice(d, tierPrices)?.amountCents ?? 0,
       owned: owned.includes(d.id),
     })),
     kit: kitPrice ? { label: kitPrice.label, amountCents: kitPrice.amountCents } : null,
