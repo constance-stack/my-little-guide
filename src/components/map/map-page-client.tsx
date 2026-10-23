@@ -12,11 +12,18 @@ export function MapPageClient({
   initialPlaceSlug,
   initialCategorySlug,
   demo = false,
+  // Embedded inline in a box of fixed height (the homepage's live demo
+  // preview) instead of filling its own full-page route (/carte,
+  // /carte/demo) — swaps the viewport-filling height for the parent
+  // container's own, and skips URL updates so clicking a marker doesn't
+  // rewrite the homepage's address bar with ?place=....
+  embedded = false,
 }: {
   initialDestinationSlug: string | null;
   initialPlaceSlug: string | null;
   initialCategorySlug: string | null;
   demo?: boolean;
+  embedded?: boolean;
 }) {
   const router = useRouter();
   const [destinations, setDestinations] = useState<OwnedDestination[]>([]);
@@ -169,6 +176,7 @@ export function MapPageClient({
 
   const updateUrl = useCallback(
     (next: { destination?: string | null; place?: string | null; cat?: string | null }) => {
+      if (embedded) return;
       const params = new URLSearchParams();
       const dest = next.destination !== undefined ? next.destination : destinationSlug;
       const place = next.place !== undefined ? next.place : selectedPlaceSlug;
@@ -178,7 +186,7 @@ export function MapPageClient({
       if (cat) params.set("cat", cat);
       router.replace(`${demo ? "/carte/demo" : "/carte"}?${params.toString()}`, { scroll: false });
     },
-    [demo, destinationSlug, selectedPlaceSlug, categoryFilter, router]
+    [embedded, demo, destinationSlug, selectedPlaceSlug, categoryFilter, router]
   );
 
   function handleSelectPlace(placeId: string) {
@@ -203,7 +211,7 @@ export function MapPageClient({
   }
 
   return (
-    <div className="flex h-[calc(100vh-65px)] min-h-0 flex-col sm:flex-row">
+    <div className={`flex min-h-0 flex-col sm:flex-row ${embedded ? "h-full" : "h-[calc(100vh-65px)]"}`}>
       <aside className="order-2 max-h-[45vh] w-full shrink overflow-y-auto border-t border-line bg-ivory p-4 sm:order-1 sm:max-h-none sm:w-80 sm:shrink-0 sm:border-r sm:border-t-0">
         {destinations.length > 1 && (
           <select

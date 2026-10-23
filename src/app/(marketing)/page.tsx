@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
+import { MapPageClient } from "@/components/map/map-page-client";
 
 export default async function HomePage() {
   const countries = await prisma.country.findMany({
@@ -100,18 +101,15 @@ export default async function HomePage() {
               compte.
             </p>
           </div>
-          <Link
-            href="/carte/demo"
-            className="group relative block h-72 border-t border-line bg-ivory sm:h-96"
-            aria-label="Ouvrir la carte interactive de démonstration"
-          >
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-sage-dark/5 transition group-hover:bg-sage-dark/10">
-              <span className="rounded-full bg-sage-dark px-5 py-2.5 text-sm text-ivory shadow">
-                Ouvrir la carte de démonstration →
-              </span>
-              <span className="text-xs text-foreground/50">Carte satellite · filtres par catégorie · fiches lieux</span>
-            </div>
-          </Link>
+          <div className="relative h-[420px] border-t border-line sm:h-[520px]">
+            <MapPageClient demo embedded initialDestinationSlug={null} initialPlaceSlug={null} initialCategorySlug={null} />
+            <Link
+              href="/carte/demo"
+              className="absolute right-3 top-3 z-10 rounded-full bg-ivory/95 px-3 py-1.5 text-xs text-sage-dark shadow hover:bg-ivory"
+            >
+              Ouvrir en plein écran ↗
+            </Link>
+          </div>
           <div className="flex flex-col items-center gap-2 px-6 py-5 text-center sm:flex-row sm:justify-between sm:px-10">
             <p className="text-sm text-foreground/70">Vous préférez lire sur papier ou hors-ligne ?</p>
             <a href="/demo/bangkok-apercu.pdf" target="_blank" rel="noreferrer" className="text-sm text-sage-dark underline">
