@@ -57,10 +57,14 @@ export function MapPageClient({
     if (demo) return;
     fetch("/api/catalog")
       .then((r) => r.json())
-      .then((payload: { destinations: (OwnedDestination & { owned: boolean })[] }) => {
-        const owned = payload.destinations.filter((d) => d.owned);
-        setDestinations(owned);
-        if (!destinationSlug && owned[0]) setDestinationSlug(owned[0].slug);
+      .then((payload: { destinations: (OwnedDestination & { accessible: boolean })[] }) => {
+        // Admins get every published destination here (same content-access
+        // bypass as the guide pages), not just what's actually been
+        // bought — this list drives the map's destination switcher, a
+        // preview tool, not the shop's "already purchased" state.
+        const accessible = payload.destinations.filter((d) => d.accessible);
+        setDestinations(accessible);
+        if (!destinationSlug && accessible[0]) setDestinationSlug(accessible[0].slug);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [demo]);

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { processQueuedPdfJob } from "@/lib/pdf";
+import { exists } from "@/lib/storage";
 
 /**
  * Generates an order's PDF on demand instead of relying on a separate
@@ -35,7 +36,19 @@ export async function GET(request: Request, { params }: { params: Promise<{ orde
     job = await prisma.pdfJob.create({ data: { orderId, status: "QUEUED" } });
   }
 
-  if (job.status !== "DONE") {
+  // A DONE job can still point at a file the container no longer has —
+  // this filesystem has no persistent disk, so a redeploy since the PDF
+  // was generated wipes it even though the job row still says DONE.
+  // Treat that case the same as "not generated yet" instead of serving a
+  // 404 for a purchase the buyer already paid for.
+  const fileStillThere = job.status === "DONE" && job.storageKey ? await exists(job.storageKey) : false;
+
+  if (job.status !== "DONE" || !fileStillThere) {
+    // processQueuedPdfJob() no-ops on an already-DONE job — reset it to
+    // QUEUED first so a missing file actually gets regenerated.
+    if (job.status === "DONE" && !fileStillThere) {
+      job = await prisma.pdfJob.update({ where: { id: job.id }, data: { status: "QUEUED" } });
+    }
     await processQueuedPdfJob(job.id);
     job = await prisma.pdfJob.findUniqueOrThrow({ where: { id: job.id } });
   }

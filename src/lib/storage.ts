@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, normalize } from "node:path";
 
 /**
@@ -26,4 +26,19 @@ export async function put(key: string, data: Buffer): Promise<void> {
 
 export async function get(key: string): Promise<Buffer> {
   return readFile(resolveKey(key));
+}
+
+// Render's free-tier web service has no persistent disk — this ./storage
+// directory is the container's own ephemeral filesystem, wiped on every
+// redeploy. A PdfJob whose status is already DONE can still point at a
+// file that no longer exists after a later deploy; callers that generate
+// on demand (see /api/orders/[orderId]/pdf) use this to detect that case
+// and regenerate instead of serving a 404.
+export async function exists(key: string): Promise<boolean> {
+  try {
+    await access(resolveKey(key));
+    return true;
+  } catch {
+    return false;
+  }
 }

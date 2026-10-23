@@ -7,7 +7,7 @@ import { computeCartLines, sumCents, fetchTierPrices, resolveDestinationPrice } 
 export async function GET() {
   const session = await auth();
 
-  const [destinations, owned, ownsKit] = await Promise.all([
+  const [destinations, owned, accessible, ownsKit] = await Promise.all([
     prisma.destination.findMany({
       where: { status: "PUBLISHED" },
       include: { priceOverride: true, _count: { select: { places: { where: { status: "PUBLISHED" } } } } },
@@ -15,10 +15,13 @@ export async function GET() {
     }),
     // Deliberately NOT passing role here: this "owned" flag drives the
     // shop's own "déjà acheté" badge and cart totals, which should reflect
-    // real purchases so the shop/checkout flow itself stays testable —
-    // the preview bypass belongs to content access (guide/carte/favoris),
-    // not to what the shop believes you own.
+    // real purchases so the shop/checkout flow itself stays testable.
     entitledDestinationIds(session?.user?.id),
+    // WITH role: same content-access bypass as the guide/carte/favoris
+    // routes, so an admin's map destination switcher lists every
+    // published destination to preview, not just what they've actually
+    // bought.
+    entitledDestinationIds(session?.user?.id, session?.user?.role),
     hasKit(session?.user?.id),
   ]);
 
@@ -35,6 +38,7 @@ export async function GET() {
       size: d.size,
       amountCents: resolveDestinationPrice(d, tierPrices)?.amountCents ?? 0,
       owned: owned.includes(d.id),
+      accessible: accessible.includes(d.id),
     })),
     kit: kitPrice ? { label: kitPrice.label, amountCents: kitPrice.amountCents } : null,
     ownsKit,
