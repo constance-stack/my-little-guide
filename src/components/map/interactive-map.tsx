@@ -6,13 +6,27 @@ import * as maplibregl from "maplibre-gl";
 import type { Map as MapLibreMap, MapGeoJSONFeature } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { getMapStyle } from "./map-style";
-import { categoryIconEmoji } from "./category-icons";
+import { drawCategoryIcon, pickRepresentativeCategory } from "./category-icons";
 
-// Renders one emoji to a small raster image via a 2D canvas — canvas text
-// uses the browser's normal (color) font rendering, unlike MapLibre's own
-// monochrome SDF glyphs, so this is what actually makes the emoji show up
-// as a map icon. Registered once per distinct emoji via addImage(), keyed
-// by the emoji string itself.
+// Renders a flat white category glyph (see drawCategoryIcon) to a small
+// raster image via a 2D canvas — MapLibre's own text-field glyphs come
+// from the style's single-color SDF font and can't render these shapes,
+// so icon-image + addImage() is the only way to put a custom symbol on a
+// marker. Registered once per distinct icon via addImage().
+function categoryIconImageData(icon: string, size = 48): ImageData {
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d")!;
+  ctx.fillStyle = "#ffffff";
+  ctx.strokeStyle = "#ffffff";
+  drawCategoryIcon(ctx, icon, size);
+  return ctx.getImageData(0, 0, size, size);
+}
+
+// The personal-pin marker (📍) is a single fixed glyph, not one of the
+// category icons above — real emoji rendering is fine here since there's
+// no color-contrast or "too many stars" concern with just one marker type.
 function emojiToImageData(emoji: string, size = 48): ImageData {
   const canvas = document.createElement("canvas");
   canvas.width = size;
@@ -268,25 +282,32 @@ export function InteractiveMap({
       const source = map.getSource("places") as maplibregl.GeoJSONSource | undefined;
       if (!source) return;
 
-      // Register a map image for every distinct emoji used by this
-      // dataset before setting the data that references it — addImage()
-      // is idempotent to call again, but hasImage() avoids redrawing one
+      // The representative category is the most specific one tagged on a
+      // place, not just the first — "incontournables" is applied so
+      // broadly alongside a more specific category (temple, restaurant…)
+      // that defaulting to categories[0] made most of the map gold stars.
+      const repCategories = data.features.map((f) => pickRepresentativeCategory(f.properties.categories));
+
+      // Register a map image for every distinct icon used by this dataset
+      // before setting the data that references it — addImage() is
+      // idempotent to call again, but hasImage() avoids redrawing one
       // that's already registered.
-      const emojis = new Set(data.features.map((f) => categoryIconEmoji(f.properties.categories[0]?.icon ?? "")));
-      for (const emoji of emojis) {
-        if (!map.hasImage(emoji)) {
-          map.addImage(emoji, emojiToImageData(emoji));
+      const icons = new Set(repCategories.map((c) => c?.icon ?? "default"));
+      for (const icon of icons) {
+        const imageId = `cat-icon-${icon}`;
+        if (!map.hasImage(imageId)) {
+          map.addImage(imageId, categoryIconImageData(icon));
         }
       }
 
       const withColor: PlaceFeatureCollection = {
         ...data,
-        features: data.features.map((f) => ({
+        features: data.features.map((f, i) => ({
           ...f,
           properties: {
             ...f.properties,
-            color: f.properties.categories[0]?.color ?? "#4a7c59",
-            icon: categoryIconEmoji(f.properties.categories[0]?.icon ?? ""),
+            color: repCategories[i]?.color ?? "#4a7c59",
+            icon: `cat-icon-${repCategories[i]?.icon ?? "default"}`,
           },
         })),
       };

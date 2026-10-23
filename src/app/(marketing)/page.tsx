@@ -7,22 +7,47 @@ export default async function HomePage() {
     orderBy: { name: "asc" },
   });
 
-  // Hero photo: Wat Arun, one of the free-preview places (see
-  // src/lib/demo.ts), so its photo is already public via
-  // /api/storage — no new licensing/visibility exception needed.
-  const heroPhoto = await prisma.photo.findFirst({ where: { storageKey: "/api/storage/photos/wat-arun.jpg" } });
-
   return (
     <main>
-      <section className="relative mx-auto max-w-5xl overflow-hidden sm:mx-6 sm:mt-6 sm:rounded-lg lg:mx-auto">
-        {heroPhoto && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={heroPhoto.storageKey} alt="" className="absolute inset-0 h-full w-full object-cover" />
-        )}
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(42,51,38,0.55) 0%, rgba(42,51,38,0.78) 100%)" }}
-        />
+      {/* Abstract travel-routes motif instead of a single destination's
+          photo — the catalog isn't staying Thailand-only, so the hero
+          shouldn't visually commit to one country. Pure line art (dashed
+          flight paths + waypoint dots) in the brand's own palette, no
+          photo/licensing to track and no favoritism towards whichever
+          destination happens to have the nicest picture. */}
+      <section className="relative mx-auto max-w-5xl overflow-hidden bg-sage-dark sm:mx-6 sm:mt-6 sm:rounded-lg lg:mx-auto">
+        <svg
+          viewBox="0 0 1200 420"
+          preserveAspectRatio="xMidYMid slice"
+          className="absolute inset-0 h-full w-full"
+          aria-hidden="true"
+        >
+          <defs>
+            <radialGradient id="heroGlow" cx="50%" cy="35%" r="75%">
+              <stop offset="0%" stopColor="#4a5c42" />
+              <stop offset="100%" stopColor="#2a3326" />
+            </radialGradient>
+          </defs>
+          <rect width="1200" height="420" fill="url(#heroGlow)" />
+          <g stroke="#faf8f3" strokeWidth="1" fill="none" opacity="0.3">
+            <path d="M -40 320 Q 300 120 620 230 T 1260 140" strokeDasharray="2 7" />
+            <path d="M -40 120 Q 260 260 560 90 T 1260 260" strokeDasharray="2 7" />
+            <path d="M 80 420 Q 420 60 760 300 T 1240 60" strokeDasharray="2 7" />
+          </g>
+          <g fill="#faf8f3">
+            <circle cx="140" cy="300" r="3.5" opacity="0.6" />
+            <circle cx="430" cy="150" r="4.5" opacity="0.75" />
+            <circle cx="620" cy="230" r="3.5" opacity="0.6" />
+            <circle cx="845" cy="110" r="3.5" opacity="0.55" />
+            <circle cx="1020" cy="245" r="4.5" opacity="0.75" />
+            <circle cx="1150" cy="130" r="3" opacity="0.5" />
+            <circle cx="300" cy="340" r="3" opacity="0.5" />
+          </g>
+          <g stroke="#faf8f3" fill="none" opacity="0.35">
+            <circle cx="430" cy="150" r="10" strokeWidth="1" />
+            <circle cx="1020" cy="245" r="10" strokeWidth="1" />
+          </g>
+        </svg>
         <div className="relative px-4 py-20 text-center sm:py-28">
           <p className="mb-3 text-xs uppercase tracking-widest text-ivory/80">Guides de voyage numériques</p>
           <h1 className="mx-auto mb-6 max-w-2xl font-serif text-4xl text-ivory sm:text-5xl">
@@ -39,9 +64,6 @@ export default async function HomePage() {
             Découvrir la Thaïlande
           </Link>
         </div>
-        {heroPhoto?.attributionText && (
-          <p className="absolute bottom-2 right-3 text-[10px] text-ivory/60">{heroPhoto.attributionText}</p>
-        )}
       </section>
 
       <section className="mx-auto max-w-4xl px-4 py-16">
