@@ -57,6 +57,7 @@ const PERSONAL_PIN_EMOJI = "📍";
 
 export function InteractiveMap({
   data,
+  fitBoundsData,
   selectedPlaceId,
   onSelectPlace,
   centerOn,
@@ -65,6 +66,11 @@ export function InteractiveMap({
   clusterEnabled = true,
 }: {
   data: PlaceFeatureCollection;
+  // The destination's full, unfiltered place set — used only to fit the
+  // camera when the destination itself changes (not on every category/
+  // search filter, which only touches `data`). A new object reference
+  // here means "a different destination's places just loaded".
+  fitBoundsData?: PlaceFeatureCollection;
   selectedPlaceId: string | null;
   onSelectPlace: (placeId: string) => void;
   centerOn: [number, number] | null;
@@ -317,6 +323,38 @@ export function InteractiveMap({
     if (map.isStyleLoaded()) update();
     else map.once("load", update);
   }, [personalPins]);
+
+  // Fit the camera to the destination's places when the destination itself
+  // changes (new fitBoundsData reference) — not on every category/search
+  // filter, which only ever changes `data`. Falls back to the fixed
+  // Bangkok startup view if a destination has just one place or none yet.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !fitBoundsData || fitBoundsData.features.length === 0) return;
+    const run = () => {
+      const coords = fitBoundsData.features.map((f) => f.geometry.coordinates as [number, number]);
+      if (coords.length === 1) {
+        map.easeTo({ center: coords[0], zoom: 12 });
+        return;
+      }
+      let minLng = Infinity, minLat = Infinity, maxLng = -Infinity, maxLat = -Infinity;
+      for (const [lng, lat] of coords) {
+        minLng = Math.min(minLng, lng);
+        minLat = Math.min(minLat, lat);
+        maxLng = Math.max(maxLng, lng);
+        maxLat = Math.max(maxLat, lat);
+      }
+      map.fitBounds(
+        [
+          [minLng, minLat],
+          [maxLng, maxLat],
+        ],
+        { padding: 60, maxZoom: 14, duration: 0 }
+      );
+    };
+    if (map.isStyleLoaded()) run();
+    else map.once("load", run);
+  }, [fitBoundsData]);
 
   // Center on a specific point (deep-link / list click) without changing
   // which place is selected.

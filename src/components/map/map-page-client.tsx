@@ -386,6 +386,7 @@ export function MapPageClient({
       <div className="relative order-1 min-h-[220px] flex-1 sm:order-2">
         <InteractiveMap
           data={filtered}
+          fitBoundsData={data}
           selectedPlaceId={selectedPlaceId}
           onSelectPlace={handleSelectPlace}
           centerOn={centerOn}
