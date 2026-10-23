@@ -25,7 +25,10 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     <div className="min-h-screen bg-background">
       <div className="flex">
         <aside className="w-56 shrink-0 border-r border-line bg-sand px-4 py-8">
-          <p className="mb-6 font-serif text-lg text-sage-dark">My Little Guide</p>
+          <p className="mb-1 font-serif text-lg text-sage-dark">My Little Guide</p>
+          <Link href="/" className="mb-6 inline-block text-xs text-foreground/60 underline hover:text-sage-dark">
+            ← Retour au site
+          </Link>
           <nav className="space-y-1">
             {NAV.map((item) => (
               <Link
