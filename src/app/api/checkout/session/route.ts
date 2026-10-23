@@ -1,8 +1,25 @@
 import { NextResponse } from "next/server";
+import type Stripe from "stripe";
 import { auth } from "@/lib/auth";
 import { entitledDestinationIds } from "@/lib/entitlements";
 import { computeCartLines, sumCents } from "@/lib/pricing";
 import { getStripe } from "@/lib/stripe";
+
+// "Managed Payments" is a newer Stripe account-level feature (Stripe acts
+// as merchant of record: it takes over tax, fraud and dispute handling)
+// that some accounts now default to for new Checkout Sessions. Once on,
+// Stripe computes tax itself and requires a Stripe tax code on every
+// line item's product_data — our ad-hoc price_data line items don't set
+// one, which is the exact cause of the "product tax code is missing"
+// error. We don't want Stripe-managed tax/compliance for a destination
+// guide at this stage, so this opts the session back out explicitly
+// rather than registering tax codes for a feature we're not using.
+// Not yet in the installed stripe SDK's TS types (brand new API field),
+// so it's merged in via an intersection type rather than widening the
+// whole params object to `any`.
+type SessionCreateParamsWithManagedPayments = Stripe.Checkout.SessionCreateParams & {
+  managed_payments?: { enabled: boolean };
+};
 
 export async function POST(request: Request) {
   const session = await auth();
@@ -29,7 +46,7 @@ export async function POST(request: Request) {
   let checkoutSession;
   try {
     const stripe = getStripe();
-    checkoutSession = await stripe.checkout.sessions.create({
+    const params: SessionCreateParamsWithManagedPayments = {
       mode: "payment",
       customer_email: session.user.email ?? undefined,
       line_items: lines.map((line) => ({
@@ -49,7 +66,14 @@ export async function POST(request: Request) {
       },
       success_url: `${appUrl}/checkout/retour?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${appUrl}/panier`,
-    });
+      managed_payments: { enabled: false },
+      // Stripe's dashboard has a separate "enable tax by default for
+      // Checkout Sessions" account setting that can silently turn this on
+      // too, with the same tax-code requirement — belt and braces against
+      // whichever of the two settings the account actually has on.
+      automatic_tax: { enabled: false },
+    };
+    checkoutSession = await stripe.checkout.sessions.create(params);
   } catch (error) {
     const message = error instanceof Error ? error.message : "Erreur Stripe inconnue.";
     return NextResponse.json({ error: message }, { status: 502 });
