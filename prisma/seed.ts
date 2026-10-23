@@ -46,7 +46,6 @@ const GLOBAL_CATEGORIES = [
   { slug: "shopping", name: "Shopping", icon: "bag", color: "#b03e7a" },
   { slug: "excursions", name: "Excursions", icon: "compass", color: "#3457a6" },
   { slug: "bien-etre-spas", name: "Bien-être et spas", icon: "lotus", color: "#6fae7c" },
-  { slug: "hotels-hebergements", name: "Hôtels et hébergements", icon: "bed", color: "#8a6ba0" },
   { slug: "points-de-vue", name: "Points de vue", icon: "view", color: "#2a7a8c" },
 ];
 
@@ -64,7 +63,6 @@ const BANGKOK_ENABLED_CATEGORIES = [
   "shopping",
   "excursions",
   "bien-etre-spas",
-  "hotels-hebergements",
   "points-de-vue",
 ];
 
@@ -125,7 +123,7 @@ async function main() {
     where: { id: bangkok.id },
     data: {
       categories: {
-        connect: BANGKOK_ENABLED_CATEGORIES.map((slug) => ({ id: categoryBySlug.get(slug)!.id })),
+        set: BANGKOK_ENABLED_CATEGORIES.map((slug) => ({ id: categoryBySlug.get(slug)!.id })),
       },
     },
   });
