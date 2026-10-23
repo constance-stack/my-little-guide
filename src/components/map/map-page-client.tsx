@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { InteractiveMap, type PlaceFeatureCollection } from "./interactive-map";
+import { InteractiveMap, type PersonalPinData, type PlaceFeatureCollection } from "./interactive-map";
 import { PlaceSheet } from "./place-sheet";
 
 type OwnedDestination = { id: string; slug: string; name: string };
@@ -30,6 +30,15 @@ export function MapPageClient({
   const [favoriteIds, setFavoriteIds] = useState<Set<string>>(new Set());
   const [search, setSearch] = useState("");
 
+  // Personal pins: the visitor's own points on this destination's map
+  // (hotel, meeting spot…) — not part of the editorial content, not
+  // available in demo mode (requires an account and that destination).
+  const [personalPins, setPersonalPins] = useState<PersonalPinData[]>([]);
+  const [placingPin, setPlacingPin] = useState(false);
+  const [pendingPin, setPendingPin] = useState<{ lng: number; lat: number } | null>(null);
+  const [pendingLabel, setPendingLabel] = useState("");
+  const [selectedPersonalPinId, setSelectedPersonalPinId] = useState<string | null>(null);
+
   // Owned destinations, for the selector. Skipped in demo mode: there's
   // nothing "owned" to pick from, just the one fixed free place list.
   useEffect(() => {
@@ -52,6 +61,44 @@ export function MapPageClient({
       .then((r) => r.json())
       .then((payload: { favorites: { placeId: string }[] }) => setFavoriteIds(new Set(payload.favorites.map((f) => f.placeId))));
   }, [demo]);
+
+  // Personal pins for the current destination — not available in demo mode.
+  useEffect(() => {
+    if (demo || !destinationSlug) {
+      queueMicrotask(() => setPersonalPins([]));
+      return;
+    }
+    fetch(`/api/personal-pins?destination=${destinationSlug}`)
+      .then((r) => r.json())
+      .then((payload: { pins: PersonalPinData[] }) => setPersonalPins(payload.pins ?? []));
+  }, [demo, destinationSlug]);
+
+  function handleMapClickForPin(lng: number, lat: number) {
+    setPlacingPin(false);
+    setPendingPin({ lng, lat });
+    setPendingLabel("");
+  }
+
+  async function submitPendingPin() {
+    if (!pendingPin || !destinationSlug || !pendingLabel.trim()) return;
+    const res = await fetch("/api/personal-pins", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ destinationSlug, label: pendingLabel.trim(), lat: pendingPin.lat, lng: pendingPin.lng }),
+    });
+    if (res.ok) {
+      const pin: PersonalPinData = await res.json();
+      setPersonalPins((prev) => [...prev, pin]);
+    }
+    setPendingPin(null);
+    setPendingLabel("");
+  }
+
+  async function deletePersonalPin(id: string) {
+    setSelectedPersonalPinId(null);
+    setPersonalPins((prev) => prev.filter((p) => p.id !== id));
+    await fetch(`/api/personal-pins/${id}`, { method: "DELETE" });
+  }
 
   // Place data: the fixed free-preview list in demo mode, otherwise the
   // selected owned destination.
@@ -205,6 +252,43 @@ export function MapPageClient({
           </p>
         )}
 
+        {!demo && (
+          <div className="mb-4">
+            {placingPin ? (
+              <div className="rounded border border-sage-dark bg-sand p-3 text-xs text-foreground/70">
+                Cliquez sur la carte pour placer votre point (hôtel, rendez-vous…).
+                <button type="button" onClick={() => setPlacingPin(false)} className="ml-2 text-sage-dark underline">
+                  Annuler
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setPlacingPin(true)}
+                className="w-full rounded border border-line px-3 py-2 text-left text-xs text-foreground/70 hover:border-sage-dark"
+              >
+                📍 Ajouter une adresse perso (hôtel, rendez-vous…)
+              </button>
+            )}
+
+            {personalPins.length > 0 && (
+              <ul className="mt-2 space-y-1">
+                {personalPins.map((p) => (
+                  <li key={p.id}>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedPersonalPinId(p.id)}
+                      className="flex w-full items-center gap-1.5 px-1 py-1 text-left text-xs text-foreground/70 hover:text-sage-dark"
+                    >
+                      📍 {p.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+
         <ul className="divide-y divide-line">
           {filtered.features.map((f) => (
             <li key={f.properties.id}>
@@ -225,7 +309,16 @@ export function MapPageClient({
       </aside>
 
       <div className="relative order-1 min-h-[220px] flex-1 sm:order-2">
-        <InteractiveMap data={filtered} selectedPlaceId={selectedPlaceId} onSelectPlace={handleSelectPlace} centerOn={centerOn} />
+        <InteractiveMap
+          data={filtered}
+          selectedPlaceId={selectedPlaceId}
+          onSelectPlace={handleSelectPlace}
+          centerOn={centerOn}
+          personalPins={personalPins}
+          placingPin={placingPin}
+          onMapClickForPin={handleMapClickForPin}
+          onSelectPersonalPin={setSelectedPersonalPinId}
+        />
         {selectedPlaceSlug && (
           <PlaceSheet
             slug={selectedPlaceSlug}
@@ -236,6 +329,64 @@ export function MapPageClient({
               updateUrl({ place: null });
             }}
           />
+        )}
+
+        {pendingPin && (
+          <div className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border border-line bg-ivory p-4 shadow-lg sm:right-auto sm:w-80">
+            <p className="mb-2 text-sm font-medium text-foreground">Nommer ce point</p>
+            <input
+              type="text"
+              autoFocus
+              value={pendingLabel}
+              onChange={(e) => setPendingLabel(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && submitPendingPin()}
+              placeholder="Ex. Mon hôtel, Rendez-vous avec Léa…"
+              className="mb-3 w-full rounded border border-line bg-ivory px-3 py-2 text-sm outline-none focus:border-sage-dark"
+            />
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={submitPendingPin}
+                disabled={!pendingLabel.trim()}
+                className="rounded bg-sage-dark px-3 py-1.5 text-xs text-ivory hover:opacity-90 disabled:opacity-50"
+              >
+                Enregistrer
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setPendingPin(null);
+                  setPendingLabel("");
+                }}
+                className="rounded border border-line px-3 py-1.5 text-xs text-foreground/70"
+              >
+                Annuler
+              </button>
+            </div>
+          </div>
+        )}
+
+        {selectedPersonalPinId && (
+          <div className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border border-line bg-ivory p-4 shadow-lg sm:right-auto sm:w-80">
+            <button
+              type="button"
+              onClick={() => setSelectedPersonalPinId(null)}
+              className="absolute right-3 top-3 text-foreground/40 hover:text-foreground"
+            >
+              ✕
+            </button>
+            <p className="mb-1 text-xs uppercase tracking-wide text-sage-dark">Votre point</p>
+            <p className="mb-3 font-serif text-lg text-foreground">
+              {personalPins.find((p) => p.id === selectedPersonalPinId)?.label}
+            </p>
+            <button
+              type="button"
+              onClick={() => deletePersonalPin(selectedPersonalPinId)}
+              className="rounded border border-line px-3 py-1.5 text-xs text-foreground/70 hover:border-sage-dark"
+            >
+              Supprimer
+            </button>
+          </div>
         )}
       </div>
     </div>

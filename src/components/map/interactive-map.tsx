@@ -37,21 +37,45 @@ export type PlaceFeatureCollection = GeoJSON.FeatureCollection<
   }
 >;
 
+export type PersonalPinData = { id: string; label: string; lat: number; lng: number };
+
+const PERSONAL_PIN_EMOJI = "📍";
+
 export function InteractiveMap({
   data,
   selectedPlaceId,
   onSelectPlace,
   centerOn,
+  personalPins = [],
+  placingPin = false,
+  onMapClickForPin,
+  onSelectPersonalPin,
 }: {
   data: PlaceFeatureCollection;
   selectedPlaceId: string | null;
   onSelectPlace: (placeId: string) => void;
   centerOn: [number, number] | null;
+  personalPins?: PersonalPinData[];
+  placingPin?: boolean;
+  onMapClickForPin?: (lng: number, lat: number) => void;
+  onSelectPersonalPin?: (id: string) => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
+  // Latest-value refs for callbacks/flags read from inside MapLibre event
+  // handlers registered once in the map-creation effect below — kept in
+  // sync after every render (not during render, which React's hooks lint
+  // rule forbids) rather than re-registering the handlers on every change.
   const onSelectPlaceRef = useRef(onSelectPlace);
-  onSelectPlaceRef.current = onSelectPlace;
+  const onSelectPersonalPinRef = useRef(onSelectPersonalPin);
+  const placingPinRef = useRef(placingPin);
+  const onMapClickForPinRef = useRef(onMapClickForPin);
+  useEffect(() => {
+    onSelectPlaceRef.current = onSelectPlace;
+    onSelectPersonalPinRef.current = onSelectPersonalPin;
+    placingPinRef.current = placingPin;
+    onMapClickForPinRef.current = onMapClickForPin;
+  });
 
   // Map instance: created once.
   useEffect(() => {
@@ -165,13 +189,65 @@ export function InteractiveMap({
           map.getCanvas().style.cursor = "";
         });
       }
+
+      if (!map.hasImage(PERSONAL_PIN_EMOJI)) {
+        map.addImage(PERSONAL_PIN_EMOJI, emojiToImageData(PERSONAL_PIN_EMOJI));
+      }
+
+      // Personal pins: a visitor's own points (hotel, meeting spot…),
+      // visually distinct from the editorial place markers — dark,
+      // unclustered, always on top.
+      map.addSource("personal-pins", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
+      map.addLayer({
+        id: "personal-pin-point",
+        type: "circle",
+        source: "personal-pins",
+        paint: {
+          "circle-color": "#2b2b2b",
+          "circle-radius": 9,
+          "circle-stroke-width": 2,
+          "circle-stroke-color": "#faf8f3",
+        },
+      });
+      map.addLayer({
+        id: "personal-pin-icon",
+        type: "symbol",
+        source: "personal-pins",
+        layout: { "icon-image": PERSONAL_PIN_EMOJI, "icon-size": 0.5, "icon-allow-overlap": true, "icon-ignore-placement": true },
+      });
+      map.on("click", "personal-pin-point", (e) => {
+        const feature = e.features?.[0] as MapGeoJSONFeature | undefined;
+        if (feature) onSelectPersonalPinRef.current?.(feature.properties.id as string);
+      });
+      map.on("click", "personal-pin-icon", (e) => {
+        const feature = e.features?.[0] as MapGeoJSONFeature | undefined;
+        if (feature) onSelectPersonalPinRef.current?.(feature.properties.id as string);
+      });
+      for (const layer of ["personal-pin-point", "personal-pin-icon"]) {
+        map.on("mouseenter", layer, () => {
+          map.getCanvas().style.cursor = "pointer";
+        });
+        map.on("mouseleave", layer, () => {
+          map.getCanvas().style.cursor = placingPinRef.current ? "crosshair" : "";
+        });
+      }
+
+      // "Add a personal pin" mode: the next plain map click (not on an
+      // existing marker) drops a pin there instead of doing nothing.
+      map.on("click", (e) => {
+        if (!placingPinRef.current) return;
+        const hits = map.queryRenderedFeatures(e.point, {
+          layers: ["unclustered-point", "unclustered-point-icon", "clusters", "personal-pin-point", "personal-pin-icon"],
+        });
+        if (hits.length > 0) return;
+        onMapClickForPinRef.current?.(e.lngLat.lng, e.lngLat.lat);
+      });
     });
 
     return () => {
       map.remove();
       mapRef.current = null;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Data updates: push new GeoJSON + a derived "color" property (first
@@ -210,6 +286,36 @@ export function InteractiveMap({
     if (map.isStyleLoaded()) update();
     else map.once("load", update);
   }, [data]);
+
+  // Personal pin data updates.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const update = () => {
+      const source = map.getSource("personal-pins") as maplibregl.GeoJSONSource | undefined;
+      if (!source) return;
+      source.setData({
+        type: "FeatureCollection",
+        features: personalPins.map((p) => ({
+          type: "Feature",
+          geometry: { type: "Point", coordinates: [p.lng, p.lat] },
+          properties: { id: p.id, label: p.label },
+        })),
+      });
+    };
+    if (map.isStyleLoaded()) update();
+    else map.once("load", update);
+  }, [personalPins]);
+
+  // Placing-pin mode: a crosshair cursor over the whole map as a hint,
+  // overridden back to pointer while actually hovering a marker (handled
+  // by the per-layer mouseenter/mouseleave handlers above).
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const canvas = map.getCanvas();
+    canvas.style.cursor = placingPin ? "crosshair" : "";
+  }, [placingPin]);
 
   // Center on a specific point (deep-link / list click) without changing
   // which place is selected.

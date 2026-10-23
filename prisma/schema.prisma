@@ -56,13 +56,13 @@ model Country {
 /// transport, sécurité...) — shown in both the web guide and the PDF kit
 /// chapter, admin-editable like a Zone's text fields.
 model KitSection {
-  id        String   @id @default(cuid())
+  id        String        @id @default(cuid())
   countryId String
-  country   Country  @relation(fields: [countryId], references: [id])
+  country   Country       @relation(fields: [countryId], references: [id])
   slug      String
   title     String
   content   String
-  sortOrder Int      @default(0)
+  sortOrder Int           @default(0)
   status    PublishStatus @default(DRAFT)
 
   @@unique([countryId, slug])
@@ -88,14 +88,31 @@ model Destination {
   guideVersions GuideVersion[]
   orderLines    OrderLine[]
   entitlements  Entitlement[]
+  personalPins  PersonalPin[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
+/// A visitor's own point on their private map — their hotel, a friend's
+/// place, a meeting spot — placed by clicking the map, not part of the
+/// editorial content. Scoped to one destination so it only ever shows on
+/// that destination's map, same as the guide's own places.
+model PersonalPin {
+  id            String      @id @default(cuid())
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  label         String
+  lat           Decimal     @db.Decimal(9, 6)
+  lng           Decimal     @db.Decimal(9, 6)
+  createdAt     DateTime    @default(now())
+}
+
 /// Neighborhood (city) or beach/sector (island) — the "Où dormir ?" unit.
 model Zone {
-  id            String @id @default(cuid())
+  id            String      @id @default(cuid())
   destinationId String
   destination   Destination @relation(fields: [destinationId], references: [id])
   slug          String
@@ -144,12 +161,12 @@ model Place {
   lng Decimal @db.Decimal(9, 6)
 
   description        String
-  whyVisit            String
-  littleTip           String?
-  indicativePrice     String?
-  indicativeDuration  String?
-  officialHours       String?
-  officialUrl         String?
+  whyVisit           String
+  littleTip          String?
+  indicativePrice    String?
+  indicativeDuration String?
+  officialHours      String?
+  officialUrl        String?
 
   /// true = seed/demo placeholder, never real verified content.
   isFictionalDemo Boolean @default(false)
@@ -173,7 +190,7 @@ model PlaceCategory {
 }
 
 model Photo {
-  id       String @id @default(cuid())
+  id         String @id @default(cuid())
   storageKey String
 
   photographer    String
@@ -211,12 +228,13 @@ model User {
   name          String?
   image         String?
 
-  accounts  Account[]
-  sessions  Session[]
+  accounts     Account[]
+  sessions     Session[]
   orders       Order[]
   entitlements Entitlement[]
   favorites    Favorite[]
   tripDays     TripDay[]
+  personalPins PersonalPin[]
 
   deletedAt DateTime?
   createdAt DateTime  @default(now())
@@ -224,12 +242,12 @@ model User {
 
 /// Admin-editable pricing, e.g. "kit-thailande", "destination-small", "destination-large".
 model Price {
-  id          String   @id @default(cuid())
-  key         String   @unique
+  id          String  @id @default(cuid())
+  key         String  @unique
   label       String
   amountCents Int
-  currency    String   @default("EUR")
-  active      Boolean  @default(true)
+  currency    String  @default("EUR")
+  active      Boolean @default(true)
 
   destinationId String?      @unique
   destination   Destination? @relation(fields: [destinationId], references: [id])
@@ -283,9 +301,9 @@ model Entitlement {
 
 model Favorite {
   userId    String
-  user      User   @relation(fields: [userId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
   placeId   String
-  place     Place  @relation(fields: [placeId], references: [id])
+  place     Place    @relation(fields: [placeId], references: [id])
   createdAt DateTime @default(now())
 
   @@id([userId, placeId])
