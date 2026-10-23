@@ -93,8 +93,13 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
       }
     }
 
+    // No EmailJob here — the buyer downloads their PDF from /compte on
+    // demand (see /api/orders/[orderId]/pdf) rather than via an emailed
+    // link, so there's no email provider to configure for the pilot. The
+    // PdfJob row still exists: /api/orders/[orderId]/pdf uses its
+    // QUEUED/RUNNING/DONE/FAILED status to generate (once) on first
+    // download instead of relying on a separate polling worker.
     await tx.pdfJob.create({ data: { orderId: order.id, status: "QUEUED" } });
-    await tx.emailJob.create({ data: { orderId: order.id, status: "QUEUED" } });
   });
 }
 
