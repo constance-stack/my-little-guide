@@ -36,7 +36,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
           className="group overflow-hidden rounded border border-line bg-sand transition hover:border-sage-dark"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/preview-map.jpg" alt="" className="h-48 w-full object-cover" />
+          <img src="/images/preview-map.jpg" alt="" className="h-40 w-full bg-ivory object-contain" />
           <div className="p-6 text-center">
             <p className="mb-1 font-serif text-lg text-sage-dark">Carte interactive</p>
             <p className="text-sm text-foreground/60">
@@ -52,7 +52,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
           className="group overflow-hidden rounded border border-line bg-sand transition hover:border-sage-dark"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/preview-pdf.jpg" alt="" className="h-48 w-full object-cover" />
+          <img src="/images/preview-pdf.jpg" alt="" className="h-40 w-full bg-ivory object-contain" />
           <div className="p-6 text-center">
             <p className="mb-1 font-serif text-lg text-sage-dark">Guide PDF</p>
             <p className="text-sm text-foreground/60">

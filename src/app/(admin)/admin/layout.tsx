@@ -9,6 +9,7 @@ const NAV = [
   { href: "/admin/zones", label: "Quartiers" },
   { href: "/admin/categories", label: "Catégories" },
   { href: "/admin/places", label: "Lieux" },
+  { href: "/admin/qc", label: "Qualité" },
   { href: "/admin/photos", label: "Photos" },
   { href: "/admin/pricing", label: "Tarifs" },
   { href: "/admin/orders", label: "Commandes" },

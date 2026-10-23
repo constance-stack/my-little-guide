@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { updatePlace } from "./actions";
+import { GpsPicker } from "@/components/admin/gps-picker";
 
 export default async function AdminPlaceEditPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -60,9 +61,9 @@ export default async function AdminPlaceEditPage({ params }: { params: Promise<{
           </label>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
-          <TextField label="Latitude" name="lat" defaultValue={place.lat.toString()} />
-          <TextField label="Longitude" name="lng" defaultValue={place.lng.toString()} />
+        <div>
+          <p className="mb-1 block text-sm text-foreground/70">Position GPS</p>
+          <GpsPicker latName="lat" lngName="lng" initialLat={Number(place.lat)} initialLng={Number(place.lng)} />
         </div>
 
         <TextArea label="Description" name="description" defaultValue={place.description} rows={4} />
