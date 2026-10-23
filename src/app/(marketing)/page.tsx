@@ -60,10 +60,10 @@ export default async function HomePage() {
             toutes vos adresses, pour un voyage réellement préparé.
           </p>
           <Link
-            href="/pays/thailande"
+            href="/pays"
             className="inline-block rounded bg-ivory px-6 py-3 text-sm text-sage-dark hover:opacity-90"
           >
-            Découvrir la Thaïlande
+            Découvrir le monde
           </Link>
         </div>
       </section>
