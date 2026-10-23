@@ -25,7 +25,7 @@ export default async function KitPage({ params }: { params: Promise<{ destinatio
       <main className="mx-auto max-w-lg px-4 py-20 text-center">
         <h1 className="mb-4 font-serif text-2xl text-sage-dark">Kit essentiel {country.name}</h1>
         <p className="mb-6 text-sm text-foreground/70">
-          Le kit essentiel s&apos;ajoute automatiquement à l&apos;achat d&apos;une destination.
+          Le kit essentiel est inclus automatiquement et gratuitement à l&apos;achat d&apos;une destination.
         </p>
         <Link href={`/pays/${country.slug}`} className="rounded bg-sage-dark px-5 py-2.5 text-sm text-ivory hover:opacity-90">
           Voir les destinations

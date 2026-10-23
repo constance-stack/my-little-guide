@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
-import { entitledDestinationIds, hasKit } from "@/lib/entitlements";
+import { entitledDestinationIds } from "@/lib/entitlements";
 import { computeCartLines, sumCents } from "@/lib/pricing";
 import { getStripe } from "@/lib/stripe";
 
@@ -13,14 +13,13 @@ export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
   const destinationIds: string[] = Array.isArray(body?.destinationIds) ? body.destinationIds : [];
 
-  const [owned, ownsKit] = await Promise.all([
-    entitledDestinationIds(session.user.id),
-    hasKit(session.user.id),
-  ]);
+  const owned = await entitledDestinationIds(session.user.id);
 
   // Server-computed line items — the client's cart is only a selection of
-  // destination ids, never a source of prices.
-  const lines = await computeCartLines(destinationIds, owned, ownsKit);
+  // destination ids, never a source of prices. The kit is never one of
+  // these lines (see computeCartLines) — it's granted for free by the
+  // webhook alongside any destination purchase.
+  const lines = await computeCartLines(destinationIds, owned);
   if (lines.length === 0) {
     return NextResponse.json({ error: "Panier vide ou déjà possédé." }, { status: 400 });
   }

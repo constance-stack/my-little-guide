@@ -54,8 +54,8 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
       },
     });
 
-    // Line items were created in the same order as destinationIds, with
-    // the Thailand kit (if any) always last — see computeCartLines().
+    // Line items were created in the same order as destinationIds (see
+    // computeCartLines() — the kit is never one of them, it's free).
     for (let i = 0; i < destinationIds.length; i++) {
       const destinationId = destinationIds[i];
       const item = items[i];
@@ -82,18 +82,10 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
       }
     }
 
-    if (items.length > destinationIds.length) {
-      const kitItem = items[destinationIds.length];
-      await tx.orderLine.create({
-        data: {
-          orderId: order.id,
-          destinationId: null,
-          priceKey: "kit-thailande",
-          amountCents: kitItem?.amount_total ?? 0,
-          label: kitItem?.description ?? "Kit essentiel",
-        },
-      });
-
+    // The kit essentiel is free and automatic with any destination
+    // purchase — not a Stripe line item, granted directly here rather
+    // than inferred from one.
+    if (destinationIds.length > 0) {
       const alreadyHasKit = await tx.entitlement.findFirst({ where: { userId, destinationId: null } });
       if (!alreadyHasKit) {
         await tx.entitlement.create({ data: { userId, destinationId: null, orderId: order.id } });

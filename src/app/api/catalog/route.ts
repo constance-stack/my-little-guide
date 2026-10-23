@@ -47,11 +47,8 @@ export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
   const destinationIds: string[] = Array.isArray(body?.destinationIds) ? body.destinationIds : [];
 
-  const [owned, ownsKit] = await Promise.all([
-    entitledDestinationIds(session?.user?.id),
-    hasKit(session?.user?.id),
-  ]);
+  const owned = await entitledDestinationIds(session?.user?.id);
 
-  const lines = await computeCartLines(destinationIds, owned, ownsKit);
+  const lines = await computeCartLines(destinationIds, owned);
   return NextResponse.json({ lines, totalCents: sumCents(lines) });
 }

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/components/shop/cart-context";
 
-type Destination = { id: string; slug: string; name: string; size: string };
+type Destination = { id: string; slug: string; name: string; size: string; placeCount: number };
 type CatalogDestination = Destination & { amountCents: number; owned: boolean };
 
 export function DestinationPicker({ destinations }: { destinations: Destination[] }) {
@@ -31,7 +31,10 @@ export function DestinationPicker({ destinations }: { destinations: Destination[
             <li key={dest.id} className="flex items-center justify-between px-4 py-3">
               <div>
                 <p className="text-sm font-medium">{dest.name}</p>
-                {info && <p className="text-xs text-foreground/50">{(info.amountCents / 100).toFixed(2)} €</p>}
+                <p className="text-xs text-foreground/50">
+                  {dest.placeCount} lieu{dest.placeCount > 1 ? "x" : ""}
+                  {info ? ` · ${(info.amountCents / 100).toFixed(2)} €` : ""}
+                </p>
               </div>
               {owned ? (
                 <span className="text-xs text-sage-dark">Déjà acheté</span>

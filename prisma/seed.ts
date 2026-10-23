@@ -70,10 +70,14 @@ async function main() {
   console.log("Seeding Bangkok pilot data…");
 
   // --- Prices ---
+  // "kit-thailande" is kept as a labeled Price row for reference, but it's
+  // never charged — src/lib/pricing.ts never turns it into a cart line;
+  // the kit is granted free and automatic by the Stripe webhook alongside
+  // any destination purchase.
   await prisma.price.upsert({
     where: { key: "kit-thailande" },
-    update: {},
-    create: { key: "kit-thailande", label: "Kit essentiel Thaïlande", amountCents: 390 },
+    update: { amountCents: 0 },
+    create: { key: "kit-thailande", label: "Kit essentiel Thaïlande", amountCents: 0 },
   });
   await prisma.price.upsert({
     where: { key: "destination-small" },

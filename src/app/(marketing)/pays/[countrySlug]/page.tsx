@@ -11,20 +11,18 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
       destinations: {
         where: { status: "PUBLISHED" },
         orderBy: { name: "asc" },
+        include: { _count: { select: { places: { where: { status: "PUBLISHED" } } } } },
       },
     },
   });
   if (!country) notFound();
 
-  const kitPrice = await prisma.price.findUnique({ where: { key: "kit-thailande" } });
-
   return (
     <main className="mx-auto max-w-4xl px-4 py-12">
       <h1 className="mb-2 font-serif text-3xl text-sage-dark">{country.name}</h1>
       <p className="mb-8 text-sm text-foreground/70">
-        Choisissez les destinations qui vous intéressent. Le kit essentiel
-        {kitPrice ? ` (${(kitPrice.amountCents / 100).toFixed(2)} €)` : ""} s&apos;ajoute automatiquement à
-        tout achat.
+        Choisissez les destinations qui vous intéressent. Le kit essentiel est inclus automatiquement et
+        gratuitement avec tout achat.
       </p>
 
       {/* Preview section (spec §3): the real product, not a mockup — the
@@ -57,7 +55,13 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
       </section>
 
       <DestinationPicker
-        destinations={country.destinations.map((d) => ({ id: d.id, slug: d.slug, name: d.name, size: d.size }))}
+        destinations={country.destinations.map((d) => ({
+          id: d.id,
+          slug: d.slug,
+          name: d.name,
+          size: d.size,
+          placeCount: d._count.places,
+        }))}
       />
     </main>
   );

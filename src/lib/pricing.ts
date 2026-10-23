@@ -9,14 +9,16 @@ export type CartLine = {
 
 /**
  * Computes the real cart total server-side from the Price table — never
- * trusts client-sent amounts. The Thailand kit is included automatically
- * whenever at least one destination is selected, and a destination already
- * owned by the signed-in user is dropped (never charged twice).
+ * trusts client-sent amounts. The Thailand kit is never a priced line: it
+ * comes free and automatic with any destination purchase (granted
+ * directly by the webhook, see handleCheckoutCompleted in
+ * api/webhooks/stripe/route.ts) rather than being charged for here. A
+ * destination already owned by the signed-in user is dropped (never
+ * charged twice).
  */
 export async function computeCartLines(
   destinationIds: string[],
-  alreadyOwnedDestinationIds: string[] = [],
-  alreadyHasKit = false
+  alreadyOwnedDestinationIds: string[] = []
 ): Promise<CartLine[]> {
   if (destinationIds.length === 0) return [];
 
@@ -29,10 +31,9 @@ export async function computeCartLines(
     include: { priceOverride: true },
   });
 
-  const [smallPrice, largePrice, kitPrice] = await Promise.all([
+  const [smallPrice, largePrice] = await Promise.all([
     prisma.price.findUnique({ where: { key: "destination-small" } }),
     prisma.price.findUnique({ where: { key: "destination-large" } }),
-    prisma.price.findUnique({ where: { key: "kit-thailande" } }),
   ]);
 
   const lines: CartLine[] = [];
@@ -46,12 +47,6 @@ export async function computeCartLines(
       amountCents: price.amountCents,
       destinationId: dest.id,
     });
-  }
-
-  // The kit only makes sense once at least one real destination is being
-  // purchased, and only if the buyer doesn't already own it.
-  if (lines.length > 0 && kitPrice?.active && !alreadyHasKit) {
-    lines.push({ key: "kit-thailande", label: kitPrice.label, amountCents: kitPrice.amountCents, destinationId: null });
   }
 
   return lines;
