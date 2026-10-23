@@ -11,6 +11,10 @@ export default async function ComptePage() {
     redirect("/connexion");
   }
 
+  if (session.user.role === "ADMIN") {
+    return <AdminHome email={session.user.email ?? ""} />;
+  }
+
   const [orders, ownedIds] = await Promise.all([
     prisma.order.findMany({
       where: { userId: session.user.id },
@@ -113,4 +117,52 @@ function PdfStatus({ pdfJob }: { pdfJob?: { status: string; storageKey: string |
   }
 
   return <p className="mt-2 text-sm text-foreground/50">Préparation de votre PDF en cours…</p>;
+}
+
+// An admin account isn't a customer — no orders, no favorites, a
+// "Mes guides" page would just be empty. /compte shows this instead:
+// direct links into the admin sections, not the customer account view.
+function AdminHome({ email }: { email: string }) {
+  const links = [
+    { href: "/admin", label: "Tableau de bord" },
+    { href: "/admin/destinations/new", label: "+ Nouvelle destination" },
+    { href: "/admin/places", label: "Lieux" },
+    { href: "/admin/qc", label: "Qualité du contenu" },
+    { href: "/admin/orders", label: "Commandes" },
+    { href: "/admin/photos", label: "Photos" },
+    { href: "/admin/pricing", label: "Tarifs" },
+  ];
+
+  return (
+    <main className="px-4 py-16">
+      <div className="mx-auto max-w-2xl">
+        <p className="mb-1 text-xs uppercase tracking-widest text-sage-dark">Compte administrateur</p>
+        <h1 className="mb-2 font-serif text-2xl text-sage-dark">Espace admin</h1>
+        <p className="mb-8 text-sm text-foreground/60">Connecté en tant que {email}</p>
+
+        <div className="mb-10 grid gap-3 sm:grid-cols-2">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="rounded border border-line bg-sand px-4 py-3 text-sm text-foreground/80 hover:border-sage-dark hover:text-sage-dark"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </div>
+
+        <form
+          action={async () => {
+            "use server";
+            await signOut({ redirectTo: "/" });
+          }}
+        >
+          <button type="submit" className="text-sm text-sage-dark underline">
+            Se déconnecter
+          </button>
+        </form>
+      </div>
+    </main>
+  );
 }

@@ -22,6 +22,12 @@ enum PublishStatus {
   PUBLISHED
 }
 
+enum DestinationRequestStatus {
+  PENDING
+  IN_PROGRESS
+  DONE
+}
+
 enum DestinationKind {
   CITY
   ISLAND
@@ -228,16 +234,36 @@ model User {
   name          String?
   image         String?
 
-  accounts     Account[]
-  sessions     Session[]
-  orders       Order[]
-  entitlements Entitlement[]
-  favorites    Favorite[]
-  tripDays     TripDay[]
-  personalPins PersonalPin[]
+  accounts            Account[]
+  sessions            Session[]
+  orders              Order[]
+  entitlements        Entitlement[]
+  favorites           Favorite[]
+  tripDays            TripDay[]
+  personalPins        PersonalPin[]
+  destinationRequests DestinationRequest[]
 
   deletedAt DateTime?
   createdAt DateTime  @default(now())
+}
+
+/// A request from the site owner for the next destination to build —
+/// "generate X" from the admin, queued rather than run automatically:
+/// fulfilling one means real research, licensed photos and written
+/// content (the same process used for Bangkok and Chiang Mai), not a
+/// server-side AI call, so it's picked up and completed from an actual
+/// working session rather than a button that publishes unverified content.
+model DestinationRequest {
+  id               String                   @id @default(cuid())
+  countryName      String
+  destinationName  String
+  targetPlaceCount Int?
+  notes            String?
+  status           DestinationRequestStatus @default(PENDING)
+  requestedById    String?
+  requestedBy      User?                    @relation(fields: [requestedById], references: [id])
+  createdAt        DateTime                 @default(now())
+  completedAt      DateTime?
 }
 
 /// Admin-editable pricing, e.g. "kit-thailande", "destination-tier1".."destination-tier4".

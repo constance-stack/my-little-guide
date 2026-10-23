@@ -1,7 +1,11 @@
 import Link from "next/link";
+import { auth } from "@/lib/auth";
 import { CartIcon } from "./cart-icon";
 
-export function ShopHeader() {
+export async function ShopHeader() {
+  const session = await auth();
+  const isAdmin = session?.user?.role === "ADMIN";
+
   return (
     <header className="sticky top-0 z-10 border-b border-line bg-ivory/95 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
@@ -10,6 +14,14 @@ export function ShopHeader() {
           My Little Guide
         </Link>
         <nav className="flex items-center gap-5">
+          {isAdmin && (
+            <Link
+              href="/admin"
+              className="rounded-full bg-sage-dark px-3 py-1 text-xs text-ivory hover:opacity-90"
+            >
+              Espace admin
+            </Link>
+          )}
           <Link href="/" aria-label="Accueil" className="text-foreground/70 hover:text-sage-dark">
             <HomeIcon />
           </Link>

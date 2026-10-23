@@ -5,6 +5,7 @@ import { auth } from "@/lib/auth";
 const NAV = [
   { href: "/admin", label: "Tableau de bord" },
   { href: "/admin/destinations", label: "Destinations" },
+  { href: "/admin/destinations/new", label: "+ Nouvelle destination" },
   { href: "/admin/kit", label: "Kit essentiel" },
   { href: "/admin/zones", label: "Quartiers" },
   { href: "/admin/categories", label: "Catégories" },
