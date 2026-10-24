@@ -10,6 +10,7 @@ export function PanierContent() {
   const [lines, setLines] = useState<CartLine[] | null>(null);
   const [checkingOut, setCheckingOut] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [consent, setConsent] = useState(false);
 
   useEffect(() => {
     if (destinationIds.length === 0) {
@@ -82,10 +83,28 @@ export function PanierContent() {
 
       {error && <p className="mb-4 text-sm text-red-700">{error}</p>}
 
+      <label className="mb-4 flex items-start gap-2 text-xs text-foreground/70">
+        <input
+          type="checkbox"
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          className="mt-0.5"
+        />
+        <span>
+          J&apos;ai lu et j&apos;accepte les{" "}
+          <a href="/cgv" target="_blank" rel="noopener noreferrer" className="underline hover:text-sage-dark">
+            conditions générales de vente
+          </a>
+          . Je demande l&apos;accès immédiat à mon guide dès le paiement et je reconnais renoncer, de ce fait, à mon
+          droit de rétractation de 14 jours applicable aux contenus numériques (article L221-28 du Code de la
+          consommation).
+        </span>
+      </label>
+
       <button
         type="button"
         onClick={handleCheckout}
-        disabled={checkingOut}
+        disabled={checkingOut || !consent}
         className="w-full rounded bg-sage-dark px-4 py-3 text-sm text-ivory hover:opacity-90 disabled:opacity-50"
       >
         {checkingOut ? "Redirection…" : "Payer"}
