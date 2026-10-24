@@ -300,8 +300,16 @@ export function InteractiveMap({
       };
       source.setData(withColor as unknown as GeoJSON.FeatureCollection);
     };
-    if (map.isStyleLoaded()) update();
-    else map.once("load", update);
+    // Try now (no-ops safely via the `!source` check above if the map's
+    // initial "load" hasn't added the source yet) and also catch that
+    // genuine first-mount race via "load" — deliberately not gated on
+    // isStyleLoaded(), which briefly reports false right after any
+    // source.setData() call while a large source reclusters; relying on
+    // "load" as the fallback in that window is wrong since it only ever
+    // fires once, for the map's initial style load (see the fitBounds
+    // effect below for the case where that silently broke a feature).
+    update();
+    if (!map.getSource("places")) map.once("load", update);
   }, [data]);
 
   // Personal pin data updates.
@@ -320,8 +328,8 @@ export function InteractiveMap({
         })),
       });
     };
-    if (map.isStyleLoaded()) update();
-    else map.once("load", update);
+    update();
+    if (!map.getSource("personal-pins")) map.once("load", update);
   }, [personalPins]);
 
   // Fit the camera to the destination's places when the destination itself
@@ -331,29 +339,37 @@ export function InteractiveMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !fitBoundsData || fitBoundsData.features.length === 0) return;
-    const run = () => {
-      const coords = fitBoundsData.features.map((f) => f.geometry.coordinates as [number, number]);
-      if (coords.length === 1) {
-        map.easeTo({ center: coords[0], zoom: 12 });
-        return;
-      }
-      let minLng = Infinity, minLat = Infinity, maxLng = -Infinity, maxLat = -Infinity;
-      for (const [lng, lat] of coords) {
-        minLng = Math.min(minLng, lng);
-        minLat = Math.min(minLat, lat);
-        maxLng = Math.max(maxLng, lng);
-        maxLat = Math.max(maxLat, lat);
-      }
-      map.fitBounds(
-        [
-          [minLng, minLat],
-          [maxLng, maxLat],
-        ],
-        { padding: 60, maxZoom: 14, duration: 0 }
-      );
-    };
-    if (map.isStyleLoaded()) run();
-    else map.once("load", run);
+    // Unconditional, unlike the other effects below — fitBounds/easeTo only
+    // move the camera, they don't touch sources or layers, so they don't
+    // need the style to be loaded first. That matters here specifically:
+    // map.once("load", ...) would be the wrong fallback for an update this
+    // far into the map's life, since MapLibre's "load" event fires once,
+    // for the map's initial style load, and never again — and
+    // isStyleLoaded() does briefly report false right after the sibling
+    // data-update effect's source.setData() call (large GeoJSON sources
+    // re-enter a loading state while they recluster), which is exactly
+    // when this effect runs. Falling back to "load" in that window meant
+    // the camera move silently never happened past the first destination
+    // switch.
+    const coords = fitBoundsData.features.map((f) => f.geometry.coordinates as [number, number]);
+    if (coords.length === 1) {
+      map.easeTo({ center: coords[0], zoom: 12 });
+      return;
+    }
+    let minLng = Infinity, minLat = Infinity, maxLng = -Infinity, maxLat = -Infinity;
+    for (const [lng, lat] of coords) {
+      minLng = Math.min(minLng, lng);
+      minLat = Math.min(minLat, lat);
+      maxLng = Math.max(maxLng, lng);
+      maxLat = Math.max(maxLat, lat);
+    }
+    map.fitBounds(
+      [
+        [minLng, minLat],
+        [maxLng, maxLat],
+      ],
+      { padding: 60, maxZoom: 14, duration: 0 }
+    );
   }, [fitBoundsData]);
 
   // Center on a specific point (deep-link / list click) without changing

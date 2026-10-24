@@ -23,8 +23,19 @@ export function PanierContent() {
       body: JSON.stringify({ destinationIds }),
     })
       .then((r) => r.json())
-      .then((data) => setLines(data.lines))
+      .then((data: { lines: CartLine[] }) => {
+        setLines(data.lines);
+        // A stored destinationId can stop resolving to a line (already
+        // owned since it was added, unpublished, price removed…) — drop
+        // it from the cart instead of leaving a stale count on the cart
+        // icon forever while this page shows "vide".
+        const resolvedIds = new Set(data.lines.map((l) => l.destinationId).filter((id): id is string => id !== null));
+        for (const id of destinationIds) {
+          if (!resolvedIds.has(id)) toggle(id);
+        }
+      })
       .catch(() => setLines([]));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [destinationIds]);
 
   async function handleCheckout() {
