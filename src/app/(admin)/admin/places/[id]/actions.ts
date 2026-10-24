@@ -3,7 +3,62 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
+import { put } from "@/lib/storage";
 import type { PublishStatus } from "@/generated/prisma/enums";
+
+// Uploads a photo and attaches it to this place in one step, so the admin
+// doesn't have to go through /admin/photos first and then come back here
+// to check a box — the two-step flow was the friction that prompted this.
+export async function uploadPlacePhoto(placeId: string, formData: FormData) {
+  const file = formData.get("file");
+  if (!(file instanceof File) || file.size === 0) {
+    throw new Error("Aucun fichier sélectionné.");
+  }
+
+  const photographer = String(formData.get("photographer") || "").trim() || "Photo personnelle";
+  const sourceName = String(formData.get("sourceName") || "").trim() || "Photo personnelle";
+  const licenseType = String(formData.get("licenseType") || "").trim() || "Tous droits réservés — photo personnelle";
+  const altText = String(formData.get("altText") || "").trim();
+  const commercialOk = formData.get("commercialOk") === "on";
+
+  if (!altText) {
+    throw new Error("Le texte alternatif est obligatoire.");
+  }
+
+  const extension = file.name.split(".").pop()?.toLowerCase() || "jpg";
+  const key = `photos/${crypto.randomUUID()}.${extension}`;
+  const buffer = Buffer.from(await file.arrayBuffer());
+  await put(key, buffer);
+
+  const photo = await prisma.photo.create({
+    data: {
+      storageKey: `/api/storage/${key}`,
+      photographer,
+      sourceName,
+      sourceUrl: "",
+      licenseType,
+      altText,
+      commercialOk,
+      verifiedAt: commercialOk ? new Date() : null,
+    },
+  });
+
+  const maxSortOrder = await prisma.placePhoto.aggregate({
+    where: { placeId },
+    _max: { sortOrder: true },
+  });
+  await prisma.placePhoto.create({
+    data: { placeId, photoId: photo.id, sortOrder: (maxSortOrder._max.sortOrder ?? -1) + 1 },
+  });
+
+  revalidatePath(`/admin/places/${placeId}`);
+  revalidatePath("/admin/photos");
+}
+
+export async function detachPlacePhoto(placeId: string, photoId: string) {
+  await prisma.placePhoto.delete({ where: { placeId_photoId: { placeId, photoId } } });
+  revalidatePath(`/admin/places/${placeId}`);
+}
 
 export async function updatePlace(id: string, formData: FormData) {
   const name = String(formData.get("name") ?? "");

@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
-import { updatePlace } from "./actions";
+import { updatePlace, uploadPlacePhoto, detachPlacePhoto } from "./actions";
 import { GpsPicker } from "@/components/admin/gps-picker";
 
 export default async function AdminPlaceEditPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const place = await prisma.place.findUnique({
     where: { id },
-    include: { categories: true, photos: true, destination: true },
+    include: { categories: true, photos: { include: { photo: true }, orderBy: { sortOrder: "asc" } }, destination: true },
   });
   if (!place) notFound();
 
@@ -23,6 +23,7 @@ export default async function AdminPlaceEditPage({ params }: { params: Promise<{
   const selectedCategoryIds = new Set(place.categories.map((c) => c.categoryId));
   const selectedPhotoIds = new Set(place.photos.map((p) => p.photoId));
   const action = updatePlace.bind(null, id);
+  const uploadAction = uploadPlacePhoto.bind(null, id);
 
   return (
     <div className="max-w-2xl">
@@ -90,7 +91,7 @@ export default async function AdminPlaceEditPage({ params }: { params: Promise<{
         </div>
 
         <div>
-          <TextField label="Google Place ID (secours photo si aucune photo ci-dessous)" name="googlePlaceId" defaultValue={place.googlePlaceId ?? ""} />
+          <TextField label="Google Place ID (secours photo si aucune photo ci-dessus)" name="googlePlaceId" defaultValue={place.googlePlaceId ?? ""} />
           {place.googlePlaceId && (
             <a
               href={`https://www.google.com/maps/place/?q=place_id:${place.googlePlaceId}`}
@@ -105,7 +106,8 @@ export default async function AdminPlaceEditPage({ params }: { params: Promise<{
 
         <div>
           <p className="mb-2 text-sm text-foreground/70">
-            Photos <span className="text-xs text-foreground/50">(une photo doit avoir l&apos;usage commercial vérifié pour publier)</span>
+            Réutiliser une photo déjà téléversée{" "}
+            <span className="text-xs text-foreground/50">(une photo doit avoir l&apos;usage commercial vérifié pour publier)</span>
           </p>
           <div className="grid grid-cols-2 gap-1">
             {photos.map((photo) => (
@@ -119,6 +121,46 @@ export default async function AdminPlaceEditPage({ params }: { params: Promise<{
 
         <button type="submit" className="rounded bg-sage-dark px-4 py-2 text-sm text-ivory hover:opacity-90">
           Enregistrer
+        </button>
+      </form>
+
+      <div className="mt-8">
+        <p className="mb-2 text-sm text-foreground/70">Photos de ce lieu</p>
+        {place.photos.length > 0 ? (
+          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
+            {place.photos.map(({ photo }) => (
+              <div key={photo.id} className="rounded border border-line bg-sand p-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={photo.storageKey} alt={photo.altText} className="mb-2 h-20 w-full rounded object-cover" />
+                <p className="truncate text-xs text-foreground/70">{photo.photographer}</p>
+                <form action={detachPlacePhoto.bind(null, id, photo.id)}>
+                  <button type="submit" className="mt-1 text-xs text-red-700 underline">
+                    Retirer
+                  </button>
+                </form>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-xs text-foreground/50">Aucune photo attachée pour l&apos;instant.</p>
+        )}
+      </div>
+
+      <form action={uploadAction} className="mt-4 space-y-3 rounded border border-line bg-sand p-4">
+        <p className="text-sm font-medium">Ajouter une photo directement pour ce lieu</p>
+        <input type="file" name="file" accept="image/*" required className="text-sm" />
+        <TextField label="Texte alternatif" name="altText" defaultValue={place.name} />
+        <div className="grid grid-cols-2 gap-3">
+          <TextField label="Photographe" name="photographer" defaultValue="Photo personnelle" />
+          <TextField label="Source" name="sourceName" defaultValue="Photo personnelle" />
+        </div>
+        <TextField label="Type de licence" name="licenseType" defaultValue="Tous droits réservés — photo personnelle" />
+        <label className="flex items-center gap-2 text-sm text-foreground/70">
+          <input type="checkbox" name="commercialOk" defaultChecked />
+          Usage commercial vérifié (nécessaire pour que cette photo compte pour la publication du lieu)
+        </label>
+        <button type="submit" className="rounded bg-sage-dark px-4 py-2 text-sm text-ivory hover:opacity-90">
+          Téléverser et attacher à ce lieu
         </button>
       </form>
     </div>
