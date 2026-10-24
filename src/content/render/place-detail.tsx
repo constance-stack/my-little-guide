@@ -1,4 +1,5 @@
 import type { GuidePlace } from "@/content/queries";
+import { GooglePhotoImage } from "@/components/guide/google-photo-image";
 
 /**
  * Renders one place's full content. Used by the web guide place page and
@@ -15,7 +16,7 @@ export function PlaceDetail({ place }: { place: GuidePlace }) {
       </p>
       <h1 className="mb-4 font-serif text-3xl text-foreground">{place.name}</h1>
 
-      {place.photos.length > 0 && (
+      {place.photos.length > 0 ? (
         <div className="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
           {place.photos.map((p) => (
             // eslint-disable-next-line @next/next/no-img-element
@@ -27,7 +28,9 @@ export function PlaceDetail({ place }: { place: GuidePlace }) {
             />
           ))}
         </div>
-      )}
+      ) : place.googlePlaceId ? (
+        <GooglePhotoImage slug={place.slug} googlePlaceId={place.googlePlaceId} alt={place.name} />
+      ) : null}
 
       <div className="mb-4 flex flex-wrap gap-2">
         {place.categories.map((c) => (

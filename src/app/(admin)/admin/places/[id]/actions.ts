@@ -19,6 +19,7 @@ export async function updatePlace(id: string, formData: FormData) {
   const indicativeDuration = String(formData.get("indicativeDuration") || "") || null;
   const officialHours = String(formData.get("officialHours") || "") || null;
   const officialUrl = String(formData.get("officialUrl") || "") || null;
+  const googlePlaceId = String(formData.get("googlePlaceId") || "").trim() || null;
   const isFictionalDemo = formData.get("isFictionalDemo") === "on";
   const categoryIds = formData.getAll("categoryIds").map(String);
   const photoIds = formData.getAll("photoIds").map(String);
@@ -28,8 +29,8 @@ export async function updatePlace(id: string, formData: FormData) {
   }
 
   if (status === "PUBLISHED") {
-    if (photoIds.length === 0) {
-      throw new Error("Un lieu publié doit avoir au moins une photo.");
+    if (photoIds.length === 0 && !googlePlaceId) {
+      throw new Error("Un lieu publié doit avoir au moins une photo ou un identifiant Google Places.");
     }
     const photos = await prisma.photo.findMany({ where: { id: { in: photoIds } } });
     if (photos.some((p) => !p.commercialOk)) {
@@ -54,6 +55,7 @@ export async function updatePlace(id: string, formData: FormData) {
         indicativeDuration,
         officialHours,
         officialUrl,
+        googlePlaceId,
         isFictionalDemo,
         categories: { deleteMany: {}, create: categoryIds.map((categoryId) => ({ categoryId })) },
         photos: { deleteMany: {}, create: photoIds.map((photoId, i) => ({ photoId, sortOrder: i })) },

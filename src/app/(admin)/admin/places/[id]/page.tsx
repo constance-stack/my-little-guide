@@ -90,6 +90,20 @@ export default async function AdminPlaceEditPage({ params }: { params: Promise<{
         </div>
 
         <div>
+          <TextField label="Google Place ID (secours photo si aucune photo ci-dessous)" name="googlePlaceId" defaultValue={place.googlePlaceId ?? ""} />
+          {place.googlePlaceId && (
+            <a
+              href={`https://www.google.com/maps/place/?q=place_id:${place.googlePlaceId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-block text-xs text-sage-dark underline"
+            >
+              Voir sur Google Maps →
+            </a>
+          )}
+        </div>
+
+        <div>
           <p className="mb-2 text-sm text-foreground/70">
             Photos <span className="text-xs text-foreground/50">(une photo doit avoir l&apos;usage commercial vérifié pour publier)</span>
           </p>

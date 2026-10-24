@@ -56,7 +56,12 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
       icon: c.category.icon,
       color: c.category.color,
     })),
-    photos: place.photos.map((p) => ({ src: p.photo.storageKey, alt: p.photo.altText })),
+    photos:
+      place.photos.length > 0
+        ? place.photos.map((p) => ({ src: p.photo.storageKey, alt: p.photo.altText }))
+        : place.googlePlaceId
+          ? [{ src: `/api/google-photo/${place.slug}`, alt: place.name }]
+          : [],
     isFavorite,
   });
 }
