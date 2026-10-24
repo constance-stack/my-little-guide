@@ -77,46 +77,46 @@ export async function updatePlace(id: string, formData: FormData) {
   const googlePlaceId = String(formData.get("googlePlaceId") || "").trim() || null;
   const isFictionalDemo = formData.get("isFictionalDemo") === "on";
   const categoryIds = formData.getAll("categoryIds").map(String);
-  const photoIds = formData.getAll("photoIds").map(String);
 
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
     throw new Error("Coordonnées GPS invalides.");
   }
 
+  // Photos are managed separately (upload/detach forms below, acting
+  // directly on PlacePhoto) so this save never touches them — it used to
+  // read a giant "reuse an existing photo" checkbox list that became
+  // unusable once the photo library grew past a handful of entries.
   if (status === "PUBLISHED") {
-    if (photoIds.length === 0 && !googlePlaceId) {
+    const attachedPhotos = await prisma.placePhoto.findMany({ where: { placeId: id }, include: { photo: true } });
+    if (attachedPhotos.length === 0 && !googlePlaceId) {
       throw new Error("Un lieu publié doit avoir au moins une photo ou un identifiant Google Places.");
     }
-    const photos = await prisma.photo.findMany({ where: { id: { in: photoIds } } });
-    if (photos.some((p) => !p.commercialOk)) {
+    if (attachedPhotos.some((p) => !p.photo.commercialOk)) {
       throw new Error("Impossible de publier : une photo attachée n'a pas d'usage commercial vérifié.");
     }
   }
 
-  await prisma.$transaction([
-    prisma.place.update({
-      where: { id },
-      data: {
-        name,
-        slug,
-        status,
-        zoneId,
-        lat,
-        lng,
-        description,
-        whyVisit,
-        littleTip,
-        indicativePrice,
-        indicativeDuration,
-        officialHours,
-        officialUrl,
-        googlePlaceId,
-        isFictionalDemo,
-        categories: { deleteMany: {}, create: categoryIds.map((categoryId) => ({ categoryId })) },
-        photos: { deleteMany: {}, create: photoIds.map((photoId, i) => ({ photoId, sortOrder: i })) },
-      },
-    }),
-  ]);
+  await prisma.place.update({
+    where: { id },
+    data: {
+      name,
+      slug,
+      status,
+      zoneId,
+      lat,
+      lng,
+      description,
+      whyVisit,
+      littleTip,
+      indicativePrice,
+      indicativeDuration,
+      officialHours,
+      officialUrl,
+      googlePlaceId,
+      isFictionalDemo,
+      categories: { deleteMany: {}, create: categoryIds.map((categoryId) => ({ categoryId })) },
+    },
+  });
 
   revalidatePath("/admin/places");
   revalidatePath(`/admin/places/${id}`);

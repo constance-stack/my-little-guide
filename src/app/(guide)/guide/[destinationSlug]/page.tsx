@@ -147,8 +147,15 @@ export default async function GuideDestinationPage({
             <ul className="divide-y divide-line rounded border border-line bg-ivory">
               {zone.places.map((place) => (
                 <li key={place.id}>
-                  <Link href={`/lieu/${place.slug}`} className="flex items-center justify-between px-4 py-3 text-sm hover:text-sage-dark">
-                    <span>{place.name}</span>
+                  <Link href={`/lieu/${place.slug}`} className="flex items-center justify-between gap-3 px-4 py-3 text-sm hover:text-sage-dark">
+                    <span className="flex items-center gap-2">
+                      {place.name}
+                      {place.indicativePrice && (
+                        <span className="rounded bg-sage-dark/10 px-1.5 py-0.5 text-xs font-medium text-sage-dark">
+                          {place.indicativePrice}
+                        </span>
+                      )}
+                    </span>
                     <span className="text-xs text-foreground/50">
                       {place.categories.map((c) => c.category.name).join(", ")}
                     </span>

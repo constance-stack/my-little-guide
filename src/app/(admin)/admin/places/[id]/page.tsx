@@ -11,17 +11,15 @@ export default async function AdminPlaceEditPage({ params }: { params: Promise<{
   });
   if (!place) notFound();
 
-  const [zones, categories, photos] = await Promise.all([
+  const [zones, categories] = await Promise.all([
     prisma.zone.findMany({ where: { destinationId: place.destinationId }, orderBy: { name: "asc" } }),
     prisma.category.findMany({
       where: { destinations: { some: { id: place.destinationId } } },
       orderBy: { name: "asc" },
     }),
-    prisma.photo.findMany({ orderBy: { createdAt: "desc" } }),
   ]);
 
   const selectedCategoryIds = new Set(place.categories.map((c) => c.categoryId));
-  const selectedPhotoIds = new Set(place.photos.map((p) => p.photoId));
   const action = updatePlace.bind(null, id);
   const uploadAction = uploadPlacePhoto.bind(null, id);
 
@@ -104,28 +102,16 @@ export default async function AdminPlaceEditPage({ params }: { params: Promise<{
           )}
         </div>
 
-        <div>
-          <p className="mb-2 text-sm text-foreground/70">
-            Réutiliser une photo déjà téléversée{" "}
-            <span className="text-xs text-foreground/50">(une photo doit avoir l&apos;usage commercial vérifié pour publier)</span>
-          </p>
-          <div className="grid grid-cols-2 gap-1">
-            {photos.map((photo) => (
-              <label key={photo.id} className="flex items-center gap-2 text-sm">
-                <input type="checkbox" name="photoIds" value={photo.id} defaultChecked={selectedPhotoIds.has(photo.id)} />
-                {photo.altText} {!photo.commercialOk && <span className="text-red-700">(non vérifiée)</span>}
-              </label>
-            ))}
-          </div>
-        </div>
-
         <button type="submit" className="rounded bg-sage-dark px-4 py-2 text-sm text-ivory hover:opacity-90">
           Enregistrer
         </button>
       </form>
 
       <div className="mt-8">
-        <p className="mb-2 text-sm text-foreground/70">Photos de ce lieu</p>
+        <p className="mb-2 text-sm text-foreground/70">
+          Photos de ce lieu{" "}
+          <span className="text-xs text-foreground/50">(une photo doit avoir l&apos;usage commercial vérifié pour publier)</span>
+        </p>
         {place.photos.length > 0 ? (
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
             {place.photos.map(({ photo }) => (
