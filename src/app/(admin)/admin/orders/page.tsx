@@ -1,9 +1,9 @@
 import { prisma } from "@/lib/db";
-import { regeneratePdf, resendEmail } from "./actions";
+import { regeneratePdf } from "./actions";
 
 export default async function AdminOrdersPage() {
   const orders = await prisma.order.findMany({
-    include: { user: true, lines: true, pdfJobs: true, emailJobs: true },
+    include: { user: true, lines: true, pdfJobs: true },
     orderBy: { createdAt: "desc" },
   });
 
@@ -21,14 +21,12 @@ export default async function AdminOrdersPage() {
               <th className="py-2">Montant</th>
               <th className="py-2">Statut</th>
               <th className="py-2">PDF</th>
-              <th className="py-2">E-mail</th>
               <th className="py-2">Actions</th>
             </tr>
           </thead>
           <tbody>
             {orders.map((order) => {
               const regenerate = regeneratePdf.bind(null, order.id);
-              const resend = resendEmail.bind(null, order.id);
               return (
                 <tr key={order.id} className="border-b border-line/60">
                   <td className="py-2">{order.createdAt.toLocaleString("fr-FR")}</td>
@@ -38,17 +36,14 @@ export default async function AdminOrdersPage() {
                   </td>
                   <td className="py-2">{order.status}</td>
                   <td className="py-2">{order.pdfJobs[0]?.status ?? "—"}</td>
-                  <td className="py-2">{order.emailJobs[0]?.status ?? "—"}</td>
                   <td className="py-2">
-                    <div className="flex gap-2">
+                    <div className="flex gap-3">
+                      <a href={`/api/orders/${order.id}/pdf`} target="_blank" rel="noopener noreferrer" className="text-xs text-sage-dark underline">
+                        Voir le PDF
+                      </a>
                       <form action={regenerate}>
                         <button type="submit" className="text-xs text-sage-dark underline">
-                          Régénérer le PDF
-                        </button>
-                      </form>
-                      <form action={resend}>
-                        <button type="submit" className="text-xs text-sage-dark underline">
-                          Renvoyer l&apos;e-mail
+                          Forcer la régénération
                         </button>
                       </form>
                     </div>
