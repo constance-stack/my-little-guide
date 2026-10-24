@@ -45,7 +45,6 @@ const GOOD_KEYS = new Set<string>([
   "battery-park",
   "bethesda-terrace",
   "blue-note-jazz-club",
-  "bronx-zoo",
   "brooklyn-botanic-garden",
   "brooklyn-bridge",
   "brooklyn-bridge-park",
@@ -57,7 +56,6 @@ const GOOD_KEYS = new Set<string>([
   "carnegie-hall",
   "central-park",
   "central-park-bow-bridge",
-  "central-park-zoo",
   "chelsea-market",
   "chinatown-manhattan",
   "chrysler-building",
@@ -199,7 +197,7 @@ const PLACES: PlaceDef[] = [
     slug: "911-memorial-museum",
     name: "Mémorial et musée du 11 Septembre",
     zone: "lower-manhattan",
-    categories: ["incontournables", "experiences-insolites"],
+    categories: ["incontournables", "temples-patrimoine"],
     lat: 40.7115, lng: -74.0134,
     description: "Deux bassins commémoratifs installés sur les fondations des tours jumelles, bordés des noms de toutes les victimes, avec un musée souterrain retraçant les événements du 11 septembre 2001.",
     whyVisit: "Un lieu de mémoire incontournable, aussi bouleversant que nécessaire pour comprendre la ville contemporaine.",
@@ -1227,17 +1225,6 @@ const PLACES: PlaceDef[] = [
     littleTip: "L'entrée est gratuite le vendredi en fin de journée — vérifiez les horaires avant de passer.",
     indicativeDuration: "1h à 1h30",
   },
-  {
-    slug: "central-park-zoo",
-    name: "Central Park Zoo",
-    zone: "upper-east-side",
-    categories: ["activites-famille"],
-    lat: 40.7679, lng: -73.9719,
-    description: "Un petit zoo urbain à l'intérieur même de Central Park, avec manchots, phoques et panda roux, à taille humaine et facile à visiter en une heure ou deux.",
-    whyVisit: "Une pause familiale facile à combiner avec une balade dans Central Park.",
-    littleTip: "Le bassin des phoques, au centre du zoo, est l'un des points de vue les plus appréciés des visiteurs.",
-    indicativeDuration: "1h à 1h30",
-  },
 
   // ---------- Upper West Side ----------
   {
@@ -1555,7 +1542,7 @@ const PLACES: PlaceDef[] = [
     zone: "brooklyn",
     categories: ["quartiers-balades"],
     lat: 40.6602, lng: -73.9690,
-    description: "Le grand parc de Brooklyn, conçu par les mêmes paysagistes que Central Park (Olmsted et Vaux), avec sa prairie de 36 hectares, son lac et son zoo, souvent considéré par les New-Yorkais comme plus réussi encore que Central Park.",
+    description: "Le grand parc de Brooklyn, conçu par les mêmes paysagistes que Central Park (Olmsted et Vaux), avec sa prairie de 36 hectares et son lac, souvent considéré par les New-Yorkais comme plus réussi encore que Central Park.",
     whyVisit: "Un grand parc verdoyant, moins touristique que Central Park, très apprécié des habitants de Brooklyn.",
     littleTip: "La Long Meadow, la plus grande prairie sans arbres d'un parc urbain américain, est idéale pour un pique-nique.",
     indicativeDuration: "2h et plus",
@@ -1706,6 +1693,17 @@ const PLACES: PlaceDef[] = [
     littleTip: "Les fresques changent plusieurs fois par an — ce que vous voyez est presque toujours temporaire.",
     indicativeDuration: "1h30 à 2h",
   },
+  {
+    slug: "bushwick-graffiti-workshop",
+    name: "Atelier graffiti à Bushwick",
+    zone: "brooklyn",
+    categories: ["experiences-insolites"],
+    lat: 40.7071, lng: -73.9394,
+    description: "Un atelier d'une heure dans un studio de Bushwick, animé par un véritable graffeur new-yorkais, pour s'initier aux techniques de la bombe aérosol et repartir avec sa propre pièce.",
+    whyVisit: "Pour prolonger la visite du street art de Bushwick Collective par une expérience pratique, plutôt que de simplement regarder.",
+    littleTip: "Plusieurs formats existent (petit panneau individuel, grande toile en groupe) — réservez à l'avance, les créneaux sont limités.",
+    indicativeDuration: "1h",
+  },
 
   // ---------- Queens ----------
   {
@@ -1845,17 +1843,6 @@ const PLACES: PlaceDef[] = [
   },
 
   // ---------- Le Bronx ----------
-  {
-    slug: "bronx-zoo",
-    name: "Bronx Zoo",
-    zone: "bronx",
-    categories: ["incontournables", "activites-famille"],
-    lat: 40.8506, lng: -73.8770,
-    description: "L'un des plus grands zoos urbains au monde, ouvert depuis 1899, qui recrée de vastes habitats naturels pour ses animaux plutôt que de simples cages, sur près de 1 km².",
-    whyVisit: "L'un des meilleurs zoos des États-Unis, avec des habitats spacieux plutôt que des enclos classiques.",
-    littleTip: "Le Congo Gorilla Forest et le Wild Asia Monorail (saisonnier) comptent parmi les sections les plus spectaculaires.",
-    indicativeDuration: "demi-journée",
-  },
   {
     slug: "new-york-botanical-garden",
     name: "New York Botanical Garden",
@@ -2031,11 +2018,11 @@ const ZONE_DEFS = [
     slug: "bronx",
     name: "Le Bronx",
     mapColor: "#6a8caf",
-    vibeText: "L'arrondissement le plus vert de New York, entre le zoo le plus spectaculaire du pays, un immense jardin botanique et le vrai quartier italien de la ville sur Arthur Avenue.",
+    vibeText: "L'arrondissement le plus vert de New York, entre un immense jardin botanique, le temple du baseball qu'est Yankee Stadium et le vrai quartier italien de la ville sur Arthur Avenue.",
     prosText: "Grands espaces verts, quartier italien plus authentique que celui de Manhattan, moins touristique.",
     consText: "Plus excentré, nécessite un trajet en métro plus long depuis Manhattan.",
-    transportText: "Lignes 2/5 (zoo, jardin botanique), 4/B/D (Yankee Stadium) ; environ 30-45 minutes depuis Midtown.",
-    nearbyText: "Le zoo et le jardin botanique sont voisins, dans le même secteur du Bronx.",
+    transportText: "Ligne B/D (jardin botanique), 4/B/D (Yankee Stadium) ; environ 30-45 minutes depuis Midtown.",
+    nearbyText: "Le jardin botanique et Arthur Avenue se visitent bien dans la même sortie au Bronx.",
     profileFitText: "Pour les familles et les amateurs de nature, en complément d'un séjour plus urbain.",
     hotelAdviceText: "Peu d'hébergements sur place — secteur à visiter en journée depuis Manhattan.",
   },
