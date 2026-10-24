@@ -76,6 +76,25 @@ export default async function GuideDestinationPage({
         <span className="text-sage-dark">→</span>
       </Link>
 
+      {destination.slug === "koh-tao" && (
+        <section className="mb-10">
+          <p className="mb-5 text-sm leading-relaxed text-foreground/80">
+            Koh Tao n&apos;a pas d&apos;aéroport : on y arrive uniquement en bateau. La route la plus directe passe
+            par Chumphon, sur le continent, rejoint en train, bus ou avion depuis Bangkok, puis en ferry jusqu&apos;à
+            l&apos;île (comptez environ 1h30 à 2h de traversée selon le bateau). L&apos;autre option classique est de
+            combiner Koh Tao avec Koh Phangan et Koh Samui dans un même séjour : l&apos;aéroport de Koh Samui, bien
+            desservi depuis Bangkok, est alors le point d&apos;entrée, suivi d&apos;un ferry remontant vers Koh Tao en
+            passant par les deux autres îles.
+          </p>
+          <div className="mb-5 rounded border border-line bg-sage-dark/5 px-4 py-3 text-sm text-foreground/80">
+            <span className="font-medium text-sage-dark">Little Tip — </span>
+            Koh Tao est petite mais vallonnée : un scooter est pratique pour la côte est et les points de vue, mais
+            certaines routes sont pentues et sinueuses. Beaucoup de visiteurs se déplacent aussi très bien à pied ou
+            en taxi partagé entre Sairee et Mae Haad.
+          </div>
+        </section>
+      )}
+
       {destination.slug === "bangkok" && (
         <section className="mb-10">
           <p className="mb-5 text-sm leading-relaxed text-foreground/80">
