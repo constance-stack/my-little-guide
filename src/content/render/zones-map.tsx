@@ -14,6 +14,11 @@ type DestinationLayout = {
   viewBox: string;
   altText: string;
   water: { d: string; strokeWidth: number }[];
+  waterLabels?: { text: string; x: number; y: number; rotate?: number }[];
+  // An optional faint outline + label grouping several zone boxes under a
+  // larger geographic unit (e.g. Manhattan's many neighborhoods) — drawn
+  // first, behind the zone boxes, purely for orientation.
+  groups?: { label: string; x: number; y: number; w: number; h: number }[];
   boxes: Record<string, Box>;
 };
 
@@ -38,7 +43,7 @@ const LAYOUTS: Record<string, DestinationLayout> = {
     },
   },
   "new-york": {
-    viewBox: "0 0 900 950",
+    viewBox: "0 0 900 980",
     altText: "Carte illustrative des quartiers de New York",
     water: [
       // Hudson River (west of Manhattan)
@@ -48,8 +53,13 @@ const LAYOUTS: Record<string, DestinationLayout> = {
       // Harlem River (between Manhattan and the Bronx)
       { d: "M 330 80 C 450 60, 550 65, 605 90", strokeWidth: 16 },
     ],
+    waterLabels: [
+      { text: "Hudson River", x: 243, y: 400, rotate: -90 },
+      { text: "East River", x: 627, y: 420, rotate: -90 },
+    ],
+    groups: [{ label: "MANHATTAN", x: 270, y: 88, w: 330, h: 578 }],
     boxes: {
-      bronx: { x: 330, y: 10, w: 250, h: 65 },
+      bronx: { x: 330, y: 10, w: 250, h: 55 },
       harlem: { x: 330, y: 95, w: 250, h: 75 },
       "upper-west-side": { x: 290, y: 185, w: 140, h: 95 },
       "upper-east-side": { x: 440, y: 185, w: 140, h: 95 },
@@ -84,6 +94,56 @@ export function ZonesMap({
       <svg viewBox={layout.viewBox} className="w-full" role="img" aria-label={layout.altText}>
         {layout.water.map((w, i) => (
           <path key={i} d={w.d} fill="none" stroke="#aecbd6" strokeWidth={w.strokeWidth} strokeLinecap="round" />
+        ))}
+        {layout.groups?.map((g, i) => (
+          <g key={i}>
+            <rect
+              x={g.x}
+              y={g.y}
+              width={g.w}
+              height={g.h}
+              rx={16}
+              fill="none"
+              stroke="#8a7a63"
+              strokeOpacity={0.35}
+              strokeWidth={2}
+              strokeDasharray="6 6"
+            />
+            <rect
+              x={g.x + g.w / 2 - 58}
+              y={g.y - 24}
+              width={116}
+              height={18}
+              fill="#faf8f3"
+            />
+            <text
+              x={g.x + g.w / 2}
+              y={g.y - 10}
+              textAnchor="middle"
+              fill="#8a7a63"
+              fillOpacity={0.9}
+              fontSize={14}
+              fontWeight={700}
+              letterSpacing={2}
+            >
+              {g.label}
+            </text>
+          </g>
+        ))}
+        {layout.waterLabels?.map((l, i) => (
+          <text
+            key={i}
+            x={l.x}
+            y={l.y}
+            textAnchor="middle"
+            fill="#6a8caf"
+            fontSize={13}
+            fontStyle="italic"
+            fontWeight={600}
+            transform={l.rotate ? `rotate(${l.rotate} ${l.x} ${l.y})` : undefined}
+          >
+            {l.text}
+          </text>
         ))}
         {placed.map((z) => {
           const box = layout.boxes[z.slug];
