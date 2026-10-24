@@ -5,7 +5,7 @@ import { prisma } from "@/lib/db";
 import { hasAccess } from "@/lib/entitlements";
 import { getDestinationForGuide } from "@/content/queries";
 import { GuideSearch } from "@/components/guide/guide-search";
-import { ZonesMap, ZoneSwatch } from "@/content/render/zones-map";
+import { ZonesMap, ZoneSwatch, hasZonesMapLayout } from "@/content/render/zones-map";
 
 export default async function GuideDestinationPage({
   params,
@@ -110,7 +110,27 @@ export default async function GuideDestinationPage({
             nécessiter un long trajet. Privilégiez les stations BTS/MRT, les embarcadères, et
             regroupez vos visites par quartier.
           </div>
-          <ZonesMap zones={destination.zones} />
+          <ZonesMap zones={destination.zones} destinationSlug={destination.slug} />
+        </section>
+      )}
+
+      {destination.slug === "new-york" && (
+        <section className="mb-10">
+          <p className="mb-5 text-sm leading-relaxed text-foreground/80">
+            New York se visite très bien à pied dans chaque quartier, mais se déplacer d&apos;un bout à l&apos;autre
+            de la ville demande presque toujours le métro — il fonctionne 24h/24 et reste le moyen le plus rapide
+            d&apos;éviter les embouteillages. Manhattan s&apos;étire du nord au sud sur près de 20 km : mieux vaut
+            regrouper ses visites par quartier plutôt que d&apos;essayer de zigzaguer, et ne pas sous-estimer les
+            distances entre Manhattan, Brooklyn, le Queens et le Bronx.
+          </p>
+          <div className="mb-5 rounded border border-line bg-sage-dark/5 px-4 py-3 text-sm text-foreground/80">
+            <span className="font-medium text-sage-dark">Little Tip — </span>
+            Le paiement du métro se fait directement par carte bancaire ou smartphone sans contact (OMNY) à chaque
+            tourniquet — pas besoin d&apos;acheter de ticket à l&apos;avance.
+          </div>
+          {hasZonesMapLayout(destination.slug) && (
+            <ZonesMap zones={destination.zones} destinationSlug={destination.slug} />
+          )}
         </section>
       )}
 

@@ -1,43 +1,92 @@
 /**
- * Stylized, color-coded illustration of Bangkok's touristic neighborhoods
- * — not a literal geographic map (no real polygon boundaries exist for
- * "touristic zones"), but a simplified layout that keeps each zone's
- * real relative position (river, old town bend, north/south/east/west)
- * roughly right. Shared between the web guide and the PDF so both show
- * the same illustration driven by the same Zone.mapColor data.
+ * Stylized, color-coded illustration of a destination's touristic
+ * neighborhoods — not a literal geographic map (no real polygon
+ * boundaries exist for "touristic zones"), but a simplified layout that
+ * keeps each zone's real relative position (river, old town bend, north/
+ * south/east/west) roughly right. Shared between the web guide and the
+ * PDF so both show the same illustration driven by the same
+ * Zone.mapColor data. One hand-placed LAYOUT per destination — a
+ * destination with no entry here just doesn't get a map (see
+ * hasZonesMapLayout()), same as before this was generalized past Bangkok.
  */
-const LAYOUT: Record<string, { x: number; y: number; w: number; h: number }> = {
-  "rattanakosin-banglamphu": { x: 300, y: 130, w: 170, h: 150 },
-  "chinatown-talat-noi": { x: 330, y: 300, w: 150, h: 110 },
-  "riverside": { x: 350, y: 430, w: 150, h: 120 },
-  "silom-sathorn": { x: 480, y: 450, w: 160, h: 150 },
-  "siam-chit-lom": { x: 490, y: 270, w: 160, h: 150 },
-  "pratunam": { x: 470, y: 120, w: 150, h: 110 },
-  "ari": { x: 440, y: 10, w: 180, h: 90 },
-  "sukhumvit-asok-phrom-phong": { x: 660, y: 290, w: 150, h: 280 },
-  "thonburi": { x: 40, y: 170, w: 250, h: 430 },
+type Box = { x: number; y: number; w: number; h: number };
+type DestinationLayout = {
+  viewBox: string;
+  altText: string;
+  water: { d: string; strokeWidth: number }[];
+  boxes: Record<string, Box>;
 };
+
+const LAYOUTS: Record<string, DestinationLayout> = {
+  bangkok: {
+    viewBox: "0 0 860 710",
+    altText: "Carte illustrative des quartiers de Bangkok",
+    water: [
+      // Chao Phraya river — illustrative curve, not a surveyed path
+      { d: "M 400 0 C 360 120, 280 160, 300 300 C 315 400, 360 460, 340 710", strokeWidth: 34 },
+    ],
+    boxes: {
+      "rattanakosin-banglamphu": { x: 300, y: 130, w: 170, h: 150 },
+      "chinatown-talat-noi": { x: 330, y: 300, w: 150, h: 110 },
+      riverside: { x: 350, y: 430, w: 150, h: 120 },
+      "silom-sathorn": { x: 480, y: 450, w: 160, h: 150 },
+      "siam-chit-lom": { x: 490, y: 270, w: 160, h: 150 },
+      pratunam: { x: 470, y: 120, w: 150, h: 110 },
+      ari: { x: 440, y: 10, w: 180, h: 90 },
+      "sukhumvit-asok-phrom-phong": { x: 660, y: 290, w: 150, h: 280 },
+      thonburi: { x: 40, y: 170, w: 250, h: 430 },
+    },
+  },
+  "new-york": {
+    viewBox: "0 0 900 950",
+    altText: "Carte illustrative des quartiers de New York",
+    water: [
+      // Hudson River (west of Manhattan)
+      { d: "M 260 10 L 260 650", strokeWidth: 26 },
+      // East River (east of Manhattan, between Manhattan/Bronx and Queens/Brooklyn)
+      { d: "M 610 60 C 600 300, 600 450, 610 650", strokeWidth: 26 },
+      // Harlem River (between Manhattan and the Bronx)
+      { d: "M 330 80 C 450 60, 550 65, 605 90", strokeWidth: 16 },
+    ],
+    boxes: {
+      bronx: { x: 330, y: 10, w: 250, h: 65 },
+      harlem: { x: 330, y: 95, w: 250, h: 75 },
+      "upper-west-side": { x: 290, y: 185, w: 140, h: 95 },
+      "upper-east-side": { x: 440, y: 185, w: 140, h: 95 },
+      midtown: { x: 300, y: 295, w: 290, h: 85 },
+      chelsea: { x: 280, y: 395, w: 140, h: 85 },
+      village: { x: 440, y: 395, w: 140, h: 85 },
+      "soho-tribeca-chinatown": { x: 310, y: 495, w: 270, h: 75 },
+      "lower-manhattan": { x: 330, y: 585, w: 230, h: 75 },
+      queens: { x: 630, y: 240, w: 250, h: 400 },
+      brooklyn: { x: 380, y: 690, w: 380, h: 230 },
+    },
+  },
+};
+
+export function hasZonesMapLayout(destinationSlug: string): boolean {
+  return destinationSlug in LAYOUTS;
+}
 
 export function ZonesMap({
   zones,
+  destinationSlug,
 }: {
   zones: { id: string; slug: string; name: string; mapColor: string }[];
+  destinationSlug: string;
 }) {
-  const placed = zones.filter((z) => LAYOUT[z.slug]);
+  const layout = LAYOUTS[destinationSlug];
+  if (!layout) return null;
+  const placed = zones.filter((z) => layout.boxes[z.slug]);
 
   return (
     <div>
-      <svg viewBox="0 0 860 710" className="w-full" role="img" aria-label="Carte illustrative des quartiers de Bangkok">
-        {/* Chao Phraya river — illustrative curve, not a surveyed path */}
-        <path
-          d="M 400 0 C 360 120, 280 160, 300 300 C 315 400, 360 460, 340 710"
-          fill="none"
-          stroke="#aecbd6"
-          strokeWidth={34}
-          strokeLinecap="round"
-        />
+      <svg viewBox={layout.viewBox} className="w-full" role="img" aria-label={layout.altText}>
+        {layout.water.map((w, i) => (
+          <path key={i} d={w.d} fill="none" stroke="#aecbd6" strokeWidth={w.strokeWidth} strokeLinecap="round" />
+        ))}
         {placed.map((z) => {
-          const box = LAYOUT[z.slug];
+          const box = layout.boxes[z.slug];
           return (
             <g key={z.id}>
               <rect
@@ -99,11 +148,17 @@ export function ZoneSwatch({ color }: { color: string }) {
 }
 
 function splitLabel(name: string): string[] {
-  // Keeps the glyph map's labels on two short lines ("Sukhumvit / Asok /
-  // Phrom Phong" doesn't fit one line at this box width) by breaking on
-  // the zone-name convention's own " / " separator.
-  const parts = name.split(" / ");
-  if (parts.length <= 1) return [name];
-  if (parts.length === 2) return parts;
-  return [parts[0], parts.slice(1).join(" / ")];
+  // Keeps the glyph map's labels on two short lines (long zone names
+  // don't fit one line at this box width) by breaking on the zone-name
+  // convention's own " / " separator first (e.g. "Sukhumvit / Asok /
+  // Phrom Phong"), falling back to " & " (e.g. "Chelsea & Meatpacking
+  // District") for zone names that use that convention instead.
+  const slashParts = name.split(" / ");
+  if (slashParts.length > 1) {
+    if (slashParts.length === 2) return slashParts;
+    return [slashParts[0], slashParts.slice(1).join(" / ")];
+  }
+  const ampParts = name.split(" & ");
+  if (ampParts.length === 2) return ampParts;
+  return [name];
 }

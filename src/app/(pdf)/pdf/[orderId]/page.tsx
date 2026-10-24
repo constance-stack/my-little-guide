@@ -77,7 +77,26 @@ export default async function PdfOrderPage({
             nécessiter un long trajet. Privilégiez les stations BTS/MRT, les embarcadères, et
             regroupez vos visites par quartier.
           </div>
-          <ZonesMap zones={destinations.find((d) => d.slug === "bangkok")!.zones} />
+          <ZonesMap zones={destinations.find((d) => d.slug === "bangkok")!.zones} destinationSlug="bangkok" />
+        </section>
+      )}
+
+      {destinations.some((d) => d.slug === "new-york") && (
+        <section className="min-h-[600px] px-16 py-12" style={{ breakAfter: "page" }}>
+          <h2 className="mb-4 font-serif text-2xl text-sage-dark">Introduction</h2>
+          <p className="mb-6 text-sm leading-relaxed text-foreground/80">
+            New York se visite très bien à pied dans chaque quartier, mais se déplacer d&apos;un bout à
+            l&apos;autre de la ville demande presque toujours le métro — il fonctionne 24h/24 et reste le moyen le
+            plus rapide d&apos;éviter les embouteillages. Manhattan s&apos;étire du nord au sud sur près de 20 km :
+            mieux vaut regrouper ses visites par quartier plutôt que d&apos;essayer de zigzaguer, et ne pas
+            sous-estimer les distances entre Manhattan, Brooklyn, le Queens et le Bronx.
+          </p>
+          <div className="mb-6 rounded border border-line bg-sage-dark/5 px-4 py-3 text-sm text-foreground/80">
+            <span className="font-medium text-sage-dark">Little Tip — </span>
+            Le paiement du métro se fait directement par carte bancaire ou smartphone sans contact (OMNY) à chaque
+            tourniquet — pas besoin d&apos;acheter de ticket à l&apos;avance.
+          </div>
+          <ZonesMap zones={destinations.find((d) => d.slug === "new-york")!.zones} destinationSlug="new-york" />
         </section>
       )}
 
