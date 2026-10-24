@@ -135,7 +135,7 @@ export function InteractiveMap({
         source: "places",
         filter: ["has", "point_count"],
         paint: {
-          "circle-color": "#4a7c59",
+          "circle-color": "#a8573f",
           "circle-radius": ["step", ["get", "point_count"], 16, 10, 20, 25, 26],
           "circle-opacity": 0.9,
         },
@@ -293,7 +293,7 @@ export function InteractiveMap({
           ...f,
           properties: {
             ...f.properties,
-            color: repCategories[i]?.color ?? "#4a7c59",
+            color: repCategories[i]?.color ?? "#a8573f",
             icon: `cat-icon-${repCategories[i]?.icon ?? "default"}`,
           },
         })),

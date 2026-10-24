@@ -43,7 +43,10 @@ export async function getDestinationForGuide(
         include: {
           places: {
             where: { status: "PUBLISHED" },
-            include: { categories: { include: { category: true } } },
+            include: {
+              categories: { include: { category: true } },
+              photos: { include: { photo: true }, orderBy: { sortOrder: "asc" }, take: 1 },
+            },
           },
         },
         orderBy: { name: "asc" },

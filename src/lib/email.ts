@@ -47,11 +47,11 @@ export async function processQueuedEmailJob(jobId: string): Promise<void> {
         "— My Little Guide",
       ].join("\n"),
       html: `
-        <div style="font-family: Georgia, serif; color: #3a4a3e; max-width: 480px;">
-          <p style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 11px; color: #4a7c59;">My Little Guide</p>
+        <div style="font-family: Georgia, serif; color: #3d342b; max-width: 480px;">
+          <p style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 11px; color: #a8573f;">My Little Guide</p>
           <h1 style="font-size: 22px;">Votre guide est prêt</h1>
           <p>Votre commande est confirmée. Retrouvez votre PDF personnalisé, votre guide interactif et votre carte privée dans votre espace personnel.</p>
-          <p><a href="${appUrl}/compte" style="display:inline-block; background:#4a7c59; color:#faf8f3; padding:10px 20px; text-decoration:none; border-radius:4px;">Accéder à mon espace</a></p>
+          <p><a href="${appUrl}/compte" style="display:inline-block; background:#a8573f; color:#faf8f3; padding:10px 20px; text-decoration:none; border-radius:4px;">Accéder à mon espace</a></p>
         </div>
       `,
     });

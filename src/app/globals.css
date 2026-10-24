@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf8f3; /* blanc cassé */
-  --foreground: #3a4a3e; /* vert profond, pour le texte */
-  --color-ivory: #faf8f3;
+  /* --background (page backdrop) and --color-ivory (card surfaces) used to
+     be the exact same value, so a "bg-ivory" card on the page body had no
+     contrast of its own — it only read as a block at all because of a thin
+     border line, which is why everything looked like flat beige-on-beige.
+     Splitting them (ivory now brighter/whiter than the page backdrop)
+     gives cards real separation, reinforced by shadow-* utilities instead
+     of relying on borders alone. */
+  --background: #f3ecdd; /* beige chaud plus soutenu, fond de page */
+  --foreground: #3d342b; /* brun chaud profond, pour le texte — remplace un vert froid */
+  --color-ivory: #fdfbf5; /* quasi blanc chaud, réservé aux surfaces de carte */
   --color-sand: #f3ede0; /* beige sable */
-  --color-sage: #9fae9a; /* vert sauge */
-  --color-sage-dark: #4a7c59; /* vert profond, accents */
+  --color-sage: #b5a47e; /* taupe sable chaud — remplace un vert sauge froid */
+  --color-sage-dark: #a8573f; /* terracotta — remplace un vert forêt froid, accents */
   --color-line: #e3dcc8;
 }
 
@@ -28,5 +35,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

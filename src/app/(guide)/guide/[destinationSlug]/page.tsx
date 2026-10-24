@@ -65,7 +65,7 @@ export default async function GuideDestinationPage({
 
       <Link
         href={`/carte?destination=${destination.slug}`}
-        className="mb-8 flex items-center justify-between rounded border border-line bg-sand px-5 py-4 transition hover:border-sage-dark"
+        className="mb-8 flex items-center justify-between rounded-2xl bg-ivory px-5 py-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
       >
         <span>
           <span className="block font-serif text-lg text-sage-dark">Voir la carte</span>
@@ -86,7 +86,7 @@ export default async function GuideDestinationPage({
             desservi depuis Bangkok, est alors le point d&apos;entrée, suivi d&apos;un ferry remontant vers Koh Tao en
             passant par les deux autres îles.
           </p>
-          <div className="mb-5 rounded border border-line bg-sage-dark/5 px-4 py-3 text-sm text-foreground/80">
+          <div className="mb-5 rounded-xl border-l-4 border-sage-dark bg-ivory px-4 py-3 text-sm text-foreground/80 shadow-sm">
             <span className="font-medium text-sage-dark">Little Tip — </span>
             Koh Tao est petite mais vallonnée : un scooter est pratique pour la côte est et les points de vue, mais
             certaines routes sont pentues et sinueuses. Beaucoup de visiteurs se déplacent aussi très bien à pied ou
@@ -104,7 +104,7 @@ export default async function GuideDestinationPage({
             Bangkok est immense, et le secret pour en profiter est de regrouper ses visites par
             quartier plutôt que de traverser la ville dans tous les sens.
           </p>
-          <div className="mb-5 rounded border border-line bg-sage-dark/5 px-4 py-3 text-sm text-foreground/80">
+          <div className="mb-5 rounded-xl border-l-4 border-sage-dark bg-ivory px-4 py-3 text-sm text-foreground/80 shadow-sm">
             <span className="font-medium text-sage-dark">Little Tip — </span>
             Un hôtel qui paraît proche d&apos;une attraction sur une carte peut en réalité
             nécessiter un long trajet. Privilégiez les stations BTS/MRT, les embarcadères, et
@@ -123,7 +123,7 @@ export default async function GuideDestinationPage({
             regrouper ses visites par quartier plutôt que d&apos;essayer de zigzaguer, et ne pas sous-estimer les
             distances entre Manhattan, Brooklyn, le Queens et le Bronx.
           </p>
-          <div className="mb-5 rounded border border-line bg-sage-dark/5 px-4 py-3 text-sm text-foreground/80">
+          <div className="mb-5 rounded-xl border-l-4 border-sage-dark bg-ivory px-4 py-3 text-sm text-foreground/80 shadow-sm">
             <span className="font-medium text-sage-dark">Little Tip — </span>
             Le paiement du métro se fait directement par carte bancaire ou smartphone sans contact (OMNY) à chaque
             tourniquet — pas besoin d&apos;acheter de ticket à l&apos;avance.
@@ -144,24 +144,44 @@ export default async function GuideDestinationPage({
               {zone.name}
             </h2>
             <p className="mb-3 text-sm text-foreground/60">{zone.vibeText}</p>
-            <ul className="divide-y divide-line rounded border border-line bg-ivory">
-              {zone.places.map((place) => (
-                <li key={place.id}>
-                  <Link href={`/lieu/${place.slug}`} className="flex items-center justify-between gap-3 px-4 py-3 text-sm hover:text-sage-dark">
-                    <span className="flex items-center gap-2">
-                      {place.name}
-                      {place.indicativePrice && (
-                        <span className="rounded bg-sage-dark/10 px-1.5 py-0.5 text-xs font-medium text-sage-dark">
-                          {place.indicativePrice}
+            <ul className="space-y-2">
+              {zone.places.map((place) => {
+                const photo = place.photos[0]?.photo;
+                return (
+                  <li key={place.id}>
+                    <Link
+                      href={`/lieu/${place.slug}`}
+                      className="flex items-center gap-3 rounded-xl bg-ivory p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                    >
+                      {photo ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={photo.storageKey}
+                          alt={photo.altText}
+                          className="h-14 w-14 shrink-0 rounded-lg object-cover"
+                        />
+                      ) : (
+                        <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-sand text-sage-dark/40">
+                          <ZoneSwatch color={zone.mapColor} />
                         </span>
                       )}
-                    </span>
-                    <span className="text-xs text-foreground/50">
-                      {place.categories.map((c) => c.category.name).join(", ")}
-                    </span>
-                  </Link>
-                </li>
-              ))}
+                      <span className="min-w-0 flex-1">
+                        <span className="flex flex-wrap items-center gap-2 text-sm">
+                          {place.name}
+                          {place.indicativePrice && (
+                            <span className="rounded bg-sage-dark/10 px-1.5 py-0.5 text-xs font-medium text-sage-dark">
+                              {place.indicativePrice}
+                            </span>
+                          )}
+                        </span>
+                        <span className="block truncate text-xs text-foreground/50">
+                          {place.categories.map((c) => c.category.name).join(", ")}
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </section>
         ))}
