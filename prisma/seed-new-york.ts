@@ -121,6 +121,7 @@ const GOOD_KEYS = new Set<string>([
   "prospect-park",
   "queens-museum",
   "radio-city-music-hall",
+  "the-oculus",
   "red-rooster-harlem",
   "riverside-park",
   "rockefeller-center-top-of-the-rock",
@@ -214,6 +215,17 @@ const PLACES: PlaceDef[] = [
     whyVisit: "La vue la plus haute et la plus complète sur New York depuis Lower Manhattan.",
     littleTip: "Réservez un créneau au coucher du soleil pour voir la ville de jour puis illuminée de nuit.",
     indicativeDuration: "1h30 à 2h",
+  },
+  {
+    slug: "the-oculus",
+    name: "The Oculus",
+    zone: "lower-manhattan",
+    categories: ["incontournables", "experiences-insolites"],
+    lat: 40.7115, lng: -74.0099,
+    description: "Le hub de transport du World Trade Center, conçu par Santiago Calatrava, dont la structure blanche en forme de squelette d'oiseau s'ouvre sur un puits de lumière de 100 mètres de long.",
+    whyVisit: "L'une des structures architecturales les plus spectaculaires construites à New York depuis des décennies, et un vrai hub de transport en activité.",
+    littleTip: "La verrière centrale s'ouvre entièrement chaque 11 septembre, en hommage aux victimes des attentats.",
+    indicativeDuration: "30 à 45 min",
   },
   {
     slug: "wall-street-charging-bull",
@@ -2096,32 +2108,62 @@ async function main() {
   // also doesn't exist on Render).
   const PHOTOS_DIR = "seed-assets/new-york-photos";
 
+  // Constance's own New York photos (sent 2026-10-24), swapped in over the
+  // Wikimedia ones for these 8 places — same seed-assets file, just
+  // credited as a personal photo instead of a Wikimedia source. The file
+  // on disk already has Constance's photo in it; this only changes which
+  // metadata branch below applies.
+  const PERSONAL_PHOTO_SLUGS = new Set<string>([
+    "hudson-yards-vessel",
+    "summit-one-vanderbilt",
+    "grand-central-terminal",
+    "moma",
+    "wall-street-charging-bull",
+    "little-island",
+    "the-oculus",
+    "dumbo-washington-street",
+  ]);
+
   let photoCount = 0;
   for (const def of PLACES) {
     let photoId: string | null = null;
     if (GOOD_KEYS.has(def.slug)) {
+      const isPersonal = PERSONAL_PHOTO_SLUGS.has(def.slug);
       const entry = manifest.find((m) => m.slug === def.slug && m.found && m.local_path);
       const srcPath = join(PHOTOS_DIR, `${def.slug}.jpg`);
-      if (entry) {
-        const ext = "jpg";
-        const storageKey = `photos/${def.slug}.${ext}`;
+      if (entry || isPersonal) {
+        const storageKey = `photos/${def.slug}.jpg`;
         const destPath = join(STORAGE_ROOT, storageKey);
         await mkdir(dirname(destPath), { recursive: true });
         await copyFile(srcPath, destPath);
-        const artist = (entry.artist ?? "").split("\n")[0].replace(/Feel free to.*/i, "").trim();
         const photoStorageKey = `/api/storage/${storageKey}`;
         const existingPhoto = await prisma.photo.findFirst({ where: { storageKey: photoStorageKey } });
-        const photoData = {
-          storageKey: photoStorageKey,
-          photographer: artist || "Non attribué (licence le permettant)",
-          sourceName: "Wikimedia Commons",
-          sourceUrl: entry.source_url ?? "",
-          licenseType: entry.license ?? "",
-          verifiedAt: new Date(),
-          commercialOk: true,
-          attributionText: artist ? `Photo : ${artist}, via Wikimedia Commons (${entry.license})` : null,
-          altText: def.altText ?? def.name,
-        };
+        const photoData = isPersonal
+          ? {
+              storageKey: photoStorageKey,
+              photographer: "Constance Caron-Dufour",
+              sourceName: "Photo personnelle",
+              sourceUrl: "",
+              licenseType: "Tous droits réservés — photo personnelle",
+              verifiedAt: new Date(),
+              commercialOk: true,
+              attributionText: null,
+              altText: def.altText ?? def.name,
+            }
+          : (() => {
+              const artist = (entry!.artist ?? "").split("\n")[0].replace(/Feel free to.*/i, "").trim();
+              return {
+                storageKey: photoStorageKey,
+                photographer: artist || "Non attribué (licence le permettant)",
+                sourceName: "Wikimedia Commons",
+                sourceUrl: entry!.source_url ?? "",
+                licenseType: entry!.license ?? "",
+                verifiedAt: new Date(),
+                commercialOk: true,
+                attributionText: artist ? `Photo : ${artist}, via Wikimedia Commons (${entry!.license})` : null,
+                altText: def.altText ?? def.name,
+              };
+            })();
         const photo = existingPhoto
           ? await prisma.photo.update({ where: { id: existingPhoto.id }, data: photoData })
           : await prisma.photo.create({ data: photoData });
