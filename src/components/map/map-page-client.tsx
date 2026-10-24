@@ -309,7 +309,7 @@ export function MapPageClient({
                 {pinError && <p className="mb-2 text-xs text-red-700">{pinError}</p>}
 
                 {addressResults && (
-                  <ul className="mb-2 divide-y divide-line rounded border border-line bg-ivory">
+                  <ul className="mb-2 divide-y divide-line rounded-xl bg-ivory shadow-md">
                     {addressResults.length === 0 && (
                       <li className="px-2 py-2 text-xs text-foreground/50">Aucune adresse trouvée.</li>
                     )}

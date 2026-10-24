@@ -33,9 +33,9 @@ export default async function FavorisPage() {
           {Array.from(byDestination.entries()).map(([slug, group]) => (
             <section key={slug}>
               <h2 className="mb-3 font-serif text-lg text-foreground">{group.name}</h2>
-              <ul className="divide-y divide-line rounded border border-line bg-ivory">
+              <ul className="space-y-2">
                 {group.places.map((fav) => (
-                  <li key={fav.placeId} className="flex items-center justify-between px-4 py-3 text-sm">
+                  <li key={fav.placeId} className="flex items-center justify-between rounded-xl bg-ivory px-4 py-3 text-sm shadow-sm">
                     <div>
                       <Link href={`/lieu/${fav.place.slug}`} className="hover:text-sage-dark">
                         {fav.place.name}

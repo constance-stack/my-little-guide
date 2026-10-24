@@ -67,9 +67,9 @@ export function PanierContent() {
 
   return (
     <div>
-      <ul className="mb-6 divide-y divide-line rounded border border-line bg-ivory">
+      <ul className="mb-6 space-y-2">
         {lines.map((line) => (
-          <li key={line.key} className="flex items-center justify-between px-4 py-3 text-sm">
+          <li key={line.key} className="flex items-center justify-between rounded-xl bg-ivory px-4 py-3 text-sm shadow-sm">
             <span>{line.label}</span>
             <div className="flex items-center gap-3">
               <span>{(line.amountCents / 100).toFixed(2)} €</span>

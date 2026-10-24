@@ -22,10 +22,10 @@ export function GuideSearch({ places }: { places: SearchablePlace[] }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Rechercher dans ce guide…"
-        className="w-full rounded border border-line bg-ivory px-3 py-2 text-sm outline-none focus:border-sage-dark"
+        className="w-full rounded-xl bg-ivory px-3 py-2 text-sm shadow-sm outline-none focus:border-sage-dark"
       />
       {query.trim() && (
-        <ul className="mt-3 divide-y divide-line rounded border border-line bg-ivory">
+        <ul className="mt-3 divide-y divide-line rounded-xl bg-ivory shadow-md">
           {filtered.length === 0 ? (
             <li className="px-4 py-3 text-sm text-foreground/50">Aucun résultat.</li>
           ) : (

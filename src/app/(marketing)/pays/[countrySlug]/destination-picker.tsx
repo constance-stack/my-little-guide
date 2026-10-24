@@ -22,13 +22,16 @@ export function DestinationPicker({ destinations }: { destinations: Destination[
 
   return (
     <div>
-      <ul className="divide-y divide-line rounded border border-line bg-ivory">
+      <ul className="space-y-2">
         {destinations.map((dest) => {
           const info = byId.get(dest.id);
           const owned = info?.owned ?? false;
           const inCart = has(dest.id);
           return (
-            <li key={dest.id} className="flex items-center justify-between px-4 py-3">
+            <li
+              key={dest.id}
+              className="flex items-center justify-between rounded-xl bg-ivory px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
               <div>
                 <p className="text-sm font-medium">{dest.name}</p>
                 <p className="text-xs text-foreground/50">
@@ -42,7 +45,7 @@ export function DestinationPicker({ destinations }: { destinations: Destination[
                 <button
                   type="button"
                   onClick={() => toggle(dest.id)}
-                  className={`rounded px-3 py-1.5 text-xs ${
+                  className={`rounded-lg px-3 py-1.5 text-xs transition ${
                     inCart ? "bg-sage-dark text-ivory" : "border border-line text-foreground/70 hover:border-sage-dark"
                   }`}
                 >
