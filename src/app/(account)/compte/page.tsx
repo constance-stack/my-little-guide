@@ -4,6 +4,7 @@ import { auth, signOut } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { entitledDestinationIds } from "@/lib/entitlements";
 import { DeleteAccountButton } from "@/components/account/delete-account-button";
+import { updateAccountEmail, updateAccountPassword } from "./actions";
 
 export default async function ComptePage({
   searchParams,
@@ -156,6 +157,65 @@ function AdminHome({ email }: { email: string }) {
               {l.label}
             </Link>
           ))}
+        </div>
+
+        <div className="mb-10 space-y-6 rounded-xl bg-ivory p-5 shadow-sm">
+          <p className="text-xs uppercase tracking-widest text-sage-dark">Sécurité du compte</p>
+
+          <form action={updateAccountEmail} className="space-y-2">
+            <p className="text-sm font-medium">Changer l&apos;email de connexion</p>
+            <input
+              type="email"
+              name="newEmail"
+              required
+              placeholder="Nouvel email"
+              className="w-full rounded border border-line bg-sand px-3 py-2 text-sm"
+            />
+            <input
+              type="password"
+              name="currentPassword"
+              required
+              placeholder="Mot de passe actuel"
+              className="w-full rounded border border-line bg-sand px-3 py-2 text-sm"
+            />
+            <button type="submit" className="rounded bg-sage-dark px-4 py-2 text-sm text-ivory hover:opacity-90">
+              Changer l&apos;email
+            </button>
+          </form>
+
+          <form action={updateAccountPassword} className="space-y-2 border-t border-line pt-5">
+            <p className="text-sm font-medium">Changer le mot de passe</p>
+            <input
+              type="password"
+              name="currentPassword"
+              required
+              placeholder="Mot de passe actuel"
+              className="w-full rounded border border-line bg-sand px-3 py-2 text-sm"
+            />
+            <input
+              type="password"
+              name="newPassword"
+              required
+              minLength={8}
+              placeholder="Nouveau mot de passe (8 caractères min.)"
+              className="w-full rounded border border-line bg-sand px-3 py-2 text-sm"
+            />
+            <input
+              type="password"
+              name="newPasswordConfirm"
+              required
+              minLength={8}
+              placeholder="Confirmer le nouveau mot de passe"
+              className="w-full rounded border border-line bg-sand px-3 py-2 text-sm"
+            />
+            <button type="submit" className="rounded bg-sage-dark px-4 py-2 text-sm text-ivory hover:opacity-90">
+              Changer le mot de passe
+            </button>
+          </form>
+
+          <p className="text-xs text-foreground/50">
+            Changer l&apos;email ou le mot de passe vous déconnecte — reconnectez-vous ensuite avec les nouveaux identifiants.
+          </p>
         </div>
 
         <form
