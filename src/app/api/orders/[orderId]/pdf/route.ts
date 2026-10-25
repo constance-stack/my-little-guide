@@ -25,11 +25,21 @@ import { exists } from "@/lib/storage";
  * self-refreshing waiting page; once the file is ready, a later refresh
  * hits the fast path below and redirects straight to it.
  */
+// request.url reflects what the Node process itself sees the incoming
+// request as — behind Render's reverse proxy (TLS terminated, forwarded to
+// the container's internal port) that resolves to something like
+// http://localhost:10000/..., not the public address. Building a redirect
+// Location from it sends the browser to a host that only exists inside the
+// container, which it obviously can't reach. NEXTAUTH_URL is already the
+// app's canonical public URL elsewhere in this codebase (pdf/page.tsx's
+// appUrl, email.ts) — use that instead for both redirects below.
+const appUrl = process.env.NEXTAUTH_URL ?? "http://localhost:3000";
+
 export async function GET(request: Request, { params }: { params: Promise<{ orderId: string }> }) {
   const { orderId } = await params;
   const session = await auth();
   if (!session?.user) {
-    return NextResponse.redirect(new URL(`/connexion?callbackUrl=/compte`, request.url));
+    return NextResponse.redirect(new URL(`/connexion?callbackUrl=/compte`, appUrl));
   }
 
   const order = await prisma.order.findUnique({ where: { id: orderId } });
@@ -52,7 +62,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ orde
   const fileStillThere = job.status === "DONE" && job.storageKey ? await exists(job.storageKey) : false;
 
   if (job.status === "DONE" && fileStillThere) {
-    return NextResponse.redirect(new URL(`/api/storage/${job.storageKey}`, request.url));
+    return NextResponse.redirect(new URL(`/api/storage/${job.storageKey}`, appUrl));
   }
 
   if (job.status === "FAILED" && job.attempts >= 3) {
