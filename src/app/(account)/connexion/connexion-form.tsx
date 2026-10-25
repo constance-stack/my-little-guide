@@ -6,6 +6,7 @@ import { signIn } from "next-auth/react";
 export function ConnexionForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(true);
   const [magicSent, setMagicSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
@@ -14,7 +15,12 @@ export function ConnexionForm() {
     e.preventDefault();
     setError(null);
     setPending(true);
-    const result = await signIn("credentials", { email, password, redirect: false });
+    const result = await signIn("credentials", {
+      email,
+      password,
+      remember: remember ? "true" : "false",
+      redirect: false,
+    });
     setPending(false);
     if (result?.error) {
       setError("E-mail ou mot de passe incorrect.");
@@ -61,6 +67,14 @@ export function ConnexionForm() {
             className="w-full rounded border border-line bg-ivory px-3 py-2 text-sm outline-none focus:border-sage-dark"
           />
         </div>
+        <label className="flex items-center gap-2 text-sm text-foreground/70">
+          <input
+            type="checkbox"
+            checked={remember}
+            onChange={(e) => setRemember(e.target.checked)}
+          />
+          Rester connecté(e) (90 jours sur cet appareil)
+        </label>
         {error && <p className="text-sm text-red-700">{error}</p>}
         <button
           type="submit"

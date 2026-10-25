@@ -10,5 +10,15 @@ declare module "next-auth" {
 
   interface User {
     role?: "USER" | "ADMIN";
+    // "Se souvenir de moi" on /connexion — carried from Credentials.authorize()
+    // into the jwt callback, then read by the custom jwt.encode() to pick a
+    // short vs. long cookie lifetime for this specific sign-in.
+    remember?: boolean;
+  }
+}
+
+declare module "next-auth/jwt" {
+  interface JWT {
+    remember?: boolean;
   }
 }
