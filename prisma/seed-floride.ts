@@ -1,0 +1,1377 @@
+/**
+ * Floride — third USA destination (guide name is "Floride", not "Road
+ * trip Floride" — this is a road-trip-style multi-region guide under
+ * the hood, but the display name stays simple), built from the admin
+ * "Nouvelle destination" request queue (destinationRequest id
+ * cmvmb9kp600022adteud73xmd): "la tu fais vraiment la Floride du nord
+ * au sud sauf Miami vu qu'il y a un autre guide pour c'est un peu un
+ * guide qui complète miami pour ceux qui souhaite visiter la Floride"
+ * — Miami, Miami Beach and Coral Gables are deliberately excluded
+ * (covered by prisma/seed-miami.ts), as is anything strictly a zoo or
+ * marine-mammal-captivity park (standing rule) — aquariums, butterfly
+ * conservatories and wildlife refuges without captive animals stayed.
+ * Same pattern as every other destination: real places, real
+ * coordinates, Wikimedia Commons photos only when a genuine match
+ * exists.
+ */
+import { mkdir, copyFile, readFile } from "node:fs/promises";
+import { dirname, join } from "node:path";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "../src/generated/prisma/client";
+
+const isRemote = !process.env.DATABASE_URL?.includes("localhost");
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+  ssl: isRemote ? { rejectUnauthorized: false } : undefined,
+});
+const prisma = new PrismaClient({ adapter });
+
+const STORAGE_ROOT = process.env.STORAGE_ROOT ?? "./storage";
+
+type PhotoManifestEntry = {
+  slug: string;
+  found: boolean;
+  title?: string;
+  artist?: string;
+  license?: string;
+  source_url?: string;
+  local_path?: string;
+};
+
+// Filled in after photo sourcing (same two-pass pattern as every other
+// destination this session) — left empty for the first seed pass.
+const GOOD_KEYS = new Set<string>([
+  "amelia-island",
+  "anastasia-state-park",
+  "anhinga-trail",
+  "blue-heaven-key-west",
+  "bonnet-house",
+  "bridge-of-lions",
+  "canaveral-national-seashore",
+  "captiva-island",
+  "castillo-de-san-marcos",
+  "clearwater-marine-aquarium",
+  "cocoa-beach",
+  "cocoa-beach-pier",
+  "cocoa-village",
+  "colonial-quarter",
+  "cummer-museum",
+  "curtis-hixon-waterfront-park",
+  "dali-museum",
+  "daytona-beach",
+  "daytona-beach-boardwalk-pier",
+  "disney-springs",
+  "edison-ford-winter-estates",
+  "epcot",
+  "ernest-hemingway-home",
+  "everglades-national-park",
+  "fort-lauderdale-beach",
+  "fort-myers-beach",
+  "fountain-of-youth-archaeological-park",
+  "honeymoon-island-state-park",
+  "hugh-taylor-birch-state-park",
+  "icon-park-wheel",
+  "islands-of-adventure",
+  "jacksonville-riverwalk",
+  "john-pennekamp-coral-reef-state-park",
+  "kennedy-space-center",
+  "key-largo",
+  "key-west-butterfly-conservatory",
+  "key-west-cemetery",
+  "lake-eola-park",
+  "las-olas-boulevard",
+  "mallory-square-sunset",
+  "marie-selby-botanical-gardens",
+  "mission-nombre-de-dios",
+  "naples-botanical-garden",
+  "naples-pier",
+  "orlando-science-center",
+  "ponce-de-leon-inlet-lighthouse",
+  "ripleys-believe-it-or-not-st-augustine",
+  "siesta-key-beach",
+  "society-of-the-four-arts",
+  "southernmost-point-buoy",
+  "st-augustine-lighthouse",
+  "st-pete-pier",
+  "tampa-riverwalk",
+  "tampa-theatre",
+  "ten-thousand-islands",
+  "the-ringling",
+  "universal-studios-florida",
+  "walt-disney-world-magic-kingdom",
+]);
+
+type PlaceDef = {
+  slug: string;
+  name: string;
+  zone: string;
+  categories: string[];
+  lat: number;
+  lng: number;
+  description: string;
+  whyVisit: string;
+  littleTip: string;
+  indicativeDuration?: string;
+  indicativePrice?: string;
+  altText?: string;
+};
+
+const PLACES: PlaceDef[] = [
+  // ---------- St. Augustine ----------
+  {
+    slug: "st-augustine-old-town",
+    name: "Vieille ville de St. Augustine",
+    zone: "st-augustine",
+    categories: ["incontournables", "temples-patrimoine", "quartiers-balades"],
+    lat: 29.8947, lng: -81.3145,
+    description: "Le centre historique de la plus ancienne ville habitée en permanence des États-Unis, fondée par les Espagnols en 1565, avec ses rues pavées et son architecture coloniale espagnole.",
+    whyVisit: "Un pan d'histoire américaine antérieur de 50 ans à l'arrivée du Mayflower, dans un décor espagnol unique en Floride.",
+    littleTip: "Le petit train touristique (Old Town Trolley) permet de se repérer rapidement avant d'explorer à pied.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "castillo-de-san-marcos",
+    name: "Castillo de San Marcos",
+    zone: "st-augustine",
+    categories: ["incontournables", "temples-patrimoine"],
+    lat: 29.8977, lng: -81.3123,
+    description: "La plus ancienne fortification en maçonnerie encore debout aux États-Unis continentaux, construite par les Espagnols en corail coquillier (coquina) à partir de 1672.",
+    whyVisit: "Un fort du XVIIe siècle remarquablement préservé, avec vue sur la baie de Matanzas.",
+    littleTip: "Des démonstrations de tir au canon historique ont lieu certains week-ends — vérifiez le programme du jour.",
+    indicativeDuration: "1h30 à 2h",
+  },
+  {
+    slug: "st-augustine-lighthouse",
+    name: "St. Augustine Lighthouse & Maritime Museum",
+    zone: "st-augustine",
+    categories: ["temples-patrimoine", "points-de-vue"],
+    lat: 29.8847, lng: -81.2881,
+    description: "Un phare de 1874 toujours en activité, que l'on peut gravir par ses 219 marches pour une vue à 360° sur St. Augustine et l'océan Atlantique.",
+    whyVisit: "La meilleure vue d'ensemble sur la ville et la côte, depuis l'un des phares historiques les mieux conservés de Floride.",
+    littleTip: "Les visites au coucher du soleil se réservent à l'avance et partent vite en haute saison.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "flagler-college",
+    name: "Flagler College",
+    zone: "st-augustine",
+    categories: ["temples-patrimoine"],
+    lat: 29.8955, lng: -81.3140,
+    description: "Un ancien hôtel de luxe de 1888 construit par le magnat Henry Flagler, aujourd'hui une université, avec un hall Tiffany et une architecture Renaissance espagnole spectaculaire.",
+    whyVisit: "L'un des plus beaux intérieurs de Floride, avec des vitraux Tiffany d'origine, ouvert aux visites guidées.",
+    littleTip: "Les visites guidées de la rotonde et de la salle à manger partent régulièrement depuis le hall d'entrée.",
+    indicativeDuration: "45 min (visite guidée)",
+  },
+  {
+    slug: "st-george-street",
+    name: "St. George Street",
+    zone: "st-augustine",
+    categories: ["shopping", "quartiers-balades"],
+    lat: 29.8958, lng: -81.3132,
+    description: "La rue piétonne historique de St. Augustine, bordée de boutiques, de confiseries et de maisons coloniales espagnoles restaurées.",
+    whyVisit: "La meilleure artère pour flâner et sentir l'ambiance de la vieille ville, loin de la circulation.",
+    littleTip: "Plusieurs confiseries artisanales proposent des dégustations gratuites en chemin.",
+    indicativeDuration: "1h",
+  },
+  {
+    slug: "fountain-of-youth-archaeological-park",
+    name: "Fountain of Youth Archaeological Park",
+    zone: "st-augustine",
+    categories: ["experiences-insolites", "temples-patrimoine"],
+    lat: 29.9035, lng: -81.3147,
+    description: "Le site présenté comme le lieu de débarquement de Ponce de León en 1513, avec un site archéologique tequesta et une source d'eau que les visiteurs peuvent goûter.",
+    whyVisit: "Un mélange de légende (la fontaine de jouvence) et de véritable site archéologique précolombien.",
+    littleTip: "La dégustation de l'eau de la source fait partie du rituel classique de la visite, à prendre au second degré.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "anastasia-state-park",
+    name: "Anastasia State Park",
+    zone: "st-augustine",
+    categories: ["quartiers-balades"],
+    lat: 29.8840, lng: -81.2789,
+    description: "Un parc d'État avec 6 km de plage préservée, dunes et lagune, juste en face de la vieille ville de St. Augustine.",
+    whyVisit: "La plage la plus proche et la plus naturelle pour compléter une journée de visite de la vieille ville.",
+    littleTip: "La lagune intérieure du parc est idéale pour le kayak, à louer sur place.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "colonial-quarter",
+    name: "Colonial Quarter",
+    zone: "st-augustine",
+    categories: ["temples-patrimoine", "experiences-insolites"],
+    lat: 29.8949, lng: -81.3133,
+    description: "Un musée vivant en plein air qui recrée 200 ans d'histoire coloniale espagnole, avec démonstrations d'artisans en costume d'époque.",
+    whyVisit: "Une façon immersive de comprendre l'histoire espagnole de St. Augustine, avec des interprètes en costume.",
+    littleTip: "Une tour de guet reconstituée offre une vue sur les toits de la vieille ville.",
+    indicativeDuration: "1h30",
+  },
+  {
+    slug: "ripleys-believe-it-or-not-st-augustine",
+    name: "Ripley's Believe It or Not! St. Augustine",
+    zone: "st-augustine",
+    categories: ["experiences-insolites"],
+    lat: 29.8938, lng: -81.3127,
+    description: "Le tout premier musée Ripley's au monde, ouvert en 1950 dans un manoir de style Maure, consacré aux curiosités et phénomènes insolites collectés par Robert Ripley.",
+    whyVisit: "L'original de toute une franchise mondiale de musées de curiosités, installé dans un bâtiment historique à lui seul insolite.",
+    littleTip: "Le bâtiment lui-même, le Castle Warden, est réputé hanté — une anecdote que les guides locaux ne manquent pas de raconter.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "mission-nombre-de-dios",
+    name: "Mission Nombre de Dios",
+    zone: "st-augustine",
+    categories: ["temples-patrimoine"],
+    lat: 29.9027, lng: -81.3134,
+    description: "Le site de la toute première messe catholique célébrée sur le sol des États-Unis en 1565, marqué par une immense croix en acier de 63 mètres visible depuis toute la ville.",
+    whyVisit: "Le site fondateur de la présence européenne permanente en Amérique du Nord.",
+    littleTip: "Les jardins en bord de baie, calmes et gratuits, offrent une belle vue sur la croix et l'eau.",
+    indicativeDuration: "30 à 45 min",
+  },
+  {
+    slug: "bridge-of-lions",
+    name: "Bridge of Lions",
+    zone: "st-augustine",
+    categories: ["points-de-vue", "quartiers-balades"],
+    lat: 29.8907, lng: -81.3098,
+    description: "Un pont basculant de style méditerranéen de 1927, gardé par deux lions en marbre de Carrare, qui relie la vieille ville à Anastasia Island.",
+    whyVisit: "L'un des ponts les plus photographiés de Floride, avec une belle vue sur la baie de Matanzas.",
+    littleTip: "La traversée à pied au coucher du soleil offre une vue dégagée sur le phare au loin.",
+    indicativeDuration: "20 à 30 min",
+  },
+
+  // ---------- Jacksonville & Daytona Beach ----------
+  {
+    slug: "jacksonville-riverwalk",
+    name: "Jacksonville Riverwalk",
+    zone: "jacksonville-daytona",
+    categories: ["quartiers-balades", "points-de-vue"],
+    lat: 30.3200, lng: -81.6557,
+    description: "Une promenade aménagée le long de la rivière St. Johns, la plus large de Floride à cet endroit, avec vue sur la skyline de Jacksonville.",
+    whyVisit: "Une bonne introduction à Jacksonville, souvent survolée dans les road trips en Floride.",
+    littleTip: "Le water taxi gratuit permet de traverser la rivière pour varier les points de vue sur la skyline.",
+    indicativeDuration: "45 min à 1h",
+  },
+  {
+    slug: "cummer-museum",
+    name: "Cummer Museum of Art and Gardens",
+    zone: "jacksonville-daytona",
+    categories: ["temples-patrimoine", "quartiers-balades"],
+    lat: 30.3160, lng: -81.6766,
+    description: "Un musée d'art en bord de rivière à Jacksonville, avec des jardins à l'italienne et à l'anglaise classés parmi les plus beaux de Floride.",
+    whyVisit: "Une collection d'art solide dans un cadre de jardins historiques particulièrement soigné.",
+    littleTip: "Les jardins se visitent gratuitement certains jours — vérifiez les horaires avant de venir uniquement pour cela.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "amelia-island",
+    name: "Amelia Island (Fernandina Beach)",
+    zone: "jacksonville-daytona",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 30.6697, lng: -81.4626,
+    description: "Une île côtière juste au nord de Jacksonville, avec le centre historique victorien de Fernandina Beach et des plages bordées de chênes et de dunes.",
+    whyVisit: "Une étape charmante et moins touristique pour commencer le road trip côte atlantique en douceur.",
+    littleTip: "Centre Street, à Fernandina Beach, concentre les meilleures adresses de restaurants et de boutiques du centre historique.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "daytona-beach",
+    name: "Daytona Beach",
+    zone: "jacksonville-daytona",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 29.2108, lng: -81.0228,
+    description: "Une plage de sable dur si compacte que les voitures ont longtemps pu y rouler et y courir — une tradition qui a donné naissance aux débuts du NASCAR.",
+    whyVisit: "L'une des rares plages des États-Unis où l'on peut encore conduire sur le sable (à certaines sections, contre péage).",
+    littleTip: "La conduite sur plage est limitée à certaines zones et certaines saisons — vérifiez les règles en vigueur avant de vous y risquer.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "daytona-international-speedway",
+    name: "Daytona International Speedway",
+    zone: "jacksonville-daytona",
+    categories: ["incontournables", "experiences-insolites"],
+    lat: 29.1853, lng: -81.0709,
+    description: "Le circuit mythique du NASCAR, surnommé le « World Center of Racing », qui accueille chaque année la célèbre course Daytona 500.",
+    whyVisit: "Un lieu culte pour les passionnés de sport automobile, avec des visites du circuit même en dehors des courses.",
+    littleTip: "Le tour en tribune et sur la piste elle-même se réserve via les visites guidées proposées toute l'année.",
+    indicativeDuration: "1h30 (visite guidée)",
+  },
+  {
+    slug: "ponce-de-leon-inlet-lighthouse",
+    name: "Ponce de Leon Inlet Lighthouse",
+    zone: "jacksonville-daytona",
+    categories: ["temples-patrimoine", "points-de-vue"],
+    lat: 29.0797, lng: -80.9273,
+    description: "Le plus haut phare de Floride (53 mètres), toujours en activité, avec un petit musée maritime dans les anciens bâtiments des gardiens.",
+    whyVisit: "Une vue impressionnante sur la côte depuis le sommet, et l'un des plus beaux phares historiques de Floride.",
+    littleTip: "203 marches à gravir — prévoyez de l'eau, surtout en été.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "daytona-beach-boardwalk-pier",
+    name: "Daytona Beach Boardwalk & Pier",
+    zone: "jacksonville-daytona",
+    categories: ["quartiers-balades", "experiences-insolites"],
+    lat: 29.2127, lng: -81.0073,
+    description: "Une promenade en bois historique avec jetée s'avançant dans l'océan, manèges rétro et ambiance balnéaire populaire des années 1920.",
+    whyVisit: "L'ambiance de station balnéaire américaine classique, avec vue sur la plage depuis la jetée.",
+    littleTip: "La grande roue au bout de la jetée offre une belle vue sur toute la plage de Daytona.",
+    indicativeDuration: "1h",
+  },
+
+  // ---------- Orlando & parcs ----------
+  {
+    slug: "walt-disney-world-magic-kingdom",
+    name: "Magic Kingdom (Walt Disney World)",
+    zone: "orlando-parks",
+    categories: ["incontournables", "activites-famille"],
+    lat: 28.4177, lng: -81.5812,
+    description: "Le parc d'attractions le plus visité au monde, dominé par le château de Cendrillon, centré sur l'univers classique des contes Disney.",
+    whyVisit: "Le parc Disney original, référence mondiale des parcs à thème pour toute la famille.",
+    littleTip: "Réservez vos attractions prioritaires via l'application officielle dès l'ouverture des réservations.",
+    indicativeDuration: "journée complète",
+  },
+  {
+    slug: "epcot",
+    name: "EPCOT (Walt Disney World)",
+    zone: "orlando-parks",
+    categories: ["incontournables", "activites-famille"],
+    lat: 28.3747, lng: -81.5494,
+    description: "Le parc Disney consacré à l'innovation et aux cultures du monde, organisé autour du pavillon sphérique Spaceship Earth et d'un tour des pays du World Showcase.",
+    whyVisit: "Une expérience Disney différente, mêlant attractions technologiques et gastronomie internationale.",
+    littleTip: "Le World Showcase se visite très bien en fin de journée, avec un dîner dans le pays de son choix.",
+    indicativeDuration: "journée complète",
+  },
+  {
+    slug: "universal-studios-florida",
+    name: "Universal Studios Florida",
+    zone: "orlando-parks",
+    categories: ["incontournables", "activites-famille"],
+    lat: 28.4743, lng: -81.4677,
+    description: "Un parc à thème centré sur le cinéma et la télévision, avec des attractions tirées de grandes franchises hollywoodiennes.",
+    whyVisit: "Une alternative à Disney tournée vers le cinéma, avec des attractions à sensations plus fortes.",
+    littleTip: "Le pass Universal Express permet de limiter l'attente sur les attractions les plus populaires, moyennant un supplément.",
+    indicativeDuration: "journée complète",
+  },
+  {
+    slug: "islands-of-adventure",
+    name: "Universal's Islands of Adventure",
+    zone: "orlando-parks",
+    categories: ["incontournables", "activites-famille"],
+    lat: 28.4722, lng: -81.4691,
+    description: "Le parc voisin d'Universal Studios, qui abrite le Wizarding World of Harry Potter, recréation immersive de Poudlard et du Chemin de Traverse.",
+    whyVisit: "L'une des reconstitutions thématiques les plus abouties jamais créées dans un parc d'attractions.",
+    littleTip: "Le Hogwarts Express relie ce parc à Universal Studios — un billet combiné est nécessaire pour l'emprunter.",
+    indicativeDuration: "journée complète",
+  },
+  {
+    slug: "disney-springs",
+    name: "Disney Springs",
+    zone: "orlando-parks",
+    categories: ["shopping", "restaurants"],
+    lat: 28.3701, lng: -81.5159,
+    description: "Un quartier commerçant et de restauration en plein air appartenant à Disney, accessible gratuitement sans billet de parc.",
+    whyVisit: "Une soirée shopping et restaurants sans avoir à payer l'entrée d'un parc à thème.",
+    littleTip: "Le parking est gratuit, ce qui en fait une bonne option de soirée même sans visiter les parcs ce jour-là.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "icon-park-wheel",
+    name: "The Wheel at ICON Park",
+    zone: "orlando-parks",
+    categories: ["points-de-vue", "experiences-insolites"],
+    lat: 28.4446, lng: -81.4688,
+    description: "Une grande roue d'observation de 120 mètres de haut sur International Drive, offrant une vue dégagée sur les parcs à thème d'Orlando.",
+    whyVisit: "Le meilleur point de vue sur l'étendue des parcs d'Orlando, visible même sans acheter de billet de parc.",
+    littleTip: "Le tour est particulièrement spectaculaire au coucher du soleil, quand les parcs s'illuminent au loin.",
+    indicativeDuration: "30 à 45 min",
+  },
+  {
+    slug: "legoland-florida",
+    name: "LEGOLAND Florida",
+    zone: "orlando-parks",
+    categories: ["incontournables", "activites-famille"],
+    lat: 27.9908, lng: -81.6956,
+    description: "Un parc à thème construit autour de l'univers LEGO, avec un parc aquatique attenant, à environ 45 minutes au sud d'Orlando.",
+    whyVisit: "Le meilleur parc à thème d'Orlando pour les plus jeunes enfants, à taille plus humaine que les grands parcs.",
+    littleTip: "Miniland, avec ses villes américaines reconstituées en briques LEGO, est le clou de la visite même pour les adultes.",
+    indicativeDuration: "demi-journée à journée complète",
+  },
+  {
+    slug: "orlando-science-center",
+    name: "Orlando Science Center",
+    zone: "orlando-parks",
+    categories: ["activites-famille", "temples-patrimoine"],
+    lat: 28.5728, lng: -81.3717,
+    description: "Un musée des sciences interactif de 4 étages avec planétarium, loin de l'agitation des parcs à thème, dans le centre-ville d'Orlando.",
+    whyVisit: "Une bonne alternative aux grands parcs pour une journée plus calme et éducative en famille.",
+    littleTip: "Le planétarium propose plusieurs séances par jour — réservez votre créneau à l'arrivée.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "lake-eola-park",
+    name: "Lake Eola Park",
+    zone: "orlando-parks",
+    categories: ["quartiers-balades", "points-de-vue"],
+    lat: 28.5444, lng: -81.3718,
+    description: "Le parc central du centre-ville d'Orlando, autour d'un lac avec vue sur la skyline, où l'on peut louer des pédalos en forme de cygne.",
+    whyVisit: "Un aperçu du vrai centre-ville d'Orlando, loin des parcs à thème, avec une jolie vue sur la skyline.",
+    littleTip: "Les pédalos-cygnes, emblématiques du lac, sont une activité classique et amusante en famille.",
+    indicativeDuration: "45 min à 1h",
+  },
+  {
+    slug: "winter-park-scenic-boat-tour",
+    name: "Winter Park Scenic Boat Tour",
+    zone: "orlando-parks",
+    categories: ["experiences-insolites", "quartiers-balades"],
+    lat: 28.5977, lng: -81.3515,
+    description: "Une excursion en bateau d'une heure à travers une chaîne de lacs et de canaux bordés de propriétés historiques, dans la charmante ville de Winter Park.",
+    whyVisit: "Une façon paisible et insolite de voir l'envers du décor résidentiel chic d'Orlando, sur l'eau.",
+    littleTip: "Cette excursion existe sans interruption depuis 1938 — l'une des plus anciennes attractions touristiques de la région.",
+    indicativeDuration: "1h",
+  },
+
+  // ---------- Space Coast ----------
+  {
+    slug: "kennedy-space-center",
+    name: "Kennedy Space Center Visitor Complex",
+    zone: "space-coast",
+    categories: ["incontournables", "experiences-insolites"],
+    lat: 28.5236, lng: -80.6830,
+    description: "Le centre spatial d'où sont parties toutes les missions lunaires Apollo et la majorité des vols de la NASA, aujourd'hui ouvert au public avec de vraies fusées Saturn V.",
+    whyVisit: "L'un des sites les plus chargés d'histoire spatiale au monde, avec une authentique fusée Saturn V exposée à l'horizontale.",
+    littleTip: "Vérifiez le calendrier des lancements avant votre visite — en assister à un en direct depuis le site est une expérience à part entière.",
+    indicativeDuration: "demi-journée à journée complète",
+  },
+  {
+    slug: "cocoa-beach",
+    name: "Cocoa Beach",
+    zone: "space-coast",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 28.3200, lng: -80.6076,
+    description: "La plage la plus connue de la Space Coast, réputée pour ses vagues de surf régulières et sa vue sur les lancements de fusées depuis le sable.",
+    whyVisit: "L'une des meilleures plages de Floride pour s'initier au surf, avec parfois une fusée visible au décollage à l'horizon.",
+    littleTip: "Les écoles de surf locales proposent des cours d'une heure pour tous niveaux, directement sur la plage.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "cocoa-beach-pier",
+    name: "Cocoa Beach Pier",
+    zone: "space-coast",
+    categories: ["restaurants", "points-de-vue"],
+    lat: 28.3212, lng: -80.6062,
+    description: "Une jetée historique s'avançant dans l'océan, avec restaurants, bars et boutiques de surf, cœur social de Cocoa Beach.",
+    whyVisit: "Le meilleur endroit pour un repas avec vue directe sur l'océan et les surfeurs.",
+    littleTip: "Le coucher de soleil vu depuis la jetée, face à l'océan, est particulièrement spectaculaire sur la côte est.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "canaveral-national-seashore",
+    name: "Canaveral National Seashore",
+    zone: "space-coast",
+    categories: ["quartiers-balades"],
+    lat: 28.7408, lng: -80.7773,
+    description: "24 km de plage sauvage et préservée, la plus longue étendue de littoral non développé de la côte est de la Floride, entre les lancements de fusées voisins.",
+    whyVisit: "Une plage totalement sauvage, rare sur la côte est de la Floride, idéale pour s'éloigner des foules.",
+    littleTip: "Les tortues marines viennent pondre sur cette plage entre mai et octobre — restez attentif et respectueux si vous en croisez.",
+    indicativeDuration: "2h",
+  },
+  {
+    slug: "cocoa-village",
+    name: "Cocoa Village",
+    zone: "space-coast",
+    categories: ["shopping", "quartiers-balades"],
+    lat: 28.3561, lng: -80.7392,
+    description: "Le centre historique de Cocoa, en bord de rivière Indian, avec boutiques indépendantes et bâtiments du début du XXe siècle.",
+    whyVisit: "Une pause charmante et authentique entre deux visites du Kennedy Space Center et de Cocoa Beach.",
+    littleTip: "Le théâtre historique Cocoa Village Playhouse, toujours en activité, vaut un coup d'œil même sans y assister à un spectacle.",
+    indicativeDuration: "1h",
+  },
+
+  // ---------- Tampa & St. Petersburg ----------
+  {
+    slug: "ybor-city",
+    name: "Ybor City",
+    zone: "tampa-st-petersburg",
+    categories: ["temples-patrimoine", "quartiers-balades", "bars-rooftops"],
+    lat: 27.9659, lng: -82.4350,
+    description: "L'ancien quartier des cigares de Tampa, fondé par des immigrants cubains et espagnols à la fin du XIXe siècle, aujourd'hui un quartier historique animé de bars et restaurants.",
+    whyVisit: "Le pendant tampéen de Little Havana, avec une histoire cigarière unique et une vie nocturne animée.",
+    littleTip: "La 7th Avenue concentre l'essentiel de l'animation en soirée, surtout le week-end.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "columbia-restaurant-ybor",
+    name: "Columbia Restaurant",
+    zone: "tampa-st-petersburg",
+    categories: ["restaurants", "incontournables"],
+    lat: 27.9650, lng: -82.4368,
+    description: "Le plus ancien restaurant espagnol de Floride, ouvert en 1905 à Ybor City, toujours tenu par la même famille sur cinq générations.",
+    whyVisit: "Une institution historique de la cuisine espagnole-cubaine, avec un décor en azulejos couvrant tout un pâté de maisons.",
+    littleTip: "Le spectacle de flamenco en soirée certains jours de la semaine complète agréablement le dîner.",
+    indicativeDuration: "1h30",
+    indicativePrice: "$$$",
+  },
+  {
+    slug: "tampa-riverwalk",
+    name: "Tampa Riverwalk",
+    zone: "tampa-st-petersburg",
+    categories: ["quartiers-balades", "points-de-vue"],
+    lat: 27.9478, lng: -82.4584,
+    description: "Une promenade de 3 km le long de la rivière Hillsborough, reliant les principaux musées et parcs du centre-ville de Tampa.",
+    whyVisit: "La meilleure façon de relier à pied les principales attractions du centre-ville de Tampa.",
+    littleTip: "Le Tampa Museum of Art et le Glazer Children's Museum sont tous deux directement accessibles depuis le Riverwalk.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "florida-aquarium-tampa",
+    name: "The Florida Aquarium",
+    zone: "tampa-st-petersburg",
+    categories: ["activites-famille"],
+    lat: 27.9428, lng: -82.4451,
+    description: "Un aquarium consacré aux écosystèmes aquatiques de Floride, des sources d'eau douce aux récifs coralliens, avec un bassin extérieur pour l'observation des dauphins.",
+    whyVisit: "Une bonne sortie en famille pour découvrir la biodiversité aquatique propre à la Floride.",
+    littleTip: "Des sorties en bateau d'observation des dauphins dans la baie de Tampa sont proposées en complément du billet d'entrée.",
+    indicativeDuration: "2h à 2h30",
+  },
+  {
+    slug: "st-pete-pier",
+    name: "The St. Pete Pier",
+    zone: "tampa-st-petersburg",
+    categories: ["quartiers-balades", "points-de-vue"],
+    lat: 27.7719, lng: -82.6309,
+    description: "La jetée emblématique de St. Petersburg, reconstruite en 2020, avec jardins, aire de jeux, marché couvert et vue sur la baie de Tampa.",
+    whyVisit: "Le cœur social du front de mer de St. Petersburg, complètement rénové et devenu une vraie destination à part entière.",
+    littleTip: "Le rooftop bar au bout de la jetée offre l'une des meilleures vues au coucher du soleil de la ville.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "dali-museum",
+    name: "The Dalí Museum",
+    zone: "tampa-st-petersburg",
+    categories: ["temples-patrimoine", "incontournables"],
+    lat: 27.7614, lng: -82.6358,
+    description: "La plus importante collection d'œuvres de Salvador Dalí en dehors de l'Espagne, dans un bâtiment moderne doté d'une spectaculaire verrière géodésique.",
+    whyVisit: "Une collection d'art surréaliste de premier plan, dans un musée dont l'architecture elle-même vaut le détour.",
+    littleTip: "Le jardin de sculptures extérieur, avec son labyrinthe végétal, se visite gratuitement.",
+    indicativeDuration: "1h30 à 2h",
+  },
+  {
+    slug: "st-petersburg-central-arts-district",
+    name: "Central Arts District (street art)",
+    zone: "tampa-st-petersburg",
+    categories: ["experiences-insolites", "quartiers-balades"],
+    lat: 27.7719, lng: -82.6404,
+    description: "Le quartier artistique de St. Petersburg, couvert de fresques murales et de galeries, qui a valu à la ville le surnom de capitale mondiale du street art.",
+    whyVisit: "L'une des plus fortes concentrations de street art de qualité aux États-Unis, en plein air et gratuite.",
+    littleTip: "Le SHINE Mural Festival, chaque automne, ajoute de nouvelles œuvres chaque année.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "sunken-gardens",
+    name: "Sunken Gardens",
+    zone: "tampa-st-petersburg",
+    categories: ["quartiers-balades"],
+    lat: 27.7906, lng: -82.6484,
+    description: "Un jardin tropical historique de St. Petersburg, aménagé dans un ancien lac asséché, avec flamants roses et végétation luxuriante depuis 1903.",
+    whyVisit: "L'une des plus anciennes attractions encore en activité de Floride, dans un cadre tropical dense et photogénique.",
+    littleTip: "Les flamants roses résidents sont nourris à heures fixes — demandez les horaires à l'entrée.",
+    indicativeDuration: "1h",
+  },
+  {
+    slug: "tampa-theatre",
+    name: "Tampa Theatre",
+    zone: "tampa-st-petersburg",
+    categories: ["temples-patrimoine", "experiences-insolites"],
+    lat: 27.9477, lng: -82.4594,
+    description: "Un cinéma-palais de 1926 au décor atmosphérique évoquant un jardin méditerranéen sous un ciel étoilé, toujours en activité.",
+    whyVisit: "L'un des derniers cinémas-palais historiques encore en fonctionnement aux États-Unis, dans un décor spectaculaire.",
+    littleTip: "Des visites patrimoniales guidées du bâtiment sont proposées certains matins, en dehors des séances.",
+    indicativeDuration: "1h (visite) ou 2h (séance)",
+  },
+  {
+    slug: "curtis-hixon-waterfront-park",
+    name: "Curtis Hixon Waterfront Park",
+    zone: "tampa-st-petersburg",
+    categories: ["quartiers-balades"],
+    lat: 27.9472, lng: -82.4610,
+    description: "Le grand parc en bord de rivière du centre-ville de Tampa, avec pelouses, fontaines et vue sur l'université de Tampa et son architecture mauresque emblématique.",
+    whyVisit: "Le meilleur point de vue gratuit sur l'architecture mauresque spectaculaire de l'université de Tampa.",
+    littleTip: "Des événements et concerts gratuits y sont organisés régulièrement en soirée — vérifiez le programme du moment.",
+    indicativeDuration: "30 à 45 min",
+  },
+
+  // ---------- Clearwater & Sarasota ----------
+  {
+    slug: "clearwater-beach",
+    name: "Clearwater Beach",
+    zone: "clearwater-sarasota",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 27.9775, lng: -82.8299,
+    description: "L'une des plages les plus récompensées des États-Unis, au sable blanc fin et à l'eau turquoise, sur la côte du Golfe du Mexique.",
+    whyVisit: "Régulièrement élue parmi les meilleures plages des États-Unis, avec un coucher de soleil réputé sur le Golfe.",
+    littleTip: "Les couchers de soleil attirent une petite foule et des animations de rue au ponton — à vivre au moins une fois.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "pier-60-clearwater",
+    name: "Pier 60",
+    zone: "clearwater-sarasota",
+    categories: ["experiences-insolites", "points-de-vue"],
+    lat: 27.9789, lng: -82.8309,
+    description: "La jetée centrale de Clearwater Beach, où se tient chaque soir au coucher du soleil une petite fête de rue avec artistes et artisans locaux.",
+    whyVisit: "Un rituel local convivial et gratuit, qui transforme chaque coucher de soleil en petit festival de rue.",
+    littleTip: "La Sunset Celebration a lieu tous les soirs, deux heures avant le coucher du soleil jusqu'à la nuit tombée.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "clearwater-marine-aquarium",
+    name: "Clearwater Marine Aquarium",
+    zone: "clearwater-sarasota",
+    categories: ["activites-famille"],
+    lat: 27.9814, lng: -82.8201,
+    description: "Un centre de soin et de réhabilitation pour animaux marins blessés, rendu célèbre par Winter, le dauphin à la queue prothétique du film « L'Esprit d'équipe ».",
+    whyVisit: "Un aquarium à vocation de soin plutôt que de simple exhibition, avec l'histoire authentique de Winter à découvrir sur place.",
+    littleTip: "Les animaux présentés sont pour la plupart inaptes à un retour en milieu naturel — l'établissement communique clairement sur sa mission de soin.",
+    indicativeDuration: "1h30 à 2h",
+  },
+  {
+    slug: "siesta-key-beach",
+    name: "Siesta Key Beach",
+    zone: "clearwater-sarasota",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 27.2639, lng: -82.5496,
+    description: "Une plage au sable de quartz si fin et si blanc qu'il reste frais sous les pieds même en plein soleil, régulièrement classée parmi les meilleures des États-Unis.",
+    whyVisit: "Un sable d'une texture vraiment unique, presque comme de la farine, qui justifie à elle seule le détour.",
+    littleTip: "Des tambours de plage rassemblent spontanément des centaines de personnes au coucher du soleil le dimanche.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "st-armands-circle",
+    name: "St. Armands Circle",
+    zone: "clearwater-sarasota",
+    categories: ["shopping", "restaurants"],
+    lat: 27.3184, lng: -82.5676,
+    description: "Un quartier commerçant circulaire conçu dans les années 1920 par le cirque Ringling, aujourd'hui bordé de boutiques et restaurants chics.",
+    whyVisit: "Une étape shopping et restaurant élégante entre le centre de Sarasota et les plages de Lido Key.",
+    littleTip: "Le quartier est particulièrement agréable en soirée, quand la circulation se calme autour du rond-point.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "the-ringling",
+    name: "The Ringling",
+    zone: "clearwater-sarasota",
+    categories: ["temples-patrimoine", "incontournables"],
+    lat: 27.3783, lng: -82.5557,
+    description: "L'ancien domaine du magnat du cirque John Ringling, avec un musée d'art européen, un manoir vénitien en bord de baie et un musée du cirque.",
+    whyVisit: "L'un des plus grands complexes culturels de Floride, légué à l'État par l'homme qui a fait de Sarasota la capitale du cirque américain.",
+    littleTip: "Le manoir Cà d'Zan, réplique d'un palais vénitien, se visite séparément du musée d'art — comptez du temps pour les deux.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "honeymoon-island-state-park",
+    name: "Honeymoon Island State Park",
+    zone: "clearwater-sarasota",
+    categories: ["quartiers-balades"],
+    lat: 28.0631, lng: -82.8324,
+    description: "Une île-barrière préservée au nord de Clearwater, avec l'une des dernières forêts de pins à encens (slash pine) encore intactes de Floride.",
+    whyVisit: "Une plage plus sauvage et moins fréquentée que Clearwater Beach, à quelques minutes seulement.",
+    littleTip: "Un ferry relie le parc à Caladesi Island, encore plus préservée et accessible uniquement par bateau.",
+    indicativeDuration: "2h",
+  },
+  {
+    slug: "marie-selby-botanical-gardens",
+    name: "Marie Selby Botanical Gardens",
+    zone: "clearwater-sarasota",
+    categories: ["quartiers-balades"],
+    lat: 27.3317, lng: -82.5416,
+    description: "Un jardin botanique en bord de baie à Sarasota, réputé pour sa collection d'orchidées et de plantes épiphytes parmi les plus importantes au monde.",
+    whyVisit: "Un jardin botanique de référence mondiale pour les orchidées, dans un cadre de bord de mer exceptionnel.",
+    littleTip: "La serre d'orchidées tropicales est climatisée — une pause bienvenue lors des journées les plus chaudes.",
+    indicativeDuration: "1h30 à 2h",
+  },
+
+  // ---------- Naples & Fort Myers ----------
+  {
+    slug: "naples-pier",
+    name: "Naples Pier",
+    zone: "naples-fort-myers",
+    categories: ["quartiers-balades", "points-de-vue"],
+    lat: 26.1297, lng: -81.8075,
+    description: "Une jetée historique de 1888 s'avançant dans le Golfe du Mexique, point de rassemblement classique pour admirer le coucher de soleil à Naples.",
+    whyVisit: "L'un des meilleurs points de vue gratuits sur le coucher de soleil de la côte du Golfe.",
+    littleTip: "Les dauphins sont fréquemment visibles depuis la jetée en fin de journée.",
+    indicativeDuration: "45 min à 1h",
+  },
+  {
+    slug: "fifth-avenue-south-naples",
+    name: "Fifth Avenue South",
+    zone: "naples-fort-myers",
+    categories: ["shopping", "restaurants"],
+    lat: 26.1364, lng: -81.7954,
+    description: "L'artère commerçante chic du centre-ville de Naples, bordée de palmiers, de galeries d'art et de restaurants haut de gamme.",
+    whyVisit: "Le cœur élégant de Naples, l'une des villes les plus huppées de la côte du Golfe.",
+    littleTip: "La rue est particulièrement agréable en soirée, quand les terrasses s'animent.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "sanibel-island",
+    name: "Sanibel Island",
+    zone: "naples-fort-myers",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 26.4523, lng: -82.1206,
+    description: "Une île réputée dans le monde entier pour la richesse de ses plages en coquillages, orientée est-ouest de façon à capter les courants qui les déposent sur le sable.",
+    whyVisit: "L'une des meilleures destinations au monde pour la recherche de coquillages, une activité devenue un vrai rituel local (le « Sanibel Stoop »).",
+    littleTip: "Les meilleures trouvailles se font tôt le matin, juste après la marée basse.",
+    indicativeDuration: "demi-journée",
+  },
+  {
+    slug: "jn-ding-darling-refuge",
+    name: "J.N. \"Ding\" Darling National Wildlife Refuge",
+    zone: "naples-fort-myers",
+    categories: ["quartiers-balades", "experiences-insolites"],
+    lat: 26.4514, lng: -82.1368,
+    description: "Une réserve naturelle sur Sanibel Island, traversable en voiture, à vélo ou en kayak, abritant l'une des plus fortes concentrations d'oiseaux migrateurs d'Amérique du Nord.",
+    whyVisit: "Une observation de la faune sauvage en liberté, sans aucune captivité, dans un décor de mangroves préservées.",
+    littleTip: "Le Wildlife Drive se parcourt idéalement en vélo ou en kayak plutôt qu'en voiture pour une immersion complète.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "edison-ford-winter-estates",
+    name: "Edison and Ford Winter Estates",
+    zone: "naples-fort-myers",
+    categories: ["temples-patrimoine", "incontournables"],
+    lat: 26.6400, lng: -81.8637,
+    description: "Les résidences d'hiver voisines de Thomas Edison et Henry Ford à Fort Myers, avec les jardins et laboratoires où Edison a mené ses recherches sur le caoutchouc.",
+    whyVisit: "Un aperçu fascinant de la vie privée de deux des plus grands inventeurs et industriels américains.",
+    littleTip: "Le banyan géant planté par Edison dans le jardin est aujourd'hui l'un des plus grands arbres de ce type aux États-Unis.",
+    indicativeDuration: "1h30 à 2h",
+  },
+  {
+    slug: "fort-myers-beach",
+    name: "Fort Myers Beach",
+    zone: "naples-fort-myers",
+    categories: ["quartiers-balades"],
+    lat: 26.4523, lng: -81.9481,
+    description: "Une plage animée sur Estero Island, avec une longue étendue de sable et une ambiance plus décontractée que Naples ou Sanibel.",
+    whyVisit: "Une plage conviviale et animée, bonne option pour une après-midi plus festive sur la côte du Golfe.",
+    littleTip: "La zone a été fortement touchée par l'ouragan Ian en 2022 — vérifiez l'état des infrastructures avant de prévoir votre visite.",
+    indicativeDuration: "2h",
+  },
+  {
+    slug: "naples-botanical-garden",
+    name: "Naples Botanical Garden",
+    zone: "naples-fort-myers",
+    categories: ["quartiers-balades"],
+    lat: 26.1131, lng: -81.7819,
+    description: "Un jardin botanique de 67 hectares consacré aux plantes des régions tropicales et subtropicales du monde entier, avec un jardin d'eau et des sentiers de mangrove.",
+    whyVisit: "Un jardin botanique moderne et bien conçu, loin de l'agitation du centre-ville de Naples.",
+    littleTip: "La tour d'observation du jardin brésilien offre une belle vue d'ensemble sur l'étang central.",
+    indicativeDuration: "1h30 à 2h",
+  },
+  {
+    slug: "captiva-island",
+    name: "Captiva Island",
+    zone: "naples-fort-myers",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 26.5209, lng: -82.1898,
+    description: "La petite île voisine de Sanibel, reliée par un pont, plus intime et bordée de maisons colorées et de bars de plage décontractés.",
+    whyVisit: "Le pendant plus bohème et plus petit de Sanibel, avec une ambiance de village insulaire préservée.",
+    littleTip: "Le coucher de soleil vu depuis un bar de plage de Captiva est un classique à ne pas manquer.",
+    indicativeDuration: "2h à 3h",
+  },
+
+  // ---------- Everglades ----------
+  {
+    slug: "everglades-national-park",
+    name: "Everglades National Park",
+    zone: "everglades",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 25.3953, lng: -80.6803,
+    description: "Le plus grand espace de nature sauvage subtropicale des États-Unis, classé au patrimoine mondial de l'UNESCO, où se rencontrent alligators, lamantins et panthères de Floride.",
+    whyVisit: "Un écosystème unique au monde, à la croisée des eaux douces et salées, sans équivalent ailleurs aux États-Unis.",
+    littleTip: "Le parc a plusieurs entrées très éloignées les unes des autres — planifiez votre itinéraire selon l'entrée la plus proche de votre route.",
+    indicativeDuration: "demi-journée à journée complète",
+  },
+  {
+    slug: "airboat-tour-everglades",
+    name: "Excursion en airboat dans les Everglades",
+    zone: "everglades",
+    categories: ["experiences-insolites", "incontournables"],
+    lat: 25.7617, lng: -80.5631,
+    description: "Une balade en bateau à fond plat propulsé par une hélice aérienne, qui glisse sur les herbiers peu profonds des Everglades à la recherche d'alligators sauvages.",
+    whyVisit: "La façon la plus emblématique de découvrir les Everglades, et souvent la meilleure chance de voir un alligator sauvage de près.",
+    littleTip: "Les excursions au lever ou en fin de journée offrent généralement plus d'observations d'animaux qu'en pleine chaleur de midi.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "anhinga-trail",
+    name: "Anhinga Trail",
+    zone: "everglades",
+    categories: ["quartiers-balades", "experiences-insolites"],
+    lat: 25.3860, lng: -80.6063,
+    description: "Un sentier sur caillebotis au cœur des Everglades, réputé pour ses observations quasi garanties d'alligators, d'anhingas et d'échassiers en liberté.",
+    whyVisit: "Probablement le meilleur rapport effort/observation de faune sauvage de tout le parc, accessible à tous.",
+    littleTip: "Les alligators se prélassent parfois directement sur le sentier en bois — gardez une distance de sécurité et ne les approchez jamais.",
+    indicativeDuration: "45 min à 1h",
+  },
+  {
+    slug: "big-cypress-national-preserve",
+    name: "Big Cypress National Preserve",
+    zone: "everglades",
+    categories: ["quartiers-balades"],
+    lat: 25.8305, lng: -81.0756,
+    description: "Une vaste réserve de cyprès chauves et de prairies humides juste au nord des Everglades, traversée par l'historique Tamiami Trail.",
+    whyVisit: "Un paysage de cyprès différent des marais ouverts des Everglades, avec moins de foule.",
+    littleTip: "Le centre d'accueil Oasis Visitor Center, en bord de route, est un excellent point d'observation d'alligators sans quitter sa voiture.",
+    indicativeDuration: "1h à 2h",
+  },
+  {
+    slug: "shark-valley",
+    name: "Shark Valley",
+    zone: "everglades",
+    categories: ["quartiers-balades", "points-de-vue"],
+    lat: 25.7573, lng: -80.7656,
+    description: "Un secteur des Everglades accessible depuis Miami, avec une boucle de 24 km à vélo ou en tram jusqu'à une tour d'observation offrant une vue à 360° sur le marais.",
+    whyVisit: "La meilleure vue d'ensemble sur l'immensité plate des Everglades, depuis la tour d'observation au bout de la boucle.",
+    littleTip: "Le vélo se loue sur place — c'est la façon la plus agréable de parcourir la boucle, plus flexible que le tram.",
+    indicativeDuration: "2h à 3h (vélo) ou 2h (tram)",
+  },
+  {
+    slug: "ten-thousand-islands",
+    name: "Ten Thousand Islands",
+    zone: "everglades",
+    categories: ["quartiers-balades", "experiences-insolites"],
+    lat: 25.8459, lng: -81.3878,
+    description: "Un archipel de mangroves à la frontière sud-ouest des Everglades, près d'Everglades City, que l'on explore en kayak ou en petit bateau.",
+    whyVisit: "Une facette plus sauvage et moins fréquentée des Everglades, côté golfe du Mexique.",
+    littleTip: "Des excursions en kayak guidées partent d'Everglades City pour explorer les chenaux entre les îles de mangrove.",
+    indicativeDuration: "2h à 3h",
+  },
+
+  // ---------- Florida Keys ----------
+  {
+    slug: "key-largo",
+    name: "Key Largo",
+    zone: "florida-keys",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 25.0865, lng: -80.4473,
+    description: "La première et la plus grande des Keys, porte d'entrée de l'archipel, réputée comme la « capitale mondiale de la plongée ».",
+    whyVisit: "Le point de départ classique pour explorer les récifs coralliens des Keys en plongée ou en snorkeling.",
+    littleTip: "De nombreux opérateurs de plongée et de snorkeling partent directement du centre de Key Largo vers le récif.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "john-pennekamp-coral-reef-state-park",
+    name: "John Pennekamp Coral Reef State Park",
+    zone: "florida-keys",
+    categories: ["incontournables", "experiences-insolites"],
+    lat: 25.1295, lng: -80.4078,
+    description: "Le tout premier parc sous-marin des États-Unis, créé en 1963 pour protéger une portion du récif corallien, le seul récif vivant des États-Unis continentaux.",
+    whyVisit: "L'occasion de faire du snorkeling ou de la plongée sur un vrai récif corallien vivant, rare aux États-Unis.",
+    littleTip: "Une statue sous-marine du Christ des Abysses, immergée à 8 mètres de profondeur, est l'une des attractions les plus photographiées du parc.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "islamorada",
+    name: "Islamorada",
+    zone: "florida-keys",
+    categories: ["restaurants", "quartiers-balades"],
+    lat: 24.9227, lng: -80.6277,
+    description: "Un village des Keys surnommé la « capitale mondiale de la pêche sportive », avec une ambiance plus posée que Key West.",
+    whyVisit: "Le meilleur arrêt des Keys pour une sortie de pêche sportive ou simplement un déjeuner de fruits de mer en bord d'eau.",
+    littleTip: "Les fish shacks en bord de route, simples mais réputés, valent souvent mieux que les restaurants plus formels.",
+    indicativeDuration: "2h",
+  },
+  {
+    slug: "seven-mile-bridge",
+    name: "Seven Mile Bridge",
+    zone: "florida-keys",
+    categories: ["incontournables", "points-de-vue"],
+    lat: 24.7127, lng: -81.1998,
+    description: "L'un des ponts les plus longs et les plus photographiés au monde, qui relie Knight's Key à Little Duck Key en traversant l'océan sur près de 11 km.",
+    whyVisit: "L'une des expériences de conduite les plus spectaculaires des États-Unis, entouré d'eau turquoise de chaque côté.",
+    littleTip: "L'ancien pont, désormais réservé aux piétons et cyclistes sur sa première portion, offre un excellent point de vue sur le nouveau pont.",
+    indicativeDuration: "20 min (traversée)",
+  },
+  {
+    slug: "bahia-honda-state-park",
+    name: "Bahia Honda State Park",
+    zone: "florida-keys",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 24.6565, lng: -81.2745,
+    description: "L'une des plus belles plages naturelles de Floride, rare dans les Keys où le littoral est souvent rocheux, avec vue sur le viaduc historique du vieux Seven Mile Bridge.",
+    whyVisit: "La plus belle plage de sable des Keys, dans un cadre particulièrement photogénique.",
+    littleTip: "Arrivez tôt : le parc limite le nombre de véhicules et affiche complet certains jours de haute saison.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "key-west-old-town",
+    name: "Key West Old Town (Duval Street)",
+    zone: "florida-keys",
+    categories: ["incontournables", "quartiers-balades", "bars-rooftops"],
+    lat: 24.5601, lng: -81.8064,
+    description: "Le cœur historique de Key West, dominé par Duval Street, artère animée bordée de bars, galeries et maisons conch (style colonial des Keys).",
+    whyVisit: "L'ambiance la plus festive et la plus colorée de tout l'archipel des Keys.",
+    littleTip: "Les Conch Tour Trains et Old Town Trolleys permettent de repérer rapidement le quartier avant d'explorer à pied.",
+    indicativeDuration: "2h à 3h",
+  },
+  {
+    slug: "southernmost-point-buoy",
+    name: "Southernmost Point Buoy",
+    zone: "florida-keys",
+    categories: ["incontournables", "experiences-insolites"],
+    lat: 24.5465, lng: -81.7975,
+    description: "Une bouée peinte marquant le point le plus au sud des États-Unis continentaux, à seulement 145 km de Cuba, devenue le spot photo le plus demandé de Key West.",
+    whyVisit: "Le selfie incontournable de tout voyage à Key West, symbole du bout de la route américaine.",
+    littleTip: "La file d'attente pour la photo peut être longue en pleine journée — tentez tôt le matin ou en soirée.",
+    indicativeDuration: "15 à 20 min",
+  },
+  {
+    slug: "ernest-hemingway-home",
+    name: "Ernest Hemingway Home and Museum",
+    zone: "florida-keys",
+    categories: ["temples-patrimoine", "incontournables"],
+    lat: 24.5567, lng: -81.8044,
+    description: "La maison où Ernest Hemingway a vécu et écrit dans les années 1930, aujourd'hui peuplée de dizaines de chats polydactyles (à six doigts), descendants de son propre chat.",
+    whyVisit: "Une immersion dans la vie de l'écrivain à Key West, avec une colonie de chats à six doigts devenue elle-même une attraction.",
+    littleTip: "Environ 40 à 50 chats vivent sur la propriété — tous portent le nom d'une célébrité, une tradition maintenue depuis des décennies.",
+    indicativeDuration: "1h",
+  },
+  {
+    slug: "mallory-square-sunset",
+    name: "Mallory Square Sunset Celebration",
+    zone: "florida-keys",
+    categories: ["experiences-insolites", "incontournables"],
+    lat: 24.5553, lng: -81.8083,
+    description: "Une fête de rue qui se tient chaque soir sur la place portuaire de Mallory Square, avec jongleurs, musiciens et funambules, au moment précis du coucher de soleil.",
+    whyVisit: "Un rituel quotidien unique à Key West, qui transforme chaque coucher de soleil en véritable spectacle de rue.",
+    littleTip: "Arrivez environ une heure avant le coucher de soleil pour profiter des artistes de rue avant que la foule ne soit trop dense.",
+    indicativeDuration: "1h30",
+  },
+  {
+    slug: "key-west-cemetery",
+    name: "Key West Cemetery",
+    zone: "florida-keys",
+    categories: ["temples-patrimoine", "experiences-insolites"],
+    lat: 24.5597, lng: -81.7955,
+    description: "Un cimetière historique au cœur de Key West, réputé pour ses épitaphes pleines d'humour noir et ses tombes au ras du sol, typiques de l'architecture des Keys.",
+    whyVisit: "L'un des cimetières les plus atypiques et les plus drôles des États-Unis, loin de l'image sombre habituelle du genre.",
+    littleTip: "Cherchez l'épitaphe « I Told You I Was Sick » — l'une des plus célèbres du cimetière.",
+    indicativeDuration: "45 min à 1h",
+  },
+  {
+    slug: "dry-tortugas-national-park",
+    name: "Dry Tortugas National Park",
+    zone: "florida-keys",
+    categories: ["incontournables", "experiences-insolites"],
+    lat: 24.6285, lng: -82.8730,
+    description: "Un parc national isolé à 110 km à l'ouest de Key West, accessible uniquement par bateau ou hydravion, dominé par l'immense Fort Jefferson du XIXe siècle.",
+    whyVisit: "L'un des parcs nationaux les moins visités et les plus isolés des États-Unis, avec un snorkeling exceptionnel autour du fort.",
+    littleTip: "Le ferry depuis Key West part tôt le matin et inclut petit-déjeuner et déjeuner — réservez plusieurs semaines à l'avance en haute saison.",
+    indicativeDuration: "journée complète",
+  },
+  {
+    slug: "key-west-butterfly-conservatory",
+    name: "Key West Butterfly and Nature Conservatory",
+    zone: "florida-keys",
+    categories: ["activites-famille", "experiences-insolites"],
+    lat: 24.5558, lng: -81.8013,
+    description: "Une serre tropicale climatisée où volent librement des centaines de papillons de dizaines d'espèces différentes, en plein cœur de Key West.",
+    whyVisit: "Une pause fraîche et apaisante au milieu de l'agitation de Duval Street, immersive et sans aucune cage.",
+    littleTip: "Les papillons sont le plus actifs en milieu de matinée, quand la serre vient d'ouvrir et que la lumière est encore douce.",
+    indicativeDuration: "45 min à 1h",
+  },
+  {
+    slug: "key-west-key-lime-pie-class",
+    name: "Cours de key lime pie à Key West",
+    zone: "florida-keys",
+    categories: ["experiences-insolites"],
+    lat: 24.5578, lng: -81.8040,
+    description: "Un atelier pratique à la Key West Key Lime Pie Company pour apprendre à préparer la tarte emblématique des Keys, à base de citrons verts locaux.",
+    whyVisit: "Une façon ludique de repartir avec une vraie compétence (et une vraie tarte) plutôt que de simplement goûter la spécialité locale.",
+    littleTip: "Vous repartez avec votre propre tarte à la fin de l'atelier — pensez à prévoir comment la transporter si vous continuez la route.",
+    indicativeDuration: "1h",
+  },
+  {
+    slug: "pepes-cafe-key-west",
+    name: "Pepe's Cafe",
+    zone: "florida-keys",
+    categories: ["restaurants", "cafes-brunchs"],
+    lat: 24.5602, lng: -81.8058,
+    description: "Le plus ancien restaurant des Keys, ouvert en 1909, réputé pour ses petits-déjeuners et son jardin ombragé de banians.",
+    whyVisit: "Une institution historique de Key West, loin de l'ambiance plus touristique de Duval Street.",
+    littleTip: "Le patio arrière, à l'ombre d'un immense banian, est bien plus agréable que les tables en façade.",
+    indicativeDuration: "1h",
+    indicativePrice: "$$",
+  },
+  {
+    slug: "blue-heaven-key-west",
+    name: "Blue Heaven",
+    zone: "florida-keys",
+    categories: ["restaurants"],
+    lat: 24.5580, lng: -81.7998,
+    description: "Un restaurant installé dans une cour extérieure colorée où des poulets et des coqs se promènent librement entre les tables, institution de Key West depuis des décennies.",
+    whyVisit: "L'une des expériences de dîner les plus décalées et les plus photographiées de Key West.",
+    littleTip: "Les poulets en liberté font partie du folklore local — ne soyez pas surpris de les voir passer sous votre table.",
+    indicativeDuration: "1h30",
+    indicativePrice: "$$",
+  },
+
+  // ---------- Palm Beach & Fort Lauderdale ----------
+  {
+    slug: "worth-avenue",
+    name: "Worth Avenue",
+    zone: "palm-beach-fort-lauderdale",
+    categories: ["shopping"],
+    lat: 26.7003, lng: -80.0392,
+    description: "L'artère commerçante la plus luxueuse de Palm Beach, souvent comparée à la Cinquième Avenue de New York ou à Rodeo Drive à Los Angeles.",
+    whyVisit: "Le symbole du luxe discret de Palm Beach, même pour une simple balade sans intention d'achat.",
+    littleTip: "Les petites ruelles couvertes (vias) qui partent de l'avenue cachent des cours intérieures particulièrement charmantes.",
+    indicativeDuration: "45 min à 1h",
+  },
+  {
+    slug: "flagler-museum",
+    name: "Flagler Museum (Whitehall)",
+    zone: "palm-beach-fort-lauderdale",
+    categories: ["temples-patrimoine", "incontournables"],
+    lat: 26.7114, lng: -80.0434,
+    description: "L'ancienne résidence d'Henry Flagler, le magnat qui a façonné le développement touristique de la Floride, un manoir de 1902 aux 75 pièces surnommé le « Taj Mahal d'Amérique ».",
+    whyVisit: "Pour comprendre l'homme à l'origine du développement de toute la côte est de la Floride, dans sa demeure d'origine.",
+    littleTip: "Le wagon de train privé de Flagler, exposé sur le domaine, témoigne du train qui a littéralement construit la Floride touristique.",
+    indicativeDuration: "1h30",
+  },
+  {
+    slug: "society-of-the-four-arts",
+    name: "Society of the Four Arts",
+    zone: "palm-beach-fort-lauderdale",
+    categories: ["temples-patrimoine", "quartiers-balades"],
+    lat: 26.7084, lng: -80.0406,
+    description: "Un centre culturel de Palm Beach réunissant musée d'art, bibliothèque et jardins botaniques, fondé en 1936.",
+    whyVisit: "Une pause culturelle et verte, moins connue que le Flagler Museum mais tout aussi soignée.",
+    littleTip: "Les jardins extérieurs, qui mêlent plusieurs styles (jardin de sculptures, jardin de la bible, jardin chinois), se visitent gratuitement.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "las-olas-boulevard",
+    name: "Las Olas Boulevard",
+    zone: "palm-beach-fort-lauderdale",
+    categories: ["restaurants", "shopping"],
+    lat: 26.1199, lng: -80.1131,
+    description: "L'artère la plus animée de Fort Lauderdale, bordée de restaurants, boutiques et galeries, qui relie le centre-ville aux plages.",
+    whyVisit: "Le meilleur endroit pour dîner et flâner en soirée à Fort Lauderdale.",
+    littleTip: "La rue se termine à l'est sur l'Intracoastal Waterway, où passent régulièrement de grands yachts.",
+    indicativeDuration: "1h à 1h30",
+  },
+  {
+    slug: "fort-lauderdale-riverwalk",
+    name: "Fort Lauderdale Riverwalk",
+    zone: "palm-beach-fort-lauderdale",
+    categories: ["quartiers-balades", "points-de-vue"],
+    lat: 26.1198, lng: -80.1434,
+    description: "Une promenade aménagée le long de la New River, au cœur du centre-ville de Fort Lauderdale, surnommée la « Venise de l'Amérique » pour son réseau de canaux.",
+    whyVisit: "Une bonne façon de découvrir le centre-ville de Fort Lauderdale au bord de l'eau, loin de l'ambiance plage.",
+    littleTip: "Des water taxis permettent de poursuivre l'exploration sur les canaux résidentiels de la ville.",
+    indicativeDuration: "45 min à 1h",
+  },
+  {
+    slug: "bonnet-house",
+    name: "Bonnet House Museum & Gardens",
+    zone: "palm-beach-fort-lauderdale",
+    categories: ["temples-patrimoine", "quartiers-balades"],
+    lat: 26.1393, lng: -80.1051,
+    description: "L'ancienne résidence d'artistes d'un couple de peintres, nichée entre plage et lagune, avec une architecture excentrique et des jardins tropicaux foisonnants.",
+    whyVisit: "Une propriété artistique préservée miraculeusement entre les gratte-ciel du front de mer de Fort Lauderdale.",
+    littleTip: "Des singes capucins, introduits par les anciens propriétaires au XXe siècle, vivent encore en semi-liberté sur une partie du domaine.",
+    indicativeDuration: "1h30 à 2h",
+  },
+  {
+    slug: "fort-lauderdale-beach",
+    name: "Fort Lauderdale Beach",
+    zone: "palm-beach-fort-lauderdale",
+    categories: ["incontournables", "quartiers-balades"],
+    lat: 26.1224, lng: -80.1053,
+    description: "Une large plage urbaine bordée d'une promenade avec son célèbre muret ondulé (wave wall), à deux pas des restaurants et hôtels du front de mer.",
+    whyVisit: "Une plage urbaine facile d'accès, nettement plus décontractée que celles de Miami Beach.",
+    littleTip: "Le dimanche matin, la promenade est fermée à la circulation et prise d'assaut par joggeurs et cyclistes.",
+    indicativeDuration: "2h",
+  },
+  {
+    slug: "hugh-taylor-birch-state-park",
+    name: "Hugh Taylor Birch State Park",
+    zone: "palm-beach-fort-lauderdale",
+    categories: ["quartiers-balades"],
+    lat: 26.1363, lng: -80.1038,
+    description: "Un parc d'État boisé coincé entre l'océan et l'Intracoastal Waterway, en plein cœur de Fort Lauderdale, avec une lagune d'eau douce traversant la forêt.",
+    whyVisit: "Une pause nature inattendue à deux pas de la plage et des gratte-ciel de Fort Lauderdale.",
+    littleTip: "Le sentier autour de la lagune permet d'observer des tortues d'eau douce et des oiseaux échassiers.",
+    indicativeDuration: "1h à 1h30",
+  },
+];
+
+const ZONE_DEFS = [
+  {
+    slug: "st-augustine",
+    name: "St. Augustine",
+    mapColor: "#a8422c",
+    vibeText: "La plus ancienne ville des États-Unis, fondée par les Espagnols en 1565, entre fort en corail coquillier, rues pavées et architecture coloniale.",
+    prosText: "Une étape historique dense et compacte, idéale pour commencer le road trip au nord de la Floride.",
+    consText: "Très touristique en haute saison, stationnement parfois difficile dans la vieille ville.",
+    transportText: "À environ 1h au sud de Jacksonville ; la vieille ville se visite entièrement à pied.",
+    nearbyText: "Jacksonville et Amelia Island sont à moins d'une heure au nord.",
+    profileFitText: "Pour démarrer le road trip par l'histoire coloniale espagnole de la Floride.",
+    hotelAdviceText: "De nombreux bed & breakfasts historiques dans la vieille ville, à prix raisonnable hors saison.",
+  },
+  {
+    slug: "jacksonville-daytona",
+    name: "Jacksonville & Daytona Beach",
+    mapColor: "#3457a6",
+    vibeText: "Le nord-est de la Floride, entre le centre urbain de Jacksonville, l'île préservée d'Amelia Island et les plages mythiques de Daytona où l'on peut encore rouler sur le sable.",
+    prosText: "Peu touristique comparé au reste de la Floride, avec une vraie identité NASCAR à Daytona.",
+    consText: "Les distances entre les étapes de cette zone sont plus importantes qu'ailleurs sur la route.",
+    transportText: "Jacksonville et Daytona Beach sont à environ 1h30 l'une de l'autre par l'I-95.",
+    nearbyText: "St. Augustine se trouve entre les deux, à mi-chemin.",
+    profileFitText: "Pour les amateurs de sport automobile et de plages moins bondées.",
+    hotelAdviceText: "Daytona Beach offre un large choix d'hôtels en bord de plage à prix modéré, surtout hors événements NASCAR.",
+  },
+  {
+    slug: "orlando-parks",
+    name: "Orlando & ses parcs",
+    mapColor: "#c9972e",
+    vibeText: "La capitale mondiale des parcs à thème, dominée par Disney World et Universal Orlando, mais aussi un vrai centre-ville autour de Lake Eola.",
+    prosText: "La plus forte concentration de parcs à thème au monde, pour tous les âges.",
+    consText: "Journées de parc fatigantes et coûteuses, forte affluence toute l'année.",
+    transportText: "Nécessite une voiture pour circuler entre les différents parcs, assez éloignés les uns des autres.",
+    nearbyText: "Kennedy Space Center et la Space Coast sont à environ 1h à l'est.",
+    profileFitText: "Incontournable pour un voyage en famille avec enfants, prévoir plusieurs jours sur place.",
+    hotelAdviceText: "Les hôtels officiels Disney et Universal coûtent plus cher mais incluent des avantages (navettes, accès anticipé).",
+  },
+  {
+    slug: "space-coast",
+    name: "Space Coast",
+    mapColor: "#2e86ab",
+    vibeText: "La côte spatiale de Floride, d'où sont parties toutes les missions lunaires américaines, entre Kennedy Space Center et plages de surf.",
+    prosText: "Une étape unique au monde pour l'histoire spatiale, combinée à de bonnes plages de surf.",
+    consText: "Compter une demi-journée minimum pour le centre spatial afin d'en profiter pleinement.",
+    transportText: "À environ 1h à l'est d'Orlando par la Route 528 (Beachline Expressway).",
+    nearbyText: "Orlando et ses parcs sont la base la plus pratique pour une excursion à la journée.",
+    profileFitText: "Pour les passionnés d'espace et d'histoire de la conquête spatiale.",
+    hotelAdviceText: "Cocoa Beach offre un bon compromis plage/accès au centre spatial pour une ou deux nuits.",
+  },
+  {
+    slug: "tampa-st-petersburg",
+    name: "Tampa & St. Petersburg",
+    mapColor: "#8f2d2d",
+    vibeText: "La grande métropole de la côte du Golfe, entre héritage cubain d'Ybor City à Tampa et scène artistique florissante de St. Petersburg.",
+    prosText: "Une vraie vie urbaine loin des plages, avec une excellente scène culturelle et culinaire.",
+    consText: "Deux villes distinctes séparées par la baie — prévoir du temps de trajet entre les deux.",
+    transportText: "Tampa et St. Petersburg sont reliées par le Howard Frankland Bridge, environ 30 minutes de trajet.",
+    nearbyText: "Clearwater Beach est à environ 30 minutes au nord-ouest de St. Petersburg.",
+    profileFitText: "Pour les amateurs de ville, de musées et de scène culinaire, en alternance avec les étapes plage.",
+    hotelAdviceText: "Ybor City (Tampa) ou le centre de St. Petersburg offrent les meilleures bases pour explorer à pied.",
+  },
+  {
+    slug: "clearwater-sarasota",
+    name: "Clearwater & Sarasota",
+    mapColor: "#2a7a8c",
+    vibeText: "Les plus belles plages de la côte du Golfe, entre le sable de quartz de Siesta Key et l'héritage circassien de Sarasota.",
+    prosText: "Parmi les plages les mieux classées des États-Unis, avec une eau plus calme que la côte Atlantique.",
+    consText: "Très prisé en haute saison hivernale par les retraités nord-américains (« snowbirds »), prix en hausse à cette période.",
+    transportText: "Clearwater et Sarasota sont à environ 1h15 l'une de l'autre, de part et d'autre de Tampa Bay.",
+    nearbyText: "Tampa et St. Petersburg sont à moins d'une heure au nord.",
+    profileFitText: "Pour les meilleures plages du road trip, à combiner avec une étape culturelle à Sarasota.",
+    hotelAdviceText: "Siesta Key et Clearwater Beach offrent de nombreux hébergements en bord de plage, à réserver tôt en haute saison.",
+  },
+  {
+    slug: "naples-fort-myers",
+    name: "Naples & Fort Myers",
+    mapColor: "#6fae7c",
+    vibeText: "Le sud-ouest chic et naturaliste de la Floride, entre boutiques élégantes de Naples et îles à coquillages de Sanibel et Captiva.",
+    prosText: "Un bon équilibre entre plages, nature préservée et gastronomie raffinée.",
+    consText: "Zone régulièrement exposée aux ouragans — vérifier l'état des infrastructures avant de partir.",
+    transportText: "Naples et Fort Myers sont à environ 45 minutes l'une de l'autre par l'I-75.",
+    nearbyText: "Les Everglades sont accessibles en moins d'une heure à l'est de Naples.",
+    profileFitText: "Pour la recherche de coquillages, l'observation d'oiseaux et une ambiance plus posée et haut de gamme.",
+    hotelAdviceText: "Sanibel et Captiva offrent des hébergements en bord de plage, souvent complets plusieurs mois à l'avance en hiver.",
+  },
+  {
+    slug: "everglades",
+    name: "Everglades",
+    mapColor: "#3f8c5a",
+    vibeText: "Le plus grand espace de nature sauvage subtropicale des États-Unis, classé à l'UNESCO, royaume des alligators et des oiseaux échassiers.",
+    prosText: "Un écosystème unique au monde, à vivre en excursion airboat ou à pied sur les sentiers sur pilotis.",
+    consText: "Chaleur et moustiques peuvent être intenses en été — privilégier l'automne à la fin de l'hiver pour la visite.",
+    transportText: "Plusieurs entrées éloignées (Shark Valley côté Miami, Everglades City côté golfe) — bien choisir son itinéraire.",
+    nearbyText: "Naples et les Keys encadrent les Everglades à l'ouest et au sud.",
+    profileFitText: "Incontournable pour l'observation de la faune sauvage en toute liberté, sans captivité.",
+    hotelAdviceText: "Peu d'hébergements sur place — la plupart des visiteurs logent à Naples, Homestead ou dans les Keys et viennent à la journée.",
+  },
+  {
+    slug: "florida-keys",
+    name: "Florida Keys",
+    mapColor: "#d6479a",
+    vibeText: "Le chapelet d'îles qui s'étire sur 180 km jusqu'au point le plus au sud des États-Unis, entre récifs coralliens, ponts spectaculaires et ambiance décontractée de Key West.",
+    prosText: "L'une des routes les plus spectaculaires des États-Unis (l'Overseas Highway), avec snorkeling et plongée de premier plan.",
+    consText: "Une seule route relie toutes les îles — tout accident ou embouteillage peut bloquer la circulation sur de longues distances.",
+    transportText: "Compter environ 3h30 de route sans arrêt entre Key Largo et Key West.",
+    nearbyText: "Les Everglades et Miami se trouvent juste au nord de Key Largo.",
+    profileFitText: "Le point d'orgue du road trip, à ne pas faire en une seule journée pour en profiter pleinement.",
+    hotelAdviceText: "Les prix grimpent fortement en haute saison (décembre à avril) — réservez plusieurs mois à l'avance pour Key West.",
+  },
+  {
+    slug: "palm-beach-fort-lauderdale",
+    name: "Palm Beach & Fort Lauderdale",
+    mapColor: "#b03e7a",
+    vibeText: "Le sud-est chic de la Floride, entre le luxe discret de Palm Beach et l'ambiance yacht de Fort Lauderdale, surnommée la « Venise de l'Amérique ».",
+    prosText: "Une étape plus urbaine et élégante, bonne transition entre Orlando et les Keys ou Miami.",
+    consText: "Prix nettement plus élevés qu'ailleurs sur la côte, notamment à Palm Beach.",
+    transportText: "Palm Beach et Fort Lauderdale sont à environ 45 minutes l'une de l'autre par l'I-95.",
+    nearbyText: "Fort Lauderdale n'est qu'à environ 45 minutes au nord de Miami.",
+    profileFitText: "Pour une étape plus chic avant de rejoindre les Keys, en évitant Miami si celle-ci est déjà prévue séparément.",
+    hotelAdviceText: "Fort Lauderdale Beach offre un bon rapport qualité-prix comparé à Palm Beach, pour une ambiance tout aussi agréable.",
+  },
+];
+
+async function main() {
+  console.log("Seeding Floride destination…");
+
+  const usa = await prisma.country.upsert({
+    where: { slug: "etats-unis" },
+    update: {},
+    create: { slug: "etats-unis", name: "États-Unis" },
+  });
+
+  const floride = await prisma.destination.upsert({
+    where: { slug: "floride" },
+    update: { status: "PUBLISHED" },
+    create: {
+      countryId: usa.id,
+      slug: "floride",
+      name: "Floride",
+      kind: "CITY",
+      size: "LARGE",
+      status: "PUBLISHED",
+    },
+  });
+
+  const categories = await prisma.category.findMany();
+  const categoryBySlug = new Map(categories.map((c) => [c.slug, c]));
+
+  const ENABLED_CATEGORIES = [
+    "incontournables", "temples-patrimoine", "quartiers-balades", "experiences-insolites",
+    "activites-famille", "restaurants", "street-food", "cafes-brunchs", "bars-rooftops",
+    "marches", "shopping", "points-de-vue",
+  ];
+  await prisma.destination.update({
+    where: { id: floride.id },
+    data: {
+      categories: {
+        set: ENABLED_CATEGORIES.map((slug) => ({ id: categoryBySlug.get(slug)!.id })),
+      },
+    },
+  });
+
+  const zoneBySlug = new Map<string, { id: string }>();
+  for (const z of ZONE_DEFS) {
+    const zone = await prisma.zone.upsert({
+      where: { destinationId_slug: { destinationId: floride.id, slug: z.slug } },
+      update: {
+        name: z.name, mapColor: z.mapColor, vibeText: z.vibeText, prosText: z.prosText,
+        consText: z.consText, transportText: z.transportText, nearbyText: z.nearbyText,
+        profileFitText: z.profileFitText, hotelAdviceText: z.hotelAdviceText,
+      },
+      create: { destinationId: floride.id, ...z },
+    });
+    zoneBySlug.set(z.slug, zone);
+  }
+
+  let manifest: PhotoManifestEntry[] = [];
+  try {
+    manifest = JSON.parse(
+      await readFile(
+        "/private/tmp/claude-501/-Users-constance/8b5fbae2-2d1e-4365-aae7-917e8137a620/scratchpad/photos_floride/manifest.json",
+        "utf-8"
+      )
+    );
+  } catch {
+    console.log("No photo manifest found yet — seeding without photos.");
+  }
+
+  // Final accepted photos live in seed-assets/floride-photos/<slug>.jpg
+  // (resized, false positives already excluded) — same pattern as
+  // seed-new-york.ts / seed-miami.ts. The Dockerfile bakes this folder
+  // into storage/photos at build time.
+  const PHOTOS_DIR = "seed-assets/floride-photos";
+
+  let photoCount = 0;
+  for (const def of PLACES) {
+    let photoId: string | null = null;
+    if (GOOD_KEYS.has(def.slug)) {
+      const entry = manifest.find((m) => m.slug === def.slug && m.found && m.local_path);
+      const srcPath = join(PHOTOS_DIR, `${def.slug}.jpg`);
+      if (entry) {
+        const storageKey = `photos/${def.slug}.jpg`;
+        const destPath = join(STORAGE_ROOT, storageKey);
+        await mkdir(dirname(destPath), { recursive: true });
+        await copyFile(srcPath, destPath);
+        const artist = (entry.artist ?? "").split("\n")[0].replace(/Feel free to.*/i, "").trim();
+        const photoStorageKey = `/api/storage/${storageKey}`;
+        const existingPhoto = await prisma.photo.findFirst({ where: { storageKey: photoStorageKey } });
+        const photoData = {
+          storageKey: photoStorageKey,
+          photographer: artist || "Non attribué (licence le permettant)",
+          sourceName: "Wikimedia Commons",
+          sourceUrl: entry.source_url ?? "",
+          licenseType: entry.license ?? "",
+          verifiedAt: new Date(),
+          commercialOk: true,
+          attributionText: artist ? `Photo : ${artist}, via Wikimedia Commons (${entry.license})` : null,
+          altText: def.altText ?? def.name,
+        };
+        const photo = existingPhoto
+          ? await prisma.photo.update({ where: { id: existingPhoto.id }, data: photoData })
+          : await prisma.photo.create({ data: photoData });
+        photoId = photo.id;
+        photoCount++;
+      }
+    }
+
+    const zone = zoneBySlug.get(def.zone);
+    const place = await prisma.place.upsert({
+      where: { slug: def.slug },
+      update: {
+        name: def.name, destinationId: floride.id, zoneId: zone?.id, status: "PUBLISHED",
+        lat: def.lat, lng: def.lng, description: def.description, whyVisit: def.whyVisit,
+        littleTip: def.littleTip, indicativeDuration: def.indicativeDuration,
+        indicativePrice: def.indicativePrice, isFictionalDemo: false,
+      },
+      create: {
+        slug: def.slug, destinationId: floride.id, zoneId: zone?.id, name: def.name,
+        status: "PUBLISHED", lat: def.lat, lng: def.lng, description: def.description,
+        whyVisit: def.whyVisit, littleTip: def.littleTip, indicativeDuration: def.indicativeDuration,
+        indicativePrice: def.indicativePrice, isFictionalDemo: false,
+      },
+    });
+
+    await prisma.placeCategory.deleteMany({ where: { placeId: place.id } });
+    for (const catSlug of def.categories) {
+      const cat = categoryBySlug.get(catSlug);
+      if (cat) await prisma.placeCategory.create({ data: { placeId: place.id, categoryId: cat.id } });
+    }
+    if (photoId) {
+      await prisma.placePhoto.deleteMany({ where: { placeId: place.id } });
+      await prisma.placePhoto.create({ data: { placeId: place.id, photoId, sortOrder: 0 } });
+    }
+
+    console.log("  place:", def.name);
+  }
+
+  console.log(`Floride seed complete: ${PLACES.length} places, ${photoCount} with real photos.`);
+}
+
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(() => prisma.$disconnect());
