@@ -30,6 +30,12 @@ export default async function FavorisPage() {
         </p>
       ) : (
         <div className="space-y-8">
+          <a
+            href="/api/favoris/pdf"
+            className="inline-block rounded-xl bg-ivory px-5 py-3 text-sm text-sage-dark shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            Télécharger mes favoris en PDF →
+          </a>
           {Array.from(byDestination.entries()).map(([slug, group]) => (
             <section key={slug}>
               <h2 className="mb-3 font-serif text-lg text-foreground">{group.name}</h2>

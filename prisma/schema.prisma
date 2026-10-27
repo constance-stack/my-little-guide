@@ -249,6 +249,7 @@ model User {
   tripDays            TripDay[]
   personalPins        PersonalPin[]
   destinationRequests DestinationRequest[]
+  favoritesPdfJobs    FavoritesPdfJob[]
 
   deletedAt DateTime?
   createdAt DateTime  @default(now())
@@ -375,6 +376,22 @@ model PdfJob {
   id         String    @id @default(cuid())
   orderId    String
   order      Order     @relation(fields: [orderId], references: [id])
+  status     JobStatus @default(QUEUED)
+  storageKey String?
+  error      String?
+  attempts   Int       @default(0)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+// Same QUEUED/RUNNING/DONE/FAILED pattern as PdfJob, but keyed by user
+// instead of order — a customer can request a PDF of just their favorited
+// places at any time, independent of (and not re-exposing) a specific
+// purchase's full guide content.
+model FavoritesPdfJob {
+  id         String    @id @default(cuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id])
   status     JobStatus @default(QUEUED)
   storageKey String?
   error      String?

@@ -40,7 +40,14 @@ export async function GET(_request: Request, { params }: { params: Promise<{ pat
       return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
     }
 
-    if (key.startsWith("pdfs/")) {
+    if (key.startsWith("pdfs/favoris-")) {
+      const pdfUserId = key.slice("pdfs/favoris-".length).replace(/\.pdf$/, "");
+      const isOwner = pdfUserId === session.user.id;
+      const isAdmin = session.user.role === "ADMIN";
+      if (!isOwner && !isAdmin) {
+        return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
+      }
+    } else if (key.startsWith("pdfs/")) {
       const orderId = key.slice("pdfs/".length).replace(/\.pdf$/, "");
       const order = await prisma.order.findUnique({ where: { id: orderId } });
       const isOwner = order?.userId === session.user.id;
