@@ -43,6 +43,7 @@ const GOOD_KEYS = new Set<string>([
   "bayfront-park",
   "bayside-marketplace",
   "brickell-avenue-skyline",
+  "south-pointe-park",
   "brickell-city-centre",
   "clevelander-hotel",
   "coral-gables-congregational-church",
