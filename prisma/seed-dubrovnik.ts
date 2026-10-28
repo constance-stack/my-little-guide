@@ -36,7 +36,25 @@ type PhotoManifestEntry = {
 
 // Filled in after photo sourcing (same two-pass pattern as every other
 // destination this session) — left empty for the first seed pass.
-const GOOD_KEYS = new Set<string>([]);
+const GOOD_KEYS = new Set<string>([
+  "banje-beach",
+  "dominican-monastery-dubrovnik",
+  "dubrovnik-cable-car",
+  "dubrovnik-city-walls",
+  "dubrovnik-synagogue",
+  "fort-lovrijenac",
+  "fort-royal-lokrum",
+  "kolocep-island",
+  "lokrum-island",
+  "lopud-island",
+  "mljet-national-park",
+  "mount-srd",
+  "orebic",
+  "peljesac-bridge",
+  "ploce-gate",
+  "rijeka-dubrovacka",
+  "sponza-palace",
+]);
 
 type PlaceDef = {
   slug: string;
