@@ -47,11 +47,11 @@ async function main() {
       slug: "transports",
       title: "Se déplacer (et prendre les bateaux)",
       content: [
-        "Une voiture de location est quasiment indispensable pour explorer la côte et l'arrière-pays au-delà de Dubrovnik même — les transports en commun entre petites villes sont limités.",
+        "Une voiture de location est quasiment indispensable pour explorer la côte et l'arrière-pays au-delà des centres-villes — les transports en commun entre petites villes sont limités.",
         "Pour les îles, les ferries et catamarans de la compagnie nationale Jadrolinija (et plusieurs opérateurs privés comme Krilo ou TP Line) desservent les destinations touristiques, avec des fréquences réduites hors saison.",
         "Réservez vos trajets en ferry à l'avance en haute saison (juillet-août), surtout pour transporter une voiture — les départs à vide sont rares mais les files d'attente, longues.",
         "Le pont de Pelješac (ouvert en 2022) permet désormais de rejoindre la péninsule sans passer par le court corridor bosnien de Neum, qui imposait auparavant un contrôle de passeport.",
-        "Dubrovnik dispose d'un aéroport international bien desservi depuis la France, à seulement 20 minutes du centre-ville.",
+        "Plusieurs aéroports internationaux bien desservis depuis la France (Dubrovnik, Split) permettent de rejoindre directement la côte dalmate — le détail de chaque aéroport est précisé dans le guide de la ville correspondante.",
       ].join("\n"),
     },
     {

@@ -49,11 +49,10 @@ async function main() {
       slug: "transports",
       title: "Se déplacer",
       content: [
-        "Le métro londonien (the Tube), le plus ancien du monde, couvre l'essentiel du centre et de la périphérie, complété par bus, Overground et DLR.",
-        "La carte Oyster ou le paiement sans contact directement avec votre carte bancaire (ou téléphone) sont la façon la plus simple de payer les transports, avec un plafond quotidien automatique selon les zones traversées.",
+        "Dans les grandes villes, le paiement sans contact directement avec votre carte bancaire (ou téléphone) est la façon la plus simple de payer les transports en commun, avec un plafond quotidien automatique selon les zones traversées — le détail de chaque réseau est précisé dans le guide de chaque ville.",
         "On conduit à gauche au Royaume-Uni — en traversant la rue à pied, pensez à regarder d'abord à droite, l'inverse du réflexe habituel.",
-        "Les applications Uber et Bolt sont largement utilisées, en complément des taxis noirs emblématiques (black cabs), plus chers mais réputés pour leur connaissance parfaite de la ville.",
-        "Londres s'étend sur une surface immense — comptez souvent 30 à 45 minutes de métro pour relier deux quartiers touristiques éloignés.",
+        "Les applications Uber et Bolt sont largement utilisées dans les grandes villes, en complément des taxis traditionnels.",
+        "Le train reste le moyen le plus simple de relier les grandes villes entre elles — réservez à l'avance sur des sites comme Trainline pour profiter des meilleurs tarifs.",
       ].join("\n"),
     },
     {

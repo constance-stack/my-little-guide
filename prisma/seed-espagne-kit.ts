@@ -46,10 +46,10 @@ async function main() {
       slug: "transports",
       title: "Se déplacer",
       content: [
-        "Le métro de Barcelone est rapide, étendu et facile à utiliser avec une carte T-Casual (10 trajets) rechargeable, nettement plus économique que les tickets simples.",
-        "Les trains à grande vitesse (AVE, Renfe) relient très rapidement les grandes villes espagnoles — Girona ou Sitges se visitent facilement en train depuis Barcelone, tout comme Madrid en 2h30.",
-        "Les applications Uber, Bolt et Cabify sont largement disponibles, en complément des taxis noir et jaune traditionnels.",
-        "Pour Montserrat ou d'autres excursions en montagne, les combinés train + téléphérique/crémaillère achetés à l'avance sont nettement plus avantageux que les billets séparés sur place.",
+        "Les trains à grande vitesse (AVE, Renfe) relient très rapidement les grandes villes espagnoles — Barcelone et Madrid, par exemple, se rejoignent en environ 2h30.",
+        "Dans les grandes villes, le métro est généralement rapide et bon marché, avec des cartes rechargeables à plusieurs trajets nettement plus économiques que les tickets simples — le détail pratique de chaque réseau est précisé dans le guide de chaque ville.",
+        "Les applications Uber, Bolt et Cabify sont largement disponibles dans toutes les grandes villes, en complément des taxis traditionnels.",
+        "Pour les excursions en montagne ou vers de petites îles, les billets combinés (train + téléphérique, bus + bateau) achetés à l'avance sont souvent plus avantageux que les billets séparés sur place.",
       ].join("\n"),
     },
     {
