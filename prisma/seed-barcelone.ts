@@ -1286,6 +1286,18 @@ const PLACES: PlaceDef[] = [
     indicativePrice: "$$$",
   },
 
+  // ---------- Aéroport ----------
+  {
+    slug: "aeroport-el-prat",
+    name: "Aeroport de Barcelona-El Prat",
+    zone: "aeroport",
+    categories: [],
+    lat: 41.2971, lng: 2.0785,
+    description: "L'aéroport international de Barcelone, à environ 15 km au sud-ouest du centre-ville, principal point d'arrivée pour la plupart des visiteurs.",
+    whyVisit: "Repère pratique pour organiser son arrivée ou son départ de Barcelone.",
+    littleTip: "L'Aerobús relie directement l'aéroport à la Plaça de Catalunya en environ 35 minutes, une option souvent plus simple qu'un taxi aux heures de pointe.",
+  },
+
   // ---------- Girona (excursion) ----------
   {
     slug: "catedral-girona",
@@ -1498,6 +1510,18 @@ const ZONE_DEFS = [
     nearbyText: "La Costa Brava (Tossa de Mar, Begur) se visite en complément pour qui loue une voiture.",
     profileFitText: "Pour les passionnés de villes médiévales et de photographie, sur une journée complète.",
     hotelAdviceText: "Quelques adresses de charme dans la vieille ville pour qui souhaite y passer une nuit plutôt qu'un aller-retour.",
+  },
+  {
+    slug: "aeroport",
+    name: "Aéroport",
+    mapColor: "#888888",
+    vibeText: "L'aéroport international de Barcelone, repéré sur la carte pour organiser facilement son arrivée ou son départ.",
+    prosText: "Utile pour visualiser la distance et l'orientation par rapport au centre-ville avant de réserver un transfert.",
+    consText: "N'est pas un lieu à visiter — purement un repère pratique.",
+    transportText: "Aerobús ou train R2 Nord jusqu'au centre-ville.",
+    nearbyText: "Barceloneta et le Centre sont les points d'arrivée les plus pratiques depuis l'aéroport.",
+    profileFitText: "Repère pratique pour tous les profils de voyage.",
+    hotelAdviceText: "Aucun hébergement recommandé à proximité directe de l'aéroport — mieux vaut loger en ville.",
   },
 ];
 

@@ -1272,6 +1272,18 @@ const PLACES: PlaceDef[] = [
     littleTip: "Les jardins sont nettement moins fréquentés que l'intérieur du monastère, parfaits pour une photo sans foule.",
     indicativeDuration: "30 min",
   },
+
+  // ---------- Aéroport ----------
+  {
+    slug: "aeropuerto-barajas",
+    name: "Aeropuerto Adolfo Suárez Madrid-Barajas",
+    zone: "aeroport",
+    categories: [],
+    lat: 40.4983, lng: -3.5676,
+    description: "Le principal aéroport international de Madrid, à environ 13 km au nord-est du centre-ville, l'un des plus grands hubs aériens d'Europe.",
+    whyVisit: "Repère pratique pour organiser son arrivée ou son départ de Madrid.",
+    littleTip: "La ligne 8 du métro relie directement l'aéroport au centre-ville (Nuevos Ministerios) en environ 15-20 minutes, souvent plus rapide qu'un taxi aux heures de pointe.",
+  },
 ];
 
 const ZONE_DEFS = [
@@ -1406,6 +1418,18 @@ const ZONE_DEFS = [
     nearbyText: "Peut se combiner avec Segovia pour qui loue une voiture et dispose d'une journée complète.",
     profileFitText: "Pour les passionnés d'histoire espagnole impériale et contemporaine.",
     hotelAdviceText: "Quelques hébergements simples dans le village d'El Escorial pour qui veut y passer la nuit, surtout utile en été pour échapper à la chaleur de Madrid.",
+  },
+  {
+    slug: "aeroport",
+    name: "Aéroport",
+    mapColor: "#888888",
+    vibeText: "L'aéroport international de Madrid, repéré sur la carte pour organiser facilement son arrivée ou son départ.",
+    prosText: "Utile pour visualiser la distance et l'orientation par rapport au centre-ville avant de réserver un transfert.",
+    consText: "N'est pas un lieu à visiter — purement un repère pratique.",
+    transportText: "Métro ligne 8 ou bus Exprés Aeropuerto jusqu'au centre-ville.",
+    nearbyText: "Salamanca et Chamberí sont les quartiers les plus proches de l'aéroport.",
+    profileFitText: "Repère pratique pour tous les profils de voyage.",
+    hotelAdviceText: "Aucun hébergement recommandé à proximité directe de l'aéroport — mieux vaut loger en ville.",
   },
 ];
 

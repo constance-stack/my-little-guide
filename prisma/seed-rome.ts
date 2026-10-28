@@ -1118,6 +1118,28 @@ const PLACES: PlaceDef[] = [
     littleTip: "Les stabilimenti (clubs de plage payants avec transats) sont la norme ici — les plages entièrement libres et gratuites sont plus rares et moins équipées.",
     indicativeDuration: "2h-3h",
   },
+
+  // ---------- Aéroports ----------
+  {
+    slug: "aeroporto-fiumicino",
+    name: "Aeroporto di Roma-Fiumicino",
+    zone: "aeroport",
+    categories: [],
+    lat: 41.8003, lng: 12.2389,
+    description: "Le principal aéroport international de Rome, à environ 30 km au sud-ouest du centre-ville, point d'arrivée de la plupart des vols long-courriers.",
+    whyVisit: "Repère pratique pour organiser son arrivée ou son départ de Rome.",
+    littleTip: "Le train Leonardo Express relie directement l'aéroport à la gare Termini en 32 minutes, sans arrêt — l'option la plus simple et rapide.",
+  },
+  {
+    slug: "aeroporto-ciampino",
+    name: "Aeroporto di Roma-Ciampino",
+    zone: "aeroport",
+    categories: [],
+    lat: 41.7994, lng: 12.5949,
+    description: "Le second aéroport de Rome, plus petit et plus proche du centre que Fiumicino, principalement utilisé par les compagnies low-cost.",
+    whyVisit: "Repère pratique pour les vols low-cost européens.",
+    littleTip: "Des navettes bus directes relient Ciampino à la gare Termini en environ 40 minutes.",
+  },
 ];
 
 const ZONE_DEFS = [
@@ -1252,6 +1274,18 @@ const ZONE_DEFS = [
     nearbyText: "Le Lido di Ostia se rejoint en 10 minutes de train supplémentaires pour combiner avec la plage.",
     profileFitText: "Pour les passionnés d'archéologie romaine en quête d'une alternative plus rapide à Pompéi.",
     hotelAdviceText: "Généralement visité en demi-journée depuis Rome, peu d'hébergements nécessaires sur place.",
+  },
+  {
+    slug: "aeroport",
+    name: "Aéroports",
+    mapColor: "#888888",
+    vibeText: "Les deux aéroports qui desservent Rome, repérés sur la carte pour organiser facilement son arrivée ou son départ.",
+    prosText: "Utile pour visualiser la distance et l'orientation par rapport au centre-ville avant de réserver un transfert.",
+    consText: "Ne sont pas des lieux à visiter — purement des repères pratiques.",
+    transportText: "Leonardo Express (train) pour Fiumicino ; navette bus pour Ciampino.",
+    nearbyText: "Le Centro Storico et le Vatican sont les points d'arrivée les plus pratiques depuis l'un ou l'autre aéroport.",
+    profileFitText: "Repère pratique pour tous les profils de voyage.",
+    hotelAdviceText: "Aucun hébergement recommandé à proximité directe des aéroports — mieux vaut loger en ville.",
   },
 ];
 

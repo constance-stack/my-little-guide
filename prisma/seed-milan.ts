@@ -811,6 +811,28 @@ const PLACES: PlaceDef[] = [
     littleTip: "Le restaurant de l'île, Locanda dell'Isola Comacina, propose un menu unique fixe servi depuis des décennies selon la même recette.",
     indicativeDuration: "1h-1h30",
   },
+
+  // ---------- Aéroports ----------
+  {
+    slug: "aeroporto-malpensa",
+    name: "Aeroporto di Milano-Malpensa",
+    zone: "aeroport",
+    categories: [],
+    lat: 45.6306, lng: 8.7281,
+    description: "Le principal aéroport international de Milan, à environ 45 km au nord-ouest du centre-ville, point d'arrivée de la plupart des vols long-courriers.",
+    whyVisit: "Repère pratique pour organiser son arrivée ou son départ de Milan.",
+    littleTip: "Le Malpensa Express relie directement l'aéroport aux gares Centrale et Cadorna en 35 à 50 minutes — nettement plus simple qu'un taxi aux heures de pointe.",
+  },
+  {
+    slug: "aeroporto-linate",
+    name: "Aeroporto di Milano-Linate",
+    zone: "aeroport",
+    categories: [],
+    lat: 45.4451, lng: 9.2767,
+    description: "Le second aéroport de Milan, bien plus proche du centre que Malpensa, principalement utilisé pour les vols domestiques et européens courts.",
+    whyVisit: "Repère pratique pour les vols intérieurs ou vers d'autres grandes villes européennes proches.",
+    littleTip: "Le bus express 73 relie Linate au centre-ville (San Babila) en seulement 25 minutes environ.",
+  },
 ];
 
 const ZONE_DEFS = [
@@ -897,6 +919,18 @@ const ZONE_DEFS = [
     nearbyText: "Bellagio, Varenna et Villa Carlotta se rejoignent facilement en bateau depuis Como, à des fréquences variables selon la saison.",
     profileFitText: "Pour une journée de paysages alpins et lacustres, loin de l'agitation urbaine de Milan.",
     hotelAdviceText: "Quelques hébergements de charme à Bellagio ou Varenna pour qui veut y passer une nuit plutôt qu'un aller-retour.",
+  },
+  {
+    slug: "aeroport",
+    name: "Aéroports",
+    mapColor: "#888888",
+    vibeText: "Les deux aéroports qui desservent Milan, repérés sur la carte pour organiser facilement son arrivée ou son départ.",
+    prosText: "Utile pour visualiser la distance et l'orientation par rapport au centre-ville avant de réserver un transfert.",
+    consText: "Ne sont pas des lieux à visiter — purement des repères pratiques.",
+    transportText: "Malpensa Express (train) ou bus pour Malpensa ; bus express 73 pour Linate.",
+    nearbyText: "Le Centro et Porta Nuova sont les points d'arrivée les plus pratiques depuis l'un ou l'autre aéroport.",
+    profileFitText: "Repère pratique pour tous les profils de voyage.",
+    hotelAdviceText: "Aucun hébergement recommandé à proximité directe des aéroports — mieux vaut loger en ville.",
   },
 ];
 

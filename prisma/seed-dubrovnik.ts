@@ -850,6 +850,18 @@ const PLACES: PlaceDef[] = [
     indicativeDuration: "1h30 à 2h",
     indicativePrice: "$$$",
   },
+
+  // ---------- Aéroport ----------
+  {
+    slug: "aeroport-dubrovnik",
+    name: "Aéroport de Dubrovnik (Čilipi)",
+    zone: "aeroport",
+    categories: [],
+    lat: 42.5614, lng: 18.2682,
+    description: "L'aéroport international de Dubrovnik, à environ 20 km au sud-est du centre historique, bien desservi depuis la France en haute saison.",
+    whyVisit: "Repère pratique pour organiser son arrivée ou son départ de Dubrovnik.",
+    littleTip: "Des navettes bus directes relient l'aéroport à la gare routière de Dubrovnik en 20-30 minutes, calées sur les horaires de vols.",
+  },
 ];
 
 const ZONE_DEFS = [
@@ -948,6 +960,18 @@ const ZONE_DEFS = [
     nearbyText: "L'aéroport de Dubrovnik se trouve à seulement 5 minutes de Cavtat, pratique en fin de séjour.",
     profileFitText: "Pour une excursion paisible depuis Dubrovnik, ou une dernière étape avant un vol depuis l'aéroport voisin.",
     hotelAdviceText: "Cavtat offre un bon compromis prix/calme pour qui veut éviter de loger en plein cœur de Dubrovnik.",
+  },
+  {
+    slug: "aeroport",
+    name: "Aéroport",
+    mapColor: "#888888",
+    vibeText: "L'aéroport international de Dubrovnik, repéré sur la carte pour organiser facilement son arrivée ou son départ.",
+    prosText: "Utile pour visualiser la distance et l'orientation par rapport au centre-ville avant de réserver un transfert.",
+    consText: "N'est pas un lieu à visiter — purement un repère pratique.",
+    transportText: "Navette bus directe jusqu'à la gare routière de Dubrovnik.",
+    nearbyText: "Cavtat, à 5 minutes, est le point habité le plus proche de l'aéroport.",
+    profileFitText: "Repère pratique pour tous les profils de voyage.",
+    hotelAdviceText: "Aucun hébergement recommandé à proximité directe de l'aéroport — Cavtat ou la vieille ville restent préférables.",
   },
 ];
 

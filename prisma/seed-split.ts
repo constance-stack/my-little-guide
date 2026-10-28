@@ -703,6 +703,18 @@ const PLACES: PlaceDef[] = [
     littleTip: "Les moulins restaurés autour de la cascade illustrent comment les habitants exploitaient la force de l'eau avant l'électricité.",
     indicativeDuration: "1h à 1h30",
   },
+
+  // ---------- Aéroport ----------
+  {
+    slug: "aeroport-split",
+    name: "Aéroport de Split (Resnik)",
+    zone: "aeroport",
+    categories: [],
+    lat: 43.5389, lng: 16.2980,
+    description: "L'aéroport international de Split, à environ 25 km à l'ouest du centre-ville, bien desservi depuis la France en haute saison.",
+    whyVisit: "Repère pratique pour organiser son arrivée ou son départ de Split.",
+    littleTip: "Une navette bus directe relie l'aéroport à la gare routière de Split en 30-40 minutes, calée sur les horaires de vols.",
+  },
 ];
 
 const ZONE_DEFS = [
@@ -801,6 +813,18 @@ const ZONE_DEFS = [
     nearbyText: "Skradin, à l'entrée du parc, est une bonne étape pour déjeuner avant ou après la visite.",
     profileFitText: "Pour une excursion nature à la journée depuis Split, accessible même sans voiture via une excursion organisée.",
     hotelAdviceText: "Peu d'hébergements près du parc — la grande majorité des visiteurs viennent à la journée depuis Split.",
+  },
+  {
+    slug: "aeroport",
+    name: "Aéroport",
+    mapColor: "#888888",
+    vibeText: "L'aéroport international de Split, repéré sur la carte pour organiser facilement son arrivée ou son départ.",
+    prosText: "Utile pour visualiser la distance et l'orientation par rapport au centre-ville avant de réserver un transfert.",
+    consText: "N'est pas un lieu à visiter — purement un repère pratique.",
+    transportText: "Navette bus directe jusqu'à la gare routière de Split.",
+    nearbyText: "Trogir est le point habité le plus proche de l'aéroport.",
+    profileFitText: "Repère pratique pour tous les profils de voyage.",
+    hotelAdviceText: "Aucun hébergement recommandé à proximité directe de l'aéroport — mieux vaut loger en ville ou à Trogir.",
   },
 ];
 

@@ -1470,6 +1470,28 @@ const PLACES: PlaceDef[] = [
     littleTip: "Un bateau touristique relie directement Hampton Court au centre de Londres (Westminster) en environ 3h, une belle façon de rentrer.",
     indicativeDuration: "45 min à 1h",
   },
+
+  // ---------- Aéroports ----------
+  {
+    slug: "heathrow-airport",
+    name: "Heathrow Airport",
+    zone: "aeroport",
+    categories: [],
+    lat: 51.4700, lng: -0.4543,
+    description: "Le principal aéroport international de Londres, à environ 24 km à l'ouest du centre-ville, l'un des plus fréquentés au monde.",
+    whyVisit: "Repère pratique pour organiser son arrivée ou son départ de Londres.",
+    littleTip: "Le Heathrow Express relie l'aéroport à Paddington en 15 minutes seulement, tandis que la Piccadilly Line (métro) est plus lente mais bien moins chère.",
+  },
+  {
+    slug: "gatwick-airport",
+    name: "Gatwick Airport",
+    zone: "aeroport",
+    categories: [],
+    lat: 51.1537, lng: -0.1821,
+    description: "Le second aéroport de Londres, au sud de la ville, largement utilisé par les compagnies low-cost pour les vols européens.",
+    whyVisit: "Repère pratique pour les vols low-cost vers ou depuis Londres.",
+    littleTip: "Le Gatwick Express relie l'aéroport à Victoria Station en environ 30 minutes.",
+  },
 ];
 
 const ZONE_DEFS = [
@@ -1616,6 +1638,18 @@ const ZONE_DEFS = [
     nearbyText: "Bushy Park, avec ses cerfs en liberté, est à quelques minutes à pied du palais.",
     profileFitText: "Pour les passionnés d'histoire Tudor et une excursion royale alternative à Windsor.",
     hotelAdviceText: "Peu d'hébergements sur place — à visiter en journée depuis le centre de Londres.",
+  },
+  {
+    slug: "aeroport",
+    name: "Aéroports",
+    mapColor: "#888888",
+    vibeText: "Les principaux aéroports qui desservent Londres, repérés sur la carte pour organiser facilement son arrivée ou son départ.",
+    prosText: "Utile pour visualiser la distance et l'orientation par rapport au centre-ville avant de réserver un transfert.",
+    consText: "Ne sont pas des lieux à visiter — purement des repères pratiques.",
+    transportText: "Heathrow Express ou Piccadilly Line pour Heathrow ; Gatwick Express pour Gatwick.",
+    nearbyText: "Westminster et South Bank sont les points d'arrivée les plus pratiques depuis l'un ou l'autre aéroport.",
+    profileFitText: "Repère pratique pour tous les profils de voyage.",
+    hotelAdviceText: "Aucun hébergement recommandé à proximité directe des aéroports — mieux vaut loger en ville.",
   },
 ];
 
