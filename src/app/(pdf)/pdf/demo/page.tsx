@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/db";
 import { getKitSections } from "@/content/queries";
-import { PlaceDetail } from "@/content/render/place-detail";
+import { PlaceCardPrint } from "@/content/render/place-card-print";
 import { KitSectionBody } from "@/content/render/kit-section";
 import { DEMO_BANGKOK_SLUGS } from "@/lib/demo";
 
@@ -54,11 +54,13 @@ export default async function PdfDemoPage() {
 
       <section className="px-16 py-12">
         <h2 className="mb-6 font-serif text-2xl text-sage-dark">Bangkok — 10 lieux en aperçu</h2>
-        {orderedPlaces.map((place) => (
-          <div key={place.id} className="mb-8" style={{ breakInside: "avoid" }}>
-            <PlaceDetail place={place} />
-          </div>
-        ))}
+        <div className="space-y-3">
+          {orderedPlaces.map((place) => (
+            <div key={place.id} style={{ breakInside: "avoid" }}>
+              <PlaceCardPrint place={place} accentColor={place.zone?.mapColor} />
+            </div>
+          ))}
+        </div>
         <p className="mt-8 text-sm text-foreground/70">
           Le guide complet Bangkok compte plus de 100 lieux, classés par quartier, avec votre carte privée et
           votre PDF personnalisé. Rendez-vous sur my-little-guide pour le découvrir en entier.

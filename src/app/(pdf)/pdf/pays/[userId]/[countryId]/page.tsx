@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { verifyPdfToken } from "@/lib/pdf-token";
 import { getDestinationForGuide, getKitSections } from "@/content/queries";
-import { PlaceDetail } from "@/content/render/place-detail";
+import { PlaceCardPrint } from "@/content/render/place-card-print";
 import { ZonesMap, ZoneSwatch } from "@/content/render/zones-map";
 import { KitSectionBody } from "@/content/render/kit-section";
 
@@ -112,44 +112,58 @@ export default async function PdfCountryPage({
         </section>
       )}
 
-      {/* Table of contents */}
+      {/* Table of contents — two-column text flow (columns-2, CSS multi-
+          column, reliable under print pagination unlike CSS grid) so the
+          list uses the full page width instead of one narrow stack, plus
+          each zone's own color swatch as a quick visual index. */}
       <section className="px-16 py-12" style={{ breakAfter: "page" }}>
-        <h2 className="mb-6 font-serif text-2xl text-sage-dark">Sommaire</h2>
-        <ul className="space-y-2 text-sm">
-          <li>
-            <a href="#kit-essentiel" className="text-foreground/80">
-              Kit essentiel
-            </a>
-          </li>
+        <h2 className="mb-1 font-serif text-2xl text-sage-dark">Sommaire</h2>
+        <div className="mb-6 h-px w-16 bg-sage-dark" />
+        <a href="#kit-essentiel" className="mb-6 inline-block text-sm font-medium text-sage-dark">
+          Kit essentiel
+        </a>
+        <div className="columns-2 gap-10">
           {destinations.map((destination) => (
-            <li key={destination.id}>
-              <a href={`#destination-${destination.slug}`} className="font-medium text-foreground/80">
+            <div key={destination.id} className="mb-6" style={{ breakInside: "avoid" }}>
+              <a
+                href={`#destination-${destination.slug}`}
+                className="font-serif text-lg text-foreground"
+              >
                 {destination.name}
               </a>
-              <ul className="ml-4 mt-1 space-y-1">
+              <ul className="mt-2 space-y-1.5">
                 {destination.zones.map((zone) => (
                   <li key={zone.id}>
-                    <a href={`#zone-${zone.id}`} className="text-foreground/60">
+                    <a href={`#zone-${zone.id}`} className="flex items-center gap-2 text-sm text-foreground/70">
+                      <ZoneSwatch color={zone.mapColor} />
                       {zone.name}
                     </a>
                   </li>
                 ))}
               </ul>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
       {/* Kit essentiel — always this one country's, never ambiguous since
-          this whole page is already scoped to a single country. */}
+          this whole page is already scoped to a single country. Tinted
+          panel + two-column text flow for the same reason as the
+          sommaire: a single long bullet column down the middle of an
+          otherwise empty wide page read as flat and wasted the width. */}
       <section id="kit-essentiel" className="px-16 py-12" style={{ breakAfter: "page" }}>
-        <h2 className="mb-6 font-serif text-2xl text-sage-dark">Kit essentiel</h2>
-        {kitSections.map((section) => (
-          <div key={section.id} className="mb-6" style={{ breakInside: "avoid" }}>
-            <h3 className="mb-2 font-serif text-lg text-foreground">{section.title}</h3>
-            <KitSectionBody content={section.content} />
+        <h2 className="mb-1 font-serif text-2xl text-sage-dark">Kit essentiel</h2>
+        <div className="mb-6 h-px w-16 bg-sage-dark" />
+        <div className="rounded-lg bg-sand p-6">
+          <div className="columns-2 gap-8">
+            {kitSections.map((section) => (
+              <div key={section.id} className="mb-6" style={{ breakInside: "avoid" }}>
+                <h3 className="mb-2 font-serif text-base text-foreground">{section.title}</h3>
+                <KitSectionBody content={section.content} />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </section>
 
       {/* One chapter per destination owned in this country, each starting
@@ -158,8 +172,12 @@ export default async function PdfCountryPage({
           zones and places, routinely taller than a single page) made
           Chromium's print layout try and fail to keep the whole block
           together, producing large blank gaps before it gave up and
-          overflowed. Only a single place's own content — genuinely no
-          taller than a page — gets breakInside: avoid below. */}
+          overflowed. Only a single place's own card — genuinely no taller
+          than a page — gets breakInside: avoid below. Places render as
+          compact photo-left/text-right cards (PlaceCardPrint) rather than
+          the web guide's full-width PlaceDetail: dozens of places back to
+          back as full-width stacked blocks was the direct cause of "too
+          many pages, doesn't use the width, monotonous". */}
       {destinations.map((destination) => (
         <section
           key={destination.id}
@@ -167,10 +185,12 @@ export default async function PdfCountryPage({
           className="px-16 py-12"
           style={{ breakBefore: "page" }}
         >
-          <h2 className="mb-2 font-serif text-3xl text-sage-dark">{destination.name}</h2>
+          <h2 className="mb-2 border-b-2 border-sage-dark pb-2 font-serif text-3xl text-sage-dark">
+            {destination.name}
+          </h2>
 
           {destination.zones.map((zone) => (
-            <div key={zone.id} id={`zone-${zone.id}`} className="mb-10">
+            <div key={zone.id} id={`zone-${zone.id}`} className="mb-8">
               <h3
                 className="mb-1 flex items-center gap-2 font-serif text-xl text-foreground"
                 style={{ breakAfter: "avoid" }}
@@ -178,15 +198,22 @@ export default async function PdfCountryPage({
                 <ZoneSwatch color={zone.mapColor} />
                 Où dormir — {zone.name}
               </h3>
-              <p className="mb-6 text-sm text-foreground/70" style={{ breakAfter: "avoid" }}>
+              <p className="mb-4 text-sm text-foreground/70" style={{ breakAfter: "avoid" }}>
                 {zone.vibeText}
               </p>
 
-              {zone.places.map((place) => (
-                <div key={place.id} id={place.slug} className="mb-8" style={{ breakInside: "avoid" }}>
-                  <PlaceDetailForPdf placeId={place.id} appUrl={appUrl} destinationSlug={destination.slug} />
-                </div>
-              ))}
+              <div className="space-y-3">
+                {zone.places.map((place) => (
+                  <div key={place.id} id={place.slug} style={{ breakInside: "avoid" }}>
+                    <PlaceCardForPdf
+                      placeId={place.id}
+                      appUrl={appUrl}
+                      destinationSlug={destination.slug}
+                      accentColor={zone.mapColor}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </section>
@@ -195,14 +222,16 @@ export default async function PdfCountryPage({
   );
 }
 
-async function PlaceDetailForPdf({
+async function PlaceCardForPdf({
   placeId,
   appUrl,
   destinationSlug,
+  accentColor,
 }: {
   placeId: string;
   appUrl: string;
   destinationSlug: string;
+  accentColor: string;
 }) {
   const place = await prisma.place.findUnique({
     where: { id: placeId },
@@ -217,8 +246,11 @@ async function PlaceDetailForPdf({
 
   return (
     <div>
-      <PlaceDetail place={place} />
-      <a href={`${appUrl}/carte?destination=${destinationSlug}&place=${place.slug}`} className="text-sm text-sage-dark underline">
+      <PlaceCardPrint place={place} accentColor={accentColor} />
+      <a
+        href={`${appUrl}/carte?destination=${destinationSlug}&place=${place.slug}`}
+        className="ml-[120px] text-[10px] text-sage-dark underline"
+      >
         Voir sur ma carte →
       </a>
     </div>

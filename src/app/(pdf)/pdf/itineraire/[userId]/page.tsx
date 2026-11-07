@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { verifyPdfToken } from "@/lib/pdf-token";
 import { getPlaceForGuide, getKitSections } from "@/content/queries";
-import { PlaceDetail } from "@/content/render/place-detail";
+import { PlaceCardPrint } from "@/content/render/place-card-print";
 import { KitSectionBody } from "@/content/render/kit-section";
 
 // Print-mode route for the "my itinerary" PDF — same pattern as
@@ -116,11 +116,13 @@ export default async function ItineraryPdfPage({
             {day.places.length === 0 ? (
               <p className="text-sm text-foreground/60">Aucun lieu prévu ce jour-là.</p>
             ) : (
-              day.places.map((place) => (
-                <div key={place.id} className="mb-8" style={{ breakInside: "avoid" }}>
-                  <PlaceDetail place={place} />
-                </div>
-              ))
+              <div className="space-y-3">
+                {day.places.map((place) => (
+                  <div key={place.id} style={{ breakInside: "avoid" }}>
+                    <PlaceCardPrint place={place} accentColor={place.zone?.mapColor} />
+                  </div>
+                ))}
+              </div>
             )}
           </section>
         ))

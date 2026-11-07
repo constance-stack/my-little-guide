@@ -2,12 +2,14 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { verifyPdfToken } from "@/lib/pdf-token";
 import { getPlaceForGuide } from "@/content/queries";
-import { PlaceDetail } from "@/content/render/place-detail";
+import { PlaceCardPrint } from "@/content/render/place-card-print";
 
-// Print-mode route for the "my favorites" PDF — same pattern as
-// (pdf)/pdf/[orderId]: reuses getPlaceForGuide()/PlaceDetail from content/
-// so this can never show different data or markup than /lieu/[slug], and
-// is authenticated by a short-lived signed token (see lib/pdf-token.ts)
+// Print-mode route for the "my favorites" PDF. Uses getPlaceForGuide() so
+// this never shows data the user doesn't have access to, same entitlement
+// check as /lieu/[slug] — but renders with the compact PlaceCardPrint
+// (photo left, text right) rather than PlaceDetail, which is built for
+// one place filling a whole web page, not dozens back to back in a PDF.
+// Authenticated by a short-lived signed token (see lib/pdf-token.ts)
 // rather than a real session, since Playwright has no login cookie.
 // getPlaceForGuide() re-checks entitlement per place, so a favorite left
 // over from a since-refunded destination is silently dropped rather than
@@ -63,11 +65,13 @@ export default async function FavoritesPdfPage({
         Array.from(byDestination.entries()).map(([slug, group]) => (
           <section key={slug} className="px-16 py-12">
             <h2 className="mb-6 font-serif text-2xl text-sage-dark">{group.name}</h2>
-            {group.places.map((place) => (
-              <div key={place.id} className="mb-8" style={{ breakInside: "avoid" }}>
-                <PlaceDetail place={place} />
-              </div>
-            ))}
+            <div className="space-y-3">
+              {group.places.map((place) => (
+                <div key={place.id} style={{ breakInside: "avoid" }}>
+                  <PlaceCardPrint place={place} accentColor={place.zone?.mapColor} />
+                </div>
+              ))}
+            </div>
           </section>
         ))
       )}
