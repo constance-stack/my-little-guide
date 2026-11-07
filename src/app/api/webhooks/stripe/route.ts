@@ -57,6 +57,12 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
 
     // Line items were created in the same order as destinationIds (see
     // computeCartLines() — the kit is never one of them, it's free).
+    // Track each destination's country as we go, so every distinct
+    // country touched by this order (there can be more than one — a
+    // single checkout can mix destinations from several countries) gets
+    // its kit granted and its PDF (re)queued below.
+    const countryIdsTouched = new Set<string>();
+
     for (let i = 0; i < destinationIds.length; i++) {
       const destinationId = destinationIds[i];
       const item = items[i];
@@ -81,25 +87,48 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
       if (!alreadyHas) {
         await tx.entitlement.create({ data: { userId, destinationId, orderId: order.id } });
       }
+
+      if (destination) countryIdsTouched.add(destination.countryId);
     }
 
     // The kit essentiel is free and automatic with any destination
     // purchase — not a Stripe line item, granted directly here rather
-    // than inferred from one.
-    if (destinationIds.length > 0) {
-      const alreadyHasKit = await tx.entitlement.findFirst({ where: { userId, destinationId: null } });
+    // than inferred from one. Granted per country (never a single global
+    // flag): a customer who owns destinations in several countries must
+    // see each country's own kit, and a second destination purchased
+    // later in an already-owned country must not need to grant it again.
+    for (const countryId of countryIdsTouched) {
+      const alreadyHasKit = await tx.kitEntitlement.findUnique({
+        where: { userId_countryId: { userId, countryId } },
+      });
       if (!alreadyHasKit) {
-        await tx.entitlement.create({ data: { userId, destinationId: null, orderId: order.id } });
+        await tx.kitEntitlement.create({ data: { userId, countryId, orderId: order.id } });
       }
     }
 
     // No EmailJob here — the buyer downloads their PDF from /compte on
-    // demand (see /api/orders/[orderId]/pdf) rather than via an emailed
-    // link, so there's no email provider to configure for the pilot. The
-    // PdfJob row still exists: /api/orders/[orderId]/pdf uses its
-    // QUEUED/RUNNING/DONE/FAILED status to generate (once) on first
-    // download instead of relying on a separate polling worker.
-    await tx.pdfJob.create({ data: { orderId: order.id, status: "QUEUED" } });
+    // demand (see /api/compte/pdf/[countryId]) rather than via an emailed
+    // link, so there's no email provider to configure for the pilot.
+    //
+    // One CountryPdfJob per distinct country in this order, not one PdfJob
+    // per order: a customer's PDF for a country combines every
+    // destination they own there. If this order adds a destination to a
+    // country the customer already owned (from an earlier order), reset
+    // that existing job to QUEUED so the next download regenerates it
+    // with the new destination included — rather than leaving the old
+    // (now incomplete) file in place or creating a second, separate PDF
+    // for the same country.
+    for (const countryId of countryIdsTouched) {
+      const existingJob = await tx.countryPdfJob.findUnique({ where: { userId_countryId: { userId, countryId } } });
+      if (existingJob) {
+        await tx.countryPdfJob.update({
+          where: { id: existingJob.id },
+          data: { status: "QUEUED", attempts: 0, error: null },
+        });
+      } else {
+        await tx.countryPdfJob.create({ data: { userId, countryId, status: "QUEUED" } });
+      }
+    }
   });
 }
 

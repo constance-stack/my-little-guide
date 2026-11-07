@@ -21,14 +21,25 @@ function getTransport() {
 export async function processQueuedEmailJob(jobId: string): Promise<void> {
   const job = await prisma.emailJob.findUnique({
     where: { id: jobId },
-    include: { order: { include: { user: true, pdfJobs: true } } },
+    include: { order: { include: { user: true, lines: { include: { destination: true } } } } },
   });
   if (!job || job.status === "DONE") return;
 
-  // The order confirmation email is only useful once the PDF is actually
-  // ready to link to — leave it QUEUED (not failed) until that happens.
-  const pdfJob = job.order.pdfJobs[0];
-  if (!pdfJob || pdfJob.status !== "DONE") return;
+  // The order confirmation email is only useful once every country PDF
+  // touched by this order is actually ready to link to — leave it QUEUED
+  // (not failed) until that happens. PDFs are per (user, country) now, not
+  // per order, since a customer's guide for a country combines every
+  // destination they own there, possibly across several orders.
+  const countryIds = Array.from(
+    new Set(job.order.lines.map((l) => l.destination?.countryId).filter((id): id is string => Boolean(id)))
+  );
+  const countryPdfJobs = await prisma.countryPdfJob.findMany({
+    where: { userId: job.order.userId, countryId: { in: countryIds } },
+  });
+  const allReady =
+    countryIds.length > 0 &&
+    countryIds.every((countryId) => countryPdfJobs.some((j) => j.countryId === countryId && j.status === "DONE"));
+  if (!allReady) return;
 
   await prisma.emailJob.update({ where: { id: jobId }, data: { status: "RUNNING" } });
 

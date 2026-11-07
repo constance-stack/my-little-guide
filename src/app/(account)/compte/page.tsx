@@ -35,7 +35,18 @@ export default async function ComptePage({
     entitledDestinationIds(session.user.id, session.user.role),
   ]);
 
-  const ownedDestinations = await prisma.destination.findMany({ where: { id: { in: ownedIds } } });
+  const ownedDestinations = await prisma.destination.findMany({
+    where: { id: { in: ownedIds } },
+    include: { country: true },
+  });
+
+  // PDFs are downloaded per country, not per order: a country's PDF
+  // combines every destination the customer owns there, however many
+  // separate orders granted them. Deduplicate owned destinations down to
+  // their distinct countries for the download list below.
+  const ownedCountries = Array.from(
+    new Map(ownedDestinations.map((d) => [d.country.id, d.country])).values()
+  );
 
   return (
     <main className="px-4 py-16">
@@ -82,6 +93,24 @@ export default async function ComptePage({
           </div>
         )}
 
+        {ownedCountries.length > 0 && (
+          <div className="mb-8">
+            <h2 className="mb-2 text-sm font-medium text-foreground/70">Mes PDF</h2>
+            <p className="mb-2 text-xs text-foreground/60">
+              Un PDF par pays, regroupant toutes les destinations que vous y avez achetées.
+            </p>
+            <ul className="space-y-2">
+              {ownedCountries.map((country) => (
+                <li key={country.id}>
+                  <a href={`/api/compte/pdf/${country.id}`} className="text-sm text-sage-dark underline">
+                    Télécharger le PDF — {country.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {orders.length === 0 ? (
           <p className="text-sm text-foreground/70">Vous n&apos;avez pas encore de commande.</p>
         ) : (
@@ -96,9 +125,6 @@ export default async function ComptePage({
                     <li key={line.id}>{line.label}</li>
                   ))}
                 </ul>
-                <a href={`/api/orders/${order.id}/pdf`} className="mt-2 inline-block text-sm text-sage-dark underline">
-                  Télécharger mon PDF
-                </a>
               </li>
             ))}
           </ul>

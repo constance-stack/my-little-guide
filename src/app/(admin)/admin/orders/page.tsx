@@ -1,11 +1,18 @@
 import { prisma } from "@/lib/db";
-import { regeneratePdf } from "./actions";
+import { regenerateCountryPdf } from "./actions";
 
 export default async function AdminOrdersPage() {
   const orders = await prisma.order.findMany({
-    include: { user: true, lines: true, pdfJobs: true },
+    include: { user: true, lines: { include: { destination: { include: { country: true } } } } },
     orderBy: { createdAt: "desc" },
   });
+
+  // PDFs are per (user, country) now, not per order — a customer's guide
+  // for a country combines every destination they own there, possibly
+  // across several orders. Fetch every CountryPdfJob once, keyed for
+  // quick lookup per order row below instead of re-querying per order.
+  const countryPdfJobs = await prisma.countryPdfJob.findMany();
+  const jobByUserCountry = new Map(countryPdfJobs.map((j) => [`${j.userId}:${j.countryId}`, j]));
 
   return (
     <div>
@@ -20,32 +27,52 @@ export default async function AdminOrdersPage() {
               <th className="py-2">Client</th>
               <th className="py-2">Montant</th>
               <th className="py-2">Statut</th>
-              <th className="py-2">PDF</th>
-              <th className="py-2">Actions</th>
+              <th className="py-2">PDF par pays</th>
             </tr>
           </thead>
           <tbody>
             {orders.map((order) => {
-              const regenerate = regeneratePdf.bind(null, order.id);
+              const countries = Array.from(
+                new Map(
+                  order.lines
+                    .map((l) => l.destination?.country)
+                    .filter((c): c is NonNullable<typeof c> => Boolean(c))
+                    .map((c) => [c.id, c])
+                ).values()
+              );
               return (
                 <tr key={order.id} className="border-b border-line/60">
-                  <td className="py-2">{order.createdAt.toLocaleString("fr-FR")}</td>
-                  <td className="py-2">{order.user.email}</td>
-                  <td className="py-2">
+                  <td className="py-2 align-top">{order.createdAt.toLocaleString("fr-FR")}</td>
+                  <td className="py-2 align-top">{order.user.email}</td>
+                  <td className="py-2 align-top">
                     {(order.amountCents / 100).toFixed(2)} {order.currency}
                   </td>
-                  <td className="py-2">{order.status}</td>
-                  <td className="py-2">{order.pdfJobs[0]?.status ?? "—"}</td>
-                  <td className="py-2">
-                    <div className="flex gap-3">
-                      <a href={`/api/orders/${order.id}/pdf`} target="_blank" rel="noopener noreferrer" className="text-xs text-sage-dark underline">
-                        Voir le PDF
-                      </a>
-                      <form action={regenerate}>
-                        <button type="submit" className="text-xs text-sage-dark underline">
-                          Forcer la régénération
-                        </button>
-                      </form>
+                  <td className="py-2 align-top">{order.status}</td>
+                  <td className="py-2 align-top">
+                    <div className="space-y-2">
+                      {countries.map((country) => {
+                        const job = jobByUserCountry.get(`${order.userId}:${country.id}`);
+                        const regenerate = regenerateCountryPdf.bind(null, order.userId, country.id);
+                        return (
+                          <div key={country.id} className="flex items-center gap-3">
+                            <span className="w-24 text-xs text-foreground/70">{country.name}</span>
+                            <span className="text-xs">{job?.status ?? "—"}</span>
+                            <a
+                              href={`/api/compte/pdf/${country.id}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs text-sage-dark underline"
+                            >
+                              Voir le PDF
+                            </a>
+                            <form action={regenerate}>
+                              <button type="submit" className="text-xs text-sage-dark underline">
+                                Forcer la régénération
+                              </button>
+                            </form>
+                          </div>
+                        );
+                      })}
                     </div>
                   </td>
                 </tr>

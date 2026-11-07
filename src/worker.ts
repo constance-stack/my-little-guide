@@ -1,20 +1,21 @@
 /**
- * Polls PdfJob/EmailJob for queued work. Deliberately a plain polling loop
- * rather than Redis/BullMQ — at this pilot's scale (one destination, low
- * order volume) a queue table is enough, and it's the first thing to swap
- * for a real queue if volume grows. Run with `npm run worker`.
+ * Polls CountryPdfJob/EmailJob for queued work. Deliberately a plain
+ * polling loop rather than Redis/BullMQ — at this pilot's scale (one
+ * destination, low order volume) a queue table is enough, and it's the
+ * first thing to swap for a real queue if volume grows. Run with
+ * `npm run worker`.
  */
 import { prisma } from "@/lib/db";
-import { processQueuedPdfJob } from "@/lib/pdf";
+import { processQueuedCountryPdfJob } from "@/lib/pdf";
 import { processQueuedEmailJob } from "@/lib/email";
 
 const POLL_INTERVAL_MS = 5000;
 
 async function tick() {
-  const pdfJobs = await prisma.pdfJob.findMany({ where: { status: "QUEUED" }, take: 5 });
-  for (const job of pdfJobs) {
-    console.log(`[worker] processing PdfJob ${job.id} (order ${job.orderId})`);
-    await processQueuedPdfJob(job.id);
+  const countryPdfJobs = await prisma.countryPdfJob.findMany({ where: { status: "QUEUED" }, take: 5 });
+  for (const job of countryPdfJobs) {
+    console.log(`[worker] processing CountryPdfJob ${job.id} (user ${job.userId}, country ${job.countryId})`);
+    await processQueuedCountryPdfJob(job.id);
   }
 
   const emailJobs = await prisma.emailJob.findMany({ where: { status: "QUEUED" }, take: 5 });

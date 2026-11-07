@@ -3,10 +3,20 @@ import { prisma } from "@/lib/db";
 import { put } from "@/lib/storage";
 import { createPdfToken } from "@/lib/pdf-token";
 
-export async function renderOrderPdf(orderId: string): Promise<string> {
+/**
+ * One PDF per (user, country) — not per order. A customer who owns several
+ * destinations in the same country, whether bought in one checkout or
+ * across several orders over time, gets a single combined PDF covering
+ * every destination they own there plus that country's kit essentiel.
+ * Regenerating it (see processQueuedCountryPdfJob) after a new purchase in
+ * an already-owned country is what makes the new destination "join" the
+ * existing PDF instead of producing a separate, incomplete one.
+ */
+export async function renderCountryPdf(userId: string, countryId: string): Promise<string> {
   const appUrl = process.env.NEXTAUTH_URL ?? "http://localhost:3000";
-  const token = createPdfToken(orderId);
-  const url = `${appUrl}/pdf/${orderId}?token=${token}`;
+  const subject = `pays-${userId}-${countryId}`;
+  const token = createPdfToken(subject);
+  const url = `${appUrl}/pdf/pays/${userId}/${countryId}?token=${token}`;
 
   const browser = await chromium.launch();
   try {
@@ -29,7 +39,7 @@ export async function renderOrderPdf(orderId: string): Promise<string> {
       `,
     });
 
-    const key = `pdfs/${orderId}.pdf`;
+    const key = `pdfs/pays-${userId}-${countryId}.pdf`;
     await put(key, pdfBuffer);
     return key;
   } finally {
@@ -97,22 +107,22 @@ export async function processQueuedFavoritesPdfJob(jobId: string): Promise<void>
   }
 }
 
-export async function processQueuedPdfJob(jobId: string): Promise<void> {
-  const job = await prisma.pdfJob.findUnique({ where: { id: jobId } });
+export async function processQueuedCountryPdfJob(jobId: string): Promise<void> {
+  const job = await prisma.countryPdfJob.findUnique({ where: { id: jobId } });
   if (!job || job.status === "DONE") return;
 
-  await prisma.pdfJob.update({ where: { id: jobId }, data: { status: "RUNNING" } });
+  await prisma.countryPdfJob.update({ where: { id: jobId }, data: { status: "RUNNING" } });
 
   try {
-    const storageKey = await renderOrderPdf(job.orderId);
-    await prisma.pdfJob.update({
+    const storageKey = await renderCountryPdf(job.userId, job.countryId);
+    await prisma.countryPdfJob.update({
       where: { id: jobId },
       data: { status: "DONE", storageKey, error: null },
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Erreur inconnue.";
     const attempts = job.attempts + 1;
-    await prisma.pdfJob.update({
+    await prisma.countryPdfJob.update({
       where: { id: jobId },
       data: {
         status: attempts >= 3 ? "FAILED" : "QUEUED",

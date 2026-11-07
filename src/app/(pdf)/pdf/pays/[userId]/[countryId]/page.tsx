@@ -6,42 +6,53 @@ import { PlaceDetail } from "@/content/render/place-detail";
 import { ZonesMap, ZoneSwatch } from "@/content/render/zones-map";
 import { KitSectionBody } from "@/content/render/kit-section";
 
-// Print-mode route: this IS the web guide, rendered for Playwright rather
-// than a browser tab. It intentionally reuses getDestinationForGuide() and
-// PlaceDetail from content/, the same functions /guide/[slug] and
-// /lieu/[slug] use — so the PDF can never show different data or markup
-// than the web guide. No site header/nav here; this page is only ever
-// loaded by the PDF renderer, authenticated by a short-lived signed token
-// rather than a real session (see lib/pdf-token.ts).
-export default async function PdfOrderPage({
+// Print-mode route: one PDF per (user, country), not per order — see
+// renderCountryPdf() in lib/pdf.ts for why. This reuses
+// getDestinationForGuide() and PlaceDetail from content/, the same
+// functions /guide/[slug] and /lieu/[slug] use, so the PDF can never show
+// different data or markup than the web guide. No site header/nav here;
+// this page is only ever loaded by the PDF renderer, authenticated by a
+// short-lived signed token rather than a real session (see
+// lib/pdf-token.ts).
+export default async function PdfCountryPage({
   params,
   searchParams,
 }: {
-  params: Promise<{ orderId: string }>;
+  params: Promise<{ userId: string; countryId: string }>;
   searchParams: Promise<{ token?: string }>;
 }) {
-  const { orderId } = await params;
+  const { userId, countryId } = await params;
   const { token } = await searchParams;
 
-  if (!verifyPdfToken(orderId, token ?? null)) notFound();
+  const subject = `pays-${userId}-${countryId}`;
+  if (!verifyPdfToken(subject, token ?? null)) notFound();
 
-  const order = await prisma.order.findUnique({
-    where: { id: orderId },
-    include: { user: true, lines: { include: { destination: { include: { country: true } } } } },
+  const [user, country] = await Promise.all([
+    prisma.user.findUnique({ where: { id: userId } }),
+    prisma.country.findUnique({ where: { id: countryId } }),
+  ]);
+  if (!user || !country) notFound();
+
+  // Every destination this user owns in this country, across however many
+  // separate orders granted them — this is what makes a second purchase in
+  // an already-owned country "join" the existing PDF rather than produce a
+  // second, incomplete one.
+  const entitlements = await prisma.entitlement.findMany({
+    where: { userId, destination: { countryId } },
+    include: { destination: true },
   });
-  if (!order) notFound();
+  const destinationSlugs = Array.from(
+    new Set(entitlements.map((e) => e.destination?.slug).filter((s): s is string => Boolean(s)))
+  );
+  if (destinationSlugs.length === 0) notFound();
 
   const appUrl = process.env.NEXTAUTH_URL ?? "http://localhost:3000";
-  const destinationSlugs = Array.from(
-    new Set(order.lines.map((l) => l.destination?.slug).filter((s): s is string => Boolean(s)))
-  );
-  const countrySlug = order.lines.find((l) => l.destination)?.destination?.country.slug;
 
   const [destinations, kitSections] = await Promise.all([
-    Promise.all(destinationSlugs.map((slug) => getDestinationForGuide(slug, order.userId))).then((ds) =>
+    Promise.all(destinationSlugs.map((slug) => getDestinationForGuide(slug, userId))).then((ds) =>
       ds.filter((d): d is NonNullable<typeof d> => d !== null)
     ),
-    countrySlug ? getKitSections(countrySlug) : Promise.resolve([]),
+    getKitSections(country.slug),
   ]);
 
   return (
@@ -49,13 +60,11 @@ export default async function PdfOrderPage({
       {/* Cover */}
       <section className="flex h-[950px] flex-col items-center justify-center text-center" style={{ breakAfter: "page" }}>
         <p className="mb-4 text-xs uppercase tracking-[0.3em] text-sage-dark">My Little Guide</p>
-        <h1 className="mb-3 font-serif text-5xl text-foreground">
-          {destinations.map((d) => d.name).join(" · ")}
-        </h1>
-        <p className="text-sm text-foreground/60">
-          Guide personnalisé préparé pour {order.user.name ?? order.user.email}
+        <h1 className="mb-3 font-serif text-5xl text-foreground">{country.name}</h1>
+        <p className="text-sm text-foreground/60">{destinations.map((d) => d.name).join(" · ")}</p>
+        <p className="mt-3 text-sm text-foreground/60">
+          Guide personnalisé préparé pour {user.name ?? user.email}
         </p>
-        <p className="mt-1 text-sm text-foreground/60">{order.createdAt.toLocaleDateString("fr-FR")}</p>
       </section>
 
       {/* Introduction + colored neighborhood map — required at the start
@@ -128,7 +137,8 @@ export default async function PdfOrderPage({
         </ul>
       </section>
 
-      {/* Kit essentiel */}
+      {/* Kit essentiel — always this one country's, never ambiguous since
+          this whole page is already scoped to a single country. */}
       <section id="kit-essentiel" className="min-h-[400px] px-16 py-12" style={{ breakAfter: "page" }}>
         <h2 className="mb-6 font-serif text-2xl text-sage-dark">Kit essentiel</h2>
         {kitSections.map((section) => (
@@ -139,7 +149,7 @@ export default async function PdfOrderPage({
         ))}
       </section>
 
-      {/* One chapter per destination */}
+      {/* One chapter per destination owned in this country */}
       {destinations.map((destination) => (
         <section key={destination.id} id={`destination-${destination.slug}`} className="px-16 py-12">
           <h2 className="mb-2 font-serif text-3xl text-sage-dark">{destination.name}</h2>
@@ -154,7 +164,7 @@ export default async function PdfOrderPage({
 
               {zone.places.map((place) => (
                 <div key={place.id} id={place.slug} className="mb-8" style={{ breakInside: "avoid" }}>
-                  <PlaceDetailForPdf placeId={place.id} userId={order.userId} appUrl={appUrl} destinationSlug={destination.slug} />
+                  <PlaceDetailForPdf placeId={place.id} userId={userId} appUrl={appUrl} destinationSlug={destination.slug} />
                 </div>
               ))}
             </div>

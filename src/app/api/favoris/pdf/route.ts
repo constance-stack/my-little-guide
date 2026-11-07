@@ -5,7 +5,7 @@ import { processQueuedFavoritesPdfJob } from "@/lib/pdf";
 import { exists } from "@/lib/storage";
 
 // Same on-demand, non-blocking generation pattern as
-// /api/orders/[orderId]/pdf — see that route's comment for the full
+// /api/compte/pdf/[countryId] — see that route's comment for the full
 // rationale (Render free tier has no background worker, and a cold start
 // plus Playwright render in one request can exceed the buyer's browser's
 // connection timeout). Keyed by the signed-in user instead of an order,

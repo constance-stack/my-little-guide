@@ -51,11 +51,13 @@ enum JobStatus {
 }
 
 model Country {
-  id           String        @id @default(cuid())
-  slug         String        @unique
-  name         String
-  destinations Destination[]
-  kitSections  KitSection[]
+  id              String           @id @default(cuid())
+  slug            String           @unique
+  name            String
+  destinations    Destination[]
+  kitSections     KitSection[]
+  kitEntitlements KitEntitlement[]
+  countryPdfJobs  CountryPdfJob[]
 }
 
 /// A section of the mandatory country-wide "kit essentiel" (visa, monnaie,
@@ -245,11 +247,13 @@ model User {
   sessions            Session[]
   orders              Order[]
   entitlements        Entitlement[]
+  kitEntitlements     KitEntitlement[]
   favorites           Favorite[]
   tripDays            TripDay[]
   personalPins        PersonalPin[]
   destinationRequests DestinationRequest[]
   favoritesPdfJobs    FavoritesPdfJob[]
+  countryPdfJobs      CountryPdfJob[]
 
   deletedAt DateTime?
   createdAt DateTime  @default(now())
@@ -297,10 +301,10 @@ model Order {
   amountCents           Int
   currency              String
 
-  lines        OrderLine[]
-  entitlements Entitlement[]
-  pdfJobs      PdfJob[]
-  emailJobs    EmailJob[]
+  lines           OrderLine[]
+  entitlements    Entitlement[]
+  kitEntitlements KitEntitlement[]
+  emailJobs       EmailJob[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -317,9 +321,9 @@ model OrderLine {
   label         String
 }
 
-/// Grants access to a destination's content, or to the country-wide "kit"
-/// when destinationId is null. Unique per [userId, destinationId] — this is
-/// what makes "never pay twice" structurally true rather than app logic.
+/// Grants access to a single destination's content. Unique per
+/// [userId, destinationId] — this is what makes "never pay twice"
+/// structurally true rather than app logic.
 model Entitlement {
   id            String       @id @default(cuid())
   userId        String
@@ -331,6 +335,27 @@ model Entitlement {
   grantedAt     DateTime     @default(now())
 
   @@unique([userId, destinationId])
+}
+
+/// Grants access to one country's "kit essentiel" — deliberately separate
+/// from Entitlement (which is always one destination) because a user can
+/// own destinations across several countries at once, and each country's
+/// kit has to be gated per-country rather than by a single global "has
+/// bought something, somewhere" flag. Unique per [userId, countryId]: the
+/// first destination purchase in a given country grants it; a second
+/// destination purchase in the same country (same order or a later one)
+/// is a no-op here rather than a second row.
+model KitEntitlement {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  countryId String
+  country   Country  @relation(fields: [countryId], references: [id])
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id])
+  grantedAt DateTime @default(now())
+
+  @@unique([userId, countryId])
 }
 
 model Favorite {
@@ -372,16 +397,25 @@ model GuideVersion {
   contentHash   String
 }
 
-model PdfJob {
+// Keyed by user + country rather than by a single order: a customer who
+// owns several destinations in the same country (bought in one order or
+// across several) gets one combined PDF for that country, regenerated
+// whenever a new purchase adds a destination there, instead of a separate
+// PDF per order that would leave the earlier destinations out.
+model CountryPdfJob {
   id         String    @id @default(cuid())
-  orderId    String
-  order      Order     @relation(fields: [orderId], references: [id])
+  userId     String
+  user       User      @relation(fields: [userId], references: [id])
+  countryId  String
+  country    Country   @relation(fields: [countryId], references: [id])
   status     JobStatus @default(QUEUED)
   storageKey String?
   error      String?
   attempts   Int       @default(0)
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
+
+  @@unique([userId, countryId])
 }
 
 // Same QUEUED/RUNNING/DONE/FAILED pattern as PdfJob, but keyed by user

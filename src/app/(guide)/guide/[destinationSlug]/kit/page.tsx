@@ -19,7 +19,7 @@ export default async function KitPage({ params }: { params: Promise<{ destinatio
 
   if (!session?.user) redirect(`/connexion?callbackUrl=/guide/${countrySlug}/kit`);
 
-  const owns = await hasKit(session.user.id, session.user.role);
+  const owns = await hasKit(session.user.id, country.id, session.user.role);
   if (!owns) {
     return (
       <main className="mx-auto max-w-lg px-4 py-20 text-center">

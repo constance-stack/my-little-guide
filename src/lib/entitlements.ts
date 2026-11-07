@@ -42,12 +42,18 @@ export async function entitledDestinationIds(userId: string | undefined | null, 
   return entitlements.map((e) => e.destinationId!);
 }
 
-/** The country-wide "kit" entitlement is the row with destinationId = null. */
-export async function hasKit(userId: string | undefined | null, role?: Role): Promise<boolean> {
+/**
+ * A country's "kit essentiel" is gated per country, not by a single global
+ * "has bought something, somewhere" flag — otherwise buying one destination
+ * anywhere would unlock every country's kit, and a second country's kit
+ * would never unlock at all once the first had already set a (wrongly)
+ * shared flag.
+ */
+export async function hasKit(userId: string | undefined | null, countryId: string, role?: Role): Promise<boolean> {
   if (!userId) return false;
   if (role === "ADMIN") return true;
-  const entitlement = await prisma.entitlement.findFirst({
-    where: { userId, destinationId: null },
+  const entitlement = await prisma.kitEntitlement.findUnique({
+    where: { userId_countryId: { userId, countryId } },
   });
   return entitlement !== null;
 }

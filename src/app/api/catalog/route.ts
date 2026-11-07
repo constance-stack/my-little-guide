@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/db";
-import { entitledDestinationIds, hasKit } from "@/lib/entitlements";
+import { entitledDestinationIds } from "@/lib/entitlements";
 import { computeCartLines, sumCents, fetchTierPrices, resolveDestinationPrice } from "@/lib/pricing";
 
 export async function GET() {
   const session = await auth();
 
-  const [destinations, owned, accessible, ownsKit] = await Promise.all([
+  const [destinations, owned, accessible] = await Promise.all([
     prisma.destination.findMany({
       where: { status: "PUBLISHED" },
       include: { priceOverride: true, _count: { select: { places: { where: { status: "PUBLISHED" } } } } },
@@ -22,13 +22,9 @@ export async function GET() {
     // published destination to preview, not just what they've actually
     // bought.
     entitledDestinationIds(session?.user?.id, session?.user?.role),
-    hasKit(session?.user?.id),
   ]);
 
-  const [tierPrices, kitPrice] = await Promise.all([
-    fetchTierPrices(),
-    prisma.price.findUnique({ where: { key: "kit-thailande" } }),
-  ]);
+  const tierPrices = await fetchTierPrices();
 
   return NextResponse.json({
     destinations: destinations.map((d) => ({
@@ -40,8 +36,6 @@ export async function GET() {
       owned: owned.includes(d.id),
       accessible: accessible.includes(d.id),
     })),
-    kit: kitPrice ? { label: kitPrice.label, amountCents: kitPrice.amountCents } : null,
-    ownsKit,
   });
 }
 
