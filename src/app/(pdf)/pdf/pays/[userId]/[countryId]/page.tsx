@@ -164,7 +164,7 @@ export default async function PdfCountryPage({
 
               {zone.places.map((place) => (
                 <div key={place.id} id={place.slug} className="mb-8" style={{ breakInside: "avoid" }}>
-                  <PlaceDetailForPdf placeId={place.id} userId={userId} appUrl={appUrl} destinationSlug={destination.slug} />
+                  <PlaceDetailForPdf placeId={place.id} appUrl={appUrl} destinationSlug={destination.slug} />
                 </div>
               ))}
             </div>
@@ -177,12 +177,10 @@ export default async function PdfCountryPage({
 
 async function PlaceDetailForPdf({
   placeId,
-  userId,
   appUrl,
   destinationSlug,
 }: {
   placeId: string;
-  userId: string;
   appUrl: string;
   destinationSlug: string;
 }) {

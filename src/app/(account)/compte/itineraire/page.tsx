@@ -8,7 +8,13 @@ export default async function ItinerairePage() {
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-12">
-      <h1 className="mb-6 font-serif text-2xl text-sage-dark">Mon itinéraire</h1>
+      <h1 className="mb-2 font-serif text-2xl text-sage-dark">Mon itinéraire</h1>
+      <a
+        href="/api/itineraire/pdf"
+        className="mb-6 inline-block rounded-xl bg-ivory px-5 py-3 text-sm text-sage-dark shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+      >
+        Télécharger mon itinéraire en PDF →
+      </a>
       <ItineraireClient />
     </main>
   );

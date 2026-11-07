@@ -254,6 +254,7 @@ model User {
   destinationRequests DestinationRequest[]
   favoritesPdfJobs    FavoritesPdfJob[]
   countryPdfJobs      CountryPdfJob[]
+  itineraryPdfJobs    ItineraryPdfJob[]
 
   deletedAt DateTime?
   createdAt DateTime  @default(now())
@@ -423,6 +424,22 @@ model CountryPdfJob {
 // places at any time, independent of (and not re-exposing) a specific
 // purchase's full guide content.
 model FavoritesPdfJob {
+  id         String    @id @default(cuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id])
+  status     JobStatus @default(QUEUED)
+  storageKey String?
+  error      String?
+  attempts   Int       @default(0)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+// Same QUEUED/RUNNING/DONE/FAILED pattern as FavoritesPdfJob, but for the
+// day-by-day itinerary (TripDay/TripStop) a customer builds themselves —
+// one PDF per user, covering every day's stops in order plus the kit
+// essentiel for each country those stops belong to.
+model ItineraryPdfJob {
   id         String    @id @default(cuid())
   userId     String
   user       User      @relation(fields: [userId], references: [id])

@@ -47,12 +47,24 @@ export async function GET(_request: Request, { params }: { params: Promise<{ pat
       if (!isOwner && !isAdmin) {
         return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
       }
-    } else if (key.startsWith("pdfs/")) {
-      const orderId = key.slice("pdfs/".length).replace(/\.pdf$/, "");
-      const order = await prisma.order.findUnique({ where: { id: orderId } });
-      const isOwner = order?.userId === session.user.id;
+    } else if (key.startsWith("pdfs/itineraire-")) {
+      const pdfUserId = key.slice("pdfs/itineraire-".length).replace(/\.pdf$/, "");
+      const isOwner = pdfUserId === session.user.id;
       const isAdmin = session.user.role === "ADMIN";
-      if (!order || (!isOwner && !isAdmin)) {
+      if (!isOwner && !isAdmin) {
+        return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
+      }
+    } else if (key.startsWith("pdfs/pays-")) {
+      // Key shape: pdfs/pays-<userId>-<countryId>.pdf — both id halves are
+      // themselves cuids with no separator of their own, so this isn't
+      // split apart; ownership is checked against the DB row instead,
+      // which is keyed the same way (userId_countryId) and already the
+      // source of truth for which (user, country) the file belongs to.
+      const rest = key.slice("pdfs/pays-".length).replace(/\.pdf$/, "");
+      const job = await prisma.countryPdfJob.findFirst({ where: { storageKey: key } });
+      const isOwner = job?.userId === session.user.id;
+      const isAdmin = session.user.role === "ADMIN";
+      if (!rest || !job || (!isOwner && !isAdmin)) {
         return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
       }
     }
