@@ -29,24 +29,13 @@ export default async function ComptePage({
   const [orders, ownedIds] = await Promise.all([
     prisma.order.findMany({
       where: { userId: session.user.id },
-      include: { lines: { include: { destination: true } } },
+      include: { lines: { include: { destination: { include: { country: true } } } } },
       orderBy: { createdAt: "desc" },
     }),
     entitledDestinationIds(session.user.id, session.user.role),
   ]);
 
-  const ownedDestinations = await prisma.destination.findMany({
-    where: { id: { in: ownedIds } },
-    include: { country: true },
-  });
-
-  // PDFs are downloaded per country, not per order: a country's PDF
-  // combines every destination the customer owns there, however many
-  // separate orders granted them. Deduplicate owned destinations down to
-  // their distinct countries for the download list below.
-  const ownedCountries = Array.from(
-    new Map(ownedDestinations.map((d) => [d.country.id, d.country])).values()
-  );
+  const ownedDestinations = await prisma.destination.findMany({ where: { id: { in: ownedIds } } });
 
   return (
     <main className="px-4 py-16">
@@ -93,40 +82,50 @@ export default async function ComptePage({
           </div>
         )}
 
-        {ownedCountries.length > 0 && (
-          <div className="mb-8">
-            <h2 className="mb-2 text-sm font-medium text-foreground/70">Mes PDF</h2>
-            <p className="mb-2 text-xs text-foreground/60">
-              Un PDF par pays, regroupant toutes les destinations que vous y avez achetées.
-            </p>
-            <ul className="space-y-2">
-              {ownedCountries.map((country) => (
-                <li key={country.id}>
-                  <a href={`/api/compte/pdf/${country.id}`} className="text-sm text-sage-dark underline">
-                    Télécharger le PDF — {country.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
         {orders.length === 0 ? (
           <p className="text-sm text-foreground/70">Vous n&apos;avez pas encore de commande.</p>
         ) : (
           <ul className="space-y-4">
-            {orders.map((order) => (
-              <li key={order.id} className="rounded border border-line bg-sand p-4">
-                <p className="text-sm text-foreground/60">
-                  Commande du {order.createdAt.toLocaleDateString("fr-FR")}
-                </p>
-                <ul className="mt-2 text-sm">
-                  {order.lines.map((line) => (
-                    <li key={line.id}>{line.label}</li>
-                  ))}
-                </ul>
-              </li>
-            ))}
+            {orders.map((order) => {
+              // PDFs are downloaded per country, not per order: a
+              // country's PDF combines every destination the customer
+              // owns there, however many separate orders granted them.
+              // An order can touch more than one country (that's the bug
+              // this replaced), so list every distinct country this
+              // particular order touched, each linking to that same
+              // shared country PDF.
+              const orderCountries = Array.from(
+                new Map(
+                  order.lines
+                    .map((l) => l.destination?.country)
+                    .filter((c): c is NonNullable<typeof c> => Boolean(c))
+                    .map((c) => [c.id, c])
+                ).values()
+              );
+              return (
+                <li key={order.id} className="rounded border border-line bg-sand p-4">
+                  <p className="text-sm text-foreground/60">
+                    Commande du {order.createdAt.toLocaleDateString("fr-FR")}
+                  </p>
+                  <ul className="mt-2 text-sm">
+                    {order.lines.map((line) => (
+                      <li key={line.id}>{line.label}</li>
+                    ))}
+                  </ul>
+                  <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                    {orderCountries.map((country) => (
+                      <a
+                        key={country.id}
+                        href={`/api/compte/pdf/${country.id}`}
+                        className="inline-block text-sm text-sage-dark underline"
+                      >
+                        Télécharger le PDF — {country.name}
+                      </a>
+                    ))}
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         )}
 
