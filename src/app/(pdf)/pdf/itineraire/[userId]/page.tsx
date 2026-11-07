@@ -79,7 +79,7 @@ export default async function ItineraryPdfPage({
       </section>
 
       {kitByCountry.some((k) => k.sections.length > 0) && (
-        <section className="min-h-[400px] px-16 py-12" style={{ breakAfter: "page" }}>
+        <section className="px-16 py-12" style={{ breakAfter: "page" }}>
           {kitByCountry.map(
             (kit) =>
               kit.sections.length > 0 && (

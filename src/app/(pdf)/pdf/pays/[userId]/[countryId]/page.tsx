@@ -69,9 +69,12 @@ export default async function PdfCountryPage({
 
       {/* Introduction + colored neighborhood map — required at the start
           of the PDF per the editorial brief, shared with the web guide so
-          both show the exact same illustration. */}
+          both show the exact same illustration. No fixed min-height here:
+          the section already gets its own page from breakAfter, so a
+          forced min-height only padded it with empty space below short
+          content instead of helping anything. */}
       {destinations.some((d) => d.slug === "bangkok") && (
-        <section className="min-h-[600px] px-16 py-12" style={{ breakAfter: "page" }}>
+        <section className="px-16 py-12" style={{ breakAfter: "page" }}>
           <h2 className="mb-4 font-serif text-2xl text-sage-dark">Introduction</h2>
           <p className="mb-6 text-sm leading-relaxed text-foreground/80">
             Bangkok est une ville de contrastes : temples majestueux, quartiers historiques,
@@ -91,7 +94,7 @@ export default async function PdfCountryPage({
       )}
 
       {destinations.some((d) => d.slug === "new-york") && (
-        <section className="min-h-[600px] px-16 py-12" style={{ breakAfter: "page" }}>
+        <section className="px-16 py-12" style={{ breakAfter: "page" }}>
           <h2 className="mb-4 font-serif text-2xl text-sage-dark">Introduction</h2>
           <p className="mb-6 text-sm leading-relaxed text-foreground/80">
             New York se visite très bien à pied dans chaque quartier, mais se déplacer d&apos;un bout à
@@ -110,7 +113,7 @@ export default async function PdfCountryPage({
       )}
 
       {/* Table of contents */}
-      <section className="min-h-[600px] px-16 py-12" style={{ breakAfter: "page" }}>
+      <section className="px-16 py-12" style={{ breakAfter: "page" }}>
         <h2 className="mb-6 font-serif text-2xl text-sage-dark">Sommaire</h2>
         <ul className="space-y-2 text-sm">
           <li>
@@ -139,7 +142,7 @@ export default async function PdfCountryPage({
 
       {/* Kit essentiel — always this one country's, never ambiguous since
           this whole page is already scoped to a single country. */}
-      <section id="kit-essentiel" className="min-h-[400px] px-16 py-12" style={{ breakAfter: "page" }}>
+      <section id="kit-essentiel" className="px-16 py-12" style={{ breakAfter: "page" }}>
         <h2 className="mb-6 font-serif text-2xl text-sage-dark">Kit essentiel</h2>
         {kitSections.map((section) => (
           <div key={section.id} className="mb-6" style={{ breakInside: "avoid" }}>
@@ -149,18 +152,35 @@ export default async function PdfCountryPage({
         ))}
       </section>
 
-      {/* One chapter per destination owned in this country */}
+      {/* One chapter per destination owned in this country, each starting
+          on its own page — breakBefore rather than wrapping the whole
+          chapter in breakInside: avoid, which (for a destination with many
+          zones and places, routinely taller than a single page) made
+          Chromium's print layout try and fail to keep the whole block
+          together, producing large blank gaps before it gave up and
+          overflowed. Only a single place's own content — genuinely no
+          taller than a page — gets breakInside: avoid below. */}
       {destinations.map((destination) => (
-        <section key={destination.id} id={`destination-${destination.slug}`} className="px-16 py-12">
+        <section
+          key={destination.id}
+          id={`destination-${destination.slug}`}
+          className="px-16 py-12"
+          style={{ breakBefore: "page" }}
+        >
           <h2 className="mb-2 font-serif text-3xl text-sage-dark">{destination.name}</h2>
 
           {destination.zones.map((zone) => (
-            <div key={zone.id} id={`zone-${zone.id}`} className="mb-10" style={{ breakInside: "avoid" }}>
-              <h3 className="mb-1 flex items-center gap-2 font-serif text-xl text-foreground">
+            <div key={zone.id} id={`zone-${zone.id}`} className="mb-10">
+              <h3
+                className="mb-1 flex items-center gap-2 font-serif text-xl text-foreground"
+                style={{ breakAfter: "avoid" }}
+              >
                 <ZoneSwatch color={zone.mapColor} />
                 Où dormir — {zone.name}
               </h3>
-              <p className="mb-6 text-sm text-foreground/70">{zone.vibeText}</p>
+              <p className="mb-6 text-sm text-foreground/70" style={{ breakAfter: "avoid" }}>
+                {zone.vibeText}
+              </p>
 
               {zone.places.map((place) => (
                 <div key={place.id} id={place.slug} className="mb-8" style={{ breakInside: "avoid" }}>

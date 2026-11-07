@@ -42,7 +42,7 @@ export default async function PdfDemoPage() {
         </p>
       </section>
 
-      <section className="min-h-[400px] px-16 py-12" style={{ breakAfter: "page" }}>
+      <section className="px-16 py-12" style={{ breakAfter: "page" }}>
         <h2 className="mb-6 font-serif text-2xl text-sage-dark">Kit essentiel</h2>
         {kitSections.map((section) => (
           <div key={section.id} className="mb-6" style={{ breakInside: "avoid" }}>
