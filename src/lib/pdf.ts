@@ -2,6 +2,20 @@ import { chromium } from "playwright";
 import { prisma } from "@/lib/db";
 import { put } from "@/lib/storage";
 import { createPdfToken } from "@/lib/pdf-token";
+import { resolvePageNumbers } from "@/lib/pdf-toc";
+
+const PDF_OPTIONS = {
+  format: "A4" as const,
+  printBackground: true,
+  margin: { top: "20mm", bottom: "20mm", left: "0mm", right: "0mm" },
+  displayHeaderFooter: true,
+  headerTemplate: "<div></div>",
+  footerTemplate: `
+    <div style="font-size:9px; width:100%; text-align:center; color:#8a7a63; font-family:Georgia,serif;">
+      My Little Guide — <span class="pageNumber"></span> / <span class="totalPages"></span>
+    </div>
+  `,
+};
 
 /**
  * One PDF per (user, country) — not per order. A customer who owns several
@@ -11,33 +25,44 @@ import { createPdfToken } from "@/lib/pdf-token";
  * Regenerating it (see processQueuedCountryPdfJob) after a new purchase in
  * an already-owned country is what makes the new destination "join" the
  * existing PDF instead of producing a separate, incomplete one.
+ *
+ * Rendered in two passes so the "Sommaire" can show real page numbers.
+ * Chromium's print engine has no CSS way for the HTML to know what page it
+ * will land on (no target-counter() support), so the first pass renders
+ * without numbers purely to find out where each destination/zone/kit
+ * section actually falls, reads that back out of the PDF's own named
+ * destinations via pdfjs-dist, then the second pass re-renders the exact
+ * same content with those numbers now supplied — only this second buffer
+ * is kept.
  */
 export async function renderCountryPdf(userId: string, countryId: string): Promise<string> {
   const appUrl = process.env.NEXTAUTH_URL ?? "http://localhost:3000";
   const subject = `pays-${userId}-${countryId}`;
   const token = createPdfToken(subject);
-  const url = `${appUrl}/pdf/pays/${userId}/${countryId}?token=${token}`;
+  const baseUrl = `${appUrl}/pdf/pays/${userId}/${countryId}?token=${token}`;
 
   const browser = await chromium.launch();
   try {
     const page = await browser.newPage();
-    const response = await page.goto(url, { waitUntil: "networkidle" });
-    if (!response || !response.ok()) {
-      throw new Error(`PDF source route returned ${response?.status()}`);
-    }
 
-    const pdfBuffer = await page.pdf({
-      format: "A4",
-      printBackground: true,
-      margin: { top: "20mm", bottom: "20mm", left: "0mm", right: "0mm" },
-      displayHeaderFooter: true,
-      headerTemplate: "<div></div>",
-      footerTemplate: `
-        <div style="font-size:9px; width:100%; text-align:center; color:#8a7a63; font-family:Georgia,serif;">
-          My Little Guide — <span class="pageNumber"></span> / <span class="totalPages"></span>
-        </div>
-      `,
-    });
+    const draftResponse = await page.goto(baseUrl, { waitUntil: "networkidle" });
+    if (!draftResponse || !draftResponse.ok()) {
+      throw new Error(`PDF source route returned ${draftResponse?.status()}`);
+    }
+    const anchorIds = await page.evaluate(() =>
+      Array.from(document.querySelectorAll("[id]"))
+        .map((el) => el.id)
+        .filter((id) => id === "kit-essentiel" || id.startsWith("destination-") || id.startsWith("zone-"))
+    );
+    const draftPdf = await page.pdf(PDF_OPTIONS);
+    const pageNumbers = await resolvePageNumbers(draftPdf, anchorIds);
+
+    const finalUrl = `${baseUrl}&pageNumbers=${encodeURIComponent(JSON.stringify(pageNumbers))}`;
+    const finalResponse = await page.goto(finalUrl, { waitUntil: "networkidle" });
+    if (!finalResponse || !finalResponse.ok()) {
+      throw new Error(`PDF source route returned ${finalResponse?.status()}`);
+    }
+    const pdfBuffer = await page.pdf(PDF_OPTIONS);
 
     const key = `pdfs/pays-${userId}-${countryId}.pdf`;
     await put(key, pdfBuffer);

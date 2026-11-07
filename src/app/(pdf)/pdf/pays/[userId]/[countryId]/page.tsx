@@ -19,10 +19,22 @@ export default async function PdfCountryPage({
   searchParams,
 }: {
   params: Promise<{ userId: string; countryId: string }>;
-  searchParams: Promise<{ token?: string }>;
+  searchParams: Promise<{ token?: string; pageNumbers?: string }>;
 }) {
   const { userId, countryId } = await params;
-  const { token } = await searchParams;
+  const { token, pageNumbers: pageNumbersParam } = await searchParams;
+
+  // Supplied on the PDF renderer's second pass only (see renderCountryPdf()
+  // in lib/pdf.ts) — absent on the first, number-finding pass, so the
+  // sommaire just renders without numbers that one time.
+  let pageNumbers: Record<string, number> = {};
+  if (pageNumbersParam) {
+    try {
+      pageNumbers = JSON.parse(pageNumbersParam);
+    } catch {
+      pageNumbers = {};
+    }
+  }
 
   const subject = `pays-${userId}-${countryId}`;
   if (!verifyPdfToken(subject, token ?? null)) notFound();
@@ -119,24 +131,39 @@ export default async function PdfCountryPage({
       <section className="px-16 py-12" style={{ breakAfter: "page" }}>
         <h2 className="mb-1 font-serif text-2xl text-sage-dark">Sommaire</h2>
         <div className="mb-6 h-px w-16 bg-sage-dark" />
-        <a href="#kit-essentiel" className="mb-6 inline-block text-sm font-medium text-sage-dark">
-          Kit essentiel
+        <a
+          href="#kit-essentiel"
+          className="mb-6 flex items-baseline justify-between gap-2 text-sm font-medium text-sage-dark"
+        >
+          <span>Kit essentiel</span>
+          {pageNumbers["kit-essentiel"] && <span>p. {pageNumbers["kit-essentiel"]}</span>}
         </a>
         <div className="columns-2 gap-10">
           {destinations.map((destination) => (
             <div key={destination.id} className="mb-6" style={{ breakInside: "avoid" }}>
               <a
                 href={`#destination-${destination.slug}`}
-                className="font-serif text-lg text-foreground"
+                className="flex items-baseline justify-between gap-2 font-serif text-lg text-foreground"
               >
-                {destination.name}
+                <span>{destination.name}</span>
+                {pageNumbers[`destination-${destination.slug}`] && (
+                  <span className="text-sm text-foreground/50">
+                    p. {pageNumbers[`destination-${destination.slug}`]}
+                  </span>
+                )}
               </a>
               <ul className="mt-2 space-y-1.5">
                 {destination.zones.map((zone) => (
                   <li key={zone.id}>
-                    <a href={`#zone-${zone.id}`} className="flex items-center gap-2 text-sm text-foreground/70">
-                      <ZoneSwatch color={zone.mapColor} />
-                      {zone.name}
+                    <a
+                      href={`#zone-${zone.id}`}
+                      className="flex items-baseline justify-between gap-2 text-sm text-foreground/70"
+                    >
+                      <span className="flex items-center gap-2">
+                        <ZoneSwatch color={zone.mapColor} />
+                        {zone.name}
+                      </span>
+                      {pageNumbers[`zone-${zone.id}`] && <span>p. {pageNumbers[`zone-${zone.id}`]}</span>}
                     </a>
                   </li>
                 ))}
@@ -249,7 +276,7 @@ async function PlaceCardForPdf({
       <PlaceCardPrint place={place} accentColor={accentColor} />
       <a
         href={`${appUrl}/carte?destination=${destinationSlug}&place=${place.slug}`}
-        className="ml-[120px] text-[10px] text-sage-dark underline"
+        className="pl-4 text-[10px] text-sage-dark underline"
       >
         Voir sur ma carte →
       </a>

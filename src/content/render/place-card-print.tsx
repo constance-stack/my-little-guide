@@ -9,12 +9,18 @@ import type { GuidePlace } from "@/content/queries";
  * use the width, everything stacked, monotonous" — a single photo-on-top
  * block per place, one after another down a narrow text column.
  *
- * This renders photo and text side by side (uses the full page width
+ * This renders text and photo side by side (uses the full page width
  * instead of one narrow column) and condenses "Pourquoi visiter" /
  * duration / price into the same flow instead of their own full-width
  * blocks, roughly halving each place's height. accentColor (the zone's
  * mapColor) gives each entry a thin left accent so a chapter doesn't
  * read as one flat wall of text.
+ *
+ * Text always comes first (left) and the photo — when there is one —
+ * sits on the right: about a third of places have no photo yet, and
+ * putting the photo on the left would shift the text's starting
+ * position left or right depending on whether a given place happens to
+ * have one, which read as inconsistent page to page.
  */
 export function PlaceCardPrint({ place, accentColor }: { place: GuidePlace; accentColor?: string }) {
   const photo = place.photos[0];
@@ -24,22 +30,6 @@ export function PlaceCardPrint({ place, accentColor }: { place: GuidePlace; acce
       className="flex gap-4 border-l-2 pl-4"
       style={{ borderColor: accentColor ?? "transparent" }}
     >
-      {photo ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={photo.photo.storageKey}
-          alt={photo.photo.altText}
-          className="h-[104px] w-[104px] shrink-0 rounded object-cover"
-        />
-      ) : place.googlePlaceId ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={`/api/google-photo/${place.slug}`}
-          alt={place.name}
-          className="h-[104px] w-[104px] shrink-0 rounded object-cover"
-        />
-      ) : null}
-
       <div className="min-w-0 flex-1">
         <p className="text-[10px] uppercase tracking-wide text-sage-dark">
           {place.destination.name}
@@ -82,6 +72,22 @@ export function PlaceCardPrint({ place, accentColor }: { place: GuidePlace; acce
           </p>
         )}
       </div>
+
+      {photo ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={photo.photo.storageKey}
+          alt={photo.photo.altText}
+          className="h-[104px] w-[104px] shrink-0 rounded object-cover"
+        />
+      ) : place.googlePlaceId ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`/api/google-photo/${place.slug}`}
+          alt={place.name}
+          className="h-[104px] w-[104px] shrink-0 rounded object-cover"
+        />
+      ) : null}
     </article>
   );
 }
