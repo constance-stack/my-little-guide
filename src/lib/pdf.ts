@@ -1,8 +1,62 @@
-import { chromium } from "playwright";
+import { chromium, type Page } from "playwright";
 import { prisma } from "@/lib/db";
 import { put } from "@/lib/storage";
 import { createPdfToken } from "@/lib/pdf-token";
 import { resolvePageNumbers } from "@/lib/pdf-toc";
+
+/**
+ * Each ZoneMapSnapshot (content/render/zone-map-snapshot.tsx) mounts its
+ * own real MapLibre WebGL map and only marks itself data-map-ready once
+ * tiles have actually loaded (the "idle" event). Without this, printing
+ * right after navigation (networkidle only guarantees the *document's*
+ * requests settled, not each map's async tile fetches + WebGL paint)
+ * would capture some zones' maps mid-load as blank tiles.
+ */
+async function waitForZoneMaps(page: Page): Promise<void> {
+  await page
+    .waitForFunction(
+      () =>
+        Array.from(document.querySelectorAll("[data-map-snapshot]")).every(
+          (el) => el.getAttribute("data-map-ready") === "true"
+        ),
+      { timeout: 20_000 }
+    )
+    .catch(() => {
+      // A handful of unloaded tiles shouldn't fail the whole PDF — the
+      // print just carries whatever those specific maps had rendered so
+      // far (usually complete or nearly so by this timeout).
+    });
+}
+
+/**
+ * Chromium's print-to-PDF pipeline does not reliably composite a live
+ * WebGL canvas into the printed output — confirmed directly: the zone
+ * maps rendered correctly on-screen but came out as blank boxes in the
+ * PDF. page.screenshot() uses a different capture path that does
+ * capture canvas/WebGL content correctly, so each map is screenshotted
+ * as a PNG first and swapped in as a plain <img> (same data: URI
+ * technique as the place-photo fix in content/render/place-card-print.tsx)
+ * before the page is ever printed.
+ */
+async function rasterizeZoneMaps(page: Page): Promise<void> {
+  const count = await page.locator("[data-map-snapshot]").count();
+  for (let i = 0; i < count; i++) {
+    const el = page.locator("[data-map-snapshot]").nth(i);
+    const png = await el.screenshot().catch(() => null);
+    if (!png) continue;
+    const dataUri = `data:image/png;base64,${png.toString("base64")}`;
+    await el.evaluate((node, src) => {
+      node.innerHTML = "";
+      const img = document.createElement("img");
+      img.src = src;
+      img.style.width = "100%";
+      img.style.height = "100%";
+      img.style.objectFit = "cover";
+      img.style.display = "block";
+      node.appendChild(img);
+    }, dataUri);
+  }
+}
 
 const PDF_OPTIONS = {
   format: "A4" as const,
@@ -49,11 +103,13 @@ export async function renderCountryPdf(userId: string, countryId: string): Promi
     if (!draftResponse || !draftResponse.ok()) {
       throw new Error(`PDF source route returned ${draftResponse?.status()}`);
     }
+    await waitForZoneMaps(page);
     const anchorIds = await page.evaluate(() =>
       Array.from(document.querySelectorAll("[id]"))
         .map((el) => el.id)
         .filter((id) => id === "kit-essentiel" || id.startsWith("destination-") || id.startsWith("zone-"))
     );
+    await rasterizeZoneMaps(page);
     const draftPdf = await page.pdf(PDF_OPTIONS);
     const pageNumbers = await resolvePageNumbers(draftPdf, anchorIds);
 
@@ -62,6 +118,8 @@ export async function renderCountryPdf(userId: string, countryId: string): Promi
     if (!finalResponse || !finalResponse.ok()) {
       throw new Error(`PDF source route returned ${finalResponse?.status()}`);
     }
+    await waitForZoneMaps(page);
+    await rasterizeZoneMaps(page);
     const pdfBuffer = await page.pdf(PDF_OPTIONS);
 
     const key = `pdfs/pays-${userId}-${countryId}.pdf`;

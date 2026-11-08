@@ -5,6 +5,7 @@ import { getDestinationForGuide, getKitSections } from "@/content/queries";
 import { sortPlacesByCategory } from "@/content/category-order";
 import { PlaceCardPrint } from "@/content/render/place-card-print";
 import { ZonesMap, ZoneSwatch } from "@/content/render/zones-map";
+import { ZoneMapSnapshot } from "@/content/render/zone-map-snapshot";
 import { KitSectionBody } from "@/content/render/kit-section";
 
 // Print-mode route: one PDF per (user, country), not per order — see
@@ -229,6 +230,13 @@ export default async function PdfCountryPage({
               <p className="mb-4 text-sm text-foreground/70" style={{ breakAfter: "avoid" }}>
                 {zone.vibeText}
               </p>
+
+              <div className="mb-4" style={{ breakInside: "avoid" }}>
+                <ZoneMapSnapshot
+                  places={zone.places.map((p) => ({ lat: Number(p.lat), lng: Number(p.lng) }))}
+                  accentColor={zone.mapColor}
+                />
+              </div>
 
               <div className="space-y-3">
                 {sortPlacesByCategory(zone.places).map((place) => (
