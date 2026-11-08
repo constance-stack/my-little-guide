@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { verifyPdfToken } from "@/lib/pdf-token";
-import { getPlaceForGuide } from "@/content/queries";
+import { getPlaceForGuide, getKitSections } from "@/content/queries";
 import { PlaceCardPrint } from "@/content/render/place-card-print";
+import { KitSectionBody } from "@/content/render/kit-section";
 
 // Print-mode route for the "my favorites" PDF. Uses getPlaceForGuide() so
 // this never shows data the user doesn't have access to, same entitlement
@@ -46,6 +47,22 @@ export default async function FavoritesPdfPage({
     byDestination.get(key)!.places.push(place);
   }
 
+  // The kit essentiel for every country represented among these favorites
+  // — almost always one, but favorites can span several countries, and
+  // each gets its own kit chapter rather than only the first one shown.
+  // getPlaceForGuide()'s destination include doesn't carry the nested
+  // country relation, only destination.countryId, so the country rows are
+  // resolved separately here (same pattern as the itinerary PDF).
+  const countryIds = Array.from(new Set(places.map((p) => p.destination.countryId)));
+  const countries = await prisma.country.findMany({ where: { id: { in: countryIds } } });
+  const kitByCountry = await Promise.all(
+    countries.map(async (country) => ({
+      slug: country.slug,
+      name: country.name,
+      sections: await getKitSections(country.slug),
+    }))
+  );
+
   return (
     <div className="bg-ivory text-foreground">
       <section className="flex h-[950px] flex-col items-center justify-center text-center" style={{ breakAfter: "page" }}>
@@ -56,6 +73,25 @@ export default async function FavoritesPdfPage({
           {user.name ?? user.email}
         </p>
       </section>
+
+      {kitByCountry.some((k) => k.sections.length > 0) && (
+        <section className="px-16 py-12" style={{ breakAfter: "page" }}>
+          {kitByCountry.map(
+            (kit) =>
+              kit.sections.length > 0 && (
+                <div key={kit.slug} className="mb-10">
+                  <h2 className="mb-6 font-serif text-2xl text-sage-dark">Kit essentiel — {kit.name}</h2>
+                  {kit.sections.map((section) => (
+                    <div key={section.id} className="mb-6" style={{ breakInside: "avoid" }}>
+                      <h3 className="mb-2 font-serif text-lg text-foreground">{section.title}</h3>
+                      <KitSectionBody content={section.content} />
+                    </div>
+                  ))}
+                </div>
+              )
+          )}
+        </section>
+      )}
 
       {places.length === 0 ? (
         <section className="px-16 py-12">
