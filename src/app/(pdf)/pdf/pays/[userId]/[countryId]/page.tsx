@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { verifyPdfToken } from "@/lib/pdf-token";
 import { getDestinationForGuide, getKitSections } from "@/content/queries";
+import { sortPlacesByCategory } from "@/content/category-order";
 import { PlaceCardPrint } from "@/content/render/place-card-print";
 import { ZonesMap, ZoneSwatch } from "@/content/render/zones-map";
 import { KitSectionBody } from "@/content/render/kit-section";
@@ -219,7 +220,7 @@ export default async function PdfCountryPage({
           {destination.zones.map((zone) => (
             <div key={zone.id} id={`zone-${zone.id}`} className="mb-8">
               <h3
-                className="mb-1 flex items-center gap-2 font-serif text-xl text-foreground"
+                className="mb-1 flex items-center justify-center gap-2 text-center font-serif text-xl text-foreground"
                 style={{ breakAfter: "avoid" }}
               >
                 <ZoneSwatch color={zone.mapColor} />
@@ -230,7 +231,7 @@ export default async function PdfCountryPage({
               </p>
 
               <div className="space-y-3">
-                {zone.places.map((place) => (
+                {sortPlacesByCategory(zone.places).map((place) => (
                   <div key={place.id} id={place.slug} style={{ breakInside: "avoid" }}>
                     <PlaceCardForPdf
                       placeId={place.id}
