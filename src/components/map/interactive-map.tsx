@@ -117,6 +117,9 @@ export function InteractiveMap({
       zoom: 11,
     });
     mapRef.current = map;
+    if (process.env.NODE_ENV !== "production") {
+      (window as unknown as { __mlgMap?: MapLibreMap }).__mlgMap = map;
+    }
 
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
 
