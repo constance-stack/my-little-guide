@@ -1,4 +1,46 @@
 import type { GuidePlace } from "@/content/queries";
+import { get } from "@/lib/storage";
+import { getLiveGooglePlacePhoto } from "@/lib/google-places";
+
+const EXTENSION_MIME: Record<string, string> = {
+  jpg: "image/jpeg",
+  jpeg: "image/jpeg",
+  png: "image/png",
+  webp: "image/webp",
+};
+
+/**
+ * Both photo sources (/api/storage/photos/... and /api/google-photo/[slug])
+ * require a real signed-in session — Playwright's PDF renderer only ever
+ * carries a short-lived print token (see lib/pdf-token.ts), never a
+ * session cookie, so an <img src="/api/..."> there always 401'd and
+ * rendered as a broken image. Reading the bytes directly on the server
+ * and inlining them as a data: URI sidesteps that HTTP/auth hop entirely
+ * instead of threading a second auth mechanism through the storage route.
+ */
+async function resolvePrintPhotoSrc(place: GuidePlace): Promise<string | null> {
+  const photo = place.photos[0];
+  if (photo) {
+    const key = photo.photo.storageKey.replace(/^\/api\/storage\//, "");
+    try {
+      const bytes = await get(key);
+      const ext = key.split(".").pop()?.toLowerCase() ?? "";
+      const mime = EXTENSION_MIME[ext] ?? "image/jpeg";
+      return `data:${mime};base64,${bytes.toString("base64")}`;
+    } catch {
+      return null;
+    }
+  }
+
+  if (place.googlePlaceId) {
+    const googlePhoto = await getLiveGooglePlacePhoto(place.googlePlaceId);
+    if (googlePhoto) {
+      return `data:${googlePhoto.contentType};base64,${googlePhoto.bytes.toString("base64")}`;
+    }
+  }
+
+  return null;
+}
 
 /**
  * A compact, print-only place card — deliberately NOT the same markup as
@@ -22,8 +64,8 @@ import type { GuidePlace } from "@/content/queries";
  * position left or right depending on whether a given place happens to
  * have one, which read as inconsistent page to page.
  */
-export function PlaceCardPrint({ place, accentColor }: { place: GuidePlace; accentColor?: string }) {
-  const photo = place.photos[0];
+export async function PlaceCardPrint({ place, accentColor }: { place: GuidePlace; accentColor?: string }) {
+  const photoSrc = await resolvePrintPhotoSrc(place);
 
   return (
     <article
@@ -73,18 +115,11 @@ export function PlaceCardPrint({ place, accentColor }: { place: GuidePlace; acce
         )}
       </div>
 
-      {photo ? (
+      {photoSrc ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={photo.photo.storageKey}
-          alt={photo.photo.altText}
-          className="h-[104px] w-[104px] shrink-0 rounded object-cover"
-        />
-      ) : place.googlePlaceId ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={`/api/google-photo/${place.slug}`}
-          alt={place.name}
+          src={photoSrc}
+          alt={place.photos[0]?.photo.altText ?? place.name}
           className="h-[104px] w-[104px] shrink-0 rounded object-cover"
         />
       ) : null}
