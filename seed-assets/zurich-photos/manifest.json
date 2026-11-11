@@ -416,62 +416,110 @@
   {
     "slug": "kronenhalle",
     "name": "Kronenhalle",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "CEphoto, Uwe Aranas",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_Switzerland-Kronenhalle-Zurich-01.jpg"
   },
   {
     "slug": "prime-tower",
     "name": "Prime Tower",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "FreeclimbZurich",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Prime_Tower_Night_Z%C3%BCrich_Zurich.jpg"
   },
   {
     "slug": "freitag-tower",
     "name": "Freitag Tower",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Daniel Lobo",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:FREITAG_SHOP_Z%C3%9CRICH_(3755596568).jpg"
   },
   {
     "slug": "im-viadukt",
     "name": "Im Viadukt",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fred Romero from Paris, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_-_Im_Viadukt_(48677206008).jpg"
   },
   {
     "slug": "frau-gerolds-garten",
     "name": "Frau Gerolds Garten",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Sdkb",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Frau_Gerolds_Garten_at_night_1.jpg"
   },
   {
     "slug": "schiffbau",
     "name": "Schiffbau",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Adrian Michael",
+    "license": "CC BY 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Schiffbau_Foyer1.jpg"
   },
   {
     "slug": "loewenbraukunst",
     "name": "Löwenbräukunst",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Escher_Wyss_-_Migros_Museum_f%C3%BCr_Gegenwartskunst_-_Limmatstrasse_270_(L%C3%B6wenbr%C3%A4u_Areal)_2011-08-20_15-58-28.JPG"
   },
   {
     "slug": "puls5",
     "name": "Puls 5",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ank Kumar",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Art_Z%C3%BCrich,_Puls_5,_Z%C3%BCrich,_Switzerland_(Ank_Kumar,_Infosys_Limited)_02.jpg"
   },
   {
     "slug": "toni-areal",
     "name": "Toni-Areal",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Choinowski",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hochhaus_Toni-Areal_Z%C3%BCrich.jpg"
   },
   {
     "slug": "josefwiese",
     "name": "Josefwiese",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Andreas Buschmann",
+    "license": "CC BY 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Josefwiese.jpg"
   },
   {
     "slug": "kalkbreite",
     "name": "Kalkbreite",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jules Vogt",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:ETH-BIB-Z%C3%BCrich,_%C3%9Cberbauung_Kalkbreite_Com_FC24-8000-0748.jpg"
   },
   {
     "slug": "flussbad-oberer-letten",
     "name": "Flussbad Oberer Letten",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Port(u*o)s",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Badi_Oberer_Letten_von_Kornhausbr%C3%BCcke.JPG"
   },
   {
     "slug": "razzia",
@@ -486,32 +534,56 @@
   {
     "slug": "zurichhorn-park",
     "name": "Parc de Zürichhorn",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JoachimKohler-HB",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fischergarten_und_-stube_am_Z%C3%BCrichhorn_(2022).jpg"
   },
   {
     "slug": "chinagarten",
     "name": "Chinagarten",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tiia Monto",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chinagarten_Z%C3%BCrich_4.jpg"
   },
   {
     "slug": "centre-le-corbusier",
     "name": "Centre Le Corbusier (Pavillon Heidi Weber)",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Centre_Le_Corbusier_-_Museum_Heidi_Weber_2015-09-08_16-18-58.JPG"
   },
   {
     "slug": "seefeld-quai",
     "name": "Quai de Seefeld",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Salix_%C3%97_sepulcralis_am_Seefeld-Quai_in_Z%C3%BCrich_2011-10-28_15-58-06.JPG"
   },
   {
     "slug": "johann-jacobs-museum",
     "name": "Johann Jacobs Museum",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Stefan Rohner",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Johann_Jacobs_Museum_Zuerich.jpg"
   },
   {
     "slug": "tiefenbrunnen-strandbad",
     "name": "Strandbad Tiefenbrunnen",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Strandbad_Tiefenbrunnen_-_%27Schwimmbecken%27_2013-09-21_17-18-04.JPG"
   },
   {
     "slug": "stadtgaertnerei",
