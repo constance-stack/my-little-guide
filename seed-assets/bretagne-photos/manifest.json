@@ -214,5 +214,221 @@
     "artist": "Gzen92",
     "license": "CC BY-SA 4.0",
     "source_url": "https://commons.wikimedia.org/wiki/File:Village_(%C3%8Ele-Mol%C3%A8ne)_(3).jpg"
+  },
+  {
+    "slug": "remparts-saint-malo",
+    "name": "Remparts de Saint-Malo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gzen92",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Remparts_(Saint-Malo)_(2).jpg"
+  },
+  {
+    "slug": "cathedrale-saint-vincent-saint-malo",
+    "name": "Cathédrale Saint-Vincent",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Chris06",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2022_Cath%C3%A9drale_Saint-Vincent_de_Saint-Malo_(2).jpg"
+  },
+  {
+    "slug": "fort-national-saint-malo",
+    "name": "Fort National",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gzen92",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fort_National_(Saint-Malo)_(5).jpg"
+  },
+  {
+    "slug": "tombeau-chateaubriand-grand-be",
+    "name": "Tombeau de Chateaubriand (île du Grand Bé)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "lux alopex lemoni",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tombeau_de_Chateaubriand_sur_l%27%C3%8Ele_du_Grand_B%C3%A9.jpg"
+  },
+  {
+    "slug": "plage-du-sillon-saint-malo",
+    "name": "Plage du Sillon",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Kev22",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Saint-Malo_-_Plage_du_Sillon_02.jpg"
+  },
+  {
+    "slug": "musee-histoire-saint-malo",
+    "name": "Musée d'histoire de Saint-Malo (Château)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Eusebius",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Saint-Malo_-_le_Ch%C3%A2teau.jpg"
+  },
+  {
+    "slug": "cancale-port-marche-huitres",
+    "name": "Cancale, le port et le marché aux huîtres",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dalbera (Jean-Pierre Dalbéra)",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Parcs_%C3%A0_huitres_(Cancale)_(7190953138).jpg"
+  },
+  {
+    "slug": "pointe-du-grouin",
+    "name": "Pointe du Grouin",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "W. Bulach",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:.00_0914_Coast_at_the_Pointe_du_Grouin,_France.jpg"
+  },
+  {
+    "slug": "dinard-promenade-clair-de-lune",
+    "name": "Promenade du Clair de Lune, Dinard",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Katrin Gilger",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dinard_(3872303950).jpg"
+  },
+  {
+    "slug": "dinard-pointe-du-moulinet",
+    "name": "Pointe du Moulinet, Dinard",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Rémih",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pointe_du_Moulinet.jpg"
+  },
+  {
+    "slug": "dinan-vieille-ville-viaduc",
+    "name": "Vieille ville de Dinan et le viaduc",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zairon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dinan_Viaduc_de_Dinan_%26_Rance.jpg"
+  },
+  {
+    "slug": "chateau-de-combourg",
+    "name": "Château de Combourg",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Calips",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:France_Bretagne_Ille-et-Vilaine_Combourg_chateau_01.jpg"
+  },
+  {
+    "slug": "cap-frehel",
+    "name": "Cap Fréhel",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "W. Bulach",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:00_0607_Cap_Fr%C3%A9hel_-_C%C3%B4te_d%C2%B4%C3%89meraude,_Bretagne.jpg"
+  },
+  {
+    "slug": "fort-la-latte",
+    "name": "Fort la Latte",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Rundvald",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fort-LaLatte-byRundvald.jpg"
+  },
+  {
+    "slug": "saint-suliac-village",
+    "name": "Saint-Suliac",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ewan ar Born",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Saint-Suliac_village_vue_Garrot.JPG"
+  },
+  {
+    "slug": "dol-de-bretagne-cathedrale",
+    "name": "Cathédrale Saint-Samson, Dol-de-Bretagne",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Eusebius",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dol_-_cath%C3%A9drale_-_fa%C3%A7ade.jpg"
+  },
+  {
+    "slug": "place-des-lices-rennes",
+    "name": "Place des Lices",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "EriFr",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Place_des_Lices_II.JPG"
+  },
+  {
+    "slug": "parlement-de-bretagne",
+    "name": "Parlement de Bretagne",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Eusebius",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rennes_-_Parlement_de_Bretagne.jpg"
+  },
+  {
+    "slug": "cathedrale-saint-pierre-rennes",
+    "name": "Cathédrale Saint-Pierre de Rennes",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "John Samuel",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Exterior_of_Cath%C3%A9drale_Saint-Pierre_de_Rennes_01.jpg"
+  },
+  {
+    "slug": "portes-mordelaises",
+    "name": "Portes Mordelaises",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "John Samuel",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Porte_Mordelaise,_Rennes_06.jpg"
+  },
+  {
+    "slug": "rue-saint-michel-rennes",
+    "name": "Rue Saint-Michel (« rue de la Soif »)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Selby",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rennes_rue_Saint-Michel.jpg"
+  },
+  {
+    "slug": "jardin-du-thabor",
+    "name": "Jardin du Thabor",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Morio60",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rennes_(Ille-et-Vilaine)_-_Parc_du_Thabor_-_Jardins_%C3%A0_la_fran%C3%A7aise_-_50794653397.jpg"
+  },
+  {
+    "slug": "musee-beaux-arts-rennes",
+    "name": "Musée des Beaux-Arts de Rennes",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "XIIIfromTOKYO",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rennes-ancien_Palais_Universitaire-Mus%C3%A9e_des_beaux_arts.JPG"
+  },
+  {
+    "slug": "place-sainte-anne-rennes",
+    "name": "Place Sainte-Anne et maisons à pans de bois",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "TouN",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Place_Saint_Anne_Rennes.JPG"
   }
 ]
