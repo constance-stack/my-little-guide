@@ -1,0 +1,515 @@
+[
+  {
+    "slug": "blaca-hermitage",
+    "name": "Ermitage de Blaca",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "cathedral-st-domnius",
+    "name": "Cathédrale Saint-Domnius",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "hvar-lavender-fields",
+    "name": "Champs de lavande de Hvar",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "hvar-town",
+    "name": "Ville de Hvar",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "jelsa-hvar",
+    "name": "Jelsa",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "kamerlengo-fortress",
+    "name": "Forteresse de Kamerlengo",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "komiza",
+    "name": "Komiža",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "marjan-hill",
+    "name": "Colline de Marjan",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "mestrovic-gallery",
+    "name": "Galerie Meštrović",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "pakleni-islands",
+    "name": "Îles Pakleni",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "poljud-stadium",
+    "name": "Stade Poljud",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "roski-slap",
+    "name": "Roški Slap",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "skradinski-buk",
+    "name": "Skradinski Buk",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "stari-grad-plain",
+    "name": "Plaine de Stari Grad",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "statue-gregory-of-nin",
+    "name": "Statue de Grégoire de Nin",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "temple-of-jupiter-split",
+    "name": "Temple de Jupiter",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "trogir-riva",
+    "name": "Riva de Trogir",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "vis-town",
+    "name": "Ville de Vis",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "zlatni-rat",
+    "name": "Zlatni Rat",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "peristyle-split",
+    "name": "Péristyle",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "TimeTravelRome",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Peristyle_of_Diocletian%27s_Palace_-_Split_-_51389330950.jpg"
+  },
+  {
+    "slug": "silver-gate-split",
+    "name": "Porte d'Argent",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Dennis G. Jarvis",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Croatia-01232_-_Silver_Gate_(9548728661).jpg"
+  },
+  {
+    "slug": "iron-gate-split",
+    "name": "Porte de Fer",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JoJan",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Split_-_Western_or_Iron_Gate.JPG"
+  },
+  {
+    "slug": "split-synagogue",
+    "name": "Synagogue de Split",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "MOs810",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_old_synagogue_split.JPG"
+  },
+  {
+    "slug": "prokurative-split",
+    "name": "Prokurative (place de la République)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Berthold Werner",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Split_BW_2024-10-02_12-10-44.jpg"
+  },
+  {
+    "slug": "riva-split",
+    "name": "Riva",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tomasz Chralowicz",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Riva_promenade_with_palms_and_Marjan_hill,_Split_(IMG_3644).jpg"
+  },
+  {
+    "slug": "split-city-museum",
+    "name": "Musée de la ville de Split",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JoJan",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Split_-_Papalic_palace.JPG"
+  },
+  {
+    "slug": "ethnographic-museum-split",
+    "name": "Musée ethnographique de Split",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ethnographic_Museum,_Split_(P1080893).jpg"
+  },
+  {
+    "slug": "fruit-square-split",
+    "name": "Voćni trg (Place aux Fruits)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fred Romero",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Split_-_Trg_Bra%C4%87e_Radi%C4%87_Vo%C4%87ni_Trg_(49019141141).jpg"
+  },
+  {
+    "slug": "peoples-square-split",
+    "name": "Narodni trg (Place du Peuple)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fred Romero",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Split_-_Narodni_trg_Pjaca_(49018614028).jpg"
+  },
+  {
+    "slug": "split-fish-market",
+    "name": "Marché aux poissons de Split",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Vasilisa Poselkova",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ribarnica_-_panoramio.jpg"
+  },
+  {
+    "slug": "bacvice-beach",
+    "name": "Plage de Bačvice",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bacvice_Beach_in_Split,_Croatia_(48608741537).jpg"
+  },
+  {
+    "slug": "kastelet-mestrovic",
+    "name": "Kaštelet",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "SchiDD",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Split-Mestrovic-Kastelet-1.jpg"
+  },
+  {
+    "slug": "split-archaeological-museum",
+    "name": "Musée archéologique de Split",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Split_Archaeological_Museum_01.jpg"
+  },
+  {
+    "slug": "sustipan-park",
+    "name": "Parc Sustipan",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Kaiser87",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sustipan.JPG"
+  },
+  {
+    "slug": "znjan-beach",
+    "name": "Plage de Žnjan",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Klapi",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Croatia_Split_beach_Znjan_panorama.jpg"
+  },
+  {
+    "slug": "trogir-cathedral",
+    "name": "Cathédrale Saint-Laurent de Trogir",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "TimeTravelRome",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:St._Lawrence_Cathedral_of_Trogir_-_51384492236.jpg"
+  },
+  {
+    "slug": "salona-archaeological-park",
+    "name": "Parc archéologique de Salone",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Adam Jones",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Roman_Ruins_-_Solin_-_Outside_Split_-_Croatia_01.jpg"
+  },
+  {
+    "slug": "st-stephens-square-hvar",
+    "name": "Place Saint-Étienne",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pjaca_Sv._Stjepan,_Hvar_01.jpg"
+  },
+  {
+    "slug": "franciscan-monastery-hvar",
+    "name": "Monastère franciscain de Hvar",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Franciscan_Monastery,_Hvar_-_Cloister_.jpg"
+  },
+  {
+    "slug": "stari-grad-hvar",
+    "name": "Stari Grad",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Sebastian Mierzwa",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hvar_Stari_Grad1_SMierzwa.jpg"
+  },
+  {
+    "slug": "skrip-village",
+    "name": "Škrip",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "August Dominus",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bra%C4%8Dko_naselje_%C5%A0krip_2017.jpg"
+  },
+  {
+    "slug": "pucisca-stone-quarry",
+    "name": "Carrières de pierre de Pučišća",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Andres rus",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Brach_stone.JPG"
+  },
+  {
+    "slug": "blue-cave-bisevo",
+    "name": "Grotte Bleue (Biševo)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Inside_the_Blue_Cave_on_Bisevo_island,_Croatia_(48693429148).jpg"
+  },
+  {
+    "slug": "stiniva-cove",
+    "name": "Crique de Stiniva",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Stiniva_Cove_on_Vis_island_in_Croatia_(48608662256).jpg"
+  },
+  {
+    "slug": "tito-cave-vis",
+    "name": "Grotte de Tito",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Falk2",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:J32_468_Titova_%C5%A1pilija.jpg"
+  },
+  {
+    "slug": "visovac-island",
+    "name": "Île de Visovac",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Petra-81",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Visovac_Island,_National_Park_Krka.jpg"
+  },
+  {
+    "slug": "krka-national-park-entrance",
+    "name": "Skradin (entrée du parc national de Krka)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Berthold Werner",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Skradin_BW_2024-09-30_13-38-20.jpg"
+  },
+  {
+    "slug": "aeroport-split",
+    "name": "Aéroport de Split (Resnik)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ballota",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Split_Airport_new_terminal_night.jpg"
+  },
+  {
+    "slug": "diocletians-palace",
+    "name": "Palais de Dioclétien",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Institute for the Study of the Ancient World",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Diocletian%27s_Palace_(LXV)_(5373142601).jpg"
+  },
+  {
+    "slug": "golden-gate-split",
+    "name": "Porte d'Or",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fred Romero",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Split_-_Zlatna_Vrata_(49019139666).jpg"
+  },
+  {
+    "slug": "bronze-gate-split",
+    "name": "Porte de Bronze",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "SchiDD",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Split-Diokletianpalast-Bronzetor.jpg"
+  },
+  {
+    "slug": "diocletians-substructures",
+    "name": "Substructures du palais (caves)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Basement_hall_of_Diocletian%27s_Palace_in_Split,_Croatia_(48693346843).jpg"
+  },
+  {
+    "slug": "trogir-old-town",
+    "name": "Vieille ville de Trogir",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Francesco Bandarin",
+    "license": "CC BY-SA 3.0 IGO",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Historic_City_of_Trogir-111867.jpg"
+  },
+  {
+    "slug": "pazar-market-split",
+    "name": "Pazar (marché vert)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fighting Irish 1977",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vegetables_at_Pazar_in_Split.jpg"
+  },
+  {
+    "slug": "fortica-hvar",
+    "name": "Forteresse espagnole (Fortica)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Spanish_Fortress,_Hvar_02.jpg"
+  },
+  {
+    "slug": "bol-brac",
+    "name": "Bol",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Marin0110",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bol_Croatia.jpg"
+  },
+  {
+    "slug": "vidova-gora",
+    "name": "Vidova Gora",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ante Perkovic",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vidova_gora,_Bra%C4%8D,_18.9.2004._(010).jpg"
+  }
+]
