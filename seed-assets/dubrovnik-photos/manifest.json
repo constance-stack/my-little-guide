@@ -1,0 +1,524 @@
+[
+  {
+    "slug": "aeroport-dubrovnik",
+    "name": "Aéroport de Dubrovnik (Čilipi)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bracodbk",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pista_%C4%8Cilipi.JPG"
+  },
+  {
+    "slug": "banje-beach",
+    "name": "Plage de Banje",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "bukovac-house-cavtat",
+    "name": "Maison natale de Vlaho Bukovac",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JERRYE AND ROY KLOTZ MD",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:VLAHO_BUKOVAC_HOME_IN_CAVTAT,_CROATIA.jpg"
+  },
+  {
+    "slug": "buza-bar",
+    "name": "Buža Bar",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Alex Proimos from Sydney, Australia",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Walls_of_Dubrovnik_Bar_(5967296829).jpg"
+  },
+  {
+    "slug": "cavtat-old-town",
+    "name": "Vieille ville de Cavtat",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "donald judge",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:4.1.17_4_Cavtat_01_(31956754072).jpg"
+  },
+  {
+    "slug": "copacabana-beach-dubrovnik",
+    "name": "Plage Copacabana (Babin Kuk)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bracodbk",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_Copacabana.jpg"
+  },
+  {
+    "slug": "dead-sea-lokrum",
+    "name": "« Mer Morte » de Lokrum",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "August Dominus",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:MRTVO_MORE_(Lokrum).JPG"
+  },
+  {
+    "slug": "dominican-monastery-dubrovnik",
+    "name": "Monastère dominicain",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "dubrovnik-aquarium",
+    "name": "Aquarium de Dubrovnik",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "August Dominus",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dubrova%C4%8Dki_akvarij.JPG"
+  },
+  {
+    "slug": "dubrovnik-cable-car",
+    "name": "Téléphérique de Dubrovnik",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "dubrovnik-cathedral",
+    "name": "Cathédrale de l'Assomption",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cathedral_of_the_Assumption,_Dubrovnik_04.jpg"
+  },
+  {
+    "slug": "dubrovnik-city-walls",
+    "name": "Remparts de Dubrovnik",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "dubrovnik-summer-festival",
+    "name": "Festival d'été de Dubrovnik",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dubrovnik_Summer_Festival_2019_(48738589813).jpg"
+  },
+  {
+    "slug": "dubrovnik-synagogue",
+    "name": "Synagogue de Dubrovnik",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "fort-lovrijenac",
+    "name": "Fort Lovrijenac",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "fort-revelin",
+    "name": "Fort Revelin",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jules Verne Times Two",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cannon_at_Fort_Revelin,_Dubrovnik,_Croatia_(PPL1-Corrected)_julesvernex2.jpg"
+  },
+  {
+    "slug": "fort-royal-lokrum",
+    "name": "Fort Royal (Lokrum)",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "franciscan-monastery-dubrovnik",
+    "name": "Monastère franciscain et sa pharmacie",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JERRYE AND ROY KLOTZ MD",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CLOISTER_OF_THE_FRANCISCAN_MONASTERY_IN_DUBROVNIK,_CROATIA.jpg"
+  },
+  {
+    "slug": "gradac-park",
+    "name": "Parc Gradac",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "August Dominus",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Park_Gradac_(Dubrovnik).JPG"
+  },
+  {
+    "slug": "kolocep-island",
+    "name": "Koločep",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "korcula-old-town",
+    "name": "Vieille ville de Korčula",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Quintin Soloviev",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kor%C4%8Dula_Old_Town,_Croatia_(2024).jpg"
+  },
+  {
+    "slug": "lapad-peninsula",
+    "name": "Péninsule de Lapad",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Chris93",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_view_West_Dubrovnik_Lapad.jpg"
+  },
+  {
+    "slug": "lokrum-botanical-garden",
+    "name": "Jardin botanique de Lokrum",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pudelek (Marcin Szala)",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lokrum_Island_-_botanical_garden.JPG"
+  },
+  {
+    "slug": "lokrum-island",
+    "name": "Île de Lokrum",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "lopud-island",
+    "name": "Lopud",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "lumbarda-beaches",
+    "name": "Plages de Lumbarda",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Nikl Gábor",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bilin_zal_-_panoramio.jpg"
+  },
+  {
+    "slug": "mali-ston-oysters",
+    "name": "Dégustation d'huîtres à Mali Ston",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Eranyo",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mali_Ston_-_Oyster's_Heaven_-_panoramio.jpg"
+  },
+  {
+    "slug": "marco-polo-house",
+    "name": "Maison de Marco Polo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Anto (talk) 13:18, 10 March 2009 (UTC)",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kor%C4%8Dula_06719-_St._Peter%27s_Church_and_Marco_Polo_birthplace.jpg"
+  },
+  {
+    "slug": "mljet-cycling",
+    "name": "Balade à vélo autour des lacs de Mljet",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bike_tour_around_lake_Veliko_Jezero_on_Mljet,_Croatia_(48739058797).jpg"
+  },
+  {
+    "slug": "mljet-national-park",
+    "name": "Parc national de Mljet",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "moreska-sword-dance",
+    "name": "Danse de l'épée Moreška",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Luka Jačov",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:More%C5%A1ka_in_Kor%C4%8Dula.jpg"
+  },
+  {
+    "slug": "mount-srd",
+    "name": "Mont Srđ",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Dennis G. Jarvis",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Croatia-01734_-_Fort_Imperial_(10089967466).jpg"
+  },
+  {
+    "slug": "odysseus-cave-mljet",
+    "name": "Grotte d'Ulysse",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enzyklofant",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Odysseus_cave.jpg"
+  },
+  {
+    "slug": "onofrio-fountain",
+    "name": "Grande fontaine d'Onofrio",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Larisa Uhryn",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Big_Onofrio_Fountain_at_night,_Old_City_of_Dubrovnik.jpg"
+  },
+  {
+    "slug": "orebic",
+    "name": "Orebić",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "peljesac-bridge",
+    "name": "Pont de Pelješac",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "peljesac-vineyards",
+    "name": "Vignobles de Pelješac (Dingač)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Quahadi Añtó 09:05, 18 December 2013 (UTC)",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vinogradi,_Dinga%C4%8D_111738.jpg"
+  },
+  {
+    "slug": "pile-gate",
+    "name": "Porte Pile",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pile_Gate,_Dubrovnik_01.jpg"
+  },
+  {
+    "slug": "ploce-gate",
+    "name": "Porte Ploče",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "polace-pomena-mljet",
+    "name": "Polače et Pomena",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Polace_Marina_on_Mljet_island,_Croatia_(48608839531).jpg"
+  },
+  {
+    "slug": "racic-mausoleum",
+    "name": "Mausolée de la famille Račić",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Martin Brož",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cavtat,_mauzoleum_rodiny_Racic,_stavel_I._Mestrovic.jpg"
+  },
+  {
+    "slug": "rat-peninsula-cavtat",
+    "name": "Péninsule de Rat",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Vintage Fan 5678",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_Secluded_Cove_Of_Rocky_limestone_coast_along_The_%C5%A0etali%C5%A1te_Rat_(Rat_Peninsula_Promenade),_in_Cavtat,_Croatia,_heavily_shaded_by_overhanging_Aleppo_pine_trees._(2016).jpg"
+  },
+  {
+    "slug": "rectors-palace",
+    "name": "Palais du Recteur",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rector%27s_palace_01.jpg"
+  },
+  {
+    "slug": "rijeka-dubrovacka",
+    "name": "Rijeka Dubrovačka",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "sipan-island",
+    "name": "Šipan",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Alex Proimos from Sydney, Australia",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Houses_of_Sipan_Island_(5968259928).jpg"
+  },
+  {
+    "slug": "sponza-palace",
+    "name": "Palais Sponza",
+    "found": true,
+    "source": "Pré-existant (session précédente)",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "st-blaise-church",
+    "name": "Église Saint-Blaise",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Richard Mortel from Riyadh, Saudi Arabia",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Church_of_St._Blaise,_Dubrovnik,_1713_(4)_(29933328642).jpg"
+  },
+  {
+    "slug": "st-mark-cathedral-korcula",
+    "name": "Cathédrale Saint-Marc",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Cosal",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Korcula,_cathedral_St._Mark.JPG"
+  },
+  {
+    "slug": "st-mary-island-mljet",
+    "name": "Îlot Sainte-Marie et monastère bénédictin",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_view_to_the_St._Mary_Island_in_Mljet_National_Park_in_Croatia_(48739061007).jpg"
+  },
+  {
+    "slug": "ston-salt-pans",
+    "name": "Marais salants de Ston",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tony Hisgett from Birmingham, UK",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Salt_pans_Ston_(4065531015).jpg"
+  },
+  {
+    "slug": "ston-walls",
+    "name": "Remparts de Ston",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "László Szalai (Beyond silence)",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ston-Fort-04.jpg"
+  },
+  {
+    "slug": "stradun",
+    "name": "Stradun (Placa)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Martin Falbisoner",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Stradun,_Dubrovnik_-_September_2017.jpg"
+  },
+  {
+    "slug": "sunj-beach-lopud",
+    "name": "Plage de Šunj",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cliffs_near_Sunj_Beach_on_Lopud_Island,_Croatia_(48738692058).jpg"
+  },
+  {
+    "slug": "sv-jakov-beach",
+    "name": "Plage de Sveti Jakov",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mountain_above_Sveti_Jakov_Beach_in_Dubrovnik,_Croatia_(48738628043).jpg"
+  },
+  {
+    "slug": "trsteno-arboretum",
+    "name": "Arboretum de Trsteno",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Modzzak",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aquedukt,_Arboretum_Trsteno,_Croatia.JPG"
+  },
+  {
+    "slug": "vela-luka-korcula",
+    "name": "Vela Luka",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Wojtkow",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vela_Luka_(Croatia)_view_from_outside_of_bay.jpg"
+  },
+  {
+    "slug": "vela-spila-cave",
+    "name": "Grotte de Vela Spila",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Quahadi Añtó",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vela_spila_01518.JPG"
+  },
+  {
+    "slug": "veliko-jezero",
+    "name": "Veliko Jezero (Grand Lac)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tarkusfazo",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mljet,_Big_lake.jpg"
+  }
+]
