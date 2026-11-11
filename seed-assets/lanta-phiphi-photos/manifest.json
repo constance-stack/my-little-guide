@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "lanta-lighthouse",
+    "name": "Phare de Koh Lanta",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lighthouse_in_Mu_Ko_Lanta_NP_(1).jpg"
+  },
+  {
+    "slug": "emerald-cave-koh-mook",
+    "name": "Grotte d'Émeraude (Koh Mook)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Uncharted25",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wayinoutcave.jpg"
+  },
+  {
+    "slug": "four-island-tour-lanta",
+    "name": "Tour des quatre îles (Koh Ngai et environs)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Marcin Konsek",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2016_Prowincja_Krabi,_Ko_Ngai_(01).jpg"
+  },
+  {
+    "slug": "ton-sai-walking-street",
+    "name": "Ton Sai Walking Street",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Street_of_Ban_Ton_Sai.jpg"
+  },
+  {
+    "slug": "khlong-chak-waterfall",
+    "name": "Cascade de Khlong Chak",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Rushen",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Small_waterfall_at_Ko_Lanta_National_Park_(8184658168).jpg"
+  },
+  {
+    "slug": "mangrove-kayak-tour-lanta",
+    "name": "Kayak dans la mangrove de Thung Yee Peng",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Dirk Enthoven",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mangroven_in_koh_lanta-_krabi_thailand_-_panoramio.jpg"
+  },
+  {
+    "slug": "lanta-old-town",
+    "name": "Lanta Old Town",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Street_in_Lanta_Old_Town_(1).jpg",
+    "note": "Replaces a previous photo that was 95% empty sea and barely showed the old town."
+  },
+  {
+    "slug": "saladan-pier-town",
+    "name": "Saladan",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Martin Abegglen",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ban_Saladan_(2048313448).jpg",
+    "note": "Replaces a previous low-resolution, grainy photo."
+  },
+  {
+    "slug": "loh-dalum-bay",
+    "name": "Loh Dalum Bay",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Loh_Dalum_Bay,_Ko_Phi_Phi_Don.jpg",
+    "note": "Replaces a previous dark, murky telephoto shot that didn't show the bay."
+  }
+]
