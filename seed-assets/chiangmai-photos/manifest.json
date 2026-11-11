@@ -1,0 +1,317 @@
+[
+  {
+    "slug": "wat-phra-that-doi-suthep",
+    "name": "Wat Phra That Doi Suthep",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "wat-chedi-luang",
+    "name": "Wat Chedi Luang",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "wat-phra-singh",
+    "name": "Wat Phra Singh",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "tha-phae-gate",
+    "name": "Tha Phae Gate",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "wat-umong",
+    "name": "Wat Umong",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "wat-suan-dok",
+    "name": "Wat Suan Dok",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "wat-chiang-man",
+    "name": "Wat Chiang Man",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "wat-phan-tao",
+    "name": "Wat Phan Tao",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "wat-lok-moli",
+    "name": "Wat Lok Moli",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "wiang-kum-kam",
+    "name": "Wiang Kum Kam",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "wat-ket-karam",
+    "name": "Wat Ket Karam",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "doi-pui-hmong-village",
+    "name": "Doi Pui — village Hmong",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "royal-park-rajapruek",
+    "name": "Royal Park Rajapruek",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "khao-soi-khun-yai",
+    "name": "Khao Soi Khun Yai",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "akha-ama-coffee",
+    "name": "Akha Ama Coffee",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "jing-jai-market",
+    "name": "Jing Jai Market",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "chiang-mai-night-bazaar",
+    "name": "Chiang Mai Night Bazaar",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "warorot-market",
+    "name": "Warorot Market",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "doi-inthanon-national-park",
+    "name": "Doi Inthanon National Park",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "lamphun",
+    "name": "Lamphun",
+    "found": true,
+    "source": "pre-existing",
+    "artist": null,
+    "license": null,
+    "source_url": null
+  },
+  {
+    "slug": "one-nimman",
+    "name": "One Nimman",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "FredTC",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:One_Nimman_-_One_Street_P_20171220_130152.jpg"
+  },
+  {
+    "slug": "three-kings-monument",
+    "name": "Three Kings Monument",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Supanut Arunoprayote",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Three_Kings_Monument,_Chiang_Mai_(I).jpg"
+  },
+  {
+    "slug": "wat-jed-yod",
+    "name": "Wat Jed Yod",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "กสิณธร ราชโอรส",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:(2022)_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%88%E0%B9%87%E0%B8%94%E0%B8%A2%E0%B8%AD%E0%B8%94_%E0%B8%AD.%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87_%E0%B8%88.%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88,Wat_Ched_Yod,Chiangmai_(1).jpg"
+  },
+  {
+    "slug": "chiang-mai-national-museum",
+    "name": "Chiang Mai National Museum",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zhou Guanhuai",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chiang_Mai_National_Museum.jpg"
+  },
+  {
+    "slug": "bua-tong-sticky-waterfalls",
+    "name": "Bua Tong Sticky Waterfalls",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "chootrong",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%95%E0%B8%AD%E0%B8%87_Buatong_Waterfall_Thailand_-_panoramio.jpg"
+  },
+  {
+    "slug": "huay-tung-tao-lake",
+    "name": "Huay Tung Tao Lake",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Huai_Tueng_Thao_Chiang_Mai_lake.JPG"
+  },
+  {
+    "slug": "mon-cham",
+    "name": "Mon Cham",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "::::=UT=::::",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B8%A1%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%88%E0%B9%88%E0%B8%A1_%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5_%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%A3%E0%B8%A1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94_%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2_-_panoramio.jpg"
+  },
+  {
+    "slug": "mae-sa-waterfall",
+    "name": "Mae Sa Waterfall",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Iscreams",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:MAE_SA_WATERFALL.jpg"
+  },
+  {
+    "slug": "doi-suthep-pui-national-park",
+    "name": "Doi Suthep-Pui National Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Maitree Phattharakiadthawee",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E0%B8%9B%E0%B9%88%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B8%AA%E0%B8%B8%E0%B9%80%E0%B8%97%E0%B8%9E_-_%E0%B8%9B%E0%B8%B8%E0%B8%A2.jpg"
+  },
+  {
+    "slug": "wua-lai-saturday-market",
+    "name": "Wua Lai Saturday Walking Street",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "กสิณธร ราชโอรส",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%B2%E0%B8%A2_%E0%B8%AD.%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87_%E0%B8%88.%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_(1).jpg"
+  },
+  {
+    "slug": "mae-kampong-village",
+    "name": "Mae Kampong Village",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "Mike Anderson",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/0dE4XtjCEBM"
+  },
+  {
+    "slug": "chiang-dao-cave",
+    "name": "Chiang Dao Cave & Mountain",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Alexey Komarov",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chiang_Dao_Cave_2023-04-02-1.jpg"
+  },
+  {
+    "slug": "maya-lifestyle-shopping-center",
+    "name": "MAYA Lifestyle Shopping Center",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "กสิณธร ราชโอรส",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E0%B9%80%E0%B8%A1%E0%B8%8D%E0%B9%88%E0%B8%B2_%E0%B9%84%E0%B8%A5%E0%B8%9F%E0%B9%8C%E0%B8%AA%E0%B9%84%E0%B8%95%E0%B8%A5%E0%B9%8C_%E0%B8%8A%E0%B8%AD%E0%B8%9B%E0%B8%9B%E0%B8%B4%E0%B8%87_%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C_Maya_Lifestyle_Shopping_Center_Chiangmai_(10).jpg"
+  },
+  {
+    "slug": "pai",
+    "name": "Pai",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pai_countryside,_Thailand.jpg"
+  },
+  {
+    "slug": "flight-of-the-gibbon",
+    "name": "Flight of the Gibbon",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "ann p",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Flight_of_the_Gibbon_Chiang_Mai.jpg"
+  }
+]
