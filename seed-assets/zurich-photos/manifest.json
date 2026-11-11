@@ -1,0 +1,581 @@
+[
+  {
+    "slug": "grossmunster",
+    "name": "Grossmünster",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jakub Hałun",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Grossm%C3%BCnster_and_Limmat_River,_Zurich,_20250330_1239_7931.jpg"
+  },
+  {
+    "slug": "fraumunster",
+    "name": "Fraumünster",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jakub Hałun",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fraum%C3%BCnster,_M%C3%BCnsterbr%C3%BCcke_and_St._Peter,_Z%C3%BCrich,_20250330_1243_7934.jpg"
+  },
+  {
+    "slug": "st-peterskirche",
+    "name": "Église Saint-Pierre",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ansicht_vom_Lindenhof_auf_das_Ziffernblatt_der_Kirche_St._Peter_in_Z%C3%BCrich_2011-08-01.jpg"
+  },
+  {
+    "slug": "lindenhof",
+    "name": "Lindenhof",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jakub Hałun",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lindenhof_Hill,_Zurich,_20250330_1227_7917.jpg"
+  },
+  {
+    "slug": "rathaus-zurich",
+    "name": "Hôtel de ville de Zurich",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JoachimKohler-HB",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rathaus_Z%C3%BCrich_und_Limmatschiff_Regula.jpg"
+  },
+  {
+    "slug": "wasserkirche",
+    "name": "Wasserkirche",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jakub Hałun",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wasserkirche_in_Zurich,_20250328_1814_7747.jpg"
+  },
+  {
+    "slug": "munsterbrucke",
+    "name": "Pont du Münster",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jakub Hałun",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fraum%C3%BCnster,_M%C3%BCnsterbr%C3%BCcke_and_St._Peter,_Z%C3%BCrich,_20250330_1243_7934.jpg"
+  },
+  {
+    "slug": "zunfthaus-zur-meisen",
+    "name": "Zunfthaus zur Meisen",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_-_M%C3%BCnsterhof_-_Zur_Meisen_IMG_1124.jpg"
+  },
+  {
+    "slug": "augustinergasse",
+    "name": "Augustinergasse",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JoachimKohler-HB",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Augustinergasse_21_%26_25_in_Z%C3%BCrich_(2013).jpg"
+  },
+  {
+    "slug": "weinplatz",
+    "name": "Weinplatz",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "sailko",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_-_Weinplatz_-_Storchen_01.JPG"
+  },
+  {
+    "slug": "munsterhof",
+    "name": "Münsterhof",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JoachimKohler-HB",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:H%C3%A4user_am_M%C3%BCnsterhof_in_Z%C3%BCrich_im_April_2022.jpg"
+  },
+  {
+    "slug": "schipfe",
+    "name": "Schipfe",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Armineaghayan",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Schipfe_45,_Z%C3%BCrich.jpg"
+  },
+  {
+    "slug": "landesmuseum",
+    "name": "Musée national suisse (Landesmuseum)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Burkhard Mücke",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Landesmuseum_Z%C3%BCrich,_2017.jpg"
+  },
+  {
+    "slug": "platzspitz-park",
+    "name": "Parc Platzspitz",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh, upload on 3. Oktober 2009",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Landesmuseum_Z%C3%BCrich_from_Platzspitzpark_IMG_1242_ShiftN.jpg"
+  },
+  {
+    "slug": "zeughauskeller",
+    "name": "Zeughauskeller",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Andrew Bossi",
+    "license": "CC BY-SA 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:7234_-_Z%C3%BCrich_-_Zeughauskeller.JPG"
+  },
+  {
+    "slug": "hiltl",
+    "name": "Hiltl",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Adrian Michael",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hiltl_Z%C3%BCrich.jpg"
+  },
+  {
+    "slug": "widder-bar",
+    "name": "Widder Bar",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Adrian Michael",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hotel_Widder.jpg"
+  },
+  {
+    "slug": "zunfthaus-zur-waag",
+    "name": "Zunfthaus zur Waag",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JoachimKohler-HB",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aussenbeleuchtung_am_Zunfthaus_zur_Waag,_Z%C3%BCrich_(2022).jpg"
+  },
+  {
+    "slug": "niederdorfstrasse",
+    "name": "Niederdorfstrasse",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tilman2007",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Niederdorfstrasse_11_Z%C3%BCrich_20230529_0343.jpg"
+  },
+  {
+    "slug": "spiegelgasse",
+    "name": "Spiegelgasse",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Leonhard Lenz",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Spiegelgasse_Z%C3%BCrich_2022-09-24_01.jpg"
+  },
+  {
+    "slug": "cabaret-voltaire",
+    "name": "Cabaret Voltaire",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ivanaivanova",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aleksandr_Veprev_Cabaret_Voltaire_(Zurich)_2016.jpg"
+  },
+  {
+    "slug": "predigerkirche",
+    "name": "Predigerkirche",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Burkhard Mücke",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Predigerkirche_in_Z%C3%BCrich.jpg"
+  },
+  {
+    "slug": "central-platz",
+    "name": "Central",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Leonhard Lenz",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Central_Z%C3%BCrich_2022-09-24_01.jpg"
+  },
+  {
+    "slug": "kunsthaus-zurich",
+    "name": "Kunsthaus Zürich",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gre regiment",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kunsthaus_Zurich_interior_1.jpg"
+  },
+  {
+    "slug": "hechtplatz",
+    "name": "Hechtplatz",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gnocchi300",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hechtplatz_Z%C3%BCrich_20260112.jpg"
+  },
+  {
+    "slug": "urania-sternwarte",
+    "name": "Observatoire Urania",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_-_Bahnhof-Uraniastrasse_-_Urania_Sternwarte_IMG_7456.JPG"
+  },
+  {
+    "slug": "neumarkt",
+    "name": "Neumarkt",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Grimmenturm_-_Neumarkt_Z%C3%BCrich_2014-10-29_11-10-28_(P7800).JPG"
+  },
+  {
+    "slug": "oepfelchammer",
+    "name": "Oepfelchammer",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zavijava2",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Oeli06072019.png"
+  },
+  {
+    "slug": "hauptbahnhof",
+    "name": "Gare centrale de Zurich",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ikiwaner",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Zuerich_Hauptbahnhof-2.jpg"
+  },
+  {
+    "slug": "bahnhofstrasse",
+    "name": "Bahnhofstrasse",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_(Schweiz),_Auto_in_der_Bahnhofstrasse_--_2011_--_1425.jpg"
+  },
+  {
+    "slug": "paradeplatz",
+    "name": "Paradeplatz",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ank Kumar",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Credit_Suisse,_Zurich_Paradeplatz_(Ank_Kumar,_Infosys_Limited)_09.jpg"
+  },
+  {
+    "slug": "confiserie-spruengli",
+    "name": "Confiserie Sprüngli",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Adrian Michael",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Confiserie_Spr%C3%BCngli_2010.jpg"
+  },
+  {
+    "slug": "beyer-uhrenmuseum",
+    "name": "Musée de l'horlogerie Beyer",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Natalia Sverdlova",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Uhrenmuseum_Beyer.JPG"
+  },
+  {
+    "slug": "burkliplatz",
+    "name": "Bürkliplatz",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ank Kumar",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:B%C3%BCrkliplatz_in_Autumn_Colours,_Zurich,_Switzerland_(Ank_Kumar)_06.jpg"
+  },
+  {
+    "slug": "quaibrucke",
+    "name": "Quaibrücke",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jochen Teufel",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Blick_vom_Z%C3%BCrichsee_auf_Quaibr%C3%BCcke_und_Grossm%C3%BCnster_(2009).jpg"
+  },
+  {
+    "slug": "sechselautenplatz",
+    "name": "Sechseläutenplatz",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Albinfo",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sechsel%C3%A4utenplatz_2014-04.JPG"
+  },
+  {
+    "slug": "opernhaus-zurich",
+    "name": "Opéra de Zurich",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Opernhaus_Z%C3%BCrich_-_Sechsel%C3%A4utenplatz_2013-08-31_18-30-40.JPG"
+  },
+  {
+    "slug": "cafe-odeon",
+    "name": "Café Odeon",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Apotheke-Caf%C3%A9_Odeon_2012-03-20_14-59-42_(P7000)_ShiftN.jpg"
+  },
+  {
+    "slug": "bellevue-platz",
+    "name": "Bellevue",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bellevue_-_Quaibr%C3%BCcke_2012-08-08_19-45-15.JPG"
+  },
+  {
+    "slug": "fifa-museum",
+    "name": "Musée FIFA du football mondial",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pakeha",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:FIFA-Museum_01.jpg"
+  },
+  {
+    "slug": "museum-rietberg",
+    "name": "Musée Rietberg",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Museum_Rietberg_%26_Villa_Wesendonck_2011-08-15_16-20-26_ShiftN.jpg"
+  },
+  {
+    "slug": "mythenquai-strandbad",
+    "name": "Strandbad Mythenquai",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mythenquai_-_Strandbad_2011-03-23_14-06-54.jpg"
+  },
+  {
+    "slug": "arboretum-zurich",
+    "name": "Arboretum de Zurich",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pakwesi at de.wikipedia",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Arboretum-Zuerich.jpg"
+  },
+  {
+    "slug": "jelmoli",
+    "name": "Jelmoli",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bahnhofstrasse_-_Jelmoli_Z%C3%BCrich_2012-11-10_17-51-11_(P7700)_ShiftN.jpg"
+  },
+  {
+    "slug": "bauschanzli",
+    "name": "Bauschänzli",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bausch%C3%A4nzli_-_Stadthausquai_-_Limmat_-_Grossm%C3%BCnster_-_Limmatquai_-_Quaibr%C3%BCcke_2012-07-30_09-01-26.JPG"
+  },
+  {
+    "slug": "haus-konstruktiv",
+    "name": "Museum Haus Konstruktiv",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:B%C3%B6rse_%26_EWZ_Unterwerk_Selnau_(Haus_Konstruktiv)_-_Sihlbr%C3%BCcke_2011-08-13_19-58-22_ShiftN.jpg"
+  },
+  {
+    "slug": "kronenhalle",
+    "name": "Kronenhalle",
+    "found": false
+  },
+  {
+    "slug": "prime-tower",
+    "name": "Prime Tower",
+    "found": false
+  },
+  {
+    "slug": "freitag-tower",
+    "name": "Freitag Tower",
+    "found": false
+  },
+  {
+    "slug": "im-viadukt",
+    "name": "Im Viadukt",
+    "found": false
+  },
+  {
+    "slug": "frau-gerolds-garten",
+    "name": "Frau Gerolds Garten",
+    "found": false
+  },
+  {
+    "slug": "schiffbau",
+    "name": "Schiffbau",
+    "found": false
+  },
+  {
+    "slug": "loewenbraukunst",
+    "name": "Löwenbräukunst",
+    "found": false
+  },
+  {
+    "slug": "puls5",
+    "name": "Puls 5",
+    "found": false
+  },
+  {
+    "slug": "toni-areal",
+    "name": "Toni-Areal",
+    "found": false
+  },
+  {
+    "slug": "josefwiese",
+    "name": "Josefwiese",
+    "found": false
+  },
+  {
+    "slug": "kalkbreite",
+    "name": "Kalkbreite",
+    "found": false
+  },
+  {
+    "slug": "flussbad-oberer-letten",
+    "name": "Flussbad Oberer Letten",
+    "found": false
+  },
+  {
+    "slug": "razzia",
+    "name": "Razzia",
+    "found": false
+  },
+  {
+    "slug": "caduffs-wine-loft",
+    "name": "Caduff's Wine Loft",
+    "found": false
+  },
+  {
+    "slug": "zurichhorn-park",
+    "name": "Parc de Zürichhorn",
+    "found": false
+  },
+  {
+    "slug": "chinagarten",
+    "name": "Chinagarten",
+    "found": false
+  },
+  {
+    "slug": "centre-le-corbusier",
+    "name": "Centre Le Corbusier (Pavillon Heidi Weber)",
+    "found": false
+  },
+  {
+    "slug": "seefeld-quai",
+    "name": "Quai de Seefeld",
+    "found": false
+  },
+  {
+    "slug": "johann-jacobs-museum",
+    "name": "Johann Jacobs Museum",
+    "found": false
+  },
+  {
+    "slug": "tiefenbrunnen-strandbad",
+    "name": "Strandbad Tiefenbrunnen",
+    "found": false
+  },
+  {
+    "slug": "stadtgaertnerei",
+    "name": "Jardins municipaux de Zurich (serres tropicales)",
+    "found": false
+  },
+  {
+    "slug": "uetliberg",
+    "name": "Üetliberg",
+    "found": false
+  },
+  {
+    "slug": "felsenegg",
+    "name": "Felsenegg",
+    "found": false
+  },
+  {
+    "slug": "albisguetli",
+    "name": "Albisgüetli",
+    "found": false
+  },
+  {
+    "slug": "rapperswil",
+    "name": "Rapperswil",
+    "found": false
+  },
+  {
+    "slug": "seedamm-holzbrucke",
+    "name": "Pont de bois du Seedamm",
+    "found": false
+  },
+  {
+    "slug": "kusnacht",
+    "name": "Küsnacht",
+    "found": false
+  },
+  {
+    "slug": "rheinfall",
+    "name": "Chutes du Rhin (Rheinfall)",
+    "found": false
+  },
+  {
+    "slug": "winterthur",
+    "name": "Winterthur",
+    "found": false
+  },
+  {
+    "slug": "kyburg-castle",
+    "name": "Château de Kyburg",
+    "found": false
+  },
+  {
+    "slug": "lindt-home-of-chocolate",
+    "name": "Lindt Home of Chocolate",
+    "found": false
+  },
+  {
+    "slug": "technorama",
+    "name": "Technorama",
+    "found": false
+  },
+  {
+    "slug": "aeroport-zurich",
+    "name": "Aéroport de Zurich (Kloten)",
+    "found": false
+  }
+]
