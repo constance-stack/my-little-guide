@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const DISMISS_KEY = "mlg-install-prompt-dismissed";
@@ -82,9 +83,10 @@ export function InstallPrompt() {
         ) : (
           <>
             <p className="text-sm text-foreground/80">
-              Ajoutez My Little Guide à l&apos;écran d&apos;accueil : appuyez sur{" "}
-              <span className="font-medium">Partager</span>, puis{" "}
-              <span className="font-medium">« Sur l&apos;écran d&apos;accueil »</span>.
+              Ajoutez My Little Guide à l&apos;écran d&apos;accueil en un geste.{" "}
+              <Link href="/comment-installer" className="font-medium text-sage-dark hover:underline">
+                En savoir plus →
+              </Link>
             </p>
             <button
               onClick={dismiss}
