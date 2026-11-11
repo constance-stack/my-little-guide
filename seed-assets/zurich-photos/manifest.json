@@ -470,11 +470,7 @@
   {
     "slug": "loewenbraukunst",
     "name": "Löwenbräukunst",
-    "found": true,
-    "source": "Wikimedia Commons",
-    "artist": "Roland zh",
-    "license": "CC BY-SA 3.0",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Escher_Wyss_-_Migros_Museum_f%C3%BCr_Gegenwartskunst_-_Limmatstrasse_270_(L%C3%B6wenbr%C3%A4u_Areal)_2011-08-20_15-58-28.JPG"
+    "found": false
   },
   {
     "slug": "puls5",
@@ -588,52 +584,92 @@
   {
     "slug": "stadtgaertnerei",
     "name": "Jardins municipaux de Zurich (serres tropicales)",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_-_Stadtg%C3%A4rtnerei_IMG_2483.JPG"
   },
   {
     "slug": "uetliberg",
     "name": "Üetliberg",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Kuhnmi",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baumsilhouetten_am_Uetliberg_mit_Novembernebel_und_Sonnenstrahlen.jpg"
   },
   {
     "slug": "felsenegg",
     "name": "Felsenegg",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Daniel Kraft",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Adliswil_Sihl_Felsenegg_20200205.jpg"
   },
   {
     "slug": "albisguetli",
     "name": "Albisgüetli",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Albinfo",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Albisg%C3%BCetli_Oktober_2025_19_44_05_109000.jpeg"
   },
   {
     "slug": "rapperswil",
     "name": "Rapperswil",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rapperswil_-_Hafen_IMG_0963.JPG"
   },
   {
     "slug": "seedamm-holzbrucke",
     "name": "Pont de bois du Seedamm",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Holzbr%C3%BCcke_-_Rapperswil_IMG.jpg"
   },
   {
     "slug": "kusnacht",
     "name": "Küsnacht",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Silvestre de la Pierre d'Alexandre",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2024-06-17_K%C3%BCsnachter-Tobel_Treppe.jpg"
   },
   {
     "slug": "rheinfall",
     "name": "Chutes du Rhin (Rheinfall)",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Christian David",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chutes_du_Rhin_-_Octobre_2021.jpg"
   },
   {
     "slug": "winterthur",
     "name": "Winterthur",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JoachimKohler-HB",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Altstadt_Winterthur_vorweihnachtlich_(2021).jpg"
   },
   {
     "slug": "kyburg-castle",
     "name": "Château de Kyburg",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roland zh",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kyburg_-_Schloss_2010-11-01_13-25-20_ShiftN.jpg"
   },
   {
     "slug": "lindt-home-of-chocolate",
@@ -643,11 +679,19 @@
   {
     "slug": "technorama",
     "name": "Technorama",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ank kumar",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Technorama_Winterthur_(Ank_kumar,_INFOSYS_Limited)_10.jpg"
   },
   {
     "slug": "aeroport-zurich",
     "name": "Aéroport de Zurich (Kloten)",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "qwesy qwesy",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Flughafen_Z%C3%BCrich_in_Kloten_-ZRH_-_panoramio_(2).jpg"
   }
 ]
