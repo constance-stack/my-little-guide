@@ -1,0 +1,308 @@
+[
+  {
+    "slug": "st-augustine-old-town",
+    "name": "Vieille ville de St. Augustine",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "DanTD",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hemingway_House_B_%26_B;_Saint_Augustine,_Florida.jpg"
+  },
+  {
+    "slug": "flagler-college",
+    "name": "Flagler College",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Flagler_College,_St._Augustine,_Florida,_USA2.jpg"
+  },
+  {
+    "slug": "st-george-street",
+    "name": "St. George Street",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Barbara Ann Spengler",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Florida_-_St._Augustine_-_St._George_Street_-_Cuzzin%27s_Sandwich_Shoppe,_interior_-_May_1984.jpg"
+  },
+  {
+    "slug": "daytona-international-speedway",
+    "name": "Daytona International Speedway",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Mrmiscellanious",
+    "license": "CC BY 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Daytona-International-Speedway-July-1-2005.jpg"
+  },
+  {
+    "slug": "juniper-springs",
+    "name": "Juniper Springs (Ocala National Forest)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ianaré Sévi",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Juniper_Springs,_FL_1.jpg"
+  },
+  {
+    "slug": "legoland-florida",
+    "name": "LEGOLAND Florida",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ziggymarley01",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Winter_Haven,_Florida_-_Legoland_Florida.jpg"
+  },
+  {
+    "slug": "ybor-city",
+    "name": "Ybor City",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Grendelkhan",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Centro_Ybor_station_at_ground_level.gk.jpg"
+  },
+  {
+    "slug": "columbia-restaurant-ybor",
+    "name": "Columbia Restaurant",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "LittleT889",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Columbia,_Ybor_City.jpg"
+  },
+  {
+    "slug": "florida-aquarium-tampa",
+    "name": "The Florida Aquarium",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Coughdrop12",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Atlantic_stingray_(Hypanus_sabinus)_Florida_Aquarium.jpg"
+  },
+  {
+    "slug": "sunken-gardens",
+    "name": "Sunken Gardens",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Florida Memory",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Coy_pond_at_the_entrance_to_the_Sunken_Gardens-_St._Petersburg,_Florida_(8527270077).jpg"
+  },
+  {
+    "slug": "clearwater-beach",
+    "name": "Clearwater Beach",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Michel Rathwell from Cornwall, Canada",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Clearwater_Beach,_Florida_(35188097760).jpg"
+  },
+  {
+    "slug": "pier-60-clearwater",
+    "name": "Pier 60",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jec8992",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beautiful_Crystal_clear_Surf_at_Pier_60_in_April_2013.jpg"
+  },
+  {
+    "slug": "st-armands-circle",
+    "name": "St. Armands Circle",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ebyabe",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sarasota_FL_Harding_Circle_HD_St_Armands_Circle05.jpg"
+  },
+  {
+    "slug": "fifth-avenue-south-naples",
+    "name": "Fifth Avenue South",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "PtKirk1295",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Naples,_Florida_St_Patrick%27s_Day_Parade.jpg"
+  },
+  {
+    "slug": "jn-ding-darling-refuge",
+    "name": "J.N. \"Ding\" Darling National Wildlife Refuge",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Russ",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ding_darling_national_wildlife_refuge_sanibel_(15902632819).jpg"
+  },
+  {
+    "slug": "airboat-tour-everglades",
+    "name": "Excursion en airboat dans les Everglades",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "User:Cacophony",
+    "license": "CC BY 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Everglades-airboat_(cropped).jpg"
+  },
+  {
+    "slug": "big-cypress-national-preserve",
+    "name": "Big Cypress National Preserve",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gzzz",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Big_Cypress_Bend_Boardwalk_3.jpg"
+  },
+  {
+    "slug": "shark-valley",
+    "name": "Shark Valley",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Daniel Kraft",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shark_Valley_Observation_Tower_Panorama.jpg"
+  },
+  {
+    "slug": "seven-mile-bridge",
+    "name": "Seven Mile Bridge",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "State Library and Archives of Florida",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pigeon_Key_from_the_Seven_Mile_Bridge,_Florida_Keys_(8591385115).jpg"
+  },
+  {
+    "slug": "bahia-honda-state-park",
+    "name": "Bahia Honda State Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jorie01",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bahia_Honda_State_Park.JPG"
+  },
+  {
+    "slug": "key-west-old-town",
+    "name": "Key West Old Town (Duval Street)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Julian Lupyan",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Buildings_on_the_Corner_of_Front_and_Duval_Street,_Key_West,_Florida.jpg"
+  },
+  {
+    "slug": "dry-tortugas-national-park",
+    "name": "Dry Tortugas National Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "U.S. National Park Service",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fort-Jefferson_Dry-Tortugas.jpg"
+  },
+  {
+    "slug": "key-west-key-lime-pie-class",
+    "name": "Cours de key lime pie à Key West",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "runarut",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Key_West_Florida_February_2020_-_Key_West_Key_Lime_Pie_Co.jpg"
+  },
+  {
+    "slug": "pepes-cafe-key-west",
+    "name": "Pepe's Cafe",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Arthur Rothstein",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pepe%27s_Cafe_Kitchen_Key_West_Florida_1938.jpg"
+  },
+  {
+    "slug": "worth-avenue",
+    "name": "Worth Avenue",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Andyxox",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Worth_Avenue.jpg"
+  },
+  {
+    "slug": "flagler-museum",
+    "name": "Flagler Museum (Whitehall)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Khowald",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ballroom_at_Whitehall_(Henry_Morrison_Flagler_Museum).jpg"
+  },
+  {
+    "slug": "fort-lauderdale-riverwalk",
+    "name": "Fort Lauderdale Riverwalk",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Richard Mc Neil",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Along_RiverWalk_,New_River,_Fort_Lauderdale,_Florida,_USA_-_panoramio.jpg"
+  },
+  {
+    "slug": "sanibel-island",
+    "name": "Sanibel Island",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "James St. John",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mollusc_shells_on_marine_beach_(Sanibel_Inn_Beach,_Sanibel_Island,_Florida,_USA)_4.jpg"
+  },
+  {
+    "slug": "islamorada",
+    "name": "Islamorada",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Unknown authorUnknown author or not provided",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Florida_Keys_Scenic_Highway_-_Whale_Harbor_Marina_in_Islamorada_-_NARA_-_7718463.jpg"
+  },
+  {
+    "slug": "winter-park-scenic-boat-tour",
+    "name": "Winter Park Scenic Boat Tour",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "David Valentine",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/a-body-of-water-with-a-pier-in-the-background-vjEHcGiW7mk"
+  },
+  {
+    "slug": "st-petersburg-central-arts-district",
+    "name": "Central Arts District (street art)",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "Shelter",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/red-suv-parked-beside-building-during-daytime-suf70HJQz3M"
+  },
+  {
+    "slug": "cocoa-beach",
+    "name": "Cocoa Beach",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Benoît Prieur",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cocoa_Beach_Pier_-_Direction_signs_others_cities_(May_2023).jpg"
+  },
+  {
+    "slug": "mission-nombre-de-dios",
+    "name": "Mission Nombre de Dios",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ebyabe",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:St_Aug_Nombre_de_Dios_cross01.jpg"
+  },
+  {
+    "slug": "southernmost-point-buoy",
+    "name": "Southernmost Point Buoy",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roger W from Sarasota, Florida, U.S.A.",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Key_West_-_%22Southernmost_Point%22_(3884547358).jpg"
+  }
+]
