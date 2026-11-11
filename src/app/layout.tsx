@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { CartProvider } from "@/components/shop/cart-context";
 import "./globals.css";
@@ -16,6 +16,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "My Little Guide",
   description: "Guides de voyage numériques premium et carte interactive privée.",
+  appleWebApp: {
+    title: "My Little Guide",
+    statusBarStyle: "default",
+    capable: true,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#a8573f",
 };
 
 // Forces every route in the app to render per-request rather than being
