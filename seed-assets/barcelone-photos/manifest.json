@@ -1,0 +1,992 @@
+[
+  {
+    "slug": "la-rambla",
+    "name": "La Rambla",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "böhringer friedrich",
+    "license": "CC BY-SA 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Artist_La_Rambla_3.JPG"
+  },
+  {
+    "slug": "barcelona-cathedral",
+    "name": "Cathédrale de Barcelone (La Seu)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Didier Descouens",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_Cathedral_-_Roof_of_Cathedral.jpg"
+  },
+  {
+    "slug": "placa-reial",
+    "name": "Plaça Reial",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Mummelgrummel",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Nacht_-_Placa_Reial_004.jpg"
+  },
+  {
+    "slug": "palau-generalitat",
+    "name": "Palau de la Generalitat",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Reda Kerbush",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Portal_of_Palau_de_la_Generalitat_at_Carrer_del_Bisbe.jpg"
+  },
+  {
+    "slug": "ajuntament-barcelona",
+    "name": "Hôtel de ville de Barcelone",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Chabe01",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_Ville_Barcelone_3.jpg"
+  },
+  {
+    "slug": "mercat-boqueria",
+    "name": "Mercat de la Boqueria",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Moheen Reeyad",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Entrance_to_Mercat_de_la_Boqueria_(01).jpg"
+  },
+  {
+    "slug": "gran-teatre-liceu",
+    "name": "Gran Teatre del Liceu",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Dvcarles",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gran_Teatre_del_Liceu_(fa%C3%A7ana).jpg"
+  },
+  {
+    "slug": "carrer-bisbe",
+    "name": "Carrer del Bisbe",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Reda Kerbush",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Portal_of_Palau_de_la_Generalitat_at_Carrer_del_Bisbe.jpg"
+  },
+  {
+    "slug": "placa-sant-felip-neri",
+    "name": "Plaça Sant Felip Neri",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Manel Zaera",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pla%C3%A7a_Sant_Felip_Neri.jpg"
+  },
+  {
+    "slug": "call-jueu-barcelona",
+    "name": "Call (ancien quartier juif de Barcelone)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pere López",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Call_de_Barcelona.jpg"
+  },
+  {
+    "slug": "palau-guell",
+    "name": "Palau Güell",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Thomas Ledl",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Palau_G%C3%BCell,_Antoni_Gaudi,_Barcelona_2.jpg"
+  },
+  {
+    "slug": "els-quatre-gats",
+    "name": "Els Quatre Gats",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jordiferrer",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2016_-_Els_Quatre_Gats_03.JPG"
+  },
+  {
+    "slug": "can-culleretes",
+    "name": "Can Culleretes",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enfo",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Can_Culleretes,_detall.jpg"
+  },
+  {
+    "slug": "caelum",
+    "name": "Caelum",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:123_Pastisseria_Caelum,_c._Palla_8_(Barcelona),_aparador.jpg"
+  },
+  {
+    "slug": "santa-maria-del-mar",
+    "name": "Basílica Santa Maria del Mar",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "José Luiz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rose_window_-_Basilica_de_Santa_Maria_del_Mar_-_Barcelona_2014.JPG"
+  },
+  {
+    "slug": "museu-picasso-barcelona",
+    "name": "Museu Picasso",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Kippelboy",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Museu_Picasso_Barcelona-_queues.jpg"
+  },
+  {
+    "slug": "passeig-del-born",
+    "name": "Passeig del Born",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Llums_de_Nadal_al_passeig_del_Born_-_20221206_202404.jpg"
+  },
+  {
+    "slug": "carrer-montcada",
+    "name": "Carrer Montcada",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Andrei Dan Suciu",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Carrer_de_Montcada,_Barcelona_-_panoramio.jpg"
+  },
+  {
+    "slug": "fossar-moreres",
+    "name": "Fossar de les Moreres",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:336_Fossar_de_les_Moreres_(Barcelona),_peveter_d%27Albert_Viaplana.jpg"
+  },
+  {
+    "slug": "mercat-santa-caterina",
+    "name": "Mercat de Santa Caterina",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Carquinyol",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Mercat_de_Santa_Caterina_en_Nadal.jpg"
+  },
+  {
+    "slug": "parc-ciutadella",
+    "name": "Parc de la Ciutadella",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Notaris",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Font_de_la_Cascada_(Parc_de_la_Ciutadella,_Barcelona).JPG"
+  },
+  {
+    "slug": "arc-de-triomf",
+    "name": "Arc de Triomf",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Daniel Kraft",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_Arc_de_Triomf.jpg"
+  },
+  {
+    "slug": "macba",
+    "name": "MACBA (Museu d'Art Contemporani de Barcelona)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zarateman",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Museu_d%27Art_Contemporani_de_Barcelona_(MACBA).jpg"
+  },
+  {
+    "slug": "cccb",
+    "name": "CCCB (Centre de Cultura Contemporània de Barcelona)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zarateman",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Centre_de_Cultura_Contempor%C3%A0nia_de_Barcelona_(CCCB).jpg"
+  },
+  {
+    "slug": "rambla-del-raval",
+    "name": "Rambla del Raval",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:543_Rambla_del_Raval_(Barcelona),_des_del_c._Hospital.jpg"
+  },
+  {
+    "slug": "filmoteca-catalunya",
+    "name": "Filmoteca de Catalunya",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:480_Filmoteca_de_Catalunya_(Barcelona),_Miguel_Navarro,_projecte_Visibles,_de_Teo_V%C3%A1zquez.jpg"
+  },
+  {
+    "slug": "antic-hospital-santa-creu",
+    "name": "Antic Hospital de la Santa Creu",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ximonic (Simo Räsänen)",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Antic_hospital_de_la_Santa_Creu_de_Barcelona_in_el_Raval,_Barcelona,_Catalonia,_Spain,_2024_January.jpg"
+  },
+  {
+    "slug": "bar-marsella",
+    "name": "Bar Marsella",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:004_Bar_Marsella,_c._Sant_Pau_65_(Barcelona),_interior.jpg"
+  },
+  {
+    "slug": "platja-barceloneta",
+    "name": "Platja de la Barceloneta",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "DimiTalen",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Promenade_and_beach,_Platja_de_la_Barceloneta,_Barcelona,_2015.jpg"
+  },
+  {
+    "slug": "port-vell-maremagnum",
+    "name": "Port Vell & Maremagnum",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:614_Marem%C3%A0gnum_i_Port_Vell_(Barcelona),_des_del_moll_de_la_Fusta.jpg"
+  },
+  {
+    "slug": "hotel-vela-w-barcelona",
+    "name": "W Barcelona (Hotel Vela)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Felix König",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:W_Barcelona_2013.jpg"
+  },
+  {
+    "slug": "museu-historia-catalunya",
+    "name": "Museu d'Història de Catalunya",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Kippelboy",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Views_from_Museu_d%27Hist%C3%B2ria_de_Catalunya_Terrace.JPG"
+  },
+  {
+    "slug": "torre-rellotge-port",
+    "name": "Torre de Rellotge (Port Vell)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jordiferrer",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Xarxes,_Torre_del_Rellotge,_Torre_de_Jaume_I_-_Barcelona.JPG"
+  },
+  {
+    "slug": "platja-nova-icaria",
+    "name": "Platja de Nova Icaria",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jordiferrer",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Platja_de_la_Nova_Ic%C3%A0ria_01.JPG"
+  },
+  {
+    "slug": "sant-miquel-del-port",
+    "name": "Església de Sant Miquel del Port",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:017_Esgl%C3%A9sia_de_Sant_Miquel_del_Port_(Barcelona).jpg"
+  },
+  {
+    "slug": "palau-de-mar",
+    "name": "Palau de Mar",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jorge Franganillo",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_Palau_de_Mar_(51136255137).jpg"
+  },
+  {
+    "slug": "transbordador-aeri",
+    "name": "Transbordador Aeri del Port (téléphérique du port)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "ThomasLendt",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:City_view_from_Transbordador_Aeri_del_Port.jpg"
+  },
+  {
+    "slug": "mercat-barceloneta",
+    "name": "Mercat de la Barceloneta",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "jordi domènech",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mercat_de_la_Barceloneta_-_panoramio.jpg"
+  },
+  {
+    "slug": "can-sole",
+    "name": "Can Solé",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:011_Can_Sol%C3%A9,_c._Sant_Carles_4_-_c._Mar_51-53_(Barcelona).jpg"
+  },
+  {
+    "slug": "sagrada-familia",
+    "name": "Sagrada Família",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Didier Descouens",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Exterior_of_the_Apse_of_the_Sagrada_Fam%C3%ADlia_-_Western_exposure.jpg"
+  },
+  {
+    "slug": "casa-batllo",
+    "name": "Casa Batlló",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "José Luiz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chimneys_of_Casa_Batll%C3%B3_-_Barcelona_2014.jpg"
+  },
+  {
+    "slug": "casa-mila",
+    "name": "Casa Milà (La Pedrera)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Thomas Ledl",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Casa_Mil%C3%A0,_general_view.jpg"
+  },
+  {
+    "slug": "casa-amatller",
+    "name": "Casa Amatller",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "C messier",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Casa_Amatller_%26_Batll%C3%B3_2955.jpg"
+  },
+  {
+    "slug": "casa-lleo-morera",
+    "name": "Casa Lleó Morera",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Casa_Lle%C3%B3_Morera_01.jpg"
+  },
+  {
+    "slug": "passeig-de-gracia",
+    "name": "Passeig de Gràcia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "DimiTalen",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Passeig_de_Gr%C3%A0cia_and_Carrer_de_Proven%C3%A7a_crossroads_seen_from_Casa_Mil%C3%A0,_Barcelona,_2023.jpg"
+  },
+  {
+    "slug": "hospital-sant-pau",
+    "name": "Hospital de Sant Pau",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hospital_de_Sant_Pau_02.jpg"
+  },
+  {
+    "slug": "fundacio-antoni-tapies",
+    "name": "Fundació Antoni Tàpies",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Equip Fundació Antoni Tàpies",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fundaci%C3%B3_Antoni_T%C3%A0pies,_Barcelona_05.jpg"
+  },
+  {
+    "slug": "palau-baro-quadras",
+    "name": "Palau del Baró Quadras",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Kent Wang from Barcelona, Spain",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Palau_del_Bar%C3%B3_de_Quadras_(51518775973).jpg"
+  },
+  {
+    "slug": "arenas-de-barcelona",
+    "name": "Arenas de Barcelona",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Felix König",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Arenas_de_Barcelona_2013.jpg"
+  },
+  {
+    "slug": "mercat-sant-antoni",
+    "name": "Mercat de Sant Antoni",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Julian Lupyan",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mercat_de_Sant_Antoni,_Barcelona.jpg"
+  },
+  {
+    "slug": "rambla-de-catalunya",
+    "name": "Rambla de Catalunya",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pere prlpz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Casa_Bonaventura_Poll%C3%A9s_(Rambla_Catalunya).jpg"
+  },
+  {
+    "slug": "disfrutar",
+    "name": "Disfrutar",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pere prlpz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Disfrutar.jpg"
+  },
+  {
+    "slug": "flash-flash",
+    "name": "Flash Flash",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Flash_Flash_-_20240424_195603.jpg"
+  },
+  {
+    "slug": "castell-montjuic",
+    "name": "Castell de Montjuïc",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Castell_Montjuic,_Barcelona_(P1170653).jpg"
+  },
+  {
+    "slug": "fundacio-joan-miro",
+    "name": "Fundació Joan Miró",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Felix König",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Eingang_Fundaci%C3%B3_Joan_Mir%C3%B3_2013.jpg"
+  },
+  {
+    "slug": "mnac",
+    "name": "Museu Nacional d'Art de Catalunya (MNAC)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Txllxt TxllxT",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Montju%C3%AFc_-_Carrer_del_Doctor_Fonti_Quer_-_View_NW_towards_MNAC_El_Palau_Nacional_de_Montju%C3%AFc_1929.jpg"
+  },
+  {
+    "slug": "poble-espanyol",
+    "name": "Poble Espanyol",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Txllxt TxllxT",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Montju%C3%AFc_-_Poble_Espanyol_de_Barcelona_1929_-_Avinguda_del_Montanyans_-_View_NW_towards_Monestir_Rom%C3%A0nic_de_Sant_Miquel_(Poble_Espanyol).jpg"
+  },
+  {
+    "slug": "font-magica",
+    "name": "Font Màgica (Fontaine magique)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ad Meskens",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_Font_m%C3%A0gica_de_Montju%C3%AFc_03.jpg"
+  },
+  {
+    "slug": "estadi-olimpic-lluis-companys",
+    "name": "Estadi Olímpic Lluís Companys",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Estadi_Ol%C3%ADmpic_Llu%C3%ADs_Companys_-_Barcelona,_Spain_-_Jan_2007.jpg"
+  },
+  {
+    "slug": "jardi-botanic-barcelona",
+    "name": "Jardí Botànic de Barcelona",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Felix König",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jard%C3%AD_Bot%C3%A0nic_de_Barcelona_scene.JPG"
+  },
+  {
+    "slug": "teleferic-montjuic",
+    "name": "Telefèric de Montjuïc",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Txllxt TxllxT",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Montju%C3%AFc_-_Avinguda_de_Miramar_-_View_SSE_on_Telef%C3%A8ric_de_Montju%C3%AFc.jpg"
+  },
+  {
+    "slug": "mirador-alcalde",
+    "name": "Mirador de l'Alcalde",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jordiferrer",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jardins_del_Mirador_de_l%27Alcalde_(Montju%C3%AFc_-_Barcelona)_15.JPG"
+  },
+  {
+    "slug": "caixaforum-barcelona",
+    "name": "CaixaForum Barcelona",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ank Kumar",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CaixaForum_Art_Gallery,_Barcelona,_Catalonia,_Spain_(Ank_Kumar,_Infosys_Limited)_07.jpg"
+  },
+  {
+    "slug": "jardins-joan-maragall",
+    "name": "Jardins de Joan Maragall",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:327_Reixa_d%27entrada_als_jardins_de_Joan_Maragall_(Barcelona),_pg._del_Pavell%C3%B3_Alb%C3%A9niz.jpg"
+  },
+  {
+    "slug": "pavello-mies-van-der-rohe",
+    "name": "Pavelló Mies van der Rohe",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jorge Franganillo",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pavell%C3%B3_Mies_van_der_Rohe_-_panoramio.jpg"
+  },
+  {
+    "slug": "park-guell",
+    "name": "Park Güell",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Park_G%C3%BCell_02.jpg"
+  },
+  {
+    "slug": "casa-vicens",
+    "name": "Casa Vicens",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "jorapa",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Casa_Vicens_(Barcelona)_-_3.jpg"
+  },
+  {
+    "slug": "placa-vila-gracia",
+    "name": "Plaça de la Vila de Gràcia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jordiferrer",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pla%C3%A7a_de_la_Vila_de_Gr%C3%A0cia_-_gegant.JPG"
+  },
+  {
+    "slug": "placa-del-sol",
+    "name": "Plaça del Sol",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pere López",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rellotge_de_sol_de_la_pla%C3%A7a_del_Sol_P1450783.JPG"
+  },
+  {
+    "slug": "mercat-abaceria-central",
+    "name": "Mercat de l'Abaceria Central",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Mattsjc",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mercat_De_L%27abaceria_Central_01.jpg"
+  },
+  {
+    "slug": "carrer-de-verdi",
+    "name": "Carrer de Verdi",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "KPFC",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2018-05-22_Carrer_de_Verdi_%E2%80%93_Barcelona_(KPFC)_01.jpg"
+  },
+  {
+    "slug": "bunkers-del-carmel",
+    "name": "Bunkers del Carmel",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Barcelonatips",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bunkers_del_Carmel_Barcelona.jpg"
+  },
+  {
+    "slug": "casa-fuster",
+    "name": "Casa Fuster",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jordiferrer",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BCN_Hotel_Casa_Fuster_09.jpg"
+  },
+  {
+    "slug": "sarria-village",
+    "name": "Village de Sarrià",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enfo",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pla%C3%A7a_Sant_Vicen%C3%A7_de_Sarri%C3%A0,_9.jpg"
+  },
+  {
+    "slug": "parc-collserola",
+    "name": "Parc Natural de Collserola",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "pere prlpz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Centre_d%27informaci%C3%B3_del_Parc_de_Collserola_P1320936.jpg"
+  },
+  {
+    "slug": "observatori-fabra",
+    "name": "Observatori Fabra",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Arnaugir",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Observatori_Fabra_-_Vista_des_del_Tibidabo_-_1.jpg"
+  },
+  {
+    "slug": "torre-bellesguard",
+    "name": "Torre Bellesguard",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Txllxt TxllxT",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Carrer_de_Bellesguard_-_View_NNE_on_Entrance_Gate_to_Torre_de_Bellesguard_(Casa_Figueras)_1900-09_by_Antoni_Gaud%C3%AD.jpg"
+  },
+  {
+    "slug": "platja-bogatell",
+    "name": "Platja del Bogatell",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jordiferrer",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Platja_del_Bogatell_(Barcelona)_03.JPG"
+  },
+  {
+    "slug": "torre-glories",
+    "name": "Torre Glòries",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diliff",
+    "license": "CC BY 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Torre_Agbar_-_Barcelona,_Spain_-_Jan_2007.jpg"
+  },
+  {
+    "slug": "parc-centre-poblenou",
+    "name": "Parc del Centre del Poblenou",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Christine Zenino",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Parc_del_Centre_del_Poblenou;_Barcelona.jpg"
+  },
+  {
+    "slug": "rambla-poblenou",
+    "name": "Rambla del Poblenou",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zarateman",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Rambla_del_Poblenou_102_(4).jpg"
+  },
+  {
+    "slug": "parc-diagonal-mar",
+    "name": "Parc Diagonal Mar",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zarateman",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Parc_Diagonal_Mar_01.jpg"
+  },
+  {
+    "slug": "edifici-forum",
+    "name": "Edifici Fòrum",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "ILESH",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Edifici_F%C3%B2rum_Barcelona_Catalonia.jpg"
+  },
+  {
+    "slug": "palo-alto",
+    "name": "Palo Alto",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:12_Palo_Alto_(antiga_f%C3%A0brica_Gal_i_Puigsech),_c._Pellaires_(Barcelona),_interior.jpg"
+  },
+  {
+    "slug": "monestir-montserrat",
+    "name": "Monestir de Montserrat",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "José Luiz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Monestir_de_St._Benedict_(Sant_Benet)_de_Montserrat_-_Montserrat_2014_(2).JPG"
+  },
+  {
+    "slug": "la-moreneta-montserrat",
+    "name": "La Moreneta (Vierge noire de Montserrat)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "José Luiz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:La_Moreneta_-_Bas%C3%ADlica_de_Montserrat_-_Montserrat_2014_(5).JPG"
+  },
+  {
+    "slug": "cremallera-montserrat",
+    "name": "Cremallera de Montserrat",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "NearEMPTiness",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cremallera_de_Montserrat_rack_railway_in_Monistrol-Vila.JPG"
+  },
+  {
+    "slug": "museu-montserrat",
+    "name": "Museu de Montserrat",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Antoni Caba",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Montserrat_Museum_Caba_Madre_de_D%C3%A9u.jpg"
+  },
+  {
+    "slug": "santa-cova-montserrat",
+    "name": "Santa Cova",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Santa_Cova_Chapel,_Montserrat.jpg"
+  },
+  {
+    "slug": "platja-sitges",
+    "name": "Platja de Sitges & Passeig Marítim",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vista_del_Passeig_Mar%C3%ADtim_de_Sitges_-_P1040841.jpg"
+  },
+  {
+    "slug": "esglesia-sant-bartomeu-sitges",
+    "name": "Església de Sant Bartomeu i Santa Tecla",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enrique Íñiguez Rodríguez",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sitges._Esgl%C3%A9sia_de_Sant_Bartomeu_i_Santa_Tecla.jpg"
+  },
+  {
+    "slug": "museu-maricel",
+    "name": "Museu Maricel",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jordiferrer",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Can_Rocamora_(Museu_Maricel)_Sitges_02.JPG"
+  },
+  {
+    "slug": "casco-antiguo-sitges",
+    "name": "Casco antiguo de Sitges",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Dieglop",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sitges_0001.jpg"
+  },
+  {
+    "slug": "aeroport-el-prat",
+    "name": "Aeroport de Barcelona-El Prat",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jorge Franganillo",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aeroport_de_Barcelona-El_Prat_(51918218542).jpg"
+  },
+  {
+    "slug": "catedral-girona",
+    "name": "Catedral de Girona",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Kritzolina",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Capital_of_the_cloister_of_Catedral_de_Girona_09.jpg"
+  },
+  {
+    "slug": "cases-onyar",
+    "name": "Cases de l'Onyar",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "CARLOS TEIXIDOR CADENAS",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Casas_del_O%C3%B1ar_(Cases_de_l%27Onyar)_en_Gerona_o_Girona._Catalu%C3%B1a,_Espa%C3%B1a.jpg"
+  },
+  {
+    "slug": "call-jueu-girona",
+    "name": "Call Jueu de Girona",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Carlos Pino Andújar",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Carrer_del_Call_jueu_de_Girona.JPG"
+  },
+  {
+    "slug": "passeig-muralla-girona",
+    "name": "Passeig de la Muralla",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "MARIA ROSA FERRE ✿ from Vilafranca del penedes, Catalunya",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:WLM14ES_-_Passeig_de_la_Muralla,_Girona_-_MARIA_ROSA_FERRE.jpg"
+  },
+  {
+    "slug": "pont-de-pedra-girona",
+    "name": "Pont de Pedra",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Yair Haklai",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pont_de_Pedra_(Girona).jpg"
+  },
+  {
+    "slug": "banys-arabs-girona",
+    "name": "Banys Àrabs",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tim Adams",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Banys_%C3%80rabs_in_Girona_Catalonia_Spain.jpg"
+  },
+  {
+    "slug": "rambla-llibertat-girona",
+    "name": "Rambla de la Llibertat",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pere López",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rambla_de_la_Llibertat_P1290879.JPG"
+  },
+  {
+    "slug": "tibidabo-parc-atraccions",
+    "name": "Parc d'Atraccions Tibidabo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jorge Franganillo",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Parc_d%27Atraccions_Tibidabo_-_49289536031.jpg"
+  },
+  {
+    "slug": "temple-sacre-cor-tibidabo",
+    "name": "Temple del Sacre Cor",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Didier Descouens",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:(Barcelona)_Torres_venecianes_-_El_Tibidabo_-_Temple_Expiatori_del_Sagrat_Cor.jpg"
+  },
+  {
+    "slug": "cosmocaixa",
+    "name": "CosmoCaixa",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jirka Dl",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CosmoCaixa_building.jpg"
+  },
+  {
+    "slug": "monestir-pedralbes",
+    "name": "Monestir de Pedralbes",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jorge Franganillo",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Monestir_de_Pedralbes_(53815470666).jpg"
+  },
+  {
+    "slug": "finca-guell",
+    "name": "Finca Güell (Pavellons Güell)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "pere prlpz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Porta_sud_de_la_finca_G%C3%BCell_20180724_155859.jpg"
+  },
+  {
+    "slug": "can-framis",
+    "name": "Museu Can Framis",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fred Romero",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Museu_Can_Framis_(3).jpg"
+  },
+  {
+    "slug": "cementiri-poblenou",
+    "name": "Cementiri de l'Est (Poblenou)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Aniol",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cementiri_del_Poblenou_20250510_08.jpg"
+  },
+  {
+    "slug": "sant-jeroni-montserrat",
+    "name": "Sant Jeroni",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jordi Gili",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ermita_de_Sant_Jeroni_(Montserrat)_02.jpg"
+  },
+  {
+    "slug": "museu-cau-ferrat",
+    "name": "Museu Cau Ferrat",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Enric",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:054_Museu_del_Cau_Ferrat_(Sitges),_La_casa_de_pr%C3%A9stecs_i_Palau_abandonat,_de_Rusi%C3%B1ol.jpg"
+  }
+]
