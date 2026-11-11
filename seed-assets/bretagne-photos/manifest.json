@@ -430,5 +430,239 @@
     "artist": "TouN",
     "license": "CC BY-SA 3.0",
     "source_url": "https://commons.wikimedia.org/wiki/File:Place_Saint_Anne_Rennes.JPG"
+  },
+  {
+    "slug": "oceanopolis-brest",
+    "name": "Océanopolis",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Thesupermat",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Brest_-_Oc%C3%A9anopolis_-_2015_-_133.jpg"
+  },
+  {
+    "slug": "chateau-de-brest",
+    "name": "Château de Brest (musée de la Marine)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Thesupermat",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Brest_-_Le_Ch%C3%A2teau_-_PA00089847_-_005.jpg"
+  },
+  {
+    "slug": "pointe-saint-mathieu",
+    "name": "Pointe Saint-Mathieu (phare et abbaye)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JackyM59",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pointe_Saint_Mathieu_-_Phare.jpg"
+  },
+  {
+    "slug": "camaret-sur-mer-port",
+    "name": "Port de Camaret-sur-Mer et tourelle Vauban",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gzen92",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Port_de_Camaret-sur-Mer_(1).jpg"
+  },
+  {
+    "slug": "pointe-de-pen-hir",
+    "name": "Pointe de Pen-Hir et les Tas de Pois",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gzen92",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pointe_de_Pen-Hir_et_les_Tas_de_Pois_(2).jpg"
+  },
+  {
+    "slug": "pointe-des-espagnols",
+    "name": "Pointe des Espagnols",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Michael Rapp",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pointe_des_Espagnols_-_Vue_c%C3%B4t%C3%A9_mer.jpg"
+  },
+  {
+    "slug": "morgat-plage-grottes",
+    "name": "Morgat, plage et grottes marines",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gzen92",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plage_de_Morgat_-_panorama.jpg"
+  },
+  {
+    "slug": "crozon-bourg",
+    "name": "Crozon (bourg)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ggal",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Crozon_%C3%89glise_Saint-Pierre.JPG"
+  },
+  {
+    "slug": "pointe-de-dinan-crozon",
+    "name": "Pointe de Dinan (« Château de Dinan »)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zairon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Presqu%27%C3%AEle_de_Crozon_Pointe_de_Dinan_11.jpg"
+  },
+  {
+    "slug": "cimetiere-bateaux-landevennec",
+    "name": "Cimetière de bateaux de Landévennec",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Louboutinj",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cimeti%C3%A8re_de_bateaux-LANDEVENNEC.jpg"
+  },
+  {
+    "slug": "port-rosmeur-douarnenez",
+    "name": "Port-Rosmeur, Douarnenez",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Paul Géniaux",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Douarnenez,_quai_du_grand_port_de_Rosmeur.jpg"
+  },
+  {
+    "slug": "port-musee-douarnenez",
+    "name": "Port-Musée de Douarnenez",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tegwenn",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Le_Port-Mus%C3%A9e.JPG"
+  },
+  {
+    "slug": "locronan-village",
+    "name": "Locronan",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tango7174",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bretagne_Finistere_Locronan1_tango7174.jpg"
+  },
+  {
+    "slug": "pointe-du-raz",
+    "name": "Pointe du Raz",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zairon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Finist%C3%A8re_Pointe_du_Raz_06.jpg"
+  },
+  {
+    "slug": "phare-de-la-vieille",
+    "name": "Phare de la Vieille",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zairon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Finist%C3%A8re_Pointe_du_Raz_Phare_de_la_Vieille_1.jpg"
+  },
+  {
+    "slug": "pointe-du-van",
+    "name": "Pointe du Van",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Espirat",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pointe_du_Van._(Cl%C3%A9den-cap-Sizun).jpg"
+  },
+  {
+    "slug": "ile-de-sein",
+    "name": "Île de Sein",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Sxilderik (attribution not fully machine-readable on file page)",
+    "license": "CC BY-SA 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%C3%8Ele_de_sein,_quai_des_fran%C3%A7ais_libres.jpg"
+  },
+  {
+    "slug": "cathedrale-saint-corentin-quimper",
+    "name": "Cathédrale Saint-Corentin, Quimper",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Amadalvarez",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Quimper_catedral_stCorentin_6184_resize.jpg"
+  },
+  {
+    "slug": "vieille-ville-quimper",
+    "name": "Vieille ville de Quimper",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Rémih",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rue_K%C3%A9r%C3%A9on_Quimper_01.jpg"
+  },
+  {
+    "slug": "musee-departemental-breton",
+    "name": "Musée Départemental Breton",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Thesupermat",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Quimper_-_Ancien_%C3%A9v%C3%AAch%C3%A9_-_Mus%C3%A9e_d%C3%A9partemental_Breton_-_001.jpg"
+  },
+  {
+    "slug": "ville-close-concarneau",
+    "name": "Ville Close de Concarneau",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Julien1978",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ville_close_de_Concarneau_(1).jpg"
+  },
+  {
+    "slug": "pont-l-abbe-chateau",
+    "name": "Pont-l'Abbé et son château",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Romain Cormier (Ackles29)",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pont-l%27abb%C3%A9_ch%C3%A2teau.jpg"
+  },
+  {
+    "slug": "loctudy-port",
+    "name": "Port de Loctudy",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Uuetenava",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Port_de_p%C3%AAche_de_Loctudy_2.JPG"
+  },
+  {
+    "slug": "phare-d-eckmuhl-penmarch",
+    "name": "Phare d'Eckmühl, Penmarc'h",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Moreau.henri",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Penmarch_001_Le_phare_d%27Eckm%C3%BChl.JPG"
+  },
+  {
+    "slug": "pointe-de-la-torche",
+    "name": "Pointe de la Torche",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "El Funcionario",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pointe_de_La_Torche_11.jpg"
+  },
+  {
+    "slug": "eglise-saint-nonna-penmarch",
+    "name": "Église Saint-Nonna, Penmarc'h",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "GFreihalter",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Penmarch_%C3%89glise_Saint-Nonna_942.jpg"
   }
 ]
