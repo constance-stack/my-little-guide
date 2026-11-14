@@ -1,0 +1,662 @@
+[
+  {
+    "slug": "yosemite-valley",
+    "name": "Yosemite Valley",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Valley View Yosemite August 2013 002.jpg",
+    "artist": "King of Hearts",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Valley_View_Yosemite_August_2013_002.jpg"
+  },
+  {
+    "slug": "el-capitan",
+    "name": "El Capitan",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:El Capitan in Merced River Yosemite.jpg",
+    "artist": "Charles Ng",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:El_Capitan_in_Merced_River_Yosemite.jpg"
+  },
+  {
+    "slug": "half-dome",
+    "name": "Half Dome",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Half Dome from Glacier Point, Yosemite NP - Diliff.jpg",
+    "artist": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Half_Dome_from_Glacier_Point,_Yosemite_NP_-_Diliff.jpg"
+  },
+  {
+    "slug": "yosemite-falls",
+    "name": "Yosemite Falls",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Yosemite Falls from trail, Yosemite NP, CA, US - Diliff.jpg",
+    "artist": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Yosemite_Falls_from_trail,_Yosemite_NP,_CA,_US_-_Diliff.jpg"
+  },
+  {
+    "slug": "glacier-point",
+    "name": "Glacier Point",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Glacier Point at Sunset, Yosemite NP, CA, US - Diliff.jpg",
+    "artist": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Glacier_Point_at_Sunset,_Yosemite_NP,_CA,_US_-_Diliff.jpg"
+  },
+  {
+    "slug": "mariposa-grove",
+    "name": "Mariposa Grove",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Yosemite National Park (CA, USA), Mariposa Grove of Giant Sequoias -- 2022 -- 2726.jpg",
+    "artist": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Yosemite_National_Park_(CA,_USA),_Mariposa_Grove_of_Giant_Sequoias_--_2022_--_2726.jpg"
+  },
+  {
+    "slug": "tunnel-view",
+    "name": "Tunnel View",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Tunnel View, Yosemite Valley, Yosemite NP - Diliff.jpg",
+    "artist": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tunnel_View,_Yosemite_Valley,_Yosemite_NP_-_Diliff.jpg"
+  },
+  {
+    "slug": "tuolumne-meadows",
+    "name": "Tuolumne Meadows",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Tuolumne Meadows with Meandering River in Autumn.jpg",
+    "artist": "Wingchi Poon",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tuolumne_Meadows_with_Meandering_River_in_Autumn.jpg"
+  },
+  {
+    "slug": "mist-trail-vernal-nevada",
+    "name": "Mist Trail (chutes Vernal et Nevada)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Vernal Fall from Mist Trail, Yosemite (29255768500).jpg",
+    "artist": "Fabio Achilli from Milano, Italy",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vernal_Fall_from_Mist_Trail,_Yosemite_(29255768500).jpg"
+  },
+  {
+    "slug": "general-sherman-tree",
+    "name": "General Sherman Tree",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:General Sherman Tree in Sequoia National Park - June 2022.jpg",
+    "artist": "Marty Aligata",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:General_Sherman_Tree_in_Sequoia_National_Park_-_June_2022.jpg"
+  },
+  {
+    "slug": "giant-forest",
+    "name": "Giant Forest",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Sequoia National Park Giant Forest.jpg",
+    "artist": "LGalcan",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sequoia_National_Park_Giant_Forest.jpg"
+  },
+  {
+    "slug": "moro-rock",
+    "name": "Moro Rock",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Stairs on Moro Rock with People 2013.jpg",
+    "artist": "Tuxyso",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Stairs_on_Moro_Rock_with_People_2013.jpg"
+  },
+  {
+    "slug": "crystal-cave-sequoia",
+    "name": "Crystal Cave",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:CrystalCave Entrance.JPG",
+    "artist": "Vgane ( talk · contribs )",
+    "license": "CC BY 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CrystalCave_Entrance.JPG"
+  },
+  {
+    "slug": "kings-canyon-scenic-byway",
+    "name": "Kings Canyon Scenic Byway",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Kings Canyon Scenic Byway through Kings Canyon, California.jpg",
+    "artist": "Guywelch2000",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kings_Canyon_Scenic_Byway_through_Kings_Canyon,_California.jpg"
+  },
+  {
+    "slug": "grant-grove-general-grant-tree",
+    "name": "Grant Grove (General Grant Tree)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:General Grant Tree in Kings Canyon National Park.jpg",
+    "artist": "Miguel Vieira ( talk · contribs )",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:General_Grant_Tree_in_Kings_Canyon_National_Park.jpg"
+  },
+  {
+    "slug": "zumwalt-meadow",
+    "name": "Zumwalt Meadow",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Kings Canyon National Park, Zumwalt Meadows.jpg",
+    "artist": "Carson Chiavatti",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kings_Canyon_National_Park,_Zumwalt_Meadows.jpg"
+  },
+  {
+    "slug": "hospital-rock",
+    "name": "Hospital Rock",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:2021 Hospital Rock bedrock mortars.jpg",
+    "artist": "Mark Yasuda",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2021_Hospital_Rock_bedrock_mortars.jpg"
+  },
+  {
+    "slug": "sequoia-national-park-foothills",
+    "name": "Foothills Visitor Center & Marble Falls Trail",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Foothills Visitor Center.JPG",
+    "artist": "The Angels 2010",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Foothills_Visitor_Center.JPG"
+  },
+  {
+    "slug": "bixby-creek-bridge",
+    "name": "Bixby Creek Bridge",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Bixby Creek Bridge, California, USA - May 2013.jpg",
+    "artist": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bixby_Creek_Bridge,_California,_USA_-_May_2013.jpg"
+  },
+  {
+    "slug": "mcway-falls",
+    "name": "McWay Falls",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:McWay Falls Big Sur May 2011 002.jpg",
+    "artist": "King of Hearts",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:McWay_Falls_Big_Sur_May_2011_002.jpg"
+  },
+  {
+    "slug": "point-lobos-reserve",
+    "name": "Point Lobos State Natural Reserve",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Point Lobos September 2012 007.jpg",
+    "artist": "King of Hearts",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Point_Lobos_September_2012_007.jpg"
+  },
+  {
+    "slug": "pfeiffer-beach",
+    "name": "Pfeiffer Beach",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Pfeiffer Beach Pink Sand Mar 2016 01.jpg",
+    "artist": "DarkNight0917",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pfeiffer_Beach_Pink_Sand_Mar_2016_01.jpg"
+  },
+  {
+    "slug": "hearst-castle",
+    "name": "Hearst Castle",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Hearst Castle Casa Grande September 2012 panorama 2.jpg",
+    "artist": "King of Hearts",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hearst_Castle_Casa_Grande_September_2012_panorama_2.jpg"
+  },
+  {
+    "slug": "carmel-by-the-sea",
+    "name": "Carmel-by-the-Sea",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Wilson Building (Carmel, California).jpg",
+    "artist": "Gregory Ford Henderson",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wilson_Building_(Carmel,_California).jpg"
+  },
+  {
+    "slug": "17-mile-drive",
+    "name": "17-Mile Drive (Pebble Beach)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:The Lone Cypress, 17 Mile Drive, Pebble Beach, California.jpg",
+    "artist": "Charles Ng",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Lone_Cypress,_17_Mile_Drive,_Pebble_Beach,_California.jpg"
+  },
+  {
+    "slug": "monterey-bay-aquarium",
+    "name": "Monterey Bay Aquarium",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Monterey Bay Aquarium, California, USA.jpg",
+    "artist": "Jim G from Silicon Valley, CA, USA",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Monterey_Bay_Aquarium,_California,_USA.jpg"
+  },
+  {
+    "slug": "cannery-row-monterey",
+    "name": "Cannery Row",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Cannery Row, Monterey, California, USA.jpg",
+    "artist": "Jim G from Silicon Valley, CA, USA",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cannery_Row,_Monterey,_California,_USA.jpg"
+  },
+  {
+    "slug": "nepenthe-big-sur",
+    "name": "Nepenthe",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:NEPENTHE - BIG SUR COAST OF CALIFORNIA.jpg",
+    "artist": "Jerrye and Roy Klotz MD",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:NEPENTHE_-_BIG_SUR_COAST_OF_CALIFORNIA.jpg"
+  },
+  {
+    "slug": "napa-valley-scenic-drive",
+    "name": "Napa Valley (Silverado Trail)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Napa Valley Silverado Trail.jpg",
+    "artist": "Stan Shebs",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Napa_Valley_Silverado_Trail.jpg"
+  },
+  {
+    "slug": "castello-di-amorosa",
+    "name": "Castello di Amorosa",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Castello di Amorosa in February 2020-1208.jpg",
+    "artist": "Frank Schulenburg",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Castello_di_Amorosa_in_February_2020-1208.jpg"
+  },
+  {
+    "slug": "domaine-chandon",
+    "name": "Domaine Chandon",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Domaine Chandon Winery (41671097221).jpg",
+    "artist": "U.S. Embassy and Consulates in Canada",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Domaine_Chandon_Winery_(41671097221).jpg"
+  },
+  {
+    "slug": "oxbow-public-market",
+    "name": "Oxbow Public Market",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Oxbow Public Market - Napa, California - DSC03198.JPG",
+    "artist": "Daderot",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Oxbow_Public_Market_-_Napa,_California_-_DSC03198.JPG"
+  },
+  {
+    "slug": "sterling-vineyards",
+    "name": "Sterling Vineyards",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Sterling Vineyards, Napa Valley, California, USA.jpg",
+    "artist": "Lyn Gateley",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sterling_Vineyards,_Napa_Valley,_California,_USA.jpg"
+  },
+  {
+    "slug": "sonoma-plaza",
+    "name": "Sonoma Plaza",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Sonoma Plaza - September 2022 - Sarah Stierch 01.jpg",
+    "artist": "Missvain",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sonoma_Plaza_-_September_2022_-_Sarah_Stierch_01.jpg"
+  },
+  {
+    "slug": "calistoga",
+    "name": "Calistoga",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Calistoga near 1277 Lincoln Avenue looking north.JPG",
+    "artist": "Emw",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Calistoga_near_1277_Lincoln_Avenue_looking_north.JPG"
+  },
+  {
+    "slug": "old-faithful-geyser-california",
+    "name": "Old Faithful Geyser of California",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Old Faithful Geyser of California (9317201078).jpg",
+    "artist": "Rennett Stowe from USA",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Old_Faithful_Geyser_of_California_(9317201078).jpg"
+  },
+  {
+    "slug": "robert-mondavi-winery",
+    "name": "Robert Mondavi Winery",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Robert Mondavi winery arch entrance..jpg",
+    "artist": "Edominguez6257",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Robert_Mondavi_winery_arch_entrance..jpg"
+  },
+  {
+    "slug": "emerald-bay-state-park",
+    "name": "Emerald Bay State Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Golden Hour at Emerald Bay.jpg",
+    "artist": "Frank Schulenburg",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Golden_Hour_at_Emerald_Bay.jpg"
+  },
+  {
+    "slug": "south-lake-tahoe",
+    "name": "South Lake Tahoe",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:South Lake Tahoe (CA, USA), Blick nach Stateline -- 2022 -- 162945.jpg",
+    "artist": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:South_Lake_Tahoe_(CA,_USA),_Blick_nach_Stateline_--_2022_--_162945.jpg"
+  },
+  {
+    "slug": "heavenly-mountain-resort",
+    "name": "Heavenly Mountain Resort (gondole)",
+    "found": true,
+    "source": "Unsplash",
+    "title": "Ski lift at heavenly ski resort",
+    "artist": "Lesli Whitecotton",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/a-gondola-with-a-mountain-view-in-the-background-WA80b8HaydQ"
+  },
+  {
+    "slug": "sand-harbor-nevada",
+    "name": "Sand Harbor",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Sand Harbor, Lake Tahoe, California in February, 2014 (12573918314).jpg",
+    "artist": "Darron Birgenheier from Reno, NV, USA",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sand_Harbor,_Lake_Tahoe,_California_in_February,_2014_(12573918314).jpg"
+  },
+  {
+    "slug": "vikingsholm-castle",
+    "name": "Vikingsholm Castle",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Vikingsholm from shore.jpg",
+    "artist": "Kevin Payravi",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vikingsholm_from_shore.jpg"
+  },
+  {
+    "slug": "tahoe-city",
+    "name": "Tahoe City",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:View over Lake Tahoe from Tahoe City, 2011.jpg",
+    "artist": "DimiTalen",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:View_over_Lake_Tahoe_from_Tahoe_City,_2011.jpg"
+  },
+  {
+    "slug": "dl-bliss-state-park",
+    "name": "D.L. Bliss State Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Bliss state park beach.jpg",
+    "artist": "Mark Doliner",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bliss_state_park_beach.jpg"
+  },
+  {
+    "slug": "donner-memorial-state-park",
+    "name": "Donner Memorial State Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Donner Memorial State Park - Flickr - Joe Parks.jpg",
+    "artist": "Joe Parks from Berkeley, CA",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Donner_Memorial_State_Park_-_Flickr_-_Joe_Parks.jpg"
+  },
+  {
+    "slug": "badwater-basin",
+    "name": "Badwater Basin",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Salt pool at Badwater Basin, Death Valley National Park, California.jpg",
+    "artist": "Christian David",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Salt_pool_at_Badwater_Basin,_Death_Valley_National_Park,_California.jpg"
+  },
+  {
+    "slug": "zabriskie-point",
+    "name": "Zabriskie Point",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Death Valley view from Zabriskie Point with people 2013.jpg",
+    "artist": "Tuxyso",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Death_Valley_view_from_Zabriskie_Point_with_people_2013.jpg"
+  },
+  {
+    "slug": "mesquite-flat-dunes",
+    "name": "Mesquite Flat Sand Dunes",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Mesquite Flat Sand Dunes Death Valley December 2013.jpg",
+    "artist": "King of Hearts",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mesquite_Flat_Sand_Dunes_Death_Valley_December_2013.jpg"
+  },
+  {
+    "slug": "artists-palette",
+    "name": "Artist's Palette",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Artist's Palette, Death Valley National Park, California.jpg",
+    "artist": "Christian David",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Artist's_Palette,_Death_Valley_National_Park,_California.jpg"
+  },
+  {
+    "slug": "dantes-view",
+    "name": "Dante's View",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Visitors on the ridge at Dante's View, Death Valley National Park, California.jpg",
+    "artist": "Christian David",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Visitors_on_the_ridge_at_Dante's_View,_Death_Valley_National_Park,_California.jpg"
+  },
+  {
+    "slug": "furnace-creek",
+    "name": "Furnace Creek",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Furnace Creek aerial.jpg",
+    "artist": "Dicklyon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Furnace_Creek_aerial.jpg"
+  },
+  {
+    "slug": "racetrack-playa",
+    "name": "Racetrack Playa",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Racetrack Playa in Death Valley National Park.jpg",
+    "artist": "Lgcharlot",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Racetrack_Playa_in_Death_Valley_National_Park.jpg"
+  },
+  {
+    "slug": "darwin-falls",
+    "name": "Darwin Falls",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:01-2007-DarwinFalls-approach-08.jpg",
+    "artist": "Bobak Ha'Eri",
+    "license": "CC BY-SA 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:01-2007-DarwinFalls-approach-08.jpg"
+  },
+  {
+    "slug": "santa-barbara-mission",
+    "name": "Santa Barbara Mission",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Mission Santa Barbara01.jpg",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mission_Santa_Barbara01.jpg"
+  },
+  {
+    "slug": "stearns-wharf",
+    "name": "Stearns Wharf",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Stearns Wharf - Don Ramey Logan.jpg",
+    "artist": "Don Ramey Logan",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Stearns_Wharf_-_Don_Ramey_Logan.jpg"
+  },
+  {
+    "slug": "santa-barbara-courthouse",
+    "name": "Santa Barbara County Courthouse",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Santa Barbara County Courthouse entrance.jpg",
+    "artist": "FuriousYogi",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Santa_Barbara_County_Courthouse_entrance.jpg"
+  },
+  {
+    "slug": "state-street-santa-barbara",
+    "name": "State Street",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Hotel Santa Barbara, State Street and Cota Street, Santa Barbara, CA (53927273830).jpg",
+    "artist": "Warren LeMay from Chicago, IL, United States",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hotel_Santa_Barbara,_State_Street_and_Cota_Street,_Santa_Barbara,_CA_(53927273830).jpg"
+  },
+  {
+    "slug": "solvang",
+    "name": "Solvang",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Solvang, CA (2025).jpg",
+    "artist": "Ligocsicnarf89",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Solvang,_CA_(2025).jpg"
+  },
+  {
+    "slug": "santa-ynez-valley-wineries",
+    "name": "Santa Ynez Valley (vignobles)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Sunstone-Vineyards-in-Santa-Ynez-Valley-Winetour-Visit-American-Luxury-Limousine-2015.jpg",
+    "artist": "Bazzy11",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sunstone-Vineyards-in-Santa-Ynez-Valley-Winetour-Visit-American-Luxury-Limousine-2015.jpg"
+  },
+  {
+    "slug": "channel-islands-national-park",
+    "name": "Channel Islands National Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Channel Islands National Park CHIS8069.jpg",
+    "artist": "National Park Service Digital Image Archives",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Channel_Islands_National_Park_CHIS8069.jpg"
+  },
+  {
+    "slug": "joshua-tree-national-park",
+    "name": "Joshua Tree National Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Joshua Tree National Park (California, USA) -- 2012 -- 5689.jpg",
+    "artist": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Joshua_Tree_National_Park_(California,_USA)_--_2012_--_5689.jpg"
+  },
+  {
+    "slug": "keys-view",
+    "name": "Keys View",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:2018 Keys View - Joshua Tree National Park 07.jpg",
+    "artist": "Farragutful",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2018_Keys_View_-_Joshua_Tree_National_Park_07.jpg"
+  },
+  {
+    "slug": "hidden-valley-joshua-tree",
+    "name": "Hidden Valley",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Hidden Valley Trail 01.jpg",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hidden_Valley_Trail_01.jpg"
+  },
+  {
+    "slug": "skull-rock",
+    "name": "Skull Rock",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Exploring Skull Rock (30065913734).jpg",
+    "artist": "Joshua Tree National Park",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Exploring_Skull_Rock_(30065913734).jpg"
+  },
+  {
+    "slug": "cholla-cactus-garden",
+    "name": "Cholla Cactus Garden",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Cholla Cactus Garden.jpg",
+    "artist": "Eric Kilby",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cholla_Cactus_Garden.jpg"
+  },
+  {
+    "slug": "pioneertown",
+    "name": "Pioneertown",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Pioneertown california saloon and bath house.jpg",
+    "artist": "Mfield , Matthew Field, http://www.photography.mattfield.com",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pioneertown_california_saloon_and_bath_house.jpg"
+  }
+]
