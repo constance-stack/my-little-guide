@@ -342,6 +342,18 @@ const PLACES: PlaceDef[] = [
     littleTip: "Arrivez tôt le matin pour les meilleures trouvailles — les habitués passent dès l'ouverture.",
     indicativeDuration: "45 min",
   },
+  {
+    slug: "coffee-up",
+    name: "Coffee Up",
+    zone: "paquis",
+    categories: ["cafes-brunchs"],
+    lat: 46.2078656, lng: 6.1406653,
+    description: "Un café de spécialité au boulevard James-Fazy, à deux pas de la gare de Cornavin, qui se présente comme le premier café genevois dédié à l'univers de l'horlogerie, avec une décoration qui joue sur ce thème.",
+    whyVisit: "Un vrai café de spécialité avec un concept original, pratique pour une pause avant de prendre le train à Cornavin.",
+    littleTip: "Les horaires varient selon les jours — mieux vaut vérifier avant de passer, surtout le week-end.",
+    indicativeDuration: "20 à 30 min",
+    indicativePrice: "$",
+  },
 
   // ---------- Quartier international ----------
   {
