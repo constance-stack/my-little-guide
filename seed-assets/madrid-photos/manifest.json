@@ -1,970 +1,970 @@
 [
- {
-  "slug": "puerta-del-sol",
-  "name": "Puerta del Sol",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Jose María Ligero Loarte",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Interior_%C3%81rbol_de_Navidad_--_2013_--_Puerta_del_Sol,_Madrid,_Espa%C3%B1a.jpg"
- },
- {
-  "slug": "plaza-mayor-madrid",
-  "name": "Plaza Mayor Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_Mayor,_Madrid,_Espa%C3%B1a,_2023-01-03,_DD_78.jpg"
- },
- {
-  "slug": "mercado-san-miguel",
-  "name": "Mercado de San Miguel",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Fernando",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Mercado_de_San_Miguel_2025.jpg"
- },
- {
-  "slug": "plaza-de-la-villa",
-  "name": "Plaza de la Villa Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Anagoria",
-  "license": "CC BY 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:2012-04-30_Plaza_de_la_Villa_Madrid_anagoria_01.JPG"
- },
- {
-  "slug": "convento-descalzas-reales",
-  "name": "Monasterio de las Descalzas Reales",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Richard Mortel from Riyadh, Saudi Arabia",
-  "license": "CC BY 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Monasterio_de_las_Descalzas_Reales,_Madrid,_16th_century_(28686856694).jpg"
- },
- {
-  "slug": "chocolateria-san-gines",
-  "name": "Chocolatería San Ginés",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "WeI-chieh Chiu from Taipei, Taiwan",
-  "license": "CC BY-SA 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Chocolater%C3%ADa_San_Gin%C3%A9s_(10512648395).jpg"
- },
- {
-  "slug": "casa-botin",
-  "name": "Restaurante Botín",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Ank Kumar",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:2014_-_Sobrino_de_Bot%C3%ADn_(Casa_Bot%C3%ADn)_Restaurant,_Madrid,_Spain_(_Ank_Kumar_)_01.jpg"
- },
- {
-  "slug": "la-bola",
-  "name": "Casa La Bola Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Raimundo Pastor",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_(RPS_07-10-2014)_Taberna_La_Bola.png"
- },
- {
-  "slug": "plaza-santa-ana",
-  "name": "Plaza de Santa Ana Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Edgardo W. Olivera from Montevideo, Uruguay",
-  "license": "CC BY 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_de_Santa_Ana,_Madrid_(26159833570).jpg"
- },
- {
-  "slug": "barrio-letras",
-  "name": "Barrio de las Letras Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Triplecaña",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Barrio_de_las_Letras_20.jpg"
- },
- {
-  "slug": "real-academia-bellas-artes-san-fernando",
-  "name": "Real Academia de Bellas Artes de San Fernando",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Carlos Delgado",
-  "license": "CC BY-SA 3.0 es",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Real_Academia_de_Bellas_Artes_de_San_Fernando_-_01.jpg"
- },
- {
-  "slug": "calle-mayor-madrid",
-  "name": "Calle Mayor Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Tuctuc_-_Calle_Mayor_-_Madrid_01.jpg"
- },
- {
-  "slug": "palacio-real-madrid",
-  "name": "Palacio Real de Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Alvesgaspar",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_May_2014-35a.jpg"
- },
- {
-  "slug": "catedral-almudena",
-  "name": "Catedral de la Almudena",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Fernando Pascullo",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_cathedral_2020_-_view_from_the_dome.jpg"
- },
- {
-  "slug": "teatro-real",
-  "name": "Teatro Real Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "kallerna",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_opera_house.jpg"
- },
- {
-  "slug": "plaza-de-oriente",
-  "name": "Plaza de Oriente Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Felipe Gabaldón",
-  "license": "CC BY 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_de_Oriente_(Madrid)_26.jpg"
- },
- {
-  "slug": "templo-debod",
-  "name": "Templo de Debod",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Templo_de_Debod,_Madrid,_Espa%C3%B1a,_2023-01-03,_DD_89-91_HDR.jpg"
- },
- {
-  "slug": "jardines-sabatini",
-  "name": "Jardines de Sabatini",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Infrogmation",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Jardines_de_Sabatini,_Madrid,_Oct_1999.jpg"
- },
- {
-  "slug": "plaza-espana-madrid",
-  "name": "Plaza de España Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Palacio_de_Comunicaciones,_Plaza_de_Cibeles,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_32-34_HDR.jpg"
- },
- {
-  "slug": "monasterio-encarnacion",
-  "name": "Monasterio de la Encarnación Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Zarateman",
-  "license": "CC0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Real_Monasterio_de_la_Encarnaci%C3%B3n_4.JPG"
- },
- {
-  "slug": "muralla-arabe-madrid",
-  "name": "Muralla árabe de Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Luis García (Zaqarbal)",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Muralla_%C3%A1rabe_de_Madrid_04.jpg"
- },
- {
-  "slug": "teleferico-madrid",
-  "name": "Teleférico de Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Tim Adams",
-  "license": "CC BY 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Telef%C3%A9rico_de_Madrid_20161106_1.jpg"
- },
- {
-  "slug": "museo-del-prado",
-  "name": "Museo del Prado",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Museo_del_Prado_-_Madrid_01.jpg"
- },
- {
-  "slug": "parque-retiro",
-  "name": "Parque del Retiro Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Estanque_del_Retiro,_Parque_del_Retiro,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_16.jpg"
- },
- {
-  "slug": "palacio-cristal-retiro",
-  "name": "Palacio de Cristal Retiro Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Palacio_de_Cristal,_Parque_del_Retiro,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_24.jpg"
- },
- {
-  "slug": "estanque-retiro",
-  "name": "Estanque Grande del Retiro",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Barcas_-_Estanque_del_Retiro_-_Madrid_01.jpg"
- },
- {
-  "slug": "puerta-alcala",
-  "name": "Puerta de Alcalá",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Puerta_de_Alcal%C3%A1,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_13.jpg"
- },
- {
-  "slug": "museo-thyssen-bornemisza",
-  "name": "Museo Thyssen-Bornemisza",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Luis García (Zaqarbal)",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Museo_Thyssen-Bornemisza_(Madrid)_07.jpg"
- },
- {
-  "slug": "museo-reina-sofia",
-  "name": "Museo Reina Sofía",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Benjamín Núñez González",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa,_detalles_del_exterior,_Madrid,_Espa%C3%B1a,_2016_01.JPG"
- },
- {
-  "slug": "caixaforum-madrid",
-  "name": "CaixaForum Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Jardin_vertical_-_CaixaForum_Madrid_01.jpg"
- },
- {
-  "slug": "real-jardin-botanico-madrid",
-  "name": "Real Jardín Botánico Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Real_Jard%C3%ADn_Bot%C3%A1nico,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_38.jpg"
- },
- {
-  "slug": "cuesta-moyano",
-  "name": "Cuesta de Moyano Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Nicolas Vigier",
-  "license": "CC0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Cuesta_de_Moyano,_Madrid.jpg"
- },
- {
-  "slug": "estacion-atocha",
-  "name": "Estación de Atocha interior",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Jorge Láscar from Australia",
-  "license": "CC BY 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Lascar_Estaci%C3%B3n_de_Atocha_(Atocha_railway_station)_-_Interior_Plaza_(4606829859).jpg"
- },
- {
-  "slug": "fuente-cibeles",
-  "name": "Fuente de Cibeles Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Fuente_de_Cibeles,_Plaza_de_Cibeles,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_10.jpg"
- },
- {
-  "slug": "palacio-linares",
-  "name": "Palacio de Linares Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Concepcion AMAT ORTA…",
-  "license": "CC BY 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:%C2%AE_S.D._MADRID_ARTECTURA_-_PALACIO_DE_LINARES_-_panoramio_(5).jpg"
- },
- {
-  "slug": "palacio-velazquez-retiro",
-  "name": "Palacio de Velázquez Retiro",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Palacio_de_Vel%C3%A1zquez,_Parque_del_Retiro,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_20.jpg"
- },
- {
-  "slug": "gran-via-madrid",
-  "name": "Gran Vía Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Tomascastelazo",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Edificio_Grassy_(Gran_V%C3%ADa_1)_-_north_facade_-_relief_over_entrance.jpg"
- },
- {
-  "slug": "edificio-metropolis",
-  "name": "Edificio Metrópolis Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Edificio_Metr%C3%B3polis,_calle_de_Alcal%C3%A1,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_08.jpg"
- },
- {
-  "slug": "edificio-telefonica",
-  "name": "Edificio Telefónica Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Jose A.",
-  "license": "CC BY 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Edificio_Telef%C3%B3nica,_Madrid_(Spain)_(33799582511).jpg"
- },
- {
-  "slug": "plaza-callao",
-  "name": "Plaza de Callao Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Nemo",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:22_de_marzo_2020-Callao-Madrid-02.jpg"
- },
- {
-  "slug": "mercado-san-anton",
-  "name": "Mercado de San Antón Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Earlyspatz",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Mercado_de_San_Anton_during_World_Pride.jpg"
- },
- {
-  "slug": "plaza-chueca",
-  "name": "Plaza de Chueca Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Zarateman",
-  "license": "CC0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Plaza_de_Chueca_2.jpg"
- },
- {
-  "slug": "museo-romanticismo",
-  "name": "Museo del Romanticismo Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Uriel1022",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Museo_del_Romanticismo_de_Madrid_2.jpg"
- },
- {
-  "slug": "palacio-longoria",
-  "name": "Palacio Longoria Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Exterior_-_Palacio_Longoria_-_Madrid_03.jpg"
- },
- {
-  "slug": "edificio-capitol",
-  "name": "Edificio Capitol Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Fred Romero from Paris, France",
-  "license": "CC BY 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Edificio_Carri%C3%B3n_(35882528662).jpg"
- },
- {
-  "slug": "calle-fuencarral",
-  "name": "Calle de Fuencarral Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Calle_de_Fuencarral_-_Madrid_03.jpg"
- },
- {
-  "slug": "terraza-circulo-bellas-artes",
-  "name": "Círculo de Bellas Artes Madrid azotea",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Zarateman",
-  "license": "CC0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_C%C3%ADrculo_de_Bellas_Artes,_Azotea_07.jpg"
- },
- {
-  "slug": "plaza-santa-barbara",
-  "name": "Plaza de Santa Bárbara Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Acediscovery",
-  "license": "CC BY 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Outdoor-exercise-equipment-Plaza-Santa-Barbara-Madrid.jpg"
- },
- {
-  "slug": "plaza-dos-mayo",
-  "name": "Plaza del Dos de Mayo Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Nicolas Vigier",
-  "license": "CC0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_del_Dos_de_Mayo,_Madrid_2021-01-08.jpg"
- },
- {
-  "slug": "calle-del-pez",
-  "name": "Calle del Pez Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Calle_del_Pez_21_-_Madrid_01.jpg"
- },
- {
-  "slug": "conde-duque",
-  "name": "Centro Cultural Conde Duque",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Fred Romero from Paris, France",
-  "license": "CC BY 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Centro_Cultural_Conde_Duque_(36595335632).jpg"
- },
- {
-  "slug": "mercado-san-ildefonso",
-  "name": "Mercado de San Ildefonso Madrid",
-  "found": false
- },
- {
-  "slug": "museo-historia-madrid",
-  "name": "Museo de Historia de Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Ricardo Peironcely",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Parte_central_de_la_fachada_del_Museo_de_Historia_de_Madrid._(Real_Hospicio_de_San_Fernando).jpg"
- },
- {
-  "slug": "museo-cerralbo",
-  "name": "Museo Cerralbo",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Alberto-g-rovi",
-  "license": "CC0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Museo_Cerralbo_17.jpg"
- },
- {
-  "slug": "via-lactea-bar",
-  "name": "Via Lactea bar Malasaña",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Jotaemec",
-  "license": "CC0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Cartel_de_ne%C3%B3n_de_la_V%C3%ADa_L%C3%A1ctea_en_Malasa%C3%B1a.jpg"
- },
- {
-  "slug": "museo-abc",
-  "name": "Museo ABC Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Rick Ligthelm from Rotterdam, The Netherlands",
-  "license": "CC BY 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Museo_ABC,_Madrid.jpg"
- },
- {
-  "slug": "calle-palma-malasana",
-  "name": "Calle de la Palma Malasaña",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Asqueladd",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Calle_de_la_Palma.JPG"
- },
- {
-  "slug": "el-rastro",
-  "name": "El Rastro Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Rastro_-_Ribera_de_Curtidores_-_Madrid_03.jpg"
- },
- {
-  "slug": "basilica-san-francisco-grande",
-  "name": "Basílica de San Francisco el Grande",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Real_Bas%C3%ADlica_de_San_Francisco_el_Grande,_Madrid,_Espa%C3%B1a,_2023-01-03,_DD_40-42_HDR.jpg"
- },
- {
-  "slug": "mercado-cebada",
-  "name": "Mercado de la Cebada Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Interior_-_Mercado_de_la_Cebada_-_Madrid_03.jpg"
- },
- {
-  "slug": "plaza-paja",
-  "name": "Plaza de la Paja Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Bernard Gagnon",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_de_la_Paja_03.jpg"
- },
- {
-  "slug": "cava-baja",
-  "name": "Calle Cava Baja Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Pérez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Fiestas_de_la_Paloma_2023_-_Calle_de_la_Cava_Baja_-_Madrid_07.jpg"
- },
- {
-  "slug": "plaza-lavapies",
-  "name": "Plaza de Lavapiés Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Liberaler Humanist",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_Lavapies,_Madrid,_13.08.14.jpg"
- },
- {
-  "slug": "tabacalera-madrid",
-  "name": "La Tabacalera Madrid Lavapies",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Fred Romero from Paris, France",
-  "license": "CC BY 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Tabacalera_(35965390063).jpg"
- },
- {
-  "slug": "mercado-anton-martin",
-  "name": "Mercado de Antón Martín Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Malopez 21",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Mercado_de_Ant%C3%B3n_Mart%C3%ADn,_fachada_calle_Santa_Isabel.JPG"
- },
- {
-  "slug": "jardines-vistillas",
-  "name": "Jardines de las Vistillas Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Luis García (Zaqarbal)",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Jardines_de_Las_Vistillas_(Madrid)_01.jpg"
- },
- {
-  "slug": "taberna-antonio-sanchez",
-  "name": "Taberna Antonio Sanchez Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Tamorlan",
-  "license": "CC BY 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Taberna_de_Antonio-S%C3%A1nchez-2009.jpg"
- },
- {
-  "slug": "mercado-san-fernando",
-  "name": "Mercado de San Fernando Lavapies",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Txapisotegi",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:La_Casquer%C3%ADa_liburu_denda.jpg"
- },
- {
-  "slug": "iglesia-san-pedro-viejo",
-  "name": "Iglesia de San Pedro el Viejo Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Iglesia_de_San_Pedro_el_Viejo_-_Madrid_01.jpg"
- },
- {
-  "slug": "calle-serrano",
-  "name": "Calle de Serrano Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:BiciMAD_-_Calle_de_Serrano_-_Madrid_01.jpg"
- },
- {
-  "slug": "museo-lazaro-galdiano",
-  "name": "Museo Lázaro Galdiano",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Ertly",
-  "license": "CC BY 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Lazaro_Galdiano_Museum_courtyard.jpg"
- },
- {
-  "slug": "biblioteca-nacional-espana",
-  "name": "Biblioteca Nacional de España",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Selbymay",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Biblioteca_Nacional_01.jpg"
- },
- {
-  "slug": "museo-arqueologico-nacional",
-  "name": "Museo Arqueológico Nacional Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Pérez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Museo_Arqueologico_Nacional_-_Madrid_01.jpg"
- },
- {
-  "slug": "plaza-colon",
-  "name": "Plaza de Colón Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Bandera_de_la_Plaza_de_Col%C3%B3n_-_Madrid_02.jpg"
- },
- {
-  "slug": "mercado-paz",
-  "name": "Mercado de la Paz Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Malopez 21",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Mercado_de_la_Paz.JPG"
- },
- {
-  "slug": "calle-jorge-juan",
-  "name": "Calle de Jorge Juan Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Lourdes Cardenal",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Calle_Jorge_Juan_by_Lou_4.jpg"
- },
- {
-  "slug": "plaza-marques-salamanca",
-  "name": "Plaza del Marqués de Salamanca",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Asqueladd",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_del_Marqu%C3%A9s_de_Salamanca.JPG"
- },
- {
-  "slug": "fundacion-juan-march",
-  "name": "Fundación Juan March",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Luis García (Zaqarbal)",
-  "license": "CC BY-SA 3.0 es",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Fundaci%C3%B3n_Juan_March_(Madrid)_02.jpg"
- },
- {
-  "slug": "mercado-vallehermoso",
-  "name": "Mercado de Vallehermoso Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Triplecaña",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Mercado_de_Vallehermoso,_Madrid.jpg"
- },
- {
-  "slug": "museo-sorolla",
-  "name": "Museo Sorolla",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Joaquín Sorolla",
-  "license": "Public domain",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Patio_de_la_casa_Sorolla.jpg"
- },
- {
-  "slug": "plaza-olavide",
-  "name": "Plaza de Olavide Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Carmen Voces",
-  "license": "CC BY 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_de_Olavide_(5198449765).jpg"
- },
- {
-  "slug": "paseo-pintor-rosales",
-  "name": "Paseo del Pintor Rosales Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Fuente_del_Paseo_del_Pintor_Rosales_-_Madrid_01.jpg"
- },
- {
-  "slug": "estacion-chamberi",
-  "name": "Estación de Chamberí Andén 0",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Emilio J. Rodríguez Posada",
-  "license": "CC BY-SA 2.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:And%C3%A9n_0-_Estaci%C3%B3n_de_Chamber%C3%AD_(34777444092).jpg"
- },
- {
-  "slug": "faro-moncloa",
-  "name": "Faro de Moncloa",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Tiia Monto",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Faro_de_Moncloa_-_deck.jpg"
- },
- {
-  "slug": "parque-oeste-madrid",
-  "name": "Parque del Oeste Madrid",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Javier Perez Montes",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Margaritas_-_Parque_del_Oeste_-_Madrid_01.jpg"
- },
- {
-  "slug": "catedral-toledo",
-  "name": "Catedral de Toledo",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Jose María Ligero Loarte",
-  "license": "CC BY-SA 3.0 es",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Reflejo_Catedral_de_Toledo_en_Fuente_Tres_Aguas_--_2014_--_Toledo,_Espa%C3%B1a_09.JPG"
- },
- {
-  "slug": "alcazar-toledo",
-  "name": "Alcázar de Toledo",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Ввласенко",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Panorama_of_Toledo_at_sunset._View_from_the_south.jpg"
- },
- {
-  "slug": "sinagoga-santa-maria-blanca",
-  "name": "Sinagoga de Santa María la Blanca Toledo",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Jl FilpoC",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Interiores_de_la_sinagoga_de_Santa_Mar%C3%ADa_la_Blanca,_Toledo.jpg"
- },
- {
-  "slug": "sinagoga-transito-toledo",
-  "name": "Sinagoga del Tránsito Toledo",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Fernando",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Sinagoga_del_Tr%C3%A1nsito_-_Artesonado_01.jpg"
- },
- {
-  "slug": "monasterio-san-juan-reyes",
-  "name": "Monasterio de San Juan de los Reyes Toledo",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Querubin Saldaña Sanchez",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Iglesia_del_monasterio_de_San_Juan_de_los_Reyes,_Toledo,_Espa%C3%B1a.jpg"
- },
- {
-  "slug": "puente-alcantara-toledo",
-  "name": "Puente de Alcántara Toledo",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Chensiyuan",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:1_Puente_de_Alc%C3%A1ntara_toledo_2014.jpg"
- },
- {
-  "slug": "mirador-valle-toledo",
-  "name": "Mirador del Valle Toledo",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Rafesmar",
-  "license": "CC BY-SA 3.0 es",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Toledo_-_Panorama_desde_Mirador_del_Valle.jpg"
- },
- {
-  "slug": "casco-historico-toledo",
-  "name": "Casco histórico de Toledo",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Pablo Costa Tirado (…",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Vista_panor%C3%A1mica_de_Toledo_(Casco_hist%C3%B3rico)_con_el_Tajo_bajo_el_Puente_de_Alc%C3%A1ntara_-_panoramio.jpg"
- },
- {
-  "slug": "puente-san-martin-toledo",
-  "name": "Puente de San Martín Toledo",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Ввласенко",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Puente_de_San_Mart%C3%ADn._Toledo,_Spain.jpg"
- },
- {
-  "slug": "acueducto-segovia",
-  "name": "Acueducto de Segovia",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "David Corral Gadea",
-  "license": "CC BY-SA 3.0 es",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Acueducto_de_Segovia_01.jpg"
- },
- {
-  "slug": "catedral-segovia",
-  "name": "Catedral de Segovia",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Catedral,_Segovia,_Espa%C3%B1a,_2024-06-14,_DD_36-38_HDR.jpg"
- },
- {
-  "slug": "alcazar-segovia",
-  "name": "Alcázar de Segovia",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Rafa Esteve",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Segovia_-_Alc%C3%A1zar_de_Segovia_22_2017-10-24.jpg"
- },
- {
-  "slug": "iglesia-san-martin-segovia",
-  "name": "Iglesia de San Martín Segovia",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Iglesia_de_San_Mart%C3%ADn,_Segovia,_Espa%C3%B1a,_2024-06-14,_DD_20.jpg"
- },
- {
-  "slug": "plaza-mayor-segovia",
-  "name": "Plaza Mayor de Segovia",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Emilio J. Rodríguez Posada",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_Mayor_de_Segovia_en_marzo_de_2022_22.jpg"
- },
- {
-  "slug": "juderia-segovia",
-  "name": "Judería de Segovia",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "GFreihalter",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Segovia_Calle_de_la_Juder%C3%ADa_Vieja_267.jpg"
- },
- {
-  "slug": "meson-candido-segovia",
-  "name": "Mesón de Cándido Segovia",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Palickap",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Segovia,_Mes%C3%B3n_de_C%C3%A1ndido_01.jpg"
- },
- {
-  "slug": "monasterio-parral-segovia",
-  "name": "Monasterio de El Parral Segovia",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Carlos Delgado",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Monasterio_de_El_Parral_-_01.jpg"
- },
- {
-  "slug": "real-monasterio-escorial",
-  "name": "Real Monasterio de El Escorial",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Diego Delso",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Real_Monasterio_de_San_Lorenzo_de_El_Escorial,_Madrid,_Espa%C3%B1a,_2025-12-30,_DD_53.jpg"
- },
- {
-  "slug": "valle-caidos",
-  "name": "Valle de los Caídos",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Godot13",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:SPA-2014-San_Lorenzo_de_El_Escorial-Valley_of_the_Fallen_(Valle_de_los_Ca%C3%ADdos).jpg"
- },
- {
-  "slug": "silla-felipe-ii",
-  "name": "Silla de Felipe II El Escorial",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Draceane",
-  "license": "CC BY-SA 3.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Silla_de_Felipe_II_panor%C3%A1mico.jpg"
- },
- {
-  "slug": "casita-principe-escorial",
-  "name": "Casita del Príncipe El Escorial",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Dorieo",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Casita_del_Pr%C3%ADncipe_(El_Escorial)_18.JPG"
- },
- {
-  "slug": "jardines-monasterio-escorial",
-  "name": "Jardines del Monasterio El Escorial",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Francesco Bini",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:San_lorenzo_del_escorial,_giardini_all%27italiana_03,0.jpg"
- },
- {
-  "slug": "aeropuerto-barajas",
-  "name": "Aeropuerto Adolfo Suárez Madrid-Barajas",
-  "found": true,
-  "source": "Wikimedia Commons",
-  "artist": "Sami Mlouhi",
-  "license": "CC BY-SA 4.0",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Adolfo_Su%C3%A1rez_Madrid%E2%80%93Barajas_Airport_-_Aeropuerto_Adolfo_Su%C3%A1rez_Madrid-Barajas_-_A%C3%A9roport_Adolfo_Su%C3%A1rez_Madrid-Barajas_-_%D9%85%D8%B7%D8%A7%D8%B1_%D9%85%D8%AF%D8%B1%D9%8A%D8%AF_%D8%A8%D8%A7%D8%B1%D8%A7%D8%AE%D8%A7%D8%B3_%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A_photo1.jpg"
- }
+  {
+    "slug": "puerta-del-sol",
+    "name": "Puerta del Sol",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Patricia Salgado",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Puerta_del_Sol_(Madrid)_16.jpg"
+  },
+  {
+    "slug": "plaza-mayor-madrid",
+    "name": "Plaza Mayor Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_Mayor,_Madrid,_Espa%C3%B1a,_2023-01-03,_DD_78.jpg"
+  },
+  {
+    "slug": "mercado-san-miguel",
+    "name": "Mercado de San Miguel",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fernando",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mercado_de_San_Miguel_2025.jpg"
+  },
+  {
+    "slug": "plaza-de-la-villa",
+    "name": "Plaza de la Villa Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Anagoria",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2012-04-30_Plaza_de_la_Villa_Madrid_anagoria_01.JPG"
+  },
+  {
+    "slug": "convento-descalzas-reales",
+    "name": "Monasterio de las Descalzas Reales",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Richard Mortel from Riyadh, Saudi Arabia",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Monasterio_de_las_Descalzas_Reales,_Madrid,_16th_century_(28686856694).jpg"
+  },
+  {
+    "slug": "chocolateria-san-gines",
+    "name": "Chocolatería San Ginés",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "WeI-chieh Chiu from Taipei, Taiwan",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chocolater%C3%ADa_San_Gin%C3%A9s_(10512648395).jpg"
+  },
+  {
+    "slug": "casa-botin",
+    "name": "Restaurante Botín",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ank Kumar",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2014_-_Sobrino_de_Bot%C3%ADn_(Casa_Bot%C3%ADn)_Restaurant,_Madrid,_Spain_(_Ank_Kumar_)_01.jpg"
+  },
+  {
+    "slug": "la-bola",
+    "name": "Casa La Bola Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Raimundo Pastor",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_(RPS_07-10-2014)_Taberna_La_Bola.png"
+  },
+  {
+    "slug": "plaza-santa-ana",
+    "name": "Plaza de Santa Ana Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Edgardo W. Olivera from Montevideo, Uruguay",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_de_Santa_Ana,_Madrid_(26159833570).jpg"
+  },
+  {
+    "slug": "barrio-letras",
+    "name": "Barrio de las Letras Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Triplecaña",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Barrio_de_las_Letras_20.jpg"
+  },
+  {
+    "slug": "real-academia-bellas-artes-san-fernando",
+    "name": "Real Academia de Bellas Artes de San Fernando",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Carlos Delgado",
+    "license": "CC BY-SA 3.0 es",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Real_Academia_de_Bellas_Artes_de_San_Fernando_-_01.jpg"
+  },
+  {
+    "slug": "calle-mayor-madrid",
+    "name": "Calle Mayor Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tuctuc_-_Calle_Mayor_-_Madrid_01.jpg"
+  },
+  {
+    "slug": "palacio-real-madrid",
+    "name": "Palacio Real de Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Alvesgaspar",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_May_2014-35a.jpg"
+  },
+  {
+    "slug": "catedral-almudena",
+    "name": "Catedral de la Almudena",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fernando Pascullo",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_cathedral_2020_-_view_from_the_dome.jpg"
+  },
+  {
+    "slug": "teatro-real",
+    "name": "Teatro Real Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "kallerna",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_opera_house.jpg"
+  },
+  {
+    "slug": "plaza-de-oriente",
+    "name": "Plaza de Oriente Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Felipe Gabaldón",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_de_Oriente_(Madrid)_26.jpg"
+  },
+  {
+    "slug": "templo-debod",
+    "name": "Templo de Debod",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Templo_de_Debod,_Madrid,_Espa%C3%B1a,_2023-01-03,_DD_89-91_HDR.jpg"
+  },
+  {
+    "slug": "jardines-sabatini",
+    "name": "Jardines de Sabatini",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Infrogmation",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jardines_de_Sabatini,_Madrid,_Oct_1999.jpg"
+  },
+  {
+    "slug": "plaza-espana-madrid",
+    "name": "Plaza de España Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Palacio_de_Comunicaciones,_Plaza_de_Cibeles,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_32-34_HDR.jpg"
+  },
+  {
+    "slug": "monasterio-encarnacion",
+    "name": "Monasterio de la Encarnación Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zarateman",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Real_Monasterio_de_la_Encarnaci%C3%B3n_4.JPG"
+  },
+  {
+    "slug": "muralla-arabe-madrid",
+    "name": "Muralla árabe de Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Luis García (Zaqarbal)",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Muralla_%C3%A1rabe_de_Madrid_04.jpg"
+  },
+  {
+    "slug": "teleferico-madrid",
+    "name": "Teleférico de Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tim Adams",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Telef%C3%A9rico_de_Madrid_20161106_1.jpg"
+  },
+  {
+    "slug": "museo-del-prado",
+    "name": "Museo del Prado",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Museo_del_Prado_-_Madrid_01.jpg"
+  },
+  {
+    "slug": "parque-retiro",
+    "name": "Parque del Retiro Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Estanque_del_Retiro,_Parque_del_Retiro,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_16.jpg"
+  },
+  {
+    "slug": "palacio-cristal-retiro",
+    "name": "Palacio de Cristal Retiro Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Palacio_de_Cristal,_Parque_del_Retiro,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_24.jpg"
+  },
+  {
+    "slug": "estanque-retiro",
+    "name": "Estanque Grande del Retiro",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Barcas_-_Estanque_del_Retiro_-_Madrid_01.jpg"
+  },
+  {
+    "slug": "puerta-alcala",
+    "name": "Puerta de Alcalá",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Puerta_de_Alcal%C3%A1,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_13.jpg"
+  },
+  {
+    "slug": "museo-thyssen-bornemisza",
+    "name": "Museo Thyssen-Bornemisza",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Luis García (Zaqarbal)",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Museo_Thyssen-Bornemisza_(Madrid)_07.jpg"
+  },
+  {
+    "slug": "museo-reina-sofia",
+    "name": "Museo Reina Sofía",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Benjamín Núñez González",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa,_detalles_del_exterior,_Madrid,_Espa%C3%B1a,_2016_01.JPG"
+  },
+  {
+    "slug": "caixaforum-madrid",
+    "name": "CaixaForum Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jardin_vertical_-_CaixaForum_Madrid_01.jpg"
+  },
+  {
+    "slug": "real-jardin-botanico-madrid",
+    "name": "Real Jardín Botánico Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Real_Jard%C3%ADn_Bot%C3%A1nico,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_38.jpg"
+  },
+  {
+    "slug": "cuesta-moyano",
+    "name": "Cuesta de Moyano Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Nicolas Vigier",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cuesta_de_Moyano,_Madrid.jpg"
+  },
+  {
+    "slug": "estacion-atocha",
+    "name": "Estación de Atocha interior",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jorge Láscar from Australia",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lascar_Estaci%C3%B3n_de_Atocha_(Atocha_railway_station)_-_Interior_Plaza_(4606829859).jpg"
+  },
+  {
+    "slug": "fuente-cibeles",
+    "name": "Fuente de Cibeles Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fuente_de_Cibeles,_Plaza_de_Cibeles,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_10.jpg"
+  },
+  {
+    "slug": "palacio-linares",
+    "name": "Palacio de Linares Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Concepcion AMAT ORTA…",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%C2%AE_S.D._MADRID_ARTECTURA_-_PALACIO_DE_LINARES_-_panoramio_(5).jpg"
+  },
+  {
+    "slug": "palacio-velazquez-retiro",
+    "name": "Palacio de Velázquez Retiro",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Palacio_de_Vel%C3%A1zquez,_Parque_del_Retiro,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_20.jpg"
+  },
+  {
+    "slug": "gran-via-madrid",
+    "name": "Gran Vía Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tomascastelazo",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Edificio_Grassy_(Gran_V%C3%ADa_1)_-_north_facade_-_relief_over_entrance.jpg"
+  },
+  {
+    "slug": "edificio-metropolis",
+    "name": "Edificio Metrópolis Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Edificio_Metr%C3%B3polis,_calle_de_Alcal%C3%A1,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_08.jpg"
+  },
+  {
+    "slug": "edificio-telefonica",
+    "name": "Edificio Telefónica Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jose A.",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Edificio_Telef%C3%B3nica,_Madrid_(Spain)_(33799582511).jpg"
+  },
+  {
+    "slug": "plaza-callao",
+    "name": "Plaza de Callao Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Nemo",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:22_de_marzo_2020-Callao-Madrid-02.jpg"
+  },
+  {
+    "slug": "mercado-san-anton",
+    "name": "Mercado de San Antón Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Earlyspatz",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mercado_de_San_Anton_during_World_Pride.jpg"
+  },
+  {
+    "slug": "plaza-chueca",
+    "name": "Plaza de Chueca Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zarateman",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Plaza_de_Chueca_2.jpg"
+  },
+  {
+    "slug": "museo-romanticismo",
+    "name": "Museo del Romanticismo Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Uriel1022",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Museo_del_Romanticismo_de_Madrid_2.jpg"
+  },
+  {
+    "slug": "palacio-longoria",
+    "name": "Palacio Longoria Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Exterior_-_Palacio_Longoria_-_Madrid_03.jpg"
+  },
+  {
+    "slug": "edificio-capitol",
+    "name": "Edificio Capitol Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fred Romero from Paris, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Edificio_Carri%C3%B3n_(35882528662).jpg"
+  },
+  {
+    "slug": "calle-fuencarral",
+    "name": "Calle de Fuencarral Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Calle_de_Fuencarral_-_Madrid_03.jpg"
+  },
+  {
+    "slug": "terraza-circulo-bellas-artes",
+    "name": "Círculo de Bellas Artes Madrid azotea",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zarateman",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_C%C3%ADrculo_de_Bellas_Artes,_Azotea_07.jpg"
+  },
+  {
+    "slug": "plaza-santa-barbara",
+    "name": "Plaza de Santa Bárbara Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Acediscovery",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Outdoor-exercise-equipment-Plaza-Santa-Barbara-Madrid.jpg"
+  },
+  {
+    "slug": "plaza-dos-mayo",
+    "name": "Plaza del Dos de Mayo Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Nicolas Vigier",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_del_Dos_de_Mayo,_Madrid_2021-01-08.jpg"
+  },
+  {
+    "slug": "calle-del-pez",
+    "name": "Calle del Pez Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Calle_del_Pez_21_-_Madrid_01.jpg"
+  },
+  {
+    "slug": "conde-duque",
+    "name": "Centro Cultural Conde Duque",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fred Romero from Paris, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Centro_Cultural_Conde_Duque_(36595335632).jpg"
+  },
+  {
+    "slug": "mercado-san-ildefonso",
+    "name": "Mercado de San Ildefonso Madrid",
+    "found": false
+  },
+  {
+    "slug": "museo-historia-madrid",
+    "name": "Museo de Historia de Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ricardo Peironcely",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Parte_central_de_la_fachada_del_Museo_de_Historia_de_Madrid._(Real_Hospicio_de_San_Fernando).jpg"
+  },
+  {
+    "slug": "museo-cerralbo",
+    "name": "Museo Cerralbo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Alberto-g-rovi",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Museo_Cerralbo_17.jpg"
+  },
+  {
+    "slug": "via-lactea-bar",
+    "name": "Via Lactea bar Malasaña",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jotaemec",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cartel_de_ne%C3%B3n_de_la_V%C3%ADa_L%C3%A1ctea_en_Malasa%C3%B1a.jpg"
+  },
+  {
+    "slug": "museo-abc",
+    "name": "Museo ABC Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Rick Ligthelm from Rotterdam, The Netherlands",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Museo_ABC,_Madrid.jpg"
+  },
+  {
+    "slug": "calle-palma-malasana",
+    "name": "Calle de la Palma Malasaña",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Asqueladd",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Calle_de_la_Palma.JPG"
+  },
+  {
+    "slug": "el-rastro",
+    "name": "El Rastro Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rastro_-_Ribera_de_Curtidores_-_Madrid_03.jpg"
+  },
+  {
+    "slug": "basilica-san-francisco-grande",
+    "name": "Basílica de San Francisco el Grande",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Real_Bas%C3%ADlica_de_San_Francisco_el_Grande,_Madrid,_Espa%C3%B1a,_2023-01-03,_DD_40-42_HDR.jpg"
+  },
+  {
+    "slug": "mercado-cebada",
+    "name": "Mercado de la Cebada Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Interior_-_Mercado_de_la_Cebada_-_Madrid_03.jpg"
+  },
+  {
+    "slug": "plaza-paja",
+    "name": "Plaza de la Paja Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_de_la_Paja_03.jpg"
+  },
+  {
+    "slug": "cava-baja",
+    "name": "Calle Cava Baja Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Pérez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fiestas_de_la_Paloma_2023_-_Calle_de_la_Cava_Baja_-_Madrid_07.jpg"
+  },
+  {
+    "slug": "plaza-lavapies",
+    "name": "Plaza de Lavapiés Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Liberaler Humanist",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_Lavapies,_Madrid,_13.08.14.jpg"
+  },
+  {
+    "slug": "tabacalera-madrid",
+    "name": "La Tabacalera Madrid Lavapies",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fred Romero from Paris, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Tabacalera_(35965390063).jpg"
+  },
+  {
+    "slug": "mercado-anton-martin",
+    "name": "Mercado de Antón Martín Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Malopez 21",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mercado_de_Ant%C3%B3n_Mart%C3%ADn,_fachada_calle_Santa_Isabel.JPG"
+  },
+  {
+    "slug": "jardines-vistillas",
+    "name": "Jardines de las Vistillas Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Luis García (Zaqarbal)",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jardines_de_Las_Vistillas_(Madrid)_01.jpg"
+  },
+  {
+    "slug": "taberna-antonio-sanchez",
+    "name": "Taberna Antonio Sanchez Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tamorlan",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Taberna_de_Antonio-S%C3%A1nchez-2009.jpg"
+  },
+  {
+    "slug": "mercado-san-fernando",
+    "name": "Mercado de San Fernando Lavapies",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Txapisotegi",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:La_Casquer%C3%ADa_liburu_denda.jpg"
+  },
+  {
+    "slug": "iglesia-san-pedro-viejo",
+    "name": "Iglesia de San Pedro el Viejo Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Iglesia_de_San_Pedro_el_Viejo_-_Madrid_01.jpg"
+  },
+  {
+    "slug": "calle-serrano",
+    "name": "Calle de Serrano Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BiciMAD_-_Calle_de_Serrano_-_Madrid_01.jpg"
+  },
+  {
+    "slug": "museo-lazaro-galdiano",
+    "name": "Museo Lázaro Galdiano",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ertly",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lazaro_Galdiano_Museum_courtyard.jpg"
+  },
+  {
+    "slug": "biblioteca-nacional-espana",
+    "name": "Biblioteca Nacional de España",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Selbymay",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Biblioteca_Nacional_01.jpg"
+  },
+  {
+    "slug": "museo-arqueologico-nacional",
+    "name": "Museo Arqueológico Nacional Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Pérez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Museo_Arqueologico_Nacional_-_Madrid_01.jpg"
+  },
+  {
+    "slug": "plaza-colon",
+    "name": "Plaza de Colón Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bandera_de_la_Plaza_de_Col%C3%B3n_-_Madrid_02.jpg"
+  },
+  {
+    "slug": "mercado-paz",
+    "name": "Mercado de la Paz Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Malopez 21",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mercado_de_la_Paz.JPG"
+  },
+  {
+    "slug": "calle-jorge-juan",
+    "name": "Calle de Jorge Juan Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Lourdes Cardenal",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Calle_Jorge_Juan_by_Lou_4.jpg"
+  },
+  {
+    "slug": "plaza-marques-salamanca",
+    "name": "Plaza del Marqués de Salamanca",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Asqueladd",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_del_Marqu%C3%A9s_de_Salamanca.JPG"
+  },
+  {
+    "slug": "fundacion-juan-march",
+    "name": "Fundación Juan March",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Luis García (Zaqarbal)",
+    "license": "CC BY-SA 3.0 es",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fundaci%C3%B3n_Juan_March_(Madrid)_02.jpg"
+  },
+  {
+    "slug": "mercado-vallehermoso",
+    "name": "Mercado de Vallehermoso Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Triplecaña",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mercado_de_Vallehermoso,_Madrid.jpg"
+  },
+  {
+    "slug": "museo-sorolla",
+    "name": "Museo Sorolla",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Joaquín Sorolla",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Patio_de_la_casa_Sorolla.jpg"
+  },
+  {
+    "slug": "plaza-olavide",
+    "name": "Plaza de Olavide Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Carmen Voces",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_de_Olavide_(5198449765).jpg"
+  },
+  {
+    "slug": "paseo-pintor-rosales",
+    "name": "Paseo del Pintor Rosales Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fuente_del_Paseo_del_Pintor_Rosales_-_Madrid_01.jpg"
+  },
+  {
+    "slug": "estacion-chamberi",
+    "name": "Estación de Chamberí Andén 0",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Emilio J. Rodríguez Posada",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:And%C3%A9n_0-_Estaci%C3%B3n_de_Chamber%C3%AD_(34777444092).jpg"
+  },
+  {
+    "slug": "faro-moncloa",
+    "name": "Faro de Moncloa",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tiia Monto",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Faro_de_Moncloa_-_deck.jpg"
+  },
+  {
+    "slug": "parque-oeste-madrid",
+    "name": "Parque del Oeste Madrid",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Javier Perez Montes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Margaritas_-_Parque_del_Oeste_-_Madrid_01.jpg"
+  },
+  {
+    "slug": "catedral-toledo",
+    "name": "Catedral de Toledo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jose María Ligero Loarte",
+    "license": "CC BY-SA 3.0 es",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Reflejo_Catedral_de_Toledo_en_Fuente_Tres_Aguas_--_2014_--_Toledo,_Espa%C3%B1a_09.JPG"
+  },
+  {
+    "slug": "alcazar-toledo",
+    "name": "Alcázar de Toledo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ввласенко",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Panorama_of_Toledo_at_sunset._View_from_the_south.jpg"
+  },
+  {
+    "slug": "sinagoga-santa-maria-blanca",
+    "name": "Sinagoga de Santa María la Blanca Toledo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jl FilpoC",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Interiores_de_la_sinagoga_de_Santa_Mar%C3%ADa_la_Blanca,_Toledo.jpg"
+  },
+  {
+    "slug": "sinagoga-transito-toledo",
+    "name": "Sinagoga del Tránsito Toledo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fernando",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sinagoga_del_Tr%C3%A1nsito_-_Artesonado_01.jpg"
+  },
+  {
+    "slug": "monasterio-san-juan-reyes",
+    "name": "Monasterio de San Juan de los Reyes Toledo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Querubin Saldaña Sanchez",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Iglesia_del_monasterio_de_San_Juan_de_los_Reyes,_Toledo,_Espa%C3%B1a.jpg"
+  },
+  {
+    "slug": "puente-alcantara-toledo",
+    "name": "Puente de Alcántara Toledo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Chensiyuan",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:1_Puente_de_Alc%C3%A1ntara_toledo_2014.jpg"
+  },
+  {
+    "slug": "mirador-valle-toledo",
+    "name": "Mirador del Valle Toledo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Rafesmar",
+    "license": "CC BY-SA 3.0 es",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Toledo_-_Panorama_desde_Mirador_del_Valle.jpg"
+  },
+  {
+    "slug": "casco-historico-toledo",
+    "name": "Casco histórico de Toledo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pablo Costa Tirado (…",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vista_panor%C3%A1mica_de_Toledo_(Casco_hist%C3%B3rico)_con_el_Tajo_bajo_el_Puente_de_Alc%C3%A1ntara_-_panoramio.jpg"
+  },
+  {
+    "slug": "puente-san-martin-toledo",
+    "name": "Puente de San Martín Toledo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ввласенко",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Puente_de_San_Mart%C3%ADn._Toledo,_Spain.jpg"
+  },
+  {
+    "slug": "acueducto-segovia",
+    "name": "Acueducto de Segovia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "David Corral Gadea",
+    "license": "CC BY-SA 3.0 es",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Acueducto_de_Segovia_01.jpg"
+  },
+  {
+    "slug": "catedral-segovia",
+    "name": "Catedral de Segovia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Catedral,_Segovia,_Espa%C3%B1a,_2024-06-14,_DD_36-38_HDR.jpg"
+  },
+  {
+    "slug": "alcazar-segovia",
+    "name": "Alcázar de Segovia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Rafa Esteve",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Segovia_-_Alc%C3%A1zar_de_Segovia_22_2017-10-24.jpg"
+  },
+  {
+    "slug": "iglesia-san-martin-segovia",
+    "name": "Iglesia de San Martín Segovia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Iglesia_de_San_Mart%C3%ADn,_Segovia,_Espa%C3%B1a,_2024-06-14,_DD_20.jpg"
+  },
+  {
+    "slug": "plaza-mayor-segovia",
+    "name": "Plaza Mayor de Segovia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Emilio J. Rodríguez Posada",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plaza_Mayor_de_Segovia_en_marzo_de_2022_22.jpg"
+  },
+  {
+    "slug": "juderia-segovia",
+    "name": "Judería de Segovia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "GFreihalter",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Segovia_Calle_de_la_Juder%C3%ADa_Vieja_267.jpg"
+  },
+  {
+    "slug": "meson-candido-segovia",
+    "name": "Mesón de Cándido Segovia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Palickap",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Segovia,_Mes%C3%B3n_de_C%C3%A1ndido_01.jpg"
+  },
+  {
+    "slug": "monasterio-parral-segovia",
+    "name": "Monasterio de El Parral Segovia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Carlos Delgado",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Monasterio_de_El_Parral_-_01.jpg"
+  },
+  {
+    "slug": "real-monasterio-escorial",
+    "name": "Real Monasterio de El Escorial",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Real_Monasterio_de_San_Lorenzo_de_El_Escorial,_Madrid,_Espa%C3%B1a,_2025-12-30,_DD_53.jpg"
+  },
+  {
+    "slug": "valle-caidos",
+    "name": "Valle de los Caídos",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Godot13",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:SPA-2014-San_Lorenzo_de_El_Escorial-Valley_of_the_Fallen_(Valle_de_los_Ca%C3%ADdos).jpg"
+  },
+  {
+    "slug": "silla-felipe-ii",
+    "name": "Silla de Felipe II El Escorial",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Draceane",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Silla_de_Felipe_II_panor%C3%A1mico.jpg"
+  },
+  {
+    "slug": "casita-principe-escorial",
+    "name": "Casita del Príncipe El Escorial",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Dorieo",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Casita_del_Pr%C3%ADncipe_(El_Escorial)_18.JPG"
+  },
+  {
+    "slug": "jardines-monasterio-escorial",
+    "name": "Jardines del Monasterio El Escorial",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Francesco Bini",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:San_lorenzo_del_escorial,_giardini_all%27italiana_03,0.jpg"
+  },
+  {
+    "slug": "aeropuerto-barajas",
+    "name": "Aeropuerto Adolfo Suárez Madrid-Barajas",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Sami Mlouhi",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Adolfo_Su%C3%A1rez_Madrid%E2%80%93Barajas_Airport_-_Aeropuerto_Adolfo_Su%C3%A1rez_Madrid-Barajas_-_A%C3%A9roport_Adolfo_Su%C3%A1rez_Madrid-Barajas_-_%D9%85%D8%B7%D8%A7%D8%B1_%D9%85%D8%AF%D8%B1%D9%8A%D8%AF_%D8%A8%D8%A7%D8%B1%D8%A7%D8%AE%D8%A7%D8%B3_%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A_photo1.jpg"
+  }
 ]
