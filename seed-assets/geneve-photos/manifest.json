@@ -187,5 +187,428 @@
     "artist": "MHM55",
     "license": "CC BY-SA 4.0",
     "source_url": "https://commons.wikimedia.org/wiki/File:Rue_de_Berne-01-zone_20.jpg"
+  },
+  {
+    "slug": "brocante-des-paquis",
+    "name": "Brocante des Pâquis",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Benoît Prieur",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Les_P%C3%A2quis_-_Gen%C3%A8ve_(avril_2018)_-_1.JPG"
+  },
+  {
+    "slug": "palais-des-nations",
+    "name": "Palais des Nations",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Eferrante",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Palais_des_Nations_(Geneve).JPG"
+  },
+  {
+    "slug": "place-des-nations-chaise-cassee",
+    "name": "Place des Nations et la Chaise cassée",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ank Kumar",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Broken_Chair_by_Daniel_Berset_at_Place_des_Nations,_Geneva_(Ank_Kumar)_01.jpg"
+  },
+  {
+    "slug": "musee-croix-rouge",
+    "name": "Musée international de la Croix-Rouge",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Benoît Prieur",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_la_Croix_Rouge_%C3%A0_Gen%C3%A8ve_-_L%27Aventure_Humanitaire.JPG"
+  },
+  {
+    "slug": "parc-de-l-ariana",
+    "name": "Parc de l'Ariana",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Guilhem Vellut from Annecy, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_Ariana_@_Parc_de_l%27Ariana_@_Gen%C3%A8ve_(50637840402).jpg"
+  },
+  {
+    "slug": "musee-ariana-porcelaine",
+    "name": "Musée Ariana",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gfuerst",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Musee_Ariana_1_Geneve.JPG"
+  },
+  {
+    "slug": "jardin-botanique-geneve",
+    "name": "Jardin botanique de Genève",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Guilhem Vellut from Annecy, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Serre_Temp%C3%A9r%C3%A9e_@_Jardin_Botanique_@_Gen%C3%A8ve_(50630384867).jpg"
+  },
+  {
+    "slug": "cern-globe-science-innovation",
+    "name": "CERN — Globe de la Science et de l'Innovation",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Adam Nieman",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CERN_Globe_of_Science_and_Innovation.jpg"
+  },
+  {
+    "slug": "musee-de-carouge",
+    "name": "Musée de Carouge",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Guilhem Vellut from Annecy, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_Carouge_@_Place_de_Sardaigne_@_Carouge_(51320811505).jpg"
+  },
+  {
+    "slug": "ateliers-artisans-carouge",
+    "name": "Ateliers d'artisans de Carouge",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "MHM55",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Carouge_Saint_Joseph-02.jpg"
+  },
+  {
+    "slug": "cafe-terrasse-carouge",
+    "name": "Terrasses de la rue Ancienne",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ypsilon from Finland",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Carouge_Rue_Ancienne.jpg"
+  },
+  {
+    "slug": "parc-la-grange",
+    "name": "Parc La Grange",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "makilica",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Roseraie_Geneva_1.jpg"
+  },
+  {
+    "slug": "parc-des-eaux-vives",
+    "name": "Parc des Eaux-Vives",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "3lisai-4u",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Parc_des_Eaux-Vives_(2024-08-21).jpg"
+  },
+  {
+    "slug": "geneve-plage",
+    "name": "Genève-Plage",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "MHM55",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gen%C3%A8ve-plage-01.jpg"
+  },
+  {
+    "slug": "plage-publique-eaux-vives",
+    "name": "Plage publique des Eaux-Vives",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "urbzoo",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plage_Publique_des_Eaux-Vives_(26835365932).jpg"
+  },
+  {
+    "slug": "port-noir",
+    "name": "Port Noir",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "MHM55",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gen%C3%A8ve-Port-Noir-01.jpg"
+  },
+  {
+    "slug": "plaine-de-plainpalais",
+    "name": "Plaine de Plainpalais",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Benoît Prieur",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:March%C3%A9_aux_puces_de_Plainpalais_en_ao%C3%BBt_2018.jpg"
+  },
+  {
+    "slug": "mamco-geneve",
+    "name": "MAMCO",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Credits to Mourad Ben Abdallah / Wikimedia Commons",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:MAMCO_Geneva.JPG"
+  },
+  {
+    "slug": "batiment-forces-motrices",
+    "name": "Bâtiment des Forces Motrices",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Traumrune",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:B%C3%A2timent_des_Forces_Motrices,_Gen%C3%A8ve.jpg"
+  },
+  {
+    "slug": "pointe-de-la-jonction",
+    "name": "Pointe de la Jonction",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pymouss",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gen%C3%A8ve_-_Jonction_Arve_Rh%C3%B4ne_150815-02.JPG"
+  },
+  {
+    "slug": "lavaux-terrasses-vignoble",
+    "name": "Terrasses viticoles de Lavaux",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Geneva_from_Lavaux_vineyard_terraces_03.jpg"
+  },
+  {
+    "slug": "rivaz-lavaux",
+    "name": "Rivaz",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Attila Terbócs, User Pasztilla",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lavaux_-_Rivaz.jpg"
+  },
+  {
+    "slug": "saint-saphorin-lavaux",
+    "name": "Saint-Saphorin",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JoachimKohler-HB",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:St-Saphorin_(Lavaux).jpg"
+  },
+  {
+    "slug": "lutry-port",
+    "name": "Lutry",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roy Lindman",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:RoyLindmanLutry_003.jpg"
+  },
+  {
+    "slug": "chexbres-point-de-vue",
+    "name": "Chexbres",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Monsoleiiil",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lavaux5.JPG"
+  },
+  {
+    "slug": "degustation-dezaley",
+    "name": "Dégustation de Dézaley",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Bryantettoni",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vignoble_du_D%C3%A9zaley_vu_depuis_le_lac_L%C3%A9man.png"
+  },
+  {
+    "slug": "place-de-la-palud-lausanne",
+    "name": "Place de la Palud",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Abaddon1337",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Place_de_la_Palud_Lausanne.jpg"
+  },
+  {
+    "slug": "musee-olympique-lausanne",
+    "name": "Musée Olympique",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Matanya",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_Olympique,_Lausanne.jpg"
+  },
+  {
+    "slug": "esplanade-montbenon-flon",
+    "name": "Esplanade de Montbenon et quartier du Flon",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Re 460 at de.wikipedia",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lausanne_Flon.jpg"
+  },
+  {
+    "slug": "ouchy-lausanne",
+    "name": "Ouchy",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Guilhem Vellut from Annecy, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ouchy_@_Lausanne_(36774417201).jpg"
+  },
+  {
+    "slug": "collection-art-brut-lausanne",
+    "name": "Collection de l'Art Brut",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Hendrik Heiser",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Batiment_de_collection_de_l%27Art_Brut.jpg"
+  },
+  {
+    "slug": "chateau-saint-maire-lausanne",
+    "name": "Château Saint-Maire",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gzzz",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_Saint-Maire_Lausanne_2020.jpg"
+  },
+  {
+    "slug": "tour-sauvabelin-lausanne",
+    "name": "Tour de Sauvabelin",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gzzz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tour_de_Sauvabelin_Lausanne.jpg"
+  },
+  {
+    "slug": "cathedrale-lausanne",
+    "name": "Cathédrale Notre-Dame de Lausanne",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zikai Liu",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lausanne-Cathedral-2022-04-23.jpg"
+  },
+  {
+    "slug": "chamonix-centre-ville",
+    "name": "Centre de Chamonix",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "AntonyB",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chamonix-Mont-Blanc_--_Le_village_pi%C3%A9ton_de_Chamonix-Sud_(Lever_du_soleil_sur_la_cha%C3%AEne_du_Mont-Blanc).jpg"
+  },
+  {
+    "slug": "telepherique-aiguille-du-midi",
+    "name": "Téléphérique de l'Aiguille du Midi",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Kristoferb",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aiguille_du_Midi_Cable_Car.JPG"
+  },
+  {
+    "slug": "sommet-aiguille-du-midi",
+    "name": "Sommet de l'Aiguille du Midi",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Benh LIEU SONG",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pano_from_Aiguille_du_Midi_02.jpg"
+  },
+  {
+    "slug": "telepherique-brevent",
+    "name": "Téléphérique du Brévent",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "AntonyB",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chamonix-Mont-Blanc_--_T%C3%A9l%C3%A9cabine_Br%C3%A9vent-Fl%C3%A9g%C3%A8re_1.JPG"
+  },
+  {
+    "slug": "palais-de-l-isle-annecy",
+    "name": "Palais de l'Isle",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Chabe01",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Palais_Isle_Annecy_3.jpg"
+  },
+  {
+    "slug": "chateau-annecy",
+    "name": "Château d'Annecy",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Castle_of_Annecy_02.jpg"
+  },
+  {
+    "slug": "pont-des-amours-jardins-europe",
+    "name": "Pont des Amours et Jardins de l'Europe",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Guilhem Vellut from Annecy, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pont_des_Amours_@_Annecy_(35501264905).jpg"
+  },
+  {
+    "slug": "lac-annecy-champ-de-mars",
+    "name": "Lac d'Annecy et Champ de Mars",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Guilhem Vellut from Annecy, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lac_d%27Annecy_@_P%C3%A2quier_@_Annecy_(39663924961).jpg"
+  },
+  {
+    "slug": "plage-annecy-imperial",
+    "name": "Plage d'Annecy (Impérial)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Guilhem Vellut from Annecy, France",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plage_de_l%27Imp%C3%A9rial_@_Annecy_(50771799572).jpg"
+  },
+  {
+    "slug": "yvoire-village-medieval",
+    "name": "Village médiéval d'Yvoire",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Christian David",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fortified_gate_of_the_medieval_village,_Yvoire,_Haute-Savoie.jpg"
+  },
+  {
+    "slug": "jardin-cinq-sens-yvoire",
+    "name": "Jardin des Cinq Sens",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lilium_%27Casablanca%27_in_Jardin_des_5_sens_(2).jpg"
+  },
+  {
+    "slug": "port-yvoire",
+    "name": "Port d'Yvoire",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Port_des_Pecheurs_in_Yvoire_(2).jpg"
+  },
+  {
+    "slug": "aeroport-geneve",
+    "name": "Aéroport de Genève (Cointrin)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Schutz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Geneva_airport_from_air.jpg"
   }
 ]
