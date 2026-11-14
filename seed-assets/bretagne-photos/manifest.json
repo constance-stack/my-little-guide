@@ -664,5 +664,257 @@
     "artist": "GFreihalter",
     "license": "CC BY-SA 3.0",
     "source_url": "https://commons.wikimedia.org/wiki/File:Penmarch_%C3%89glise_Saint-Nonna_942.jpg"
+  },
+  {
+    "slug": "remparts-vieille-ville-vannes",
+    "name": "Vieille ville et remparts de Vannes",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Giorgio Galeotti",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Remparts_de_Vannes_-_Vannes%2C_France_-_August_19%2C_2018_01.jpg"
+  },
+  {
+    "slug": "cathedrale-saint-pierre-vannes",
+    "name": "Cathédrale Saint-Pierre de Vannes",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Raimond Spekking",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Saint-Pierre_de_Vannes-2253.jpg"
+  },
+  {
+    "slug": "port-de-vannes",
+    "name": "Port de Vannes",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Myrabella",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Port_de_Vannes_quai_Eric_Tabarly.jpg"
+  },
+  {
+    "slug": "port-navalo",
+    "name": "Port-Navalo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fab5669",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Arzon_-_Port-Navalo_%2803%29.jpg"
+  },
+  {
+    "slug": "ile-aux-moines",
+    "name": "Île-aux-Moines",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jebulon",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%C3%8Ele_aux_Moines_1%2C_Morbihan%2C_France.jpg"
+  },
+  {
+    "slug": "ile-d-arz",
+    "name": "Île-d'Arz",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fab5669",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%C3%8Ele-d%27Arz_-_bourg.jpg"
+  },
+  {
+    "slug": "quartier-saint-goustan-auray",
+    "name": "Quartier Saint-Goustan, Auray",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Myrabella",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Auray_port_de_Saint-Goustan.jpg"
+  },
+  {
+    "slug": "basilique-sainte-anne-d-auray",
+    "name": "Basilique de Sainte-Anne-d'Auray",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Zairon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sainte-Anne-d%27Auray_Sanctuaire_Basilique_Sainte-Anne_Ext%C3%A9rieure_Facade_01.jpg"
+  },
+  {
+    "slug": "cairn-de-gavrinis",
+    "name": "Cairn de Gavrinis",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pierre F631",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cairn_de_Gavrinis_par_drone_-_vue_2.jpg"
+  },
+  {
+    "slug": "table-des-marchands-locmariaquer",
+    "name": "Table des Marchands et Grand Menhir, Locmariaquer",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Shonagon",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Locmariaquer-table-des-marchands.jpg"
+  },
+  {
+    "slug": "alignements-du-menec",
+    "name": "Alignements du Ménec",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Giorgio Galeotti",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alignements_du_M%C3%A9nec_-_LIeu-dit_le_M%C3%A9nec%2C_Carnac%2C_France_-_August_19%2C_2018_01.jpg"
+  },
+  {
+    "slug": "alignements-de-kermario",
+    "name": "Alignements de Kermario",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Giorgio Galeotti",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alignements_de_Kermario_-_Carnac%2C_France_-_August_19%2C_2018_01.jpg"
+  },
+  {
+    "slug": "tumulus-saint-michel-carnac",
+    "name": "Tumulus Saint-Michel",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ji-Elle",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tumulus_Saint-Michel_%282%29.jpg"
+  },
+  {
+    "slug": "carnac-plage",
+    "name": "Carnac-Plage",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "chisloup",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Carnac_%2C_la_grande_plage_-_panoramio.jpg"
+  },
+  {
+    "slug": "la-trinite-sur-mer-port",
+    "name": "Port de la Trinité-sur-Mer",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Myrabella",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:La_Trinite-sur-Mer.jpg"
+  },
+  {
+    "slug": "grande-plage-quiberon",
+    "name": "Grande Plage de Quiberon",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "MHM55",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Quiberon_Grande_Plage-2025-01.jpg"
+  },
+  {
+    "slug": "cote-sauvage-quiberon",
+    "name": "Côte Sauvage de Quiberon",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "MHM55",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:C%C3%B4te_sauvage-Quiberon-2025-19.jpg"
+  },
+  {
+    "slug": "port-maria-quiberon",
+    "name": "Port-Maria, Quiberon",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Anthony Levrot",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Quiberon_-_56170_-_2021.06.10_-_Port_Maria_%C2%A9_Anthony_Levrot.jpg"
+  },
+  {
+    "slug": "le-palais-citadelle-vauban",
+    "name": "Le Palais et la Citadelle Vauban",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Franck-fnba",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Le_palais_morbihan_citadelle_vauban_2011g.jpg"
+  },
+  {
+    "slug": "sauzon-belle-ile",
+    "name": "Sauzon",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gilles Messian",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sauzon%2C_Belle-%C3%8Ele-en-Mer%2C_France_%2848030439768%29.jpg"
+  },
+  {
+    "slug": "phare-des-poulains",
+    "name": "Phare des Poulains",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Lepocheux",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Phare_de_la_Pointe_des_Poulains%2C_Belle-%C3%8Ele_%281%29.jpg"
+  },
+  {
+    "slug": "aiguilles-de-port-coton",
+    "name": "Aiguilles de Port-Coton",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Franck-fnba",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bangor_aiguilles_de_port_coton_2014a.jpg"
+  },
+  {
+    "slug": "grotte-de-l-apothicairerie",
+    "name": "Grotte de l'Apothicairerie",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Dropy",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Grotte_apothicairerie_belle_ile.jpg"
+  },
+  {
+    "slug": "plage-de-donnant",
+    "name": "Plage de Donnant",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pmau",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plage_de_Donnant_-_dsmm05334.jpg"
+  },
+  {
+    "slug": "aeroport-brest-bretagne",
+    "name": "Aéroport de Brest Bretagne",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "LittleJohn29",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aerogare_Brest.jpg"
+  },
+  {
+    "slug": "aeroport-rennes-saint-jacques",
+    "name": "Aéroport de Rennes-Saint-Jacques",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pymouss",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Saint-Jacques-de-la-Lande_-_A%C3%A9roport_Rennes-Saint-Jacques_vue_a%C3%A9rienne_20180504.jpg"
+  },
+  {
+    "slug": "aeroport-dinard",
+    "name": "Aéroport de Dinard-Pleurtuit-Saint-Malo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Steff",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dinard-Pleurtuit-Saint-Malo_Airport.jpg"
+  },
+  {
+    "slug": "aeroport-lorient-bretagne-sud",
+    "name": "Aéroport de Lorient Bretagne Sud",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Math Faure",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Le_terminal_des_d%C3%A9parts_et_arriv%C3%A9es_de_l%27a%C3%A9roport_de_Lorient..JPG"
   }
 ]
