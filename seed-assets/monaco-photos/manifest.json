@@ -1,0 +1,432 @@
+[
+  {
+    "slug": "palais-princier-monaco",
+    "name": "Palais Princier de Monaco",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Princely Palace of Monaco.JPG",
+    "artist": "Niels Mickers",
+    "license": "CC BY 3.0 nl",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Princely_Palace_of_Monaco.JPG"
+  },
+  {
+    "slug": "place-du-palais",
+    "name": "Place du Palais",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Place du Palais Monaco IMG 1191.jpg",
+    "artist": "Alexander Migl",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Place_du_Palais_Monaco_IMG_1191.jpg"
+  },
+  {
+    "slug": "cathedrale-monaco",
+    "name": "Cathédrale de Monaco (Notre-Dame-Immaculée)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Cathedral of Our Lady Immaculate, Monaco (front).jpg",
+    "artist": "Uhooep",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cathedral_of_Our_Lady_Immaculate,_Monaco_(front).jpg"
+  },
+  {
+    "slug": "musee-oceanographique-monaco",
+    "name": "Musée Océanographique de Monaco",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Oceanographic Museum Monaco.JPG",
+    "artist": null,
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Oceanographic_Museum_Monaco.JPG"
+  },
+  {
+    "slug": "jardins-saint-martin",
+    "name": "Jardins Saint-Martin",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Benches at the Saint Martin Gardens in Monaco.jpg",
+    "artist": "Jorgecft",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Benches_at_the_Saint_Martin_Gardens_in_Monaco.jpg"
+  },
+  {
+    "slug": "chapelle-misericorde",
+    "name": "Chapelle de la Miséricorde",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Chapelle de la Miséricorde de Monaco en 2011.jpg",
+    "artist": "Berthold Werner",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chapelle_de_la_Mis%C3%A9ricorde_de_Monaco_en_2011.jpg"
+  },
+  {
+    "slug": "vieille-ville-rocher",
+    "name": "Vieille ville du Rocher",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Monaco Rocher de Monaco Rue Basse 1.jpg",
+    "artist": "Zairon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Monaco_Rocher_de_Monaco_Rue_Basse_1.jpg"
+  },
+  {
+    "slug": "rampe-major",
+    "name": "Rampe Major",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Rampe Major (Monaco) en novembre 2021.jpg",
+    "artist": "Benoît Prieur",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rampe_Major_(Monaco)_en_novembre_2021.jpg"
+  },
+  {
+    "slug": "place-visitation",
+    "name": "Place et Chapelle de la Visitation",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Chapelle de la Visitation - panoramio.jpg",
+    "artist": "Mister No",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chapelle_de_la_Visitation_-_panoramio.jpg"
+  },
+  {
+    "slug": "casino-monte-carlo",
+    "name": "Casino de Monte-Carlo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Le casino de Monte-Carlo.JPG",
+    "artist": "Fruitpunchline",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Le_casino_de_Monte-Carlo.JPG"
+  },
+  {
+    "slug": "jardins-du-casino",
+    "name": "Terrasses et jardins du Casino",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Monaco Casino de Monte Carlo Jardin.jpg",
+    "artist": "Zairon",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Monaco_Casino_de_Monte_Carlo_Jardin.jpg"
+  },
+  {
+    "slug": "opera-monte-carlo",
+    "name": "Opéra de Monte-Carlo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Opéra de Monte-Carlo-Salle Garnier-2.jpg",
+    "artist": "Yair Haklai",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Op%C3%A9ra_de_Monte-Carlo-Salle_Garnier-2.jpg"
+  },
+  {
+    "slug": "cafe-de-paris-monte-carlo",
+    "name": "Café de Paris Monte-Carlo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Cafe de Paris Monte-Carlo - panoramio.jpg",
+    "artist": "Mister No",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cafe_de_Paris_Monte-Carlo_-_panoramio.jpg"
+  },
+  {
+    "slug": "hotel-de-paris-monte-carlo",
+    "name": "Hôtel de Paris Monte-Carlo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Hôtel de Paris Monte-Carlo 001.jpg",
+    "artist": "Arnaud 25",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_de_Paris_Monte-Carlo_001.jpg"
+  },
+  {
+    "slug": "restaurant-louis-xv",
+    "name": "Le Louis XV",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:2016 Hotel de Paris - Monaco 03 Restaurant Louis XV.jpg",
+    "artist": "Jordiferrer",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2016_Hotel_de_Paris_-_Monaco_03_Restaurant_Louis_XV.jpg"
+  },
+  {
+    "slug": "restaurant-yoshi",
+    "name": "Yoshi (Hôtel Métropole)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Façade Hotel Metropole Monte-Carlo.jpg",
+    "artist": "HOTEL METROPOLE MONTE-CARLO",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fa%C3%A7ade_Hotel_Metropole_Monte-Carlo.jpg"
+  },
+  {
+    "slug": "jardin-japonais-monaco",
+    "name": "Jardin Japonais de Monaco",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Japanese garden Monaco2.jpg",
+    "artist": "Tangopaso",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Japanese_garden_Monaco2.jpg"
+  },
+  {
+    "slug": "grimaldi-forum",
+    "name": "Grimaldi Forum",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Grimaldi Forum Monaco - photographe Olivia Marocco.jpg",
+    "artist": "Grimaldi Forum Monaco",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Grimaldi_Forum_Monaco_-_photographe_Olivia_Marocco.jpg"
+  },
+  {
+    "slug": "plage-du-larvotto",
+    "name": "Plage du Larvotto",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Plage de Larvotto (Monaco) en novembre 2021 (3).jpg",
+    "artist": "Benoît Prieur",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plage_de_Larvotto_(Monaco)_en_novembre_2021_(3).jpg"
+  },
+  {
+    "slug": "restaurant-blue-bay",
+    "name": "Blue Bay – Marcel Ravin",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:MONTE-CARLO BAY HOTEL ^ RESORT 8 - panoramio.jpg",
+    "artist": "otterboris",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:MONTE-CARLO_BAY_HOTEL_%5E_RESORT_8_-_panoramio.jpg"
+  },
+  {
+    "slug": "sporting-monte-carlo",
+    "name": "Monte-Carlo Sporting",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Monte Carlo Sporting Club in 2023.jpg",
+    "artist": "Resilentos",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Monte_Carlo_Sporting_Club_in_2023.jpg"
+  },
+  {
+    "slug": "port-hercule",
+    "name": "Port Hercule",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Yachts in Port Hercule, Monaco (July 2020) 01.jpg",
+    "artist": "Renek78",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Yachts_in_Port_Hercule,_Monaco_(July_2020)_01.jpg"
+  },
+  {
+    "slug": "eglise-sainte-devote",
+    "name": "Église Sainte-Dévote",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Église Sainte-Dévote (Monaco).jpg",
+    "artist": "Tangopaso",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-D%C3%A9vote_(Monaco).jpg"
+  },
+  {
+    "slug": "marche-condamine",
+    "name": "Marché de la Condamine",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Marché de la Condamine depuis la Place d'Armes (Monaco).jpg",
+    "artist": "Benoît Prieur",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:March%C3%A9_de_la_Condamine_depuis_la_Place_d%27Armes_(Monaco).jpg"
+  },
+  {
+    "slug": "quai-albert-premier",
+    "name": "Quai Albert 1er",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Quai Albert 1er, Monaco (53970085054).jpg",
+    "artist": "Charles from Port Chester, New York",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Quai_Albert_1er,_Monaco_(53970085054).jpg"
+  },
+  {
+    "slug": "collection-voitures-prince",
+    "name": "Collection de Voitures du Prince",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Entrance of the car collection of the Prince of Monaco.jpg",
+    "artist": "Andromeda2064",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Entrance_of_the_car_collection_of_the_Prince_of_Monaco.jpg"
+  },
+  {
+    "slug": "circuit-f1-monaco",
+    "name": "Circuit de Formule 1 de Monaco",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Circuit de Monaco - Start Finish line (54798543172).jpg",
+    "artist": "crash71100",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Circuit_de_Monaco_-_Start_Finish_line_(54798543172).jpg"
+  },
+  {
+    "slug": "piscine-rainier-iii",
+    "name": "Stade nautique Rainier III",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Piscine de Monaco.jpg",
+    "artist": "Zil",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Piscine_de_Monaco.jpg"
+  },
+  {
+    "slug": "port-fontvieille",
+    "name": "Port de Fontvieille",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Port de Fontvieille of Monaco.JPG",
+    "artist": "Niels Mickers",
+    "license": "CC BY 3.0 nl",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Port_de_Fontvieille_of_Monaco.JPG"
+  },
+  {
+    "slug": "stade-louis-ii",
+    "name": "Stade Louis II",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Stade Louis II de Monaco.jpg",
+    "artist": "User:Arnaud 25",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Stade_Louis_II_de_Monaco.jpg"
+  },
+  {
+    "slug": "roseraie-princesse-grace",
+    "name": "Roseraie Princesse Grace",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Roseraie Princesse Grace - panoramio.jpg",
+    "artist": "Mister No",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Roseraie_Princesse_Grace_-_panoramio.jpg"
+  },
+  {
+    "slug": "jardin-exotique-monaco",
+    "name": "Jardin Exotique de Monaco",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Jardin exotique de Monaco D190408 a.jpg",
+    "artist": "Tangopaso",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jardin_exotique_de_Monaco_D190408_a.jpg"
+  },
+  {
+    "slug": "parc-princesse-antoinette",
+    "name": "Parc Princesse Antoinette",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Princess Antoinette Park.jpg",
+    "artist": "Mx. Granger",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Princess_Antoinette_Park.jpg"
+  },
+  {
+    "slug": "heliport-monaco",
+    "name": "Héliport de Monaco",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Héliport de Monaco 01.jpg",
+    "artist": "Arnaud 25",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:H%C3%A9liport_de_Monaco_01.jpg"
+  },
+  {
+    "slug": "village-eze",
+    "name": "Village d'Èze",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Èze-Village P1000147.jpg",
+    "artist": "Miniwark",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%C3%88ze-Village_P1000147.jpg"
+  },
+  {
+    "slug": "jardin-exotique-eze",
+    "name": "Jardin Exotique d'Èze",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Jardin Exotique - Eze - panoramio - kajikawa.jpg",
+    "artist": "kajikawa",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jardin_Exotique_-_Eze_-_panoramio_-_kajikawa.jpg"
+  },
+  {
+    "slug": "trophee-auguste-la-turbie",
+    "name": "Trophée d'Auguste",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Tropaeum Alpium - La Turbie 2014.JPG",
+    "artist": "José Luiz",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tropaeum_Alpium_-_La_Turbie_2014.JPG"
+  },
+  {
+    "slug": "village-la-turbie",
+    "name": "Village de La Turbie",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:LaTurbie-RuelleDuVillage2-20071102.jpg",
+    "artist": "Patrice Semeria",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:LaTurbie-RuelleDuVillage2-20071102.jpg"
+  },
+  {
+    "slug": "chateau-roquebrune",
+    "name": "Château de Roquebrune",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Château de Roquebrune (9).jpg",
+    "artist": "Guerinf",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Roquebrune_(9).jpg"
+  },
+  {
+    "slug": "promenade-corbusier",
+    "name": "Promenade Le Corbusier",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Promenade Le Corbusier-Cap Martin-France PACA.JPG",
+    "artist": "Gilbert Bochenek",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Promenade_Le_Corbusier-Cap_Martin-France_PACA.JPG"
+  },
+  {
+    "slug": "plage-mala",
+    "name": "Plage Mala",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Plage Mala à Cap d'ail.jpg",
+    "artist": "https://www.jonmountjoy.com/",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Plage_Mala_%C3%A0_Cap_d%27ail.jpg"
+  },
+  {
+    "slug": "sentier-littoral-cap-dail",
+    "name": "Sentier du littoral",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Sentier du littoral, Crédit Photo @Ville de Cap d'Ail (2).jpg",
+    "artist": "Bureau d'information Cap d'Ail",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sentier_du_littoral,_Cr%C3%A9dit_Photo_@Ville_de_Cap_d%27Ail_(2).jpg"
+  },
+  {
+    "slug": "aeroport-nice-cote-dazur",
+    "name": "Aéroport de Nice Côte d'Azur",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "title": "File:Terminal 1 Nice Côte d'Azur Airport in 2014.jpg",
+    "artist": "Mike_fleming",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Terminal_1_Nice_C%C3%B4te_d%27Azur_Airport_in_2014.jpg"
+  }
+]
