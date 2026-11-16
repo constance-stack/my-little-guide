@@ -1,0 +1,704 @@
+[
+  {
+    "slug": "cagliari-cathedral",
+    "name": "Cathédrale Santa Maria de Cagliari",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Unukorno",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Duomo_di_Cagliari_Sardegna.jpg"
+  },
+  {
+    "slug": "bastione-saint-remy",
+    "name": "Bastion Saint-Remy",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Datato",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cagliari_-_Bastione_San_Remy_-_2025-09-28_11-40-42_001.JPG"
+  },
+  {
+    "slug": "basilica-san-saturnino",
+    "name": "Basilique Saint-Saturnin",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Francesca Iannelli",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Basilica_di_San_Saturnino-Cagliari1.JPG"
+  },
+  {
+    "slug": "sella-del-diavolo",
+    "name": "Sella del Diavolo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Einaz80",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sella_del_Diavolo_Sardinia_Aerial.jpg"
+  },
+  {
+    "slug": "villasimius-village",
+    "name": "Villasimius",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villasimius_Bay_in_Sardinia,_Italy_(48399819146).jpg"
+  },
+  {
+    "slug": "capo-carbonara",
+    "name": "Capo Carbonara",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Alistair young",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Capo_Carbonara_(Sardinia).jpg"
+  },
+  {
+    "slug": "isola-dei-cavoli",
+    "name": "Île dei Cavoli",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Fflavio74",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Faro_Isola_dei_Cavoli.JPG"
+  },
+  {
+    "slug": "punta-molentis",
+    "name": "Punta Molentis",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Punta_Molentis_Beach_surrounded_by_granite_rocks,_Sardinia,_Italy_(48399761977).jpg"
+  },
+  {
+    "slug": "torre-elefante",
+    "name": "Tour de l'Éléphant",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Giova81",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Torreelefante.jpg"
+  },
+  {
+    "slug": "cittadella-musei",
+    "name": "Cittadella dei Musei",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Daniel Ventura",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Museo_archeologico_nazionale_(Cagliari)_12.jpg"
+  },
+  {
+    "slug": "poetto-beach",
+    "name": "Plage du Poetto",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Chris",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Poetto_beach.jpg"
+  },
+  {
+    "slug": "pula-town",
+    "name": "Pula",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pula_(Italy)_-_Torre_del_Coltellazzo_(01).JPG"
+  },
+  {
+    "slug": "teulada-town",
+    "name": "Teulada",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "gian luca bucci",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Costa_di_Teulada_(CA)_-_panoramio_(1).jpg"
+  },
+  {
+    "slug": "baia-sardinia",
+    "name": "Baia Sardinia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Klaus Eltrop",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Strand_von_Baia_Sardinia_-_panoramio.jpg"
+  },
+  {
+    "slug": "palau-town",
+    "name": "Palau",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Palau,_panorama_(01).jpg"
+  },
+  {
+    "slug": "grotte-di-neptuno",
+    "name": "Grotte de Neptune",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JYB Devot",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Grotta_di_Nettuno_1035-1041mod.jpg"
+  },
+  {
+    "slug": "stintino-village",
+    "name": "Stintino",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Stintino_-_Panorama_(03).jpg"
+  },
+  {
+    "slug": "su-gologone-spring",
+    "name": "Source de Su Gologone",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "JYB Devot",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sorgente_Su_Gologone_P1011131mod.jpg"
+  },
+  {
+    "slug": "gola-su-gorropu",
+    "name": "Gorges de Su Gorropu",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "etheriel",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gorroppu_Canyon_Sardinia.jpg"
+  },
+  {
+    "slug": "tiscali-village",
+    "name": "Village nuragique de Tiscali",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Rafael Brix",
+    "license": "CC BY 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tiscali_from_above.jpg"
+  },
+  {
+    "slug": "fonni-village",
+    "name": "Fonni",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fonni_(08).JPG"
+  },
+  {
+    "slug": "dorgali-village",
+    "name": "Dorgali",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Christian Boss 1965",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sardegna_Dorgali.jpg"
+  },
+  {
+    "slug": "baunei-village",
+    "name": "Baunei",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Yesuitus2001",
+    "license": "CC BY-SA 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wv_Baunei_banner.JPG"
+  },
+  {
+    "slug": "tortoli-town",
+    "name": "Tortolì",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tiscali at Italian Wikipedia",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tortol%C3%AC.jpg"
+  },
+  {
+    "slug": "torre-san-pancrazio",
+    "name": "Tour Saint-Pancrace",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "23345i",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cagliari_-_Torre_di_San_Pancrazio_-_2026-09-07_00-34-40_001.jpg"
+  },
+  {
+    "slug": "santuario-bonaria",
+    "name": "Basilique Notre-Dame-de-Bonaria",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cagliari_-_Santuario_della_Madonna_di_Bonaria_(03).JPG"
+  },
+  {
+    "slug": "marina-villasimius",
+    "name": "Marina di Villasimius",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Olaf Tausch",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Marina_di_Villasimius_01.jpg"
+  },
+  {
+    "slug": "capo-spartivento",
+    "name": "Capo Spartivento",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Domus_de_Maria_-_Faro_di_Capo_Spartivento_(08).JPG"
+  },
+  {
+    "slug": "domus-de-maria",
+    "name": "Domus de Maria",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Domus_de_Maria_-_Faro_di_Capo_Spartivento_(10).JPG"
+  },
+  {
+    "slug": "porto-cervo",
+    "name": "Porto Cervo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Superbass",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Porto_Cervo_Hafen.jpg"
+  },
+  {
+    "slug": "marina-porto-cervo",
+    "name": "Marina di Porto Cervo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "MrArifnajafov",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Porto_Cervo_2.JPG"
+  },
+  {
+    "slug": "san-pantaleo-village",
+    "name": "San Pantaleo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Olbia,_frazione_San_Pantaleo,_chiesa_di_San_Pantaleo_(06).jpg"
+  },
+  {
+    "slug": "porto-rotondo",
+    "name": "Porto Rotondo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Olbia,_frazione_Porto_Rotondo,_panorama_(02).jpg"
+  },
+  {
+    "slug": "basilica-san-simplicio",
+    "name": "Basilique Saint-Simplice",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Clemensfranz",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:San_Simplicio_Olbia_01.jpg"
+  },
+  {
+    "slug": "nuraghe-albucciu",
+    "name": "Nuraghe Albucciu",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Helga Steinreich",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Nuraghe-albucciu-1.jpg"
+  },
+  {
+    "slug": "tomba-giganti-coddu-vecchiu",
+    "name": "Tomba dei Giganti di Coddu Vecchiu",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pablo Rende",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tomba_dei_giganti_di_Coddu_Vecchiu.jpg"
+  },
+  {
+    "slug": "compendio-garibaldino",
+    "name": "Compendio Garibaldino",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_compendio_garibaldino_di_Caprera_(22).jpg"
+  },
+  {
+    "slug": "spiaggia-relitto-caprera",
+    "name": "Spiaggia del Relitto",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:La_Maddalena-Caprera,_spiaggia_del_Relitto_(09).jpg"
+  },
+  {
+    "slug": "budelli-pink-beach",
+    "name": "Spiaggia Rosa (Budelli)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "trevis_lu (Luca Giudicatti)",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Spiaggia_rosa,_isola_di_budelli,_sardegna.jpg"
+  },
+  {
+    "slug": "alghero-cathedral",
+    "name": "Cathédrale Santa Maria d'Alghero",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "proteusbcn",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alghero_Cathedral_Catalan_Gothic.jpg"
+  },
+  {
+    "slug": "cala-gonone",
+    "name": "Cala Gonone",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Unukorno",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cala_Gonone_Sardegna.jpg"
+  },
+  {
+    "slug": "cala-luna",
+    "name": "Cala Luna",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "trolvag",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:At_Cala_Luna,_Dorgali_NU,_Sardinia,_Italy_-_panoramio.jpg"
+  },
+  {
+    "slug": "cala-sisine",
+    "name": "Cala Sisine",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Flickr user clurr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cala_Sisine.jpg"
+  },
+  {
+    "slug": "cala-biriola",
+    "name": "Cala Biriola",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roberto Mura",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cala_Biriola.jpg"
+  },
+  {
+    "slug": "cala-mariolu",
+    "name": "Cala Mariolu",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Roberto Mura",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cala_Mariolu_2012.jpg"
+  },
+  {
+    "slug": "cala-goloritze",
+    "name": "Cala Goloritzé",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "delaere",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cala_Goloritze_o.jpg"
+  },
+  {
+    "slug": "altopiano-golgo",
+    "name": "Altopiano del Golgo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "gian luca bucci",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baunei_-_Altopiano_del_Golgo_-_panoramio.jpg"
+  },
+  {
+    "slug": "santa-maria-navarrese",
+    "name": "Santa Maria Navarrese",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ramon Espiña Fernand…",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Santa_Mar%C3%ADa_Navarrese_-_panoramio_(1).jpg"
+  },
+  {
+    "slug": "pedra-longa",
+    "name": "Pedra Longa",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "fotografia di Rosanna C.",
+    "license": "CC BY 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baunei-Pedra_Longa.jpg"
+  },
+  {
+    "slug": "cala-liberotto",
+    "name": "Cala Liberotto",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Marek Ślusarczyk (Tupungato) Photo gallery",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cala_Liberotto,_Orosei,_Sardinia,_Italy.jpg"
+  },
+  {
+    "slug": "grotta-ispinigoli",
+    "name": "Grotte d'Ispinigoli",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "SehLax",
+    "license": "CC BY 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Grotta_di_ispinigoli.jpg"
+  },
+  {
+    "slug": "torre-san-cristoforo-oristano",
+    "name": "Torre di San Cristoforo",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Oristano_piazza_del_mercato_e_torre_San_Cristoforo.jpg"
+  },
+  {
+    "slug": "san-giovanni-di-sinis",
+    "name": "San Giovanni di Sinis",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Norbert Nagel",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Church_San_Giovanni_di_Sinis_-_Cabras_-_Sardinia_-_Italy_-_03.jpg"
+  },
+  {
+    "slug": "nuraghe-losa",
+    "name": "Nuraghe Losa",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Non attribué (licence le permettant)",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Nuraghe_losa.jpg"
+  },
+  {
+    "slug": "su-nuraxi-barumini",
+    "name": "Nuraghe Su Nuraxi de Barumini",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Norbert Nagel",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Nuraghe_Su_Nuraxi_-_Barumini_-_Sardinia_-_Italy_-_27.jpg"
+  },
+  {
+    "slug": "aeroporto-cagliari-elmas",
+    "name": "Aéroport de Cagliari-Elmas",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "lucamascaro",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aeroporto_Cagliari-Elmas.jpg"
+  },
+  {
+    "slug": "aeroporto-olbia-costa-smeralda",
+    "name": "Aéroport d'Olbia Costa Smeralda",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Non attribué (licence le permettant)",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aeroporto_Olbia_Costa_Smeralda_Rollfeld.jpg"
+  },
+  {
+    "slug": "aeroporto-alghero-fertilia",
+    "name": "Aéroport d'Alghero-Fertilia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Michiel1972",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alghero_Airport.jpg"
+  },
+  {
+    "slug": "anfiteatro-romano-cagliari",
+    "name": "Amphithéâtre romain de Cagliari",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ariosa1959",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Anfiteatro_Romano_di_Cagliari.jpg"
+  },
+  {
+    "slug": "orto-botanico-cagliari",
+    "name": "Jardin botanique de Cagliari",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Daniel Ventura",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Orto_botanico_di_cagliari_52.jpg"
+  },
+  {
+    "slug": "molentargius-saline",
+    "name": "Parc naturel de Molentargius-Saline",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ryan Hodnett",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Greater_Flamingos_(Fenicottero_Rosa)_(Phoenicopterus_roseus)_-_Cagliari,_Italy_2024-03-25.jpg"
+  },
+  {
+    "slug": "spiaggia-simius",
+    "name": "Plage de Simius",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Olaf Tausch",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Spiaggia_di_Simius_01.jpg"
+  },
+  {
+    "slug": "porto-giunco-beach",
+    "name": "Plage de Porto Giunco",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dronepicr",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_beach_of_Porto_Giunco_(Spiaggia_di_Porto_Giunco)_and_the_nearby_lake_Stagno_di_Notteri_in_Sardinia,_Italy_(48402731012).jpg"
+  },
+  {
+    "slug": "torre-porto-giunco",
+    "name": "Tour de Porto Giunco",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "robad0b",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villasimius_-_Torre_di_Porto_Giunco_(2).jpg"
+  },
+  {
+    "slug": "stagno-notteri",
+    "name": "Étang de Notteri",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Non attribué (licence le permettant)",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villasimius_-_Stagno_di_Notteri.jpg"
+  },
+  {
+    "slug": "nora-archaeological-site",
+    "name": "Site archéologique de Nora",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Norbert Nagel",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Archaeological_site_Nora_-_Pula_-_Sardinia_-_Italy_-_17.jpg"
+  },
+  {
+    "slug": "chia-beach",
+    "name": "Plage de Chia (Su Giudeu)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Cristiano Cani from Cagliari, Italia",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dune_di_Chia.jpg"
+  },
+  {
+    "slug": "torre-chia",
+    "name": "Tour espagnole de Chia",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Cristiano Cani from Cagliari, Italia",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Torre_di_Chia_-_Domus_de_Maria_(CA).jpg"
+  },
+  {
+    "slug": "torre-porta-terra-alghero",
+    "name": "Torre di Porta Terra",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Sailko",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alghero,_torre_porta_a_terra,_veduta_03.JPG"
+  },
+  {
+    "slug": "necropoli-anghelu-ruju",
+    "name": "Nécropole d'Anghelu Ruju",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alghero,_necropoli_di_Anghelu_Ruju_(004).jpg"
+  },
+  {
+    "slug": "torre-pelosa",
+    "name": "Tour de la Pelosa",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "CapoDelFalcone.JPG: Mihael Grmek",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Torre_della_Pelosa_-_Stintino_(SS).jpg"
+  },
+  {
+    "slug": "nuoro-centro",
+    "name": "Nuoro (centre historique)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Max.oppo",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Nuoro_-_centro_storico_2.jpg"
+  },
+  {
+    "slug": "museo-vita-tradizioni-popolari",
+    "name": "Musée de la vie et des traditions populaires sardes",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Sailko",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Nuoro,_museo_etnografico_sardo,_interno,_sala_dei_costumi_tradizionali_01.jpg"
+  },
+  {
+    "slug": "orgosolo-murales",
+    "name": "Orgosolo et ses fresques murales",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Sotziu Murales",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Il_Tenore_Murales_di_Orgosolo.jpg"
+  },
+  {
+    "slug": "valle-lanaittu",
+    "name": "Vallée de Lanaittu",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Sara Argiolas",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Valle_di_Lanaitho.jpg"
+  },
+  {
+    "slug": "gavoi-village",
+    "name": "Gavoi et le lac de Gusana",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gianni Careddu",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gavoi_-_Lago_di_Gusana_(01).JPG"
+  },
+  {
+    "slug": "arbatax-red-rocks",
+    "name": "Rochers rouges d'Arbatax",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Daniel Ventura",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rocce_Rosse_Arbatax_03.jpg"
+  },
+  {
+    "slug": "tharros",
+    "name": "Site archéologique de Tharros",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Milly Carta",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rovine_di_Tharros.jpg"
+  }
+]
