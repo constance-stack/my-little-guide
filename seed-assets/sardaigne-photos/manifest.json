@@ -700,5 +700,122 @@
     "artist": "Milly Carta",
     "license": "CC BY-SA 4.0",
     "source_url": "https://commons.wikimedia.org/wiki/File:Rovine_di_Tharros.jpg"
+  },
+  {
+    "slug": "spiaggia-pelosa",
+    "name": "Plage de la Pelosa",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "Anthony Roberts",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/a-large-body-of-water-surrounded-by-mountains-0LRkz4KGCSw"
+  },
+  {
+    "slug": "porto-pino-beach",
+    "name": "Plage et dunes de Porto Pino",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "Lisa van Vliet",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/a-sandy-beach-with-blue-water-and-grass-dxOEbmMVku0"
+  },
+  {
+    "slug": "olbia-old-town",
+    "name": "Olbia (centre historique)",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "Bernhard",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/a-small-store-on-a-city-street-corner-6W9cnnKl0PU"
+  },
+  {
+    "slug": "caprera-island",
+    "name": "Île de Caprera",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "Arno Senoner",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/a-large-body-of-water-surrounded-by-rocks-_DJfXA4z4sQ"
+  },
+  {
+    "slug": "sassari-centro",
+    "name": "Sassari (centre historique)",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "David Clarke",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/cobblestone-alley-between-yellow-buildings-4dZd8oY6En0"
+  },
+  {
+    "slug": "asinara-island",
+    "name": "Île d'Asinara (parc national)",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "Jürgen Scheeff",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/green-trees-near-blue-sea-under-blue-sky-during-daytime-LOoHZ9A_rT4"
+  },
+  {
+    "slug": "monte-ortobene",
+    "name": "Monte Ortobene",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "Jürgen Scheeff",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/a-stone-structure-with-a-statue-on-top-of-it-Iey0rx6Jchg"
+  },
+  {
+    "slug": "alghero-old-town",
+    "name": "Vieille ville d'Alghero",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "Denisa-Elena Ficau",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/tour-train-on-a-narrow-street-with-buildings-RNY7AuKcTCw"
+  },
+  {
+    "slug": "capo-caccia",
+    "name": "Capo Caccia",
+    "found": true,
+    "source": "Pexels",
+    "artist": "Anastasia Haritonov",
+    "license": "Pexels License",
+    "source_url": "https://www.pexels.com/photo/stunning-cliffs-at-capo-caccia-sardinia-coastline-33992271/"
+  },
+  {
+    "slug": "bastioni-alghero",
+    "name": "Bastioni (remparts catalans)",
+    "found": true,
+    "source": "Pexels",
+    "artist": "Petra Nesti",
+    "license": "Pexels License",
+    "source_url": "https://www.pexels.com/photo/scenic-view-of-alghero-waterfront-in-sardinia-38811447/"
+  },
+  {
+    "slug": "capo-orso-fort",
+    "name": "Fort de Capo d'Orso",
+    "found": true,
+    "source": "Pexels",
+    "artist": "Aurora Ferrari",
+    "license": "Pexels License",
+    "source_url": "https://www.pexels.com/photo/scenic-view-through-capo-d-orso-rock-formation-40619213/"
+  },
+  {
+    "slug": "cabras-village",
+    "name": "Cabras et son étang",
+    "found": true,
+    "source": "Pexels",
+    "artist": "Francesco Ungaro",
+    "license": "Pexels License",
+    "source_url": "https://www.pexels.com/photo/sea-during-golden-hour-3012604/"
+  },
+  {
+    "slug": "supramonte-monte-corrasi",
+    "name": "Le Supramonte (Monte Corrasi)",
+    "found": true,
+    "source": "Pexels",
+    "artist": "Anastasia Haritonov",
+    "license": "Pexels License",
+    "source_url": "https://www.pexels.com/photo/serene-river-valley-in-sardinia-italy-33992303/"
   }
 ]
