@@ -27,7 +27,7 @@ export function getMapStyle(): StyleSpecification | string {
       {
         id: "background",
         type: "background",
-        paint: { "background-color": "#f3ede0" },
+        paint: { "background-color": "#eef2f7" },
       },
     ],
   };

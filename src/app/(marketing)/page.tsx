@@ -25,8 +25,8 @@ export default async function HomePage() {
         >
           <defs>
             <radialGradient id="heroGlow" cx="50%" cy="35%" r="75%">
-              <stop offset="0%" stopColor="#8a4d3a" />
-              <stop offset="100%" stopColor="#2e221c" />
+              <stop offset="0%" stopColor="#1d3a5f" />
+              <stop offset="100%" stopColor="#071423" />
             </radialGradient>
           </defs>
           <rect width="1200" height="420" fill="url(#heroGlow)" />

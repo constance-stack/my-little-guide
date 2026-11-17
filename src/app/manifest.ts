@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Guides de voyage numériques premium et carte interactive privée.",
     start_url: "/",
     display: "standalone",
-    background_color: "#fdfbf5",
-    theme_color: "#a8573f",
+    background_color: "#ffffff",
+    theme_color: "#0f2a4a",
     icons: [
       {
         src: "/icon",

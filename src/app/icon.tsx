@@ -13,7 +13,7 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#fdfbf5",
+          background: "#ffffff",
         }}
       >
         <svg
@@ -21,7 +21,7 @@ export default function Icon() {
           height="320"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#a8573f"
+          stroke="#0f2a4a"
           strokeWidth={1.3}
         >
           <circle cx="12" cy="12" r="9" />

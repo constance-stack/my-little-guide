@@ -1,20 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  /* --background (page backdrop) and --color-ivory (card surfaces) used to
-     be the exact same value, so a "bg-ivory" card on the page body had no
-     contrast of its own — it only read as a block at all because of a thin
-     border line, which is why everything looked like flat beige-on-beige.
-     Splitting them (ivory now brighter/whiter than the page backdrop)
-     gives cards real separation, reinforced by shadow-* utilities instead
-     of relying on borders alone. */
-  --background: #f3ecdd; /* beige chaud plus soutenu, fond de page */
-  --foreground: #3d342b; /* brun chaud profond, pour le texte — remplace un vert froid */
-  --color-ivory: #fdfbf5; /* quasi blanc chaud, réservé aux surfaces de carte */
-  --color-sand: #f3ede0; /* beige sable */
-  --color-sage: #b5a47e; /* taupe sable chaud — remplace un vert sauge froid */
-  --color-sage-dark: #a8573f; /* terracotta — remplace un vert forêt froid, accents */
-  --color-line: #e3dcc8;
+  /* White-and-navy palette (client request, replacing the earlier warm
+     ivory/terracotta one). --background and --color-ivory are both pure
+     white now; card/surface separation relies on shadow-* utilities and
+     --color-line rather than a background tint, same approach the old
+     palette's own comment already called for. */
+  --background: #ffffff; /* fond de page, blanc */
+  --foreground: #0f2a4a; /* bleu marine profond, pour le texte */
+  --color-ivory: #ffffff; /* surfaces de carte, blanc */
+  --color-sand: #eef2f7; /* bleu-gris très clair, remplace le beige sable */
+  --color-sage: #64748b; /* bleu-gris moyen, accents discrets (ex. encadrés Little Tip) */
+  --color-sage-dark: #0f2a4a; /* bleu marine, accent principal (boutons, titres, liens) */
+  --color-line: #dde3ea;
 }
 
 @theme inline {

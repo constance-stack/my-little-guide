@@ -104,7 +104,7 @@ export function ZonesMap({
               height={g.h}
               rx={16}
               fill="none"
-              stroke="#8a7a63"
+              stroke="#64748b"
               strokeOpacity={0.35}
               strokeWidth={2}
               strokeDasharray="6 6"
@@ -120,7 +120,7 @@ export function ZonesMap({
               x={g.x + g.w / 2}
               y={g.y - 10}
               textAnchor="middle"
-              fill="#8a7a63"
+              fill="#64748b"
               fillOpacity={0.9}
               fontSize={14}
               fontWeight={700}

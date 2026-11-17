@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#a8573f",
+  themeColor: "#0f2a4a",
 };
 
 // Forces every route in the app to render per-request rather than being

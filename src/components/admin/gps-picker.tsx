@@ -41,7 +41,7 @@ export function GpsPicker({
     });
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
 
-    const marker = new maplibregl.Marker({ draggable: true, color: "#a8422c" })
+    const marker = new maplibregl.Marker({ draggable: true, color: "#0f2a4a" })
       .setLngLat([initialLng, initialLat])
       .addTo(map);
 
