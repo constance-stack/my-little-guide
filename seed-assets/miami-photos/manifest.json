@@ -260,12 +260,20 @@
   {
     "slug": "flagler-street",
     "name": "Flagler Street (centre historique)",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
   },
   {
     "slug": "olympia-theater",
     "name": "Olympia Theater",
-    "found": false
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
   },
   {
     "slug": "jungle-island",
@@ -423,10 +431,11 @@
     "slug": "panther-coffee",
     "name": "Panther Coffee",
     "found": true,
+    "title": "Antique Coffee Roaster from Panther Coffee",
+    "artist": "Ines Hegedus-Garcia",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Antique_Coffee_Roaster_from_Panther_Coffee_(6022342859).jpg"
   },
   {
     "slug": "zak-the-baker",
@@ -446,28 +455,31 @@
     "slug": "gramps-bar",
     "name": "Gramps",
     "found": true,
+    "title": "Wynwood Bar - Gramps",
+    "artist": "Ines Hegedus-Garcia",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wynwood_Bar_-_Gramps_(8570087286).jpg"
   },
   {
     "slug": "miami-design-district",
     "name": "Miami Design District",
     "found": true,
+    "title": "Design District, Miami, Florida 2021 - What is Miami",
+    "artist": "Sharon Hahn Darlin",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Design_District,_Miami,_Florida_2021_-_What_is_Miami.jpg"
   },
   {
     "slug": "institute-of-contemporary-art-miami",
     "name": "Institute of Contemporary Art, Miami (ICA Miami)",
     "found": true,
+    "title": "ICA Miami 17-11 2839 03 (photo by Iwan Baan)",
+    "artist": "ICA Miami",
+    "license": "CC BY-SA 4.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:ICA_Miami_17-11_2839_03.jpg"
   },
   {
     "slug": "de-la-cruz-collection",
@@ -503,10 +515,11 @@
     "slug": "calle-ocho",
     "name": "Calle Ocho (SW 8th Street)",
     "found": true,
+    "title": "Calle Ocho, Little Havana, Miami, Florida 2021 - Welcome (Little Havana sign + rooster statue)",
+    "artist": "Sharon Hahn Darlin",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Calle_Ocho,_Little_Havana,_Miami,_Florida_2021_-_Welcome.jpg"
   },
   {
     "slug": "maximo-gomez-domino-park",
@@ -549,19 +562,21 @@
     "slug": "versailles-restaurant",
     "name": "Versailles Restaurant",
     "found": true,
+    "title": "Versailles Restaurant - Little Havana, Miami, October 2010",
+    "artist": "Eugene Kim",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Versailles_Restaurant_-_Little_Havana,_Miami,_October_2010.jpg"
   },
   {
     "slug": "azucar-ice-cream-company",
     "name": "Azucar Ice Cream Company",
     "found": true,
+    "title": "Azucar - Little Havana, Miami FL",
+    "artist": "Paolo Gamba",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Azucar_-_Little_Havana,_Miami_FL.jpg"
   },
   {
     "slug": "el-credito-cigars",
@@ -645,12 +660,22 @@
   {
     "slug": "coconut-grove-waterfront",
     "name": "Front de baie de Coconut Grove (Dinner Key)",
-    "found": false
+    "found": true,
+    "title": "Dinner Key Marina, Coconut Grove, Miami, Florida.jpg",
+    "artist": "Larsen9236",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dinner_Key_Marina,_Coconut_Grove,_Miami,_Florida.jpg"
   },
   {
     "slug": "cocowalk",
     "name": "CocoWalk",
-    "found": false
+    "found": true,
+    "title": "CocoWalk Outdoor Mall.jpg",
+    "artist": "Richie Diesterheft",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CocoWalk_Outdoor_Mall.jpg"
   },
   {
     "slug": "barnacle-historic-state-park",
@@ -684,7 +709,12 @@
   {
     "slug": "the-kampong",
     "name": "The Kampong",
-    "found": false
+    "found": true,
+    "title": "The Kampong - 003.jpg",
+    "artist": "Daderot",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Kampong_-_003.jpg"
   },
   {
     "slug": "coconut-grove-farmers-market",
@@ -699,7 +729,12 @@
   {
     "slug": "biltmore-hotel",
     "name": "The Biltmore Hotel",
-    "found": false
+    "found": true,
+    "title": "Coral Gables - The Biltmore Hotel.jpg",
+    "artist": "P. Hughes",
+    "license": "CC BY 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Coral_Gables_-_The_Biltmore_Hotel.jpg"
   },
   {
     "slug": "biltmore-turkish-mosaic-lamp-class",
@@ -718,12 +753,22 @@
   {
     "slug": "miracle-mile",
     "name": "Miracle Mile",
-    "found": false
+    "found": true,
+    "title": "Coral Gables Miracle Mile 20100403.jpg",
+    "artist": "Averette",
+    "license": "CC BY 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Coral_Gables_Miracle_Mile_20100403.jpg"
   },
   {
     "slug": "coral-gables-merrick-house",
     "name": "Coral Gables Merrick House",
-    "found": false
+    "found": true,
+    "title": "Merrick House in Coral Gables Florida.jpg",
+    "artist": "MarcelaSantana",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Merrick_House_in_Coral_Gables_Florida.jpg"
   },
   {
     "slug": "fairchild-tropical-botanic-garden",
@@ -737,12 +782,22 @@
   {
     "slug": "lowe-art-museum",
     "name": "Lowe Art Museum",
-    "found": false
+    "found": true,
+    "title": "Lowe.jpg",
+    "artist": "8ABL",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lowe.jpg"
   },
   {
     "slug": "university-of-miami-campus",
     "name": "Campus de l'Université de Miami",
-    "found": false
+    "found": true,
+    "title": "University of Miami Otto G. Richter Library.jpg",
+    "artist": "",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:University_of_Miami_Otto_G._Richter_Library.jpg"
   },
   {
     "slug": "coral-gables-congregational-church",
@@ -756,7 +811,12 @@
   {
     "slug": "books-and-books-coral-gables",
     "name": "Books & Books",
-    "found": false
+    "found": true,
+    "title": "Books & Books, Coral Gables Florida, April 2023 - Exterior.jpg",
+    "artist": "Phillip Pessar",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Books_%26_Books,_Coral_Gables_Florida,_April_2023_-_Exterior.jpg"
   },
   {
     "slug": "caffe-abbracci",
