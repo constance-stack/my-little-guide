@@ -107,24 +107,14 @@ function drawStar(ctx: CanvasRenderingContext2D, cx: number, cy: number, outerR:
 }
 
 function drawTemple(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
-  const w = size * 0.5;
-  const roofY = cy - size * 0.2;
-  const baseY = cy + size * 0.22;
-  // Two-tier pagoda roof.
-  ctx.beginPath();
-  ctx.moveTo(cx, cy - size * 0.32);
-  ctx.lineTo(cx + w * 0.55, roofY);
-  ctx.lineTo(cx - w * 0.55, roofY);
-  ctx.closePath();
-  ctx.fill();
-  ctx.beginPath();
-  ctx.moveTo(cx, roofY - size * 0.02);
-  ctx.lineTo(cx + w * 0.72, baseY - size * 0.08);
-  ctx.lineTo(cx - w * 0.72, baseY - size * 0.08);
-  ctx.closePath();
-  ctx.fill();
-  // Base.
-  ctx.fillRect(cx - w * 0.4, baseY - size * 0.02, w * 0.8, size * 0.12);
+  // A single classical column — one universal "monument/heritage" mark,
+  // not a pagoda silhouette (too detailed to read at marker size).
+  const w = size * 0.28;
+  const topY = cy - size * 0.3;
+  const botY = cy + size * 0.3;
+  ctx.fillRect(cx - w, topY, w * 2, size * 0.1);
+  ctx.fillRect(cx - w * 0.55, topY + size * 0.1, w * 1.1, size * 0.4);
+  ctx.fillRect(cx - w, botY - size * 0.1, w * 2, size * 0.1);
 }
 
 function drawWalkPath(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
@@ -138,60 +128,57 @@ function drawWalkPath(ctx: CanvasRenderingContext2D, cx: number, cy: number, siz
 }
 
 function drawFamily(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
+  // A single heart — "family/togetherness" as one clean, unambiguous shape
+  // instead of trying (and failing, at this size) to depict people.
+  const r = size * 0.19;
+  const topY = cy - size * 0.12;
   ctx.beginPath();
-  ctx.arc(cx - size * 0.12, cy - size * 0.08, size * 0.13, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.beginPath();
-  ctx.arc(cx + size * 0.16, cy - size * 0.02, size * 0.09, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.beginPath();
-  ctx.ellipse(cx - size * 0.12, cy + size * 0.2, size * 0.17, size * 0.13, 0, Math.PI, 0);
-  ctx.fill();
-  ctx.beginPath();
-  ctx.ellipse(cx + size * 0.16, cy + size * 0.22, size * 0.12, size * 0.1, 0, Math.PI, 0);
+  ctx.arc(cx - r * 0.95, topY, r, 0, Math.PI * 2);
+  ctx.arc(cx + r * 0.95, topY, r, 0, Math.PI * 2);
+  ctx.moveTo(cx - r * 1.85, topY + r * 0.35);
+  ctx.lineTo(cx, cy + size * 0.32);
+  ctx.lineTo(cx + r * 1.85, topY + r * 0.35);
+  ctx.closePath();
   ctx.fill();
 }
 
 function drawFork(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
-  ctx.lineWidth = size * 0.06;
+  // A single spoon — one oval head, one straight handle. Reads instantly
+  // as "eating/restaurant" without the fork's many thin strokes.
+  ctx.beginPath();
+  ctx.ellipse(cx, cy - size * 0.16, size * 0.16, size * 0.2, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.lineWidth = size * 0.09;
   ctx.strokeStyle = ctx.fillStyle;
-  const top = cy - size * 0.3;
-  const tineBottom = cy - size * 0.02;
-  for (const dx of [-size * 0.14, 0, size * 0.14]) {
-    ctx.beginPath();
-    ctx.moveTo(cx + dx, top);
-    ctx.lineTo(cx + dx, tineBottom);
-    ctx.stroke();
-  }
   ctx.beginPath();
-  ctx.moveTo(cx - size * 0.14, tineBottom);
-  ctx.lineTo(cx + size * 0.14, tineBottom);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(cx, tineBottom);
-  ctx.lineTo(cx, cy + size * 0.3);
+  ctx.moveTo(cx, cy + size * 0.02);
+  ctx.lineTo(cx, cy + size * 0.32);
   ctx.stroke();
 }
 
 function drawBowl(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
+  // One bowl arc, one pair of chopsticks — no steam curls, which blurred
+  // into the bowl at small size.
   ctx.beginPath();
-  ctx.arc(cx, cy + size * 0.06, size * 0.26, 0.08 * Math.PI, 0.92 * Math.PI);
+  ctx.arc(cx, cy + size * 0.08, size * 0.26, 0.05 * Math.PI, 0.95 * Math.PI);
   ctx.closePath();
   ctx.fill();
   ctx.lineWidth = size * 0.045;
   ctx.strokeStyle = ctx.fillStyle;
-  for (const dx of [-size * 0.08, size * 0.08]) {
-    ctx.beginPath();
-    ctx.moveTo(cx + dx, cy - size * 0.16);
-    ctx.quadraticCurveTo(cx + dx + size * 0.05, cy - size * 0.26, cx + dx, cy - size * 0.34);
-    ctx.stroke();
-  }
+  ctx.beginPath();
+  ctx.moveTo(cx - size * 0.02, cy - size * 0.04);
+  ctx.lineTo(cx + size * 0.2, cy - size * 0.32);
+  ctx.moveTo(cx + size * 0.1, cy - size * 0.04);
+  ctx.lineTo(cx + size * 0.3, cy - size * 0.26);
+  ctx.stroke();
 }
 
 function drawCup(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
-  const w = size * 0.34;
-  const top = cy - size * 0.18;
-  const bottom = cy + size * 0.2;
+  // Scaled down ~25% from the original — client feedback was that this
+  // one read fine, just too large relative to the others.
+  const w = size * 0.26;
+  const top = cy - size * 0.14;
+  const bottom = cy + size * 0.16;
   ctx.beginPath();
   ctx.moveTo(cx - w, top);
   ctx.lineTo(cx + w, top);
@@ -199,10 +186,10 @@ function drawCup(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: nu
   ctx.lineTo(cx - w * 0.78, bottom);
   ctx.closePath();
   ctx.fill();
-  ctx.lineWidth = size * 0.06;
+  ctx.lineWidth = size * 0.045;
   ctx.strokeStyle = ctx.fillStyle;
   ctx.beginPath();
-  ctx.arc(cx + w * 0.95, cy, size * 0.14, -0.6 * Math.PI, 0.6 * Math.PI);
+  ctx.arc(cx + w * 0.95, cy, size * 0.1, -0.6 * Math.PI, 0.6 * Math.PI);
   ctx.stroke();
 }
 
@@ -279,28 +266,27 @@ function drawCompass(ctx: CanvasRenderingContext2D, cx: number, cy: number, size
 }
 
 function drawLotus(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
+  // Three petals instead of five — stays a clean flower shape at marker
+  // size instead of fusing into a blob.
   const petal = (angle: number) => {
     ctx.save();
-    ctx.translate(cx, cy + size * 0.04);
+    ctx.translate(cx, cy + size * 0.06);
     ctx.rotate(angle);
     ctx.beginPath();
-    ctx.ellipse(0, -size * 0.16, size * 0.09, size * 0.18, 0, 0, Math.PI * 2);
+    ctx.ellipse(0, -size * 0.18, size * 0.12, size * 0.22, 0, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
   };
-  for (const angle of [-0.5, -0.25, 0, 0.25, 0.5]) petal(angle);
+  for (const angle of [-0.45, 0, 0.45]) petal(angle);
 }
 
 function drawMountains(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
+  // A single peak — one clean triangle instead of a sun + two overlapping
+  // ridgelines, which merged into a smudge at marker size.
   ctx.beginPath();
-  ctx.arc(cx + size * 0.18, cy - size * 0.2, size * 0.08, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.beginPath();
-  ctx.moveTo(cx - size * 0.28, cy + size * 0.22);
-  ctx.lineTo(cx - size * 0.08, cy - size * 0.1);
-  ctx.lineTo(cx + size * 0.08, cy + size * 0.1);
-  ctx.lineTo(cx + size * 0.2, cy - size * 0.06);
-  ctx.lineTo(cx + size * 0.3, cy + size * 0.22);
+  ctx.moveTo(cx, cy - size * 0.3);
+  ctx.lineTo(cx + size * 0.3, cy + size * 0.24);
+  ctx.lineTo(cx - size * 0.3, cy + size * 0.24);
   ctx.closePath();
   ctx.fill();
 }
