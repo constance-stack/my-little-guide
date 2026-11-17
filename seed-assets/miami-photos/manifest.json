@@ -3,15 +3,21 @@
     "slug": "ocean-drive-art-deco",
     "name": "Ocean Drive et le quartier Art Déco",
     "found": true,
+    "title": "Ocean Drive in the Miami Beach Art Deco Historic District",
+    "artist": "Robbschultz69",
+    "license": "CC BY-SA 4.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ocean_Drive_in_the_Miami_Beach_Art_Deco_Historic_District.jpg"
   },
   {
     "slug": "south-beach-plage",
     "name": "South Beach (la plage)",
-    "found": false
+    "found": true,
+    "title": "Miami Beach - Beach scene",
+    "artist": "P. Hughes",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Miami_Beach_-_Beach_scene.jpg"
   },
   {
     "slug": "lincoln-road-mall",
@@ -35,28 +41,31 @@
     "slug": "wolfsonian-fiu",
     "name": "The Wolfsonian–FIU",
     "found": true,
+    "title": "The Wolfsonian—FIU",
+    "artist": "Dcurator",
+    "license": "CC BY-SA 4.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Wolfsonian%E2%80%94FIU.jpg"
   },
   {
     "slug": "art-deco-welcome-center",
     "name": "Art Deco Museum (Miami Design Preservation League)",
     "found": true,
+    "title": "Miami South Beach Art Deco Welcome Center by Don Ramey Logan",
+    "artist": "Don Ramey Logan",
+    "license": "CC BY 4.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Miami_South_Beach_Art_Deco_Welcome_Center_by_Don_Ramey_Logan.jpg"
   },
   {
     "slug": "jewish-museum-florida",
     "name": "Jewish Museum of Florida-FIU",
     "found": true,
+    "title": "JewishMuseumMiamiBeach",
+    "artist": "Alexf",
+    "license": "CC BY-SA 3.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:JewishMuseumMiamiBeach.png"
   },
   {
     "slug": "south-pointe-park",
@@ -80,19 +89,21 @@
     "slug": "versace-mansion",
     "name": "Casa Casuarina (ancien manoir Versace)",
     "found": true,
+    "title": "Casa Casuarina 2019",
+    "artist": "Vadelmavene",
+    "license": "CC BY-SA 4.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Casa_Casuarina_2019.jpg"
   },
   {
     "slug": "the-bass-museum",
     "name": "The Bass",
     "found": true,
+    "title": "Bass Museum",
+    "artist": "Tamanoeconomico",
+    "license": "CC BY-SA 4.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bass_Museum.jpg"
   },
   {
     "slug": "clevelander-hotel",
@@ -177,10 +188,11 @@
     "slug": "miami-beach-boardwalk",
     "name": "Miami Beach Boardwalk",
     "found": true,
+    "title": "Miami Beach boardwalk looking north at Midbeach Park",
+    "artist": "Dough4872",
+    "license": "CC BY-SA 4.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Miami_Beach_boardwalk_looking_north_at_Midbeach_Park.jpg"
   },
   {
     "slug": "miami-beach-botanical-garden",
@@ -215,19 +227,21 @@
     "slug": "perez-art-museum-miami",
     "name": "Pérez Art Museum Miami (PAMM)",
     "found": true,
+    "title": "PAMM MRD 23",
+    "artist": "Phillip Pessar",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:PAMM_MRD_23.jpg"
   },
   {
     "slug": "phillip-and-patricia-frost-museum-science",
     "name": "Phillip and Patricia Frost Museum of Science",
     "found": true,
+    "title": "20170829 Miami 1881 Frost Science Museum sRGB (Gulf Stream Aquarium oculus)",
+    "artist": "Dan Lundberg",
+    "license": "CC BY-SA 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:20170829_Miami_1881_Frost_Science_Museum_sRGB.jpg"
   },
   {
     "slug": "freedom-tower",
@@ -261,19 +275,21 @@
     "slug": "flagler-street",
     "name": "Flagler Street (centre historique)",
     "found": true,
+    "title": "Flagler Street Improvement Downtown Miami FL 25 June 2024 - 5",
+    "artist": "Phillip Pessar",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Flagler_Street_Improvement_Downtown_Miami_FL_25_June_2024_-_5.jpg"
   },
   {
     "slug": "olympia-theater",
     "name": "Olympia Theater",
     "found": true,
+    "title": "Olympia Theatre Miami exterior 2016",
+    "artist": "Phillip Pessar",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Olympia_Theatre_Miami_exterior_2016.jpg"
   },
   {
     "slug": "jungle-island",
@@ -287,7 +303,12 @@
   {
     "slug": "skyviews-miami",
     "name": "Skyviews Miami Observation Wheel",
-    "found": false
+    "found": true,
+    "title": "Skyviews Miami Bayside Marketplace - Ferris Wheel Cars, 2022",
+    "artist": "Phillip Pessar",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Skyviews_Miami_Bayside_Marketplace_-_Ferris_Wheel_Cars%2C_2022.jpg"
   },
   {
     "slug": "garcias-seafood-grille",
@@ -298,10 +319,12 @@
     "slug": "kaseya-center",
     "name": "Kaseya Center",
     "found": true,
+    "title": "Kaseya Center Downtown Miami FL, 5 April 2024.jpg",
+    "artist": "Phillip Pessar",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kaseya_Center_Downtown_Miami_FL,_5_April_2024.jpg",
+    "note": "already attached in an earlier batch (parent manifest), same file"
   },
   {
     "slug": "historymiami-museum",
@@ -316,10 +339,12 @@
     "slug": "brightline-miamicentral",
     "name": "MiamiCentral Station (Brightline)",
     "found": true,
+    "title": "MiamiCentral Brightline Station Miami (46364865115).jpg",
+    "artist": "Phillip Pessar",
+    "license": "CC BY 2.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:MiamiCentral_Brightline_Station_Miami_(46364865115).jpg",
+    "note": "already attached in an earlier batch (parent manifest), same file"
   },
   {
     "slug": "brickell-city-centre",
@@ -343,10 +368,12 @@
     "slug": "mary-brickell-village",
     "name": "Mary Brickell Village",
     "found": true,
+    "title": "Mary Brickell Village looking south.jpg",
+    "artist": "Marc Averette",
+    "license": "CC BY 3.0",
     "source": "Wikimedia Commons",
-    "artist": "",
-    "license": "",
-    "source_url": ""
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mary_Brickell_Village_looking_south.jpg",
+    "note": "already attached in an earlier batch (parent manifest), same file"
   },
   {
     "slug": "la-moon",
@@ -371,7 +398,13 @@
   {
     "slug": "simpson-park",
     "name": "Simpson Park",
-    "found": false
+    "found": true,
+    "title": "Simpson Park, Miami FL, December 2022 - Arrow sign.jpg",
+    "artist": "Phillip Pessar",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Simpson_Park,_Miami_FL,_December_2022_-_Arrow_sign.jpg",
+    "note": "NEW - not yet in parent manifest.json, file saved to seed-assets/miami-photos/simpson-park.jpg"
   },
   {
     "slug": "area-31",
@@ -395,7 +428,13 @@
   {
     "slug": "wynwood-street-art",
     "name": "Rues de Wynwood (street art)",
-    "found": false
+    "found": true,
+    "title": "Mural Wynwood Art District (8139367235).jpg",
+    "artist": "Phillip Pessar",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mural_Wynwood_Art_District_(8139367235).jpg",
+    "note": "NEW - not yet in parent manifest.json, file saved to seed-assets/miami-photos/wynwood-street-art.jpg"
   },
   {
     "slug": "margulies-collection",
@@ -405,7 +444,8 @@
   {
     "slug": "rubell-museum",
     "name": "Rubell Museum",
-    "found": false
+    "found": false,
+    "note": "rejected a 2009 Commons photo of the OLD Wynwood building; the place description specifies the museum moved to a different Allapattah warehouse in 2019, so that photo would be the wrong building"
   },
   {
     "slug": "wynwood-brewing-company",
