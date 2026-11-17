@@ -180,7 +180,9 @@ export function InteractiveMap({
         filter: ["!", ["has", "point_count"]],
         layout: {
           "icon-image": ["get", "icon"],
-          "icon-size": 0.5,
+          // Was 0.5 (24px icon on a 16px-diameter circle — overflowing the
+          // marker on every side). 0.27 leaves a clear margin instead.
+          "icon-size": 0.27,
           "icon-allow-overlap": true,
           "icon-ignore-placement": true,
         },

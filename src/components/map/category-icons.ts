@@ -107,14 +107,18 @@ function drawStar(ctx: CanvasRenderingContext2D, cx: number, cy: number, outerR:
 }
 
 function drawTemple(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
-  // A single classical column — one universal "monument/heritage" mark,
-  // not a pagoda silhouette (too detailed to read at marker size).
-  const w = size * 0.28;
-  const topY = cy - size * 0.3;
-  const botY = cy + size * 0.3;
-  ctx.fillRect(cx - w, topY, w * 2, size * 0.1);
-  ctx.fillRect(cx - w * 0.55, topY + size * 0.1, w * 1.1, size * 0.4);
-  ctx.fillRect(cx - w, botY - size * 0.1, w * 2, size * 0.1);
+  // A single rounded monument arch — one shape, reads as "historic site"
+  // without the blocky three-bar column look.
+  const w = size * 0.24;
+  const topY = cy - size * 0.28;
+  const baseY = cy + size * 0.28;
+  ctx.beginPath();
+  ctx.moveTo(cx - w, baseY);
+  ctx.lineTo(cx - w, topY + w);
+  ctx.arc(cx, topY + w, w, Math.PI, 0);
+  ctx.lineTo(cx + w, baseY);
+  ctx.closePath();
+  ctx.fill();
 }
 
 function drawWalkPath(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
