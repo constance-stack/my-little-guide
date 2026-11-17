@@ -1,0 +1,791 @@
+[
+  {
+    "slug": "ocean-drive-art-deco",
+    "name": "Ocean Drive et le quartier Art Déco",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "south-beach-plage",
+    "name": "South Beach (la plage)",
+    "found": false
+  },
+  {
+    "slug": "lincoln-road-mall",
+    "name": "Lincoln Road Mall",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "espanola-way",
+    "name": "Española Way",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "wolfsonian-fiu",
+    "name": "The Wolfsonian–FIU",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "art-deco-welcome-center",
+    "name": "Art Deco Museum (Miami Design Preservation League)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "jewish-museum-florida",
+    "name": "Jewish Museum of Florida-FIU",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "south-pointe-park",
+    "name": "South Pointe Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "holocaust-memorial-miami-beach",
+    "name": "Holocaust Memorial Miami Beach",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "versace-mansion",
+    "name": "Casa Casuarina (ancien manoir Versace)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "the-bass-museum",
+    "name": "The Bass",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "clevelander-hotel",
+    "name": "The Clevelander",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "mangos-tropical-cafe",
+    "name": "Mango's Tropical Café",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "joes-stone-crab",
+    "name": "Joe's Stone Crab",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "prime-112",
+    "name": "Prime 112",
+    "found": false
+  },
+  {
+    "slug": "la-sandwicherie",
+    "name": "La Sandwicherie",
+    "found": false
+  },
+  {
+    "slug": "puerto-sagua",
+    "name": "Puerto Sagua",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "fontainebleau-miami-beach",
+    "name": "Fontainebleau Miami Beach",
+    "found": true,
+    "title": "Miami Beach - Fountain, Fontainebleau Hotel.jpg",
+    "artist": "P. Hughes",
+    "license": "CC BY 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Miami_Beach_-_Fountain,_Fontainebleau_Hotel.jpg"
+  },
+  {
+    "slug": "eden-roc-miami-beach",
+    "name": "Eden Roc Miami Beach",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "faena-district",
+    "name": "Faena District",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "north-shore-open-space-park",
+    "name": "North Shore Open Space Park",
+    "found": false
+  },
+  {
+    "slug": "miami-beach-boardwalk",
+    "name": "Miami Beach Boardwalk",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "miami-beach-botanical-garden",
+    "name": "Miami Beach Botanical Garden",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "o-cinema-miami-beach",
+    "name": "O Cinema Miami Beach",
+    "found": false
+  },
+  {
+    "slug": "27-restaurant",
+    "name": "27 Restaurant (Freehand Miami)",
+    "found": false
+  },
+  {
+    "slug": "bayfront-park",
+    "name": "Bayfront Park",
+    "found": true,
+    "title": "Bayfront Park with Vizcayne in Background, Miami Florida, 30 September 2022.jpg",
+    "artist": "Phillip Pessar",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bayfront_Park_with_Vizcayne_in_Background,_Miami_Florida,_30_September_2022.jpg"
+  },
+  {
+    "slug": "perez-art-museum-miami",
+    "name": "Pérez Art Museum Miami (PAMM)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "phillip-and-patricia-frost-museum-science",
+    "name": "Phillip and Patricia Frost Museum of Science",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "freedom-tower",
+    "name": "Freedom Tower",
+    "found": true,
+    "title": "Freedom Tower (Miami, Fl.).jpg",
+    "artist": "Federico Pirruccio",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Freedom_Tower_(Miami,_Fl.).jpg"
+  },
+  {
+    "slug": "bayside-marketplace",
+    "name": "Bayside Marketplace",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "miami-riverwalk",
+    "name": "Miami Riverwalk",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "flagler-street",
+    "name": "Flagler Street (centre historique)",
+    "found": false
+  },
+  {
+    "slug": "olympia-theater",
+    "name": "Olympia Theater",
+    "found": false
+  },
+  {
+    "slug": "jungle-island",
+    "name": "Jungle Island",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "skyviews-miami",
+    "name": "Skyviews Miami Observation Wheel",
+    "found": false
+  },
+  {
+    "slug": "garcias-seafood-grille",
+    "name": "Garcia's Seafood Grille & Fish Market",
+    "found": false
+  },
+  {
+    "slug": "kaseya-center",
+    "name": "Kaseya Center",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "historymiami-museum",
+    "name": "HistoryMiami Museum",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "brightline-miamicentral",
+    "name": "MiamiCentral Station (Brightline)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "brickell-city-centre",
+    "name": "Brickell City Centre",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "brickell-avenue-skyline",
+    "name": "Brickell Avenue",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "mary-brickell-village",
+    "name": "Mary Brickell Village",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "la-moon",
+    "name": "La Moon",
+    "found": false
+  },
+  {
+    "slug": "komodo-miami",
+    "name": "Komodo",
+    "found": false
+  },
+  {
+    "slug": "sugar-rooftop",
+    "name": "Sugar Rooftop",
+    "found": false
+  },
+  {
+    "slug": "the-wharf-miami",
+    "name": "The Wharf Miami",
+    "found": false
+  },
+  {
+    "slug": "simpson-park",
+    "name": "Simpson Park",
+    "found": false
+  },
+  {
+    "slug": "area-31",
+    "name": "Area 31",
+    "found": false
+  },
+  {
+    "slug": "wynwood-walls",
+    "name": "Wynwood Walls",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "wynwood-walls-spray-can-workshop",
+    "name": "Atelier bombe aérosol à Wynwood Walls",
+    "found": false
+  },
+  {
+    "slug": "wynwood-street-art",
+    "name": "Rues de Wynwood (street art)",
+    "found": false
+  },
+  {
+    "slug": "margulies-collection",
+    "name": "Margulies Collection at the Warehouse",
+    "found": false
+  },
+  {
+    "slug": "rubell-museum",
+    "name": "Rubell Museum",
+    "found": false
+  },
+  {
+    "slug": "wynwood-brewing-company",
+    "name": "Wynwood Brewing Company",
+    "found": false
+  },
+  {
+    "slug": "coyo-taco",
+    "name": "Coyo Taco",
+    "found": false
+  },
+  {
+    "slug": "kyu-miami",
+    "name": "KYU",
+    "found": false
+  },
+  {
+    "slug": "1-800-lucky",
+    "name": "1-800-Lucky",
+    "found": false
+  },
+  {
+    "slug": "panther-coffee",
+    "name": "Panther Coffee",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "zak-the-baker",
+    "name": "Zak the Baker",
+    "found": false
+  },
+  {
+    "slug": "wynwood-marketplace",
+    "name": "Wynwood Marketplace",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "gramps-bar",
+    "name": "Gramps",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "miami-design-district",
+    "name": "Miami Design District",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "institute-of-contemporary-art-miami",
+    "name": "Institute of Contemporary Art, Miami (ICA Miami)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "de-la-cruz-collection",
+    "name": "de la Cruz Collection",
+    "found": false
+  },
+  {
+    "slug": "swan-restaurant",
+    "name": "Swan",
+    "found": false
+  },
+  {
+    "slug": "harrys-pizzeria",
+    "name": "Harry's Pizzeria",
+    "found": false
+  },
+  {
+    "slug": "buena-vista-deli",
+    "name": "Buena Vista Deli",
+    "found": false
+  },
+  {
+    "slug": "palm-court-design-district",
+    "name": "Palm Court",
+    "found": false
+  },
+  {
+    "slug": "mandolin-aegean-bistro",
+    "name": "Mandolin Aegean Bistro",
+    "found": false
+  },
+  {
+    "slug": "calle-ocho",
+    "name": "Calle Ocho (SW 8th Street)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "maximo-gomez-domino-park",
+    "name": "Máximo Gómez Domino Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "cuban-memorial-boulevard",
+    "name": "Cuban Memorial Boulevard",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "ball-and-chain",
+    "name": "Ball & Chain",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "cafe-la-trova",
+    "name": "Café La Trova",
+    "found": false
+  },
+  {
+    "slug": "el-exquisito-restaurant",
+    "name": "El Exquisito",
+    "found": false
+  },
+  {
+    "slug": "versailles-restaurant",
+    "name": "Versailles Restaurant",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "azucar-ice-cream-company",
+    "name": "Azucar Ice Cream Company",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "el-credito-cigars",
+    "name": "El Credito Cigar Factory",
+    "found": false
+  },
+  {
+    "slug": "viernes-culturales",
+    "name": "Viernes Culturales (Cultural Fridays)",
+    "found": false
+  },
+  {
+    "slug": "futurama-little-havana",
+    "name": "Futurama 1637",
+    "found": false
+  },
+  {
+    "slug": "los-pinarenos-fruteria",
+    "name": "Los Pinareños Frutería",
+    "found": false
+  },
+  {
+    "slug": "guayabera-shops-calle-ocho",
+    "name": "Boutiques de guayaberas sur Calle Ocho",
+    "found": false
+  },
+  {
+    "slug": "el-pub-restaurant",
+    "name": "El Pub Restaurant",
+    "found": false
+  },
+  {
+    "slug": "cuba-ocho-art-research-center",
+    "name": "Cuba Ocho Art and Research Center",
+    "found": false
+  },
+  {
+    "slug": "little-havana-cuban-cooking-class",
+    "name": "Cours de cuisine cubaine à Little Havana",
+    "found": false
+  },
+  {
+    "slug": "little-haiti-cultural-complex",
+    "name": "Little Haiti Cultural Complex",
+    "found": false
+  },
+  {
+    "slug": "caribbean-marketplace",
+    "name": "Caribbean Marketplace",
+    "found": false
+  },
+  {
+    "slug": "chef-creole",
+    "name": "Chef Creole",
+    "found": false
+  },
+  {
+    "slug": "piman-bouk",
+    "name": "Piman Bouk",
+    "found": false
+  },
+  {
+    "slug": "sweat-records",
+    "name": "Sweat Records",
+    "found": false
+  },
+  {
+    "slug": "libreri-mapou",
+    "name": "Libreri Mapou",
+    "found": false
+  },
+  {
+    "slug": "vizcaya-museum-gardens",
+    "name": "Vizcaya Museum and Gardens",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "coconut-grove-waterfront",
+    "name": "Front de baie de Coconut Grove (Dinner Key)",
+    "found": false
+  },
+  {
+    "slug": "cocowalk",
+    "name": "CocoWalk",
+    "found": false
+  },
+  {
+    "slug": "barnacle-historic-state-park",
+    "name": "The Barnacle Historic State Park",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "peacock-park",
+    "name": "Peacock Park",
+    "found": false
+  },
+  {
+    "slug": "greenstreet-cafe",
+    "name": "GreenStreet Café",
+    "found": false
+  },
+  {
+    "slug": "lulu-coconut-grove",
+    "name": "LuLu Coconut Grove",
+    "found": false
+  },
+  {
+    "slug": "the-last-carrot",
+    "name": "The Last Carrot",
+    "found": false
+  },
+  {
+    "slug": "the-kampong",
+    "name": "The Kampong",
+    "found": false
+  },
+  {
+    "slug": "coconut-grove-farmers-market",
+    "name": "Coconut Grove Organic Farmers Market",
+    "found": false
+  },
+  {
+    "slug": "coconut-grove-sailing-club-waterfront",
+    "name": "Front de mer du Coconut Grove Sailing Club",
+    "found": false
+  },
+  {
+    "slug": "biltmore-hotel",
+    "name": "The Biltmore Hotel",
+    "found": false
+  },
+  {
+    "slug": "biltmore-turkish-mosaic-lamp-class",
+    "name": "Atelier lampe mosaïque turque au Biltmore",
+    "found": false
+  },
+  {
+    "slug": "venetian-pool",
+    "name": "Venetian Pool",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "miracle-mile",
+    "name": "Miracle Mile",
+    "found": false
+  },
+  {
+    "slug": "coral-gables-merrick-house",
+    "name": "Coral Gables Merrick House",
+    "found": false
+  },
+  {
+    "slug": "fairchild-tropical-botanic-garden",
+    "name": "Fairchild Tropical Botanic Garden",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "lowe-art-museum",
+    "name": "Lowe Art Museum",
+    "found": false
+  },
+  {
+    "slug": "university-of-miami-campus",
+    "name": "Campus de l'Université de Miami",
+    "found": false
+  },
+  {
+    "slug": "coral-gables-congregational-church",
+    "name": "Coral Gables Congregational Church",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "",
+    "license": "",
+    "source_url": ""
+  },
+  {
+    "slug": "books-and-books-coral-gables",
+    "name": "Books & Books",
+    "found": false
+  },
+  {
+    "slug": "caffe-abbracci",
+    "name": "Caffe Abbracci",
+    "found": false
+  },
+  {
+    "slug": "bulla-gastrobar",
+    "name": "Bulla Gastrobar",
+    "found": false
+  },
+  {
+    "slug": "coral-gables-art-cinema",
+    "name": "Coral Gables Art Cinema",
+    "found": false
+  },
+  {
+    "slug": "matheson-hammock-park",
+    "name": "Matheson Hammock Park",
+    "found": true,
+    "title": "Matheson Hammock Clouds.jpg",
+    "artist": "Anish Patel",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Matheson_Hammock_Clouds.jpg"
+  },
+  {
+    "slug": "coral-gables-farmers-market",
+    "name": "Coral Gables Farmers Market",
+    "found": false
+  }
+]
