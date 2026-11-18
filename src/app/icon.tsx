@@ -24,8 +24,8 @@ export default function Icon() {
           stroke="#0f2a4a"
           strokeWidth={1.3}
         >
-          <circle cx="12" cy="12" r="9" />
-          <path d="M15 9l-4 2-2 4 4-2 2-4z" />
+          <path d="M12 21s7-7.58 7-12.5A7 7 0 1 0 5 8.5C5 13.42 12 21 12 21z" />
+          <circle cx="12" cy="8.5" r="2.5" />
         </svg>
       </div>
     ),

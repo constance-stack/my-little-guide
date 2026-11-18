@@ -150,7 +150,7 @@ export function InteractiveMap({
         source: "places",
         filter: ["has", "point_count"],
         layout: { "text-field": "{point_count_abbreviated}", "text-size": 12 },
-        paint: { "text-color": "#faf8f3" },
+        paint: { "text-color": "#ffffff" },
       });
 
       map.addLayer({
@@ -162,7 +162,7 @@ export function InteractiveMap({
           "circle-color": ["get", "color"],
           "circle-radius": 8,
           "circle-stroke-width": 2,
-          "circle-stroke-color": "#faf8f3",
+          "circle-stroke-color": "#ffffff",
         },
       });
 
@@ -232,7 +232,7 @@ export function InteractiveMap({
           "circle-color": "#2b2b2b",
           "circle-radius": 9,
           "circle-stroke-width": 2,
-          "circle-stroke-color": "#faf8f3",
+          "circle-stroke-color": "#ffffff",
         },
       });
       map.addLayer({

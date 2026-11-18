@@ -10,7 +10,7 @@ export async function ShopHeader() {
     <header className="sticky top-0 z-10 border-b border-line bg-ivory/95 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
         <Link href="/" className="flex items-center gap-2 font-serif text-lg text-sage-dark">
-          <CompassIcon />
+          <PinIcon />
           My Little Guide
         </Link>
         <nav className="flex items-center gap-5">
@@ -37,11 +37,11 @@ export async function ShopHeader() {
   );
 }
 
-function CompassIcon() {
+function PinIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M15 9l-4 2-2 4 4-2 2-4z" />
+      <path d="M12 21s7-7.58 7-12.5A7 7 0 1 0 5 8.5C5 13.42 12 21 12 21z" />
+      <circle cx="12" cy="8.5" r="2.5" />
     </svg>
   );
 }

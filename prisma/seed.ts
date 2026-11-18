@@ -32,21 +32,25 @@ const prisma = new PrismaClient({ adapter });
 // dropped outright — the kit essentiel already covers transport advice,
 // and Bangkok has no beaches. See prisma/migrate-consolidate-categories.ts
 // for the one-time data migration that retired the old slugs.
+// Muted, jewel-toned palette built to sit alongside the site's navy/white
+// theme (see src/app/globals.css) — every color dark/saturated enough for
+// white icon glyphs and white badge text, spread across hue rather than
+// the old warm terracotta/gold/brown set that no longer matched.
 const GLOBAL_CATEGORIES = [
-  { slug: "incontournables", name: "Incontournables", icon: "star", color: "#c9972e" },
-  { slug: "temples-patrimoine", name: "Temples, patrimoine et musées", icon: "temple", color: "#a8422c" },
-  { slug: "quartiers-balades", name: "Balades et nature", icon: "walk", color: "#3f8c5a" },
-  { slug: "experiences-insolites", name: "Expériences insolites", icon: "sparkle", color: "#d6479a" },
-  { slug: "activites-famille", name: "Activités en famille", icon: "family", color: "#2e86ab" },
-  { slug: "restaurants", name: "Restaurants", icon: "fork", color: "#8f2d2d" },
-  { slug: "street-food", name: "Street food", icon: "noodles", color: "#e8821e" },
-  { slug: "cafes-brunchs", name: "Cafés et brunchs", icon: "coffee", color: "#6b3f2a" },
-  { slug: "bars-rooftops", name: "Bars et vie nocturne", icon: "cocktail", color: "#4a2e7a" },
-  { slug: "marches", name: "Marchés", icon: "basket", color: "#c2641f" },
-  { slug: "shopping", name: "Shopping", icon: "bag", color: "#b03e7a" },
-  { slug: "excursions", name: "Excursions", icon: "compass", color: "#3457a6" },
-  { slug: "bien-etre-spas", name: "Bien-être et spas", icon: "lotus", color: "#6fae7c" },
-  { slug: "points-de-vue", name: "Points de vue", icon: "view", color: "#2a7a8c" },
+  { slug: "incontournables", name: "Incontournables", icon: "star", color: "#b8862e" },
+  { slug: "temples-patrimoine", name: "Temples, patrimoine et musées", icon: "temple", color: "#8a4a3f" },
+  { slug: "quartiers-balades", name: "Balades et nature", icon: "walk", color: "#3f6b52" },
+  { slug: "experiences-insolites", name: "Expériences insolites", icon: "sparkle", color: "#8c3a6b" },
+  { slug: "activites-famille", name: "Activités en famille", icon: "family", color: "#2e6b94" },
+  { slug: "restaurants", name: "Restaurants", icon: "fork", color: "#7a2e3d" },
+  { slug: "street-food", name: "Street food", icon: "noodles", color: "#c2751f" },
+  { slug: "cafes-brunchs", name: "Cafés et brunchs", icon: "coffee", color: "#5c4030" },
+  { slug: "bars-rooftops", name: "Bars et vie nocturne", icon: "cocktail", color: "#4a3570" },
+  { slug: "marches", name: "Marchés", icon: "basket", color: "#9c5a35" },
+  { slug: "shopping", name: "Shopping", icon: "bag", color: "#8c4568" },
+  { slug: "excursions", name: "Excursions", icon: "compass", color: "#35508c" },
+  { slug: "bien-etre-spas", name: "Bien-être et spas", icon: "lotus", color: "#5a8c6b" },
+  { slug: "points-de-vue", name: "Points de vue", icon: "view", color: "#1f7a8c" },
 ];
 
 const BANGKOK_ENABLED_CATEGORIES = [

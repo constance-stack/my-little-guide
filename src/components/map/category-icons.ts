@@ -147,16 +147,29 @@ function drawFamily(ctx: CanvasRenderingContext2D, cx: number, cy: number, size:
 }
 
 function drawFork(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
-  // A single spoon — one oval head, one straight handle. Reads instantly
-  // as "eating/restaurant" without the fork's many thin strokes.
-  ctx.beginPath();
-  ctx.ellipse(cx, cy - size * 0.16, size * 0.16, size * 0.2, 0, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.lineWidth = size * 0.09;
+  // Three tines over a cross-bar, one straight handle — a simple flat
+  // fork silhouette, not a spoon.
+  const topY = cy - size * 0.32;
+  const barY = cy - size * 0.06;
+  const bottomY = cy + size * 0.32;
+  const spread = size * 0.14;
+
+  ctx.lineWidth = size * 0.07;
   ctx.strokeStyle = ctx.fillStyle;
   ctx.beginPath();
-  ctx.moveTo(cx, cy + size * 0.02);
-  ctx.lineTo(cx, cy + size * 0.32);
+  ctx.moveTo(cx - spread, topY);
+  ctx.lineTo(cx - spread, barY);
+  ctx.moveTo(cx, topY);
+  ctx.lineTo(cx, barY);
+  ctx.moveTo(cx + spread, topY);
+  ctx.lineTo(cx + spread, barY);
+  ctx.moveTo(cx - spread, barY);
+  ctx.lineTo(cx + spread, barY);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(cx, barY);
+  ctx.lineTo(cx, bottomY);
   ctx.stroke();
 }
 
