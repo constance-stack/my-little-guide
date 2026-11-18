@@ -1,0 +1,902 @@
+[
+  {
+    "slug": "monte-testaccio",
+    "found": true,
+    "title": "File:Monte Testaccio.jpg",
+    "artist": "Tyler Bell",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/20031978",
+    "local_path": "seed-assets/rome-photos/monte-testaccio.jpg"
+  },
+  {
+    "slug": "colosseo",
+    "found": true,
+    "title": "File:20160425 112 Roma - Colosseum (26660478501).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/22991060@N04\">Sjaak Kempe</a> from Groningen, The Netherlands",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/75574905",
+    "local_path": "seed-assets/rome-photos/colosseo.jpg"
+  },
+  {
+    "slug": "foro-romano",
+    "found": true,
+    "title": "File:Foro Romano Palatino veduta dal Circo Massimo - panoramio.jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161029132053/http://www.panoramio.com/user/7955631?with_photo_id=105347806\">Pierfelice Licitra</a>",
+    "license": "CC BY 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/57535366",
+    "local_path": "seed-assets/rome-photos/foro-romano.jpg"
+  },
+  {
+    "slug": "piazza-san-pietro",
+    "found": true,
+    "title": "File:St Peter's Square, Vatican City - April 2007.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Diliff\" title=\"User:Diliff\">Diliff</a>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/2065989",
+    "local_path": "seed-assets/rome-photos/piazza-san-pietro.jpg"
+  },
+  {
+    "slug": "pantheon-roma",
+    "found": true,
+    "title": "File:Pantheon Exterior 2 (14853409113).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/49169223@N00\">daryl_mitchell</a> from Saskatoon, Saskatchewan, Canada",
+    "license": "CC BY-SA 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/40680853",
+    "local_path": "seed-assets/rome-photos/pantheon-roma.jpg"
+  },
+  {
+    "slug": "piazza-navona",
+    "found": true,
+    "title": "File:Obelisk piazza Navona, Rome, Italy.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Jebulon\" title=\"User:Jebulon\">Jebulon</a>",
+    "license": "CC0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/30156178",
+    "local_path": "seed-assets/rome-photos/piazza-navona.jpg"
+  },
+  {
+    "slug": "fontana-trevi",
+    "found": true,
+    "title": "File:Roma Fontana di Trevi (52348772277).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/46191841@N00\">Jorge Franganillo</a>",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/139637576",
+    "local_path": "seed-assets/rome-photos/fontana-trevi.jpg"
+  },
+  {
+    "slug": "via-coronari",
+    "found": true,
+    "title": "File:Via dei Coronari in Rome (1).jpg",
+    "artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q51955005\" class=\"extiw\" title=\"d:Q51955005\"><span title=\"Wikimedian\">Krzysztof Golik</span></a></bdi>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/96124336",
+    "local_path": "seed-assets/rome-photos/via-coronari.jpg"
+  },
+  {
+    "slug": "chiesa-sant-ignazio",
+    "found": true,
+    "title": "File:Chiesa di Sant'Ignazio di Loyola in Campo Marzio 01.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Nicholas_Gemini\" title=\"User:Nicholas Gemini\">Nicholas Gemini</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/78962643",
+    "local_path": "seed-assets/rome-photos/chiesa-sant-ignazio.jpg"
+  },
+  {
+    "slug": "chiesa-san-luigi-francesi",
+    "found": true,
+    "title": "File:Chiesa di San Luigi dei Francesi - panoramio.jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161102095048/http://www.panoramio.com/user/5152111?with_photo_id=127639361\">Mister No</a>",
+    "license": "CC BY 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/60309960",
+    "local_path": "seed-assets/rome-photos/chiesa-san-luigi-francesi.jpg"
+  },
+  {
+    "slug": "palazzo-altemps",
+    "found": true,
+    "title": "File:Ceiling of Cardinal Altemps in Palazzo Altemps (Rome).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Livioandronico2013\" title=\"User:Livioandronico2013\">Livioandronico2013</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/40276285",
+    "local_path": "seed-assets/rome-photos/palazzo-altemps.jpg"
+  },
+  {
+    "slug": "elefantino-bernini",
+    "found": true,
+    "title": "File:Obelisque elephant santa Maria sopra Minerva, Rome, Italy.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Jebulon\" title=\"User:Jebulon\">Jebulon</a>",
+    "license": "CC0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/30817849",
+    "local_path": "seed-assets/rome-photos/elefantino-bernini.jpg"
+  },
+  {
+    "slug": "via-del-corso",
+    "found": true,
+    "title": "File:Via del Corso Roma 20160616.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Estormiz\" title=\"User:Estormiz\">Estormiz</a>",
+    "license": "CC0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/49639665",
+    "local_path": "seed-assets/rome-photos/via-del-corso.jpg"
+  },
+  {
+    "slug": "galleria-doria-pamphilj",
+    "found": true,
+    "title": "File:Ceiling in Galleria Doria-Pamphilj (Roma).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Livioandronico2013\" title=\"User:Livioandronico2013\">Livioandronico2013</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/63300976",
+    "local_path": "seed-assets/rome-photos/galleria-doria-pamphilj.jpg"
+  },
+  {
+    "slug": "area-sacra-largo-argentina",
+    "found": true,
+    "title": "File:Roma Area Sacra di Largo Argentina (52985588096).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/46191841@N00\">Jorge Franganillo</a>",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/139696100",
+    "local_path": "seed-assets/rome-photos/area-sacra-largo-argentina.jpg"
+  },
+  {
+    "slug": "palazzo-madama-roma",
+    "found": true,
+    "title": "File:Palazzo Madama (Roma).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Merulana\" title=\"User:Merulana\">Merulana</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/126533897",
+    "local_path": "seed-assets/rome-photos/palazzo-madama-roma.jpg"
+  },
+  {
+    "slug": "palatino",
+    "found": true,
+    "title": "File:Palatine Hill from Circus Maximus Rome.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Jebulon\" title=\"User:Jebulon\">Jebulon</a>",
+    "license": "CC0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/55912502",
+    "local_path": "seed-assets/rome-photos/palatino.jpg"
+  },
+  {
+    "slug": "arco-costantino",
+    "found": true,
+    "title": "File:Arco di Costantino, Roma 2019.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Lucrezia789&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Lucrezia789 (page does not exist)\">Lucrezia789</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/79162133",
+    "local_path": "seed-assets/rome-photos/arco-costantino.jpg"
+  },
+  {
+    "slug": "fori-imperiali",
+    "found": true,
+    "title": "File:Sidewalk of Via dei Fori Imperiali, Roma, Italy.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Vsatinet\" title=\"User:Vsatinet\">Vsatinet</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/155066903",
+    "local_path": "seed-assets/rome-photos/fori-imperiali.jpg"
+  },
+  {
+    "slug": "colonna-traiana",
+    "found": true,
+    "title": "File:Colonna Traiana, Rome (15049493250).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/96391186@N06\">Gary Ullah</a> from UK",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/57331692",
+    "local_path": "seed-assets/rome-photos/colonna-traiana.jpg"
+  },
+  {
+    "slug": "vittoriano",
+    "found": true,
+    "title": "File:Altare della Patria (Roma).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:ThePhotografer\" title=\"User:ThePhotografer\">ThePhotografer</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/117846253",
+    "local_path": "seed-assets/rome-photos/vittoriano.jpg"
+  },
+  {
+    "slug": "campidoglio",
+    "found": true,
+    "title": "File:Piazza del Campidoglio 1, Rome.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Nhartmannphotos\" title=\"User:Nhartmannphotos\">Nhartmannphotos</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/193981855",
+    "local_path": "seed-assets/rome-photos/campidoglio.jpg"
+  },
+  {
+    "slug": "bocca-della-verita",
+    "found": true,
+    "title": "File:Rome (IT), Bocca della Verità -- 2013 -- 3479.jpg",
+    "artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q34788025\" class=\"extiw\" title=\"d:Q34788025\"><span title=\"German photographer and mathematician\">Dietmar Rabich</span></a></bdi>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/35120632",
+    "local_path": "seed-assets/rome-photos/bocca-della-verita.jpg"
+  },
+  {
+    "slug": "circo-massimo",
+    "found": true,
+    "title": "File:Circo Massimo, Ancient Rome Area, Rome, Italy.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:AlexIta71&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:AlexIta71 (page does not exist)\">Alessandro Cossu</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/98880871",
+    "local_path": "seed-assets/rome-photos/circo-massimo.jpg"
+  },
+  {
+    "slug": "basilica-san-pietro",
+    "found": true,
+    "title": "File:Basilica di San Pietro in Vaticano September 2015-1a.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Alvesgaspar\" title=\"User:Alvesgaspar\">Alvesgaspar</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/43509289",
+    "local_path": "seed-assets/rome-photos/basilica-san-pietro.jpg"
+  },
+  {
+    "slug": "musei-vaticani",
+    "found": true,
+    "title": "File:Roma - Musei Vaticani 5897.JPG",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Phyrexian\" title=\"User:Phyrexian\">Phyrexian</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/144902984",
+    "local_path": "seed-assets/rome-photos/musei-vaticani.jpg"
+  },
+  {
+    "slug": "cappella-sistina",
+    "found": true,
+    "title": "File:Ceiling of the Sistine Chapel.jpg",
+    "artist": "KatieThebeau",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/151014309",
+    "local_path": "seed-assets/rome-photos/cappella-sistina.jpg"
+  },
+  {
+    "slug": "castel-sant-angelo",
+    "found": true,
+    "title": "File:Castel Sant'Angelo 4 (15279239828).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/49169223@N00\">daryl_mitchell</a> from Saskatoon, Saskatchewan, Canada",
+    "license": "CC BY-SA 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/40681117",
+    "local_path": "seed-assets/rome-photos/castel-sant-angelo.jpg"
+  },
+  {
+    "slug": "ponte-sant-angelo",
+    "found": true,
+    "title": "File:Roma - Ponte Sant'Angelo (42766516232).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/129231073@N06\">Fred Romero</a> from Paris, France",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/113139800",
+    "local_path": "seed-assets/rome-photos/ponte-sant-angelo.jpg"
+  },
+  {
+    "slug": "giardini-vaticani",
+    "found": true,
+    "title": "File:Vatican Gardens 1.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Marek69\" title=\"User:Marek69\">Marek</a><small>.</small><a href=\"//commons.wikimedia.org/wiki/Special:Contributions/Marek69\" title=\"Special:Contributions/Marek69\"><small>69</small></a> <a href=\"//commons.wikimedia.org/wiki/User_talk:Marek69\" title=\"User talk:Marek69\"><small><sup><i>talk</i></sup></small></a>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/5245386",
+    "local_path": "seed-assets/rome-photos/giardini-vaticani.jpg"
+  },
+  {
+    "slug": "borgo-pio",
+    "found": true,
+    "title": "File:Borgo Pio in Rome (1).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Tournasol7\" title=\"User:Tournasol7\">Krzysztof Golik</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/99955700",
+    "local_path": "seed-assets/rome-photos/borgo-pio.jpg"
+  },
+  {
+    "slug": "necropoli-vaticana",
+    "found": true,
+    "title": "File:Fronte del sarcofago di giona, 280-300 dc., da necropoli vaticana 01.JPG",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Sailko\" title=\"User:Sailko\">Sailko</a>",
+    "license": "CC BY 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/30530998",
+    "local_path": "seed-assets/rome-photos/necropoli-vaticana.jpg"
+  },
+  {
+    "slug": "piazza-santa-maria-trastevere",
+    "found": true,
+    "title": "File:Piazza di Santa Maria - Trastevere - Rome, Italy - DSC00438.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Daderot\" title=\"User:Daderot\">Daderot</a>",
+    "license": "CC0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/79106725",
+    "local_path": "seed-assets/rome-photos/piazza-santa-maria-trastevere.jpg"
+  },
+  {
+    "slug": "isola-tiberina",
+    "found": true,
+    "title": "File:Isola Tiberina, Rome (24824736817).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/158619309@N03\">Deensel</a>",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/73531484",
+    "local_path": "seed-assets/rome-photos/isola-tiberina.jpg"
+  },
+  {
+    "slug": "ponte-rotto",
+    "found": true,
+    "title": "File:Ponte Rotto-Roma.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Dipietroff&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Dipietroff (page does not exist)\">Dipietroff</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/72985686",
+    "local_path": "seed-assets/rome-photos/ponte-rotto.jpg"
+  },
+  {
+    "slug": "gianicolo",
+    "found": true,
+    "title": "File:Bust of Costante Garibaldi in the Gianicolo Park, Rome.jpg",
+    "artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q29011582\" class=\"extiw\" title=\"d:Q29011582\"><span title=\"financial manager and Wikimedian\">Reda Kerbush</span></a></bdi>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/195354421",
+    "local_path": "seed-assets/rome-photos/gianicolo.jpg"
+  },
+  {
+    "slug": "orto-botanico-roma",
+    "found": true,
+    "title": "File:Orto botanico di Roma 07.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Daniel_Ventura\" title=\"User:Daniel Ventura\">Daniel Ventura</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/68637919",
+    "local_path": "seed-assets/rome-photos/orto-botanico-roma.jpg"
+  },
+  {
+    "slug": "villa-farnesina",
+    "found": true,
+    "title": "File:Villa Farnesina Südfassade.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Peter1936F\" title=\"User:Peter1936F\">Peter1936F</a>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/30575984",
+    "local_path": "seed-assets/rome-photos/villa-farnesina.jpg"
+  },
+  {
+    "slug": "vicolo-del-cinque",
+    "found": true,
+    "title": "File:Roma Trastevere Vicolo del Cinque.jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"http://www.wikivoyage-old.org/shared/User%3AGobbler\">Gobbler</a>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/22795767",
+    "local_path": "seed-assets/rome-photos/vicolo-del-cinque.jpg"
+  },
+  {
+    "slug": "porta-portese",
+    "found": true,
+    "title": "File:Porta Portese, Rome.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Everydayand&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Everydayand (page does not exist)\">ME</a>",
+    "license": "CC0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/153177790",
+    "local_path": "seed-assets/rome-photos/porta-portese.jpg"
+  },
+  {
+    "slug": "campo-de-fiori",
+    "found": true,
+    "title": "File:Market scene - Campo de' Fiori - Rome, Italy - DSC01657.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Daderot\" title=\"User:Daderot\">Daderot</a>",
+    "license": "CC0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/79675730",
+    "local_path": "seed-assets/rome-photos/campo-de-fiori.jpg"
+  },
+  {
+    "slug": "piazza-farnese",
+    "found": true,
+    "title": "File:Fountain at Piazza Farnese in Rome.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Tournasol7\" title=\"User:Tournasol7\">Krzysztof Golik</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/99942871",
+    "local_path": "seed-assets/rome-photos/piazza-farnese.jpg"
+  },
+  {
+    "slug": "ghetto-ebraico-roma",
+    "found": true,
+    "title": "File:Ghetto ebraico di Roma 14.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Camelia.boban\" title=\"User:Camelia.boban\">Camelia.boban</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/78435409",
+    "local_path": "seed-assets/rome-photos/ghetto-ebraico-roma.jpg"
+  },
+  {
+    "slug": "grande-sinagoga-roma",
+    "found": true,
+    "title": "File:Great Synagogue of Rome,front view.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Livioandronico2013\" title=\"User:Livioandronico2013\">Livioandronico2013</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/35862137",
+    "local_path": "seed-assets/rome-photos/grande-sinagoga-roma.jpg"
+  },
+  {
+    "slug": "teatro-marcello",
+    "found": true,
+    "title": "File:2016 Teatro Marcello 01.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Jordiferrer\" title=\"User:Jordiferrer\">Jordiferrer</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/54475274",
+    "local_path": "seed-assets/rome-photos/teatro-marcello.jpg"
+  },
+  {
+    "slug": "fontana-tartarughe",
+    "found": true,
+    "title": "File:Fontana delle Tartarughe - Rome, Italy - DSC00598.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Daderot\" title=\"User:Daderot\">Daderot</a>",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/79203494",
+    "local_path": "seed-assets/rome-photos/fontana-tartarughe.jpg"
+  },
+  {
+    "slug": "palazzo-spada",
+    "found": true,
+    "title": "File:Ceiling with Africa and America in Palazzo Spada (Rome).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Livioandronico2013\" title=\"User:Livioandronico2013\">Livioandronico2013</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/45211289",
+    "local_path": "seed-assets/rome-photos/palazzo-spada.jpg"
+  },
+  {
+    "slug": "via-giulia",
+    "found": true,
+    "title": "File:Via Giulia, Rome, Italy (4188207115).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/89987210@N00\">seanfoneill</a> from Philadelphia, United States",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/73576883",
+    "local_path": "seed-assets/rome-photos/via-giulia.jpg"
+  },
+  {
+    "slug": "piazza-di-spagna",
+    "found": true,
+    "title": "File:Piazza di Spagna, Rome (Ank Kumar) 01.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Ank_gsx\" title=\"User:Ank gsx\">Ank Kumar</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/102734040",
+    "local_path": "seed-assets/rome-photos/piazza-di-spagna.jpg"
+  },
+  {
+    "slug": "via-dei-condotti",
+    "found": true,
+    "title": "File:Via dei Condotti in Rome.jpg",
+    "artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q51955005\" class=\"extiw\" title=\"d:Q51955005\"><span title=\"Wikimedian\">Krzysztof Golik</span></a></bdi>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/96146649",
+    "local_path": "seed-assets/rome-photos/via-dei-condotti.jpg"
+  },
+  {
+    "slug": "villa-borghese-parco",
+    "found": true,
+    "title": "File:Roma Villa Borghese (52603073589).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/46191841@N00\">Jorge Franganillo</a>",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/139632701",
+    "local_path": "seed-assets/rome-photos/villa-borghese-parco.jpg"
+  },
+  {
+    "slug": "galleria-borghese",
+    "found": true,
+    "title": "File:Galleria Borghese in Rome 08.jpg",
+    "artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q51955005\" class=\"extiw\" title=\"d:Q51955005\"><span title=\"Wikimedian\">Krzysztof Golik</span></a></bdi>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/96041926",
+    "local_path": "seed-assets/rome-photos/galleria-borghese.jpg"
+  },
+  {
+    "slug": "piazza-del-popolo",
+    "found": true,
+    "title": "File:Porta del Popolo in Rome (1).jpg",
+    "artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q51955005\" class=\"extiw\" title=\"d:Q51955005\"><span title=\"Wikimedian\">Krzysztof Golik</span></a></bdi>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/100243199",
+    "local_path": "seed-assets/rome-photos/piazza-del-popolo.jpg"
+  },
+  {
+    "slug": "terrazza-pincio",
+    "found": true,
+    "title": "File:Rome - view from Terrazza del Pincio 02 (js).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Jerzystrzelecki\" title=\"User:Jerzystrzelecki\">Jerzy Strzelecki</a>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/89445595",
+    "local_path": "seed-assets/rome-photos/terrazza-pincio.jpg"
+  },
+  {
+    "slug": "mausoleo-augusto",
+    "found": true,
+    "title": "File:Mausoleo di Augusto 11.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Hugo_DK\" title=\"User:Hugo DK\">Hugo DK</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/115176739",
+    "local_path": "seed-assets/rome-photos/mausoleo-augusto.jpg"
+  },
+  {
+    "slug": "ara-pacis",
+    "found": true,
+    "title": "File:Ara Pacis (SW).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Rabax63&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Rabax63 (page does not exist)\">Rabax63</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/64568298",
+    "local_path": "seed-assets/rome-photos/ara-pacis.jpg"
+  },
+  {
+    "slug": "via-margutta",
+    "found": true,
+    "title": "File:Roma, Via Margutta (15775384000).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/77525123@N00\">Philosofia</a> from Rome, Italy",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/73363611",
+    "local_path": "seed-assets/rome-photos/via-margutta.jpg"
+  },
+  {
+    "slug": "casina-valadier",
+    "found": true,
+    "title": "File:Casina Valadier lato SO Roma.jpg",
+    "artist": "<table class=\"toccolours\" style=\"width:100%; margin-top:10px;\" cellpadding=\"2\">\n\n<tbody><tr class=\"plainlinks\">\n<td><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Emblem-camera.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Emblem-camera.svg/40px-Emblem-camera.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"25\" height=\"25\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Emblem-camera.svg/60px-Emblem-camera.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></a></span>  <a href=\"https://upload.wikimedia.org/wikipedia/commons/3/34/Casina_Valadier_lato_SO_Roma.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=api&amp;utm_content=original\" class=\"internal\" title=\"Casina Valadier lato SO Roma.jpg\">This Photo</a> was taken by <i><b><a href=\"//commons.wikimedia.org/wiki/User:Moroder\" title=\"User:Moroder\">Wolfgang Moroder</a></b></i>.  <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:User_with_smile.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/User_with_smile.svg/40px-User_with_smile.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"25\" height=\"25\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/User_with_smile.svg/60px-User_with_smile.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"128\" data-file-height=\"128\"></a></span>\n</td>\n<td align=\"right\">Feel free to use my photos, but please mention me as the author and send me a  <a class=\"external text\" data-mw-original-href=\"http://commons.wikimedia.org/w/index.php?title=User_talk:Moroder&amp;action=edit&amp;section=new\" href=\"https://commons.wikimedia.org/w/index.php?title=User_talk:Moroder&amp;action=edit&amp;section=new\">message</a>. <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Crystal_128_mail.png\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Crystal_128_mail.png/40px-Crystal_128_mail.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"25\" height=\"25\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Crystal_128_mail.png/60px-Crystal_128_mail.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"128\" data-file-height=\"128\"></a></span>\n</td></tr></tbody></table>\n<div style=\"clear:both; border:2px solid #cc0000; background-color:#f7f7f7; margin-top:6px;\">\n<table><tbody><tr><td style=\"padding:4px;\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Control_copyright_icon.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Control_copyright_icon.svg/120px-Control_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"61\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Control_copyright_icon.svg/250px-Control_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"171\" data-file-height=\"163\"></a></span>\n</td><td style=\"padding:4px;\"><div style=\"margin-top:0.5em;\">This image is <b>not in the <a href=\"https://en.wikipedia.org/wiki/Public_domain\" class=\"extiw\" title=\"en:Public domain\">public domain</a></b>. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically <b>excludes use in social media</b>, if applicable terms of the licenses listed here are not appropriate.</div>\n</td></tr></tbody></table></div>\n<div style=\"clear:both; border:2px solid #00cc00; background-color:#f7f7f7; margin-top:6px;\">\n<table><tbody><tr><td style=\"padding:4px;\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Upload-problem2.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Upload-problem2.svg/120px-Upload-problem2.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"57\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Upload-problem2.svg/250px-Upload-problem2.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"159\" data-file-height=\"142\"></a></span>\n</td><td style=\"padding:4px;\"><div style=\"margin-top:0.5em;\">Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.<br>Please if you think that any changes should be required, please inform the author.<br>Otherwise you can upload a new image with a new name. Please use one of the templates <a href=\"//commons.wikimedia.org/wiki/Template:Derived_from\" title=\"Template:Derived from\">derivative</a> or <a href=\"//commons.wikimedia.org/wiki/Template:Extracted_from\" title=\"Template:Extracted from\">extract</a>.</div>\n</td></tr></tbody></table></div>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/59070819",
+    "local_path": "seed-assets/rome-photos/casina-valadier.jpg"
+  },
+  {
+    "slug": "laghetto-villa-borghese",
+    "found": true,
+    "title": "File:Villa Borghese (Rome) - Laghetto, tempio di Asclepio.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:NikonZ7II\" title=\"User:NikonZ7II\">NikonZ7II</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/116431938",
+    "local_path": "seed-assets/rome-photos/laghetto-villa-borghese.jpg"
+  },
+  {
+    "slug": "giardino-aranci",
+    "found": true,
+    "title": "File:Giardino degli aranci (Roma).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Bex-Lemon\" title=\"User:Bex-Lemon\">Bex-Lemon</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/77311051",
+    "local_path": "seed-assets/rome-photos/giardino-aranci.jpg"
+  },
+  {
+    "slug": "buco-serratura",
+    "found": true,
+    "title": "File:Il buco della serratura - Priorato dei Cavalieri di Malta (25525267346).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/7897906@N06\">Luca Nebuloni</a>",
+    "license": "CC BY 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/57474989",
+    "local_path": "seed-assets/rome-photos/buco-serratura.jpg"
+  },
+  {
+    "slug": "piramide-cestio",
+    "found": true,
+    "title": "File:Roma - Piramide Cestia - 2024-09-18 14-11-18 001.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:BeshevI&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:BeshevI (page does not exist)\">BeshevI</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/152807608",
+    "local_path": "seed-assets/rome-photos/piramide-cestio.jpg"
+  },
+  {
+    "slug": "cimitero-acattolico-roma",
+    "found": true,
+    "title": "File:Cimitero acattolico Rome 085.JPG",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Marcus_Cyron\" title=\"User:Marcus Cyron\">Marcus Cyron</a>",
+    "license": "CC BY 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/24866600",
+    "local_path": "seed-assets/rome-photos/cimitero-acattolico-roma.jpg"
+  },
+  {
+    "slug": "mercato-testaccio",
+    "found": true,
+    "title": "File:Testaccio - il nuovo mercato 1280317.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Lalupa\" title=\"User:Lalupa\">Lalupa</a>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/28366104",
+    "local_path": "seed-assets/rome-photos/mercato-testaccio.jpg"
+  },
+  {
+    "slug": "centrale-montemartini",
+    "found": true,
+    "title": "File:Centrale Montemartini, Rome (22172805771).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/41523983@N08\">Carole Raddato</a> from FRANKFURT, Germany",
+    "license": "CC BY-SA 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/45895038",
+    "local_path": "seed-assets/rome-photos/centrale-montemartini.jpg"
+  },
+  {
+    "slug": "rione-monti",
+    "found": true,
+    "title": "File:Rione I Monti, Rome, Lazio, Italy - panoramio.jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161025231951/http://www.panoramio.com/user/861544?with_photo_id=72888651\">trolvag</a>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/54766797",
+    "local_path": "seed-assets/rome-photos/rione-monti.jpg"
+  },
+  {
+    "slug": "santa-maria-maggiore",
+    "found": true,
+    "title": "File:Basilica di Santa Maria Maggiore abside a Roma.jpg",
+    "artist": "<table class=\"toccolours\" style=\"width:100%; margin-top:10px;\" cellpadding=\"2\">\n\n<tbody><tr class=\"plainlinks\">\n<td><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Emblem-camera.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Emblem-camera.svg/40px-Emblem-camera.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"25\" height=\"25\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Emblem-camera.svg/60px-Emblem-camera.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></a></span>  <a href=\"https://upload.wikimedia.org/wikipedia/commons/7/71/Basilica_di_Santa_Maria_Maggiore_abside_a_Roma.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=api&amp;utm_content=original\" class=\"internal\" title=\"Basilica di Santa Maria Maggiore abside a Roma.jpg\">This Photo</a> was taken by <i><b><a href=\"//commons.wikimedia.org/wiki/User:Moroder\" title=\"User:Moroder\">Wolfgang Moroder</a></b></i>.  <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:User_with_smile.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/User_with_smile.svg/40px-User_with_smile.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"25\" height=\"25\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/User_with_smile.svg/60px-User_with_smile.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"128\" data-file-height=\"128\"></a></span>\n</td>\n<td align=\"right\">Feel free to use my photos, but please mention me as the author and send me a  <a class=\"external text\" data-mw-original-href=\"http://commons.wikimedia.org/w/index.php?title=User_talk:Moroder&amp;action=edit&amp;section=new\" href=\"https://commons.wikimedia.org/w/index.php?title=User_talk:Moroder&amp;action=edit&amp;section=new\">message</a>. <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Crystal_128_mail.png\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Crystal_128_mail.png/40px-Crystal_128_mail.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"25\" height=\"25\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Crystal_128_mail.png/60px-Crystal_128_mail.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"128\" data-file-height=\"128\"></a></span>\n</td></tr></tbody></table>\n<div style=\"clear:both; border:2px solid #cc0000; background-color:#f7f7f7; margin-top:6px;\">\n<table><tbody><tr><td style=\"padding:4px;\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Control_copyright_icon.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Control_copyright_icon.svg/120px-Control_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"61\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Control_copyright_icon.svg/250px-Control_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"171\" data-file-height=\"163\"></a></span>\n</td><td style=\"padding:4px;\"><div style=\"margin-top:0.5em;\">This image is <b>not in the <a href=\"https://en.wikipedia.org/wiki/Public_domain\" class=\"extiw\" title=\"en:Public domain\">public domain</a></b>. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically <b>excludes use in social media</b>, if applicable terms of the licenses listed here are not appropriate.</div>\n</td></tr></tbody></table></div>\n<div style=\"clear:both; border:2px solid #00cc00; background-color:#f7f7f7; margin-top:6px;\">\n<table><tbody><tr><td style=\"padding:4px;\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Upload-problem2.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Upload-problem2.svg/120px-Upload-problem2.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"57\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Upload-problem2.svg/250px-Upload-problem2.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"159\" data-file-height=\"142\"></a></span>\n</td><td style=\"padding:4px;\"><div style=\"margin-top:0.5em;\">Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.<br>Please if you think that any changes should be required, please inform the author.<br>Otherwise you can upload a new image with a new name. Please use one of the templates <a href=\"//commons.wikimedia.org/wiki/Template:Derived_from\" title=\"Template:Derived from\">derivative</a> or <a href=\"//commons.wikimedia.org/wiki/Template:Extracted_from\" title=\"Template:Extracted from\">extract</a>.</div>\n</td></tr></tbody></table></div>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/74326108",
+    "local_path": "seed-assets/rome-photos/santa-maria-maggiore.jpg"
+  },
+  {
+    "slug": "san-pietro-in-vincoli",
+    "found": true,
+    "title": "File:San Pietro in Vincoli - Roma, facciata.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Luciano_Tronati\" title=\"User:Luciano Tronati\">Luciano Tronati</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/57092260",
+    "local_path": "seed-assets/rome-photos/san-pietro-in-vincoli.jpg"
+  },
+  {
+    "slug": "domus-aurea",
+    "found": true,
+    "title": "File:Sala della Sfinge (Sphinx Room), Domus aurea, Rome.jpg",
+    "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>, Ufficio Stampa Parco Archeologico Del Colosseo",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/79028948",
+    "local_path": "seed-assets/rome-photos/domus-aurea.jpg"
+  },
+  {
+    "slug": "case-romane-celio",
+    "found": true,
+    "title": "File:Bacini ceramici, 1150 ca. (antiquarium delle case romane al celio, presso i ss. giovanni e paolo al celio) 05.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Sailko\" title=\"User:Sailko\">Francesco Bini</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/162419231",
+    "local_path": "seed-assets/rome-photos/case-romane-celio.jpg"
+  },
+  {
+    "slug": "san-giovanni-laterano",
+    "found": true,
+    "title": "File:Rom, Basilika San Giovanni in Laterano (14164084913).jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/69460501@N04\">Heribert Pohl --- Thanks for half  a million clicks!</a> from Germering bei München, Bayern",
+    "license": "CC BY-SA 2.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/34099009",
+    "local_path": "seed-assets/rome-photos/san-giovanni-laterano.jpg"
+  },
+  {
+    "slug": "via-appia-antica",
+    "found": true,
+    "title": "File:Rome Lazio Via Appia Antica.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Nhartmannphotos\" title=\"User:Nhartmannphotos\">Nicholas Hartmann</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/97352873",
+    "local_path": "seed-assets/rome-photos/via-appia-antica.jpg"
+  },
+  {
+    "slug": "catacombe-san-callisto",
+    "found": true,
+    "title": "File:Roma, Ingresso Catacombe di San Callisto.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Palickap&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Palickap (page does not exist)\">Palickap</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/66183822",
+    "local_path": "seed-assets/rome-photos/catacombe-san-callisto.jpg"
+  },
+  {
+    "slug": "catacombe-san-sebastiano",
+    "found": true,
+    "title": "File:Roma, Catacombe di San Sebastiano (1).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Palickap&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Palickap (page does not exist)\">Palickap</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/66184227",
+    "local_path": "seed-assets/rome-photos/catacombe-san-sebastiano.jpg"
+  },
+  {
+    "slug": "terme-caracalla",
+    "found": true,
+    "title": "File:Thermes de Caracalla (Rome) (4).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Gzen92\" title=\"User:Gzen92\">Gzen92</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/53501568",
+    "local_path": "seed-assets/rome-photos/terme-caracalla.jpg"
+  },
+  {
+    "slug": "mausoleo-cecilia-metella",
+    "found": true,
+    "title": "File:Roma Appia Antica - mausoleo Cecilia Metella.JPG",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Lalupa\" title=\"User:Lalupa\">Lalupa</a>",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/385176",
+    "local_path": "seed-assets/rome-photos/mausoleo-cecilia-metella.jpg"
+  },
+  {
+    "slug": "circo-massenzio",
+    "found": true,
+    "title": "File:Roma, Circo di Massenzio (1).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Palickap&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Palickap (page does not exist)\">Palickap</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/66219619",
+    "local_path": "seed-assets/rome-photos/circo-massenzio.jpg"
+  },
+  {
+    "slug": "villa-d-este-tivoli",
+    "found": true,
+    "title": "File:Tivoli - Villa D'Este - panoramio - gian luca bucci.jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161013055037/http://www.panoramio.com/user/819712?with_photo_id=11577299\">gian luca bucci</a>",
+    "license": "CC BY 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/48552632",
+    "local_path": "seed-assets/rome-photos/villa-d-este-tivoli.jpg"
+  },
+  {
+    "slug": "villa-adriana-tivoli",
+    "found": true,
+    "title": "File:Archaeological remains in Villa Adriana (Tivoli, Rome).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Anna_Eden_86&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Anna Eden 86 (page does not exist)\">Anna Eden 86</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/123268806",
+    "local_path": "seed-assets/rome-photos/villa-adriana-tivoli.jpg"
+  },
+  {
+    "slug": "centro-storico-tivoli",
+    "found": true,
+    "title": "File:Santa Maria Maggiore (Tivoli) 01.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Codas\" title=\"User:Codas\">Davide Mauro</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/82451538",
+    "local_path": "seed-assets/rome-photos/centro-storico-tivoli.jpg"
+  },
+  {
+    "slug": "tempio-vesta-tivoli",
+    "found": true,
+    "title": "File:Tempio di Vesta, Tivoli (RM).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Anna_Eden_86&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Anna Eden 86 (page does not exist)\">Anna Eden 86</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/123271139",
+    "local_path": "seed-assets/rome-photos/tempio-vesta-tivoli.jpg"
+  },
+  {
+    "slug": "cascate-villa-gregoriana",
+    "found": true,
+    "title": "File:Parco Villa Gregoriana .jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Parco_Villa_Gregoriana&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Parco Villa Gregoriana (page does not exist)\">Parco Villa Gregoriana</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/80628150",
+    "local_path": "seed-assets/rome-photos/cascate-villa-gregoriana.jpg"
+  },
+  {
+    "slug": "ristorante-sibilla-tivoli",
+    "found": true,
+    "title": "File:Terrace - Ristorante Sibilla - Tivoli, Italy - DSC03832.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Daderot\" title=\"User:Daderot\">Daderot</a>",
+    "license": "CC0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/80370410",
+    "local_path": "seed-assets/rome-photos/ristorante-sibilla-tivoli.jpg"
+  },
+  {
+    "slug": "scavi-ostia-antica",
+    "found": true,
+    "title": "File:Decumano Maximus scavi di ostia antica.JPG",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Bolo77\" title=\"User:Bolo77\">Stefano Bolognini</a>",
+    "license": "CC BY 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/5575265",
+    "local_path": "seed-assets/rome-photos/scavi-ostia-antica.jpg"
+  },
+  {
+    "slug": "teatro-romano-ostia",
+    "found": true,
+    "title": "File:Teatro Romano di Ostia..JPG",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Franzo3&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Franzo3 (page does not exist)\">Franzo3</a>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/27749620",
+    "local_path": "seed-assets/rome-photos/teatro-romano-ostia.jpg"
+  },
+  {
+    "slug": "terme-ostia",
+    "found": true,
+    "title": "File:Poseidon mosaic Terme di Nettuno Ostia Antica.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:MatthiasKabel\" title=\"User:MatthiasKabel\">User:MatthiasKabel</a>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/6700568",
+    "local_path": "seed-assets/rome-photos/terme-ostia.jpg"
+  },
+  {
+    "slug": "castello-giulio-ii-ostia",
+    "found": true,
+    "title": "File:Castello di Giulio II ad Ostia Antica ( Roma).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Giuseppe_Rampolla&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Giuseppe Rampolla (page does not exist)\">Giuseppe Rampolla</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/123164949",
+    "local_path": "seed-assets/rome-photos/castello-giulio-ii-ostia.jpg"
+  },
+  {
+    "slug": "lido-di-ostia",
+    "found": true,
+    "title": "File:MARE OSTIA LIDO ROMA - panoramio - ispirato.jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161012012437/http://www.panoramio.com/user/2097411?with_photo_id=12814565\">ispirato</a>",
+    "license": "CC BY-SA 3.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/49441158",
+    "local_path": "seed-assets/rome-photos/lido-di-ostia.jpg"
+  },
+  {
+    "slug": "aeroporto-fiumicino",
+    "found": true,
+    "title": "File:Aeroporto di Roma-Fiumicino (2024) 1.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Air_fans&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Air fans (page does not exist)\">Air fans</a>",
+    "license": "CC0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/149606683",
+    "local_path": "seed-assets/rome-photos/aeroporto-fiumicino.jpg"
+  },
+  {
+    "slug": "aeroporto-ciampino",
+    "found": true,
+    "title": "File:Ciampino–G. B. Pastine International Airport in 2018.01.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:CAPTAIN_RAJU\" title=\"User:CAPTAIN RAJU\">CAPTAIN RAJU</a>",
+    "license": "CC BY-SA 4.0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/page/71544416",
+    "local_path": "seed-assets/rome-photos/aeroporto-ciampino.jpg"
+  }
+]
