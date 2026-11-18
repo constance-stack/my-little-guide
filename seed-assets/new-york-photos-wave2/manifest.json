@@ -1,0 +1,300 @@
+[
+  {
+    "slug": "230-fifth-rooftop-bar",
+    "name": "230 Fifth Rooftop Bar",
+    "found": false
+  },
+  {
+    "slug": "911-memorial-museum",
+    "name": "Mémorial et musée du 11 Septembre (9/11 Memorial & Museum)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ken Lund",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:National_September_11_Memorial,_World_Trade_Center,_New_York,_New_York_-_Flickr_id_32584500217.jpg"
+  },
+  {
+    "slug": "arthur-avenue-little-italy-bronx",
+    "name": "Arthur Avenue (Little Italy du Bronx)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Leonard J. DeFrancisci",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Arthur_Avenue_Retail_Market_(Bronx,_New_York)_001.jpg"
+  },
+  {
+    "slug": "balthazar",
+    "name": "Balthazar",
+    "found": false
+  },
+  {
+    "slug": "broadway-show",
+    "name": "Spectacle à Broadway (a Broadway show)",
+    "found": true,
+    "source": "Unsplash",
+    "artist": "Andrea Pedruzzi",
+    "license": "Unsplash License",
+    "source_url": "https://unsplash.com/photos/ed-sullivan-theater-marquee-in-new-york-4wlLonNYrNE"
+  },
+  {
+    "slug": "bushwick-graffiti-workshop",
+    "name": "Atelier graffiti à Bushwick (graffiti workshop)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Kidfly182",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bushwick_Collective_007.jpg"
+  },
+  {
+    "slug": "central-park-east",
+    "name": "Central Park (côté est / east side)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "King of Hearts",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Central_Park_New_York_May_2015_007.jpg"
+  },
+  {
+    "slug": "chelsea-galleries",
+    "name": "Galeries d'art de Chelsea (Chelsea art galleries)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Tdorante10",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:23rd_St_10th_Av_td_(2018-11-27)_21_-_501_West_23rd_Street.jpg"
+  },
+  {
+    "slug": "cote-korean-steakhouse",
+    "name": "Cote Korean Steakhouse",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jim.henderson",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cote_(restaurant)_22St_HDR_2022_jeh.jpg"
+  },
+  {
+    "slug": "dakota-building",
+    "name": "The Dakota",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "User:stonyrun",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dakota_Apartment_Building_2_CPW.jpeg"
+  },
+  {
+    "slug": "dominique-ansel-bakery",
+    "name": "Dominique Ansel Bakery",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "LittleT889",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dominique_Ansel_Bakery.jpg"
+  },
+  {
+    "slug": "doyers-street",
+    "name": "Doyers Street",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ken Lund from Reno, Nevada, USA",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Doyers_Street,_Chinatown,_Manhattan,_New_York_(7237356826).jpg"
+  },
+  {
+    "slug": "dyker-heights-christmas-lights",
+    "name": "Dyker Heights (illuminations de Noël)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Rachel L'Heureux",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dyker_Heights_Christmas_Lights.jpg"
+  },
+  {
+    "slug": "economy-candy",
+    "name": "Economy Candy",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Kidfly182",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Economy_Candy.jpg"
+  },
+  {
+    "slug": "edge-hudson-yards",
+    "name": "Edge (Hudson Yards)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Wikipettanko",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Edge_NYC_observation_deck_at_30_Hudson_Yards.jpg"
+  },
+  {
+    "slug": "grand-army-plaza-greenmarket",
+    "name": "Grand Army Plaza Greenmarket",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Unknown (Commons uploader)",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Green-Market-Grand-Army-Plaza-Large.jpg"
+  },
+  {
+    "slug": "grand-central-whispering-gallery",
+    "name": "Whispering Gallery (Grand Central)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Pi.1415926535",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Carving_on_ventilation_shaft_at_GCT_whispering_gallery,_September_2025.jpg"
+  },
+  {
+    "slug": "hells-kitchen-restaurant-row",
+    "name": "Restaurant Row (Hell's Kitchen)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Laslovarga",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Restaurant_Row_0473New_York_City.JPG"
+  },
+  {
+    "slug": "jackson-heights-queens",
+    "name": "Jackson Heights",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jim.henderson",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Little_Amal_at_Jackson_Heights%E2%80%93Roosevelt_Avenue-74th_St_HDR_2022_jeh.jpg"
+  },
+  {
+    "slug": "jewish-museum",
+    "name": "Jewish Museum",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ajay Suresh",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jewish_Museum_(48059132236).jpg"
+  },
+  {
+    "slug": "joes-pizza",
+    "name": "Joe's Pizza",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Steam Pipe Trunk Distribution Venue",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Joe%27s_Pizza,_Greenwich_Village,_NYC.jpg"
+  },
+  {
+    "slug": "le-bernardin",
+    "name": "Le Bernardin",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Arnold Gatilao",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Interior_of_Le_Bernardin.jpg"
+  },
+  {
+    "slug": "met-cloisters",
+    "name": "The Cloisters",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Gigi alt",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Cloisters_at_Fort_Tryon.jpg"
+  },
+  {
+    "slug": "neue-galerie",
+    "name": "Neue Galerie",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Francesca.hyanna19",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Neue_Galerie,_New_York.jpg"
+  },
+  {
+    "slug": "park-slope-5th-avenue",
+    "name": "Park Slope (5th Avenue)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jim.henderson",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Park_Slope_Ale_House_2023_jeh.jpg"
+  },
+  {
+    "slug": "peter-luger-steak-house",
+    "name": "Peter Luger Steak House",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Leonard J. DeFrancisci",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Peter_Luger_Steak_House_(Brooklyn,_New_York)_001.jpg"
+  },
+  {
+    "slug": "rockaway-beach",
+    "name": "Rockaway Beach",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jessica Sheridan from NYC, USA",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rockaway_Beach_(9639553883).jpg"
+  },
+  {
+    "slug": "rockefeller-center-ice-rink",
+    "name": "Patinoire du Rockefeller Center",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Oleg Yunakov",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rockefeller_Center_Ice_Rink_filled_with_winter_skaters.jpg"
+  },
+  {
+    "slug": "smorgasburg",
+    "name": "Smorgasburg",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "dumbonyc",
+    "license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Smorgasburg_in_Dumbo.jpg"
+  },
+  {
+    "slug": "soho-cast-iron-historic-district",
+    "name": "SoHo (quartier historique en fonte)",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Elisa.rolle",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:SoHo_Cast_Iron_Historic_District_034.JPG"
+  },
+  {
+    "slug": "sylvias-restaurant",
+    "name": "Sylvia's Restaurant",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Ajay Suresh from New York, NY, USA",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Harlem_-_Sylvia%27s_Restaurant_(48555310372).jpg"
+  },
+  {
+    "slug": "trinity-church-wall-street",
+    "name": "Trinity Church",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Lerxst15",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Trinity_Church_looking_down_Wall_Street,_Manhattan,_NY.jpg"
+  },
+  {
+    "slug": "united-nations-headquarters",
+    "name": "Siège des Nations Unies",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Choinowski",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:United_Nations_Secretariat_Building.jpg"
+  },
+  {
+    "slug": "via-carota",
+    "name": "Via Carota",
+    "found": true,
+    "source": "Wikimedia Commons",
+    "artist": "Jim.henderson",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Via_Carota_2023_jeh.jpg"
+  }
+]
