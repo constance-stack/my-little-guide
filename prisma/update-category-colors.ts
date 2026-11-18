@@ -21,12 +21,11 @@ const CATEGORY_COLORS: Record<string, string> = {
   "points-de-vue": "#1f7a8c",
 };
 
-const connectionString = process.env.DATABASE_URL!;
-const isRemote = !connectionString.includes("localhost");
-const adapter = new PrismaPg(
-  { connectionString },
-  { ssl: isRemote ? { rejectUnauthorized: false } : undefined }
-);
+const isRemote = !process.env.DATABASE_URL?.includes("localhost");
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+  ssl: isRemote ? { rejectUnauthorized: false } : undefined,
+});
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
