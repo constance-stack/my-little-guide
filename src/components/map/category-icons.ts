@@ -107,18 +107,23 @@ function drawStar(ctx: CanvasRenderingContext2D, cx: number, cy: number, outerR:
 }
 
 function drawTemple(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
-  // A single rounded monument arch — one shape, reads as "historic site"
-  // without the blocky three-bar column look.
-  const w = size * 0.24;
-  const topY = cy - size * 0.28;
-  const baseY = cy + size * 0.28;
+  // A small building — pitched roof over a body, with a doorway cut out
+  // (evenodd fill) — reads plainly as "monument/museum" at marker size.
+  const halfW = size * 0.26;
+  const roofTopY = cy - size * 0.3;
+  const roofBaseY = cy - size * 0.08;
+  const baseY = cy + size * 0.3;
+  const doorW = size * 0.09;
+  const doorTopY = cy + size * 0.06;
+
   ctx.beginPath();
-  ctx.moveTo(cx - w, baseY);
-  ctx.lineTo(cx - w, topY + w);
-  ctx.arc(cx, topY + w, w, Math.PI, 0);
-  ctx.lineTo(cx + w, baseY);
+  ctx.moveTo(cx, roofTopY);
+  ctx.lineTo(cx + halfW * 1.1, roofBaseY);
+  ctx.lineTo(cx - halfW * 1.1, roofBaseY);
   ctx.closePath();
-  ctx.fill();
+  ctx.rect(cx - halfW, roofBaseY, halfW * 2, baseY - roofBaseY);
+  ctx.rect(cx - doorW / 2, doorTopY, doorW, baseY - doorTopY);
+  ctx.fill("evenodd");
 }
 
 function drawWalkPath(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
