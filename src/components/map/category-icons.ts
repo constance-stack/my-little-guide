@@ -179,19 +179,28 @@ function drawFork(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: n
 }
 
 function drawBowl(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
-  // One bowl arc, one pair of chopsticks — no steam curls, which blurred
-  // into the bowl at small size.
+  // A bowl with wavy noodle strands rising out of it, plus one chopstick
+  // resting across the rim — reads as "noodles" specifically, not just
+  // generic chopsticks.
   ctx.beginPath();
-  ctx.arc(cx, cy + size * 0.08, size * 0.26, 0.05 * Math.PI, 0.95 * Math.PI);
+  ctx.arc(cx, cy + size * 0.1, size * 0.26, 0.05 * Math.PI, 0.95 * Math.PI);
   ctx.closePath();
   ctx.fill();
+
   ctx.lineWidth = size * 0.045;
   ctx.strokeStyle = ctx.fillStyle;
+  ctx.lineCap = "round";
+  const rimY = cy - size * 0.02;
+  for (const dx of [-size * 0.1, size * 0.08]) {
+    ctx.beginPath();
+    ctx.moveTo(cx + dx, rimY);
+    ctx.quadraticCurveTo(cx + dx - size * 0.07, rimY - size * 0.14, cx + dx + size * 0.03, rimY - size * 0.28);
+    ctx.stroke();
+  }
+
   ctx.beginPath();
-  ctx.moveTo(cx - size * 0.02, cy - size * 0.04);
-  ctx.lineTo(cx + size * 0.2, cy - size * 0.32);
-  ctx.moveTo(cx + size * 0.1, cy - size * 0.04);
-  ctx.lineTo(cx + size * 0.3, cy - size * 0.26);
+  ctx.moveTo(cx - size * 0.22, cy + size * 0.04);
+  ctx.lineTo(cx + size * 0.28, cy - size * 0.28);
   ctx.stroke();
 }
 

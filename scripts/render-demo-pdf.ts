@@ -30,7 +30,7 @@ async function main() {
       displayHeaderFooter: true,
       headerTemplate: "<div></div>",
       footerTemplate: `
-        <div style="font-size:9px; width:100%; text-align:center; color:#8a7a63; font-family:Georgia,serif;">
+        <div style="font-size:9px; width:100%; text-align:center; color:#64748b; font-family:Georgia,serif;">
           My Little Guide — <span class="pageNumber"></span> / <span class="totalPages"></span>
         </div>
       `,

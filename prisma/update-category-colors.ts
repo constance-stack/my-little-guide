@@ -6,19 +6,19 @@ import { PrismaClient } from "../src/generated/prisma/client";
 
 const CATEGORY_COLORS: Record<string, string> = {
   incontournables: "#b8862e",
-  "temples-patrimoine": "#8a4a3f",
-  "quartiers-balades": "#3f6b52",
-  "experiences-insolites": "#8c3a6b",
-  "activites-famille": "#2e6b94",
-  restaurants: "#7a2e3d",
-  "street-food": "#c2751f",
-  "cafes-brunchs": "#5c4030",
-  "bars-rooftops": "#4a3570",
-  marches: "#9c5a35",
-  shopping: "#8c4568",
-  excursions: "#35508c",
-  "bien-etre-spas": "#5a8c6b",
-  "points-de-vue": "#1f7a8c",
+  "temples-patrimoine": "#b5502c",
+  "quartiers-balades": "#3f7a4a",
+  "experiences-insolites": "#9c3fb8",
+  "activites-famille": "#2e63b8",
+  restaurants: "#b8213f",
+  "street-food": "#c9781e",
+  "cafes-brunchs": "#5c3a28",
+  "bars-rooftops": "#3f4bb8",
+  marches: "#7a8a2e",
+  shopping: "#6b3fb8",
+  excursions: "#1f3d7a",
+  "bien-etre-spas": "#3f9c6e",
+  "points-de-vue": "#1f8a8c",
 };
 
 const isRemote = !process.env.DATABASE_URL?.includes("localhost");

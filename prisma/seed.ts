@@ -38,19 +38,19 @@ const prisma = new PrismaClient({ adapter });
 // the old warm terracotta/gold/brown set that no longer matched.
 const GLOBAL_CATEGORIES = [
   { slug: "incontournables", name: "Incontournables", icon: "star", color: "#b8862e" },
-  { slug: "temples-patrimoine", name: "Temples, patrimoine et musées", icon: "temple", color: "#8a4a3f" },
-  { slug: "quartiers-balades", name: "Balades et nature", icon: "walk", color: "#3f6b52" },
-  { slug: "experiences-insolites", name: "Expériences insolites", icon: "sparkle", color: "#8c3a6b" },
-  { slug: "activites-famille", name: "Activités en famille", icon: "family", color: "#2e6b94" },
-  { slug: "restaurants", name: "Restaurants", icon: "fork", color: "#7a2e3d" },
-  { slug: "street-food", name: "Street food", icon: "noodles", color: "#c2751f" },
-  { slug: "cafes-brunchs", name: "Cafés et brunchs", icon: "coffee", color: "#5c4030" },
-  { slug: "bars-rooftops", name: "Bars et vie nocturne", icon: "cocktail", color: "#4a3570" },
-  { slug: "marches", name: "Marchés", icon: "basket", color: "#9c5a35" },
-  { slug: "shopping", name: "Shopping", icon: "bag", color: "#8c4568" },
-  { slug: "excursions", name: "Excursions", icon: "compass", color: "#35508c" },
-  { slug: "bien-etre-spas", name: "Bien-être et spas", icon: "lotus", color: "#5a8c6b" },
-  { slug: "points-de-vue", name: "Points de vue", icon: "view", color: "#1f7a8c" },
+  { slug: "temples-patrimoine", name: "Temples, patrimoine et musées", icon: "temple", color: "#b5502c" },
+  { slug: "quartiers-balades", name: "Balades et nature", icon: "walk", color: "#3f7a4a" },
+  { slug: "experiences-insolites", name: "Expériences insolites", icon: "sparkle", color: "#9c3fb8" },
+  { slug: "activites-famille", name: "Activités en famille", icon: "family", color: "#2e63b8" },
+  { slug: "restaurants", name: "Restaurants", icon: "fork", color: "#b8213f" },
+  { slug: "street-food", name: "Street food", icon: "noodles", color: "#c9781e" },
+  { slug: "cafes-brunchs", name: "Cafés et brunchs", icon: "coffee", color: "#5c3a28" },
+  { slug: "bars-rooftops", name: "Bars et vie nocturne", icon: "cocktail", color: "#3f4bb8" },
+  { slug: "marches", name: "Marchés", icon: "basket", color: "#7a8a2e" },
+  { slug: "shopping", name: "Shopping", icon: "bag", color: "#6b3fb8" },
+  { slug: "excursions", name: "Excursions", icon: "compass", color: "#1f3d7a" },
+  { slug: "bien-etre-spas", name: "Bien-être et spas", icon: "lotus", color: "#3f9c6e" },
+  { slug: "points-de-vue", name: "Points de vue", icon: "view", color: "#1f8a8c" },
 ];
 
 const BANGKOK_ENABLED_CATEGORIES = [
