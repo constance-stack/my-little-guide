@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 // maplibre-gl ships no default export (v6) — only named exports.
 import * as maplibregl from "maplibre-gl";
 import type { Map as MapLibreMap, MapGeoJSONFeature } from "maplibre-gl";
@@ -86,6 +86,11 @@ export function InteractiveMap({
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
+  // The map is created centered on a fixed fallback point (see below) and
+  // only actually positioned once real place data arrives — without this,
+  // every page load briefly flashed that fallback city before snapping to
+  // the right one. Hidden until positioned, then revealed in place.
+  const [positioned, setPositioned] = useState(false);
   const clusterEnabledRef = useRef(clusterEnabled);
   // Latest-value refs for callbacks read from inside MapLibre event
   // handlers registered once in the map-creation effect below — kept in
@@ -359,6 +364,7 @@ export function InteractiveMap({
     const coords = fitBoundsData.features.map((f) => f.geometry.coordinates as [number, number]);
     if (coords.length === 1) {
       map.easeTo({ center: coords[0], zoom: 12 });
+      setPositioned(true);
       return;
     }
     let minLng = Infinity, minLat = Infinity, maxLng = -Infinity, maxLat = -Infinity;
@@ -375,7 +381,17 @@ export function InteractiveMap({
       ],
       { padding: 60, maxZoom: 14, duration: 0 }
     );
+    setPositioned(true);
   }, [fitBoundsData]);
+
+  // Safety net: a destination that's genuinely empty never gets a
+  // fitBounds call above (0 features), which would otherwise leave the
+  // map hidden forever. Reveal it at the fallback view after a short
+  // grace period if nothing has positioned it by then.
+  useEffect(() => {
+    const timer = setTimeout(() => setPositioned(true), 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Center on a specific point (deep-link / list click) without changing
   // which place is selected.
@@ -387,5 +403,11 @@ export function InteractiveMap({
     else map.once("load", run);
   }, [centerOn]);
 
-  return <div ref={containerRef} className="h-full w-full" data-selected={selectedPlaceId ?? undefined} />;
+  return (
+    <div
+      ref={containerRef}
+      className={`h-full w-full transition-opacity duration-150 ${positioned ? "opacity-100" : "opacity-0"}`}
+      data-selected={selectedPlaceId ?? undefined}
+    />
+  );
 }
