@@ -84,14 +84,12 @@ export default async function HomePage() {
             <span>PDF personnalisé</span>
             <span aria-hidden="true">·</span>
             <span>Carte privée</span>
-            <span aria-hidden="true">·</span>
-            <span>Lieux vérifiés un par un</span>
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-5xl px-4 py-20 sm:py-24">
-        <div className="grid gap-5 sm:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2">
           <FeatureCard
             accent="#a8d4e8"
             icon={<BookIcon />}
@@ -103,12 +101,6 @@ export default async function HomePage() {
             icon={<PinIcon />}
             title="Une carte vraiment utile"
             description="Uniquement les adresses des destinations achetées, avec recherche, filtres par catégorie et favoris synchronisés sur tous vos appareils."
-          />
-          <FeatureCard
-            accent="#f5bea0"
-            icon={<CheckIcon />}
-            title="Des lieux vérifiés, pas du contenu générique"
-            description="Chaque adresse est choisie et décrite à la main, avec de vraies photos — pas de liste automatique ni de texte générique."
           />
         </div>
       </section>
@@ -217,15 +209,6 @@ function PinIcon() {
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f2a4a" strokeWidth="1.5">
       <path d="M12 21s7-7.58 7-12.5A7 7 0 1 0 5 8.5C5 13.42 12 21 12 21z" />
       <circle cx="12" cy="8.5" r="2.5" />
-    </svg>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f2a4a" strokeWidth="1.5">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M8.5 12.5l2.5 2.5 4.5-5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
