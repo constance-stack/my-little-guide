@@ -24,11 +24,20 @@ export async function GET(request: Request) {
 
   const pins = await prisma.personalPin.findMany({
     where: { userId: session.user.id, destinationId: destination.id },
+    include: { category: true },
     orderBy: { createdAt: "asc" },
   });
 
   return NextResponse.json({
-    pins: pins.map((p) => ({ id: p.id, label: p.label, lat: Number(p.lat), lng: Number(p.lng) })),
+    pins: pins.map((p) => ({
+      id: p.id,
+      label: p.label,
+      lat: Number(p.lat),
+      lng: Number(p.lng),
+      categoryId: p.categoryId,
+      categoryIcon: p.category?.icon ?? null,
+      categoryColor: p.category?.color ?? null,
+    })),
   });
 }
 
@@ -39,13 +48,14 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json().catch(() => null);
-  const { destinationSlug, label, lat, lng } = body ?? {};
+  const { destinationSlug, label, lat, lng, categoryId } = body ?? {};
   if (
     typeof destinationSlug !== "string" ||
     typeof label !== "string" ||
     !label.trim() ||
     typeof lat !== "number" ||
-    typeof lng !== "number"
+    typeof lng !== "number" ||
+    (categoryId !== undefined && categoryId !== null && typeof categoryId !== "string")
   ) {
     return NextResponse.json({ error: "Champs manquants ou invalides." }, { status: 400 });
   }
@@ -62,9 +72,32 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Destination non achetée." }, { status: 403 });
   }
 
+  let category = null;
+  if (categoryId) {
+    category = await prisma.category.findUnique({ where: { id: categoryId } });
+    if (!category) {
+      return NextResponse.json({ error: "Catégorie introuvable." }, { status: 404 });
+    }
+  }
+
   const pin = await prisma.personalPin.create({
-    data: { userId: session.user.id, destinationId: destination.id, label: label.trim().slice(0, 80), lat, lng },
+    data: {
+      userId: session.user.id,
+      destinationId: destination.id,
+      label: label.trim().slice(0, 80),
+      lat,
+      lng,
+      categoryId: categoryId ?? null,
+    },
   });
 
-  return NextResponse.json({ id: pin.id, label: pin.label, lat: Number(pin.lat), lng: Number(pin.lng) });
+  return NextResponse.json({
+    id: pin.id,
+    label: pin.label,
+    lat: Number(pin.lat),
+    lng: Number(pin.lng),
+    categoryId: pin.categoryId,
+    categoryIcon: category?.icon ?? null,
+    categoryColor: category?.color ?? null,
+  });
 }

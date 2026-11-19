@@ -48,12 +48,22 @@ export type PlaceFeatureCollection = GeoJSON.FeatureCollection<
     slug: string;
     name: string;
     zone: string | null;
-    categories: { slug: string; name: string; icon: string; color: string }[];
+    categories: { id: string; slug: string; name: string; icon: string; color: string }[];
     thumbnail: string | null;
   }
 >;
 
-export type PersonalPinData = { id: string; label: string; lat: number; lng: number };
+export type PersonalPinData = {
+  id: string;
+  label: string;
+  lat: number;
+  lng: number;
+  // Visitor-chosen, optional — when set, the pin shows this category's icon
+  // and color instead of the generic dark pin marker.
+  categoryId?: string | null;
+  categoryIcon?: string | null;
+  categoryColor?: string | null;
+};
 
 const PERSONAL_PIN_EMOJI = "📍";
 
@@ -246,7 +256,10 @@ export function InteractiveMap({
         type: "circle",
         source: "personal-pins",
         paint: {
-          "circle-color": "#2b2b2b",
+          // Falls back to the plain dark marker when a pin has no chosen
+          // category — "has" is true once the data-update effect sets the
+          // "color" property, which it only does for categorized pins.
+          "circle-color": ["case", ["has", "color"], ["get", "color"], "#2b2b2b"],
           "circle-radius": 9,
           "circle-stroke-width": 2,
           "circle-stroke-color": "#ffffff",
@@ -256,7 +269,16 @@ export function InteractiveMap({
         id: "personal-pin-icon",
         type: "symbol",
         source: "personal-pins",
-        layout: { "icon-image": PERSONAL_PIN_EMOJI, "icon-size": 0.5, "icon-allow-overlap": true, "icon-ignore-placement": true },
+        layout: {
+          // Each pin's own "icon"/"iconSize" properties (set in the data-update
+          // effect below) pick either the chosen category's glyph or the plain
+          // pin emoji fallback — the two image types render at different
+          // natural sizes (see the category-icon overflow fix elsewhere).
+          "icon-image": ["get", "icon"],
+          "icon-size": ["get", "iconSize"],
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
+        },
       });
       map.on("click", "personal-pin-point", (e) => {
         const feature = e.features?.[0] as MapGeoJSONFeature | undefined;
@@ -341,12 +363,31 @@ export function InteractiveMap({
     const update = () => {
       const source = map.getSource("personal-pins") as maplibregl.GeoJSONSource | undefined;
       if (!source) return;
+
+      const icons = new Set(
+        personalPins.filter((p) => p.categoryIcon).map((p) => p.categoryIcon as string)
+      );
+      for (const icon of icons) {
+        const imageId = `cat-icon-${icon}`;
+        if (!map.hasImage(imageId)) {
+          map.addImage(imageId, categoryIconImageData(icon));
+        }
+      }
+
       source.setData({
         type: "FeatureCollection",
         features: personalPins.map((p) => ({
           type: "Feature",
           geometry: { type: "Point", coordinates: [p.lng, p.lat] },
-          properties: { id: p.id, label: p.label },
+          properties: p.categoryIcon
+            ? {
+                id: p.id,
+                label: p.label,
+                icon: `cat-icon-${p.categoryIcon}`,
+                iconSize: 0.27,
+                color: p.categoryColor ?? "#2b2b2b",
+              }
+            : { id: p.id, label: p.label, icon: PERSONAL_PIN_EMOJI, iconSize: 0.5 },
         })),
       });
     };

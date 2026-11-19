@@ -116,6 +116,12 @@ model PersonalPin {
   lat           Decimal     @db.Decimal(9, 6)
   lng           Decimal     @db.Decimal(9, 6)
   createdAt     DateTime    @default(now())
+
+  // Optional, visitor-chosen — lets them classify their own pin (hotel,
+  // meeting point…) under whichever category icon they like, shown on the
+  // map in place of the generic pin marker.
+  categoryId String?
+  category   Category? @relation(fields: [categoryId], references: [id])
 }
 
 /// Neighborhood (city) or beach/sector (island) — the "Où dormir ?" unit.
@@ -151,8 +157,9 @@ model Category {
   // Set only for a destination-specific extra category (isGlobal = false).
   destinations Destination[] @relation("DestinationExtraCategories")
 
-  places    PlaceCategory[]
-  favorites Favorite[]
+  places       PlaceCategory[]
+  favorites    Favorite[]
+  personalPins PersonalPin[]
 }
 
 model Place {

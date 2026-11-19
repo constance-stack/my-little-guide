@@ -53,6 +53,7 @@ export function MapPageClient({
   const [addressQuery, setAddressQuery] = useState("");
   const [addressResults, setAddressResults] = useState<{ label: string; lat: number; lng: number }[] | null>(null);
   const [addressSearching, setAddressSearching] = useState(false);
+  const [pinCategoryId, setPinCategoryId] = useState<string>("");
   const [pinError, setPinError] = useState<string | null>(null);
   const [selectedPersonalPinId, setSelectedPersonalPinId] = useState<string | null>(null);
 
@@ -115,7 +116,13 @@ export function MapPageClient({
     const res = await fetch("/api/personal-pins", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ destinationSlug, label: result.label, lat: result.lat, lng: result.lng }),
+      body: JSON.stringify({
+        destinationSlug,
+        label: result.label,
+        lat: result.lat,
+        lng: result.lng,
+        categoryId: pinCategoryId || null,
+      }),
     });
     const data = await res.json().catch(() => null);
     if (!res.ok) {
@@ -126,6 +133,22 @@ export function MapPageClient({
     setAddingPin(false);
     setAddressQuery("");
     setAddressResults(null);
+    setPinCategoryId("");
+  }
+
+  async function updatePinCategory(id: string, categoryId: string | null) {
+    const res = await fetch(`/api/personal-pins/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ categoryId }),
+    });
+    const data = await res.json().catch(() => null);
+    if (!res.ok) return;
+    setPersonalPins((prev) =>
+      prev.map((p) =>
+        p.id === id ? { ...p, categoryId, categoryIcon: data.categoryIcon, categoryColor: data.categoryColor } : p
+      )
+    );
   }
 
   async function deletePersonalPin(id: string) {
@@ -167,11 +190,11 @@ export function MapPageClient({
   }, [selectedPlaceSlug, data]);
 
   const allCategories = useMemo(() => {
-    const map = new Map<string, { slug: string; name: string; color: string }>();
+    const map = new Map<string, { id: string; slug: string; name: string; icon: string; color: string }>();
     for (const f of data.features) {
       for (const c of f.properties.categories) map.set(c.slug, c);
     }
-    return Array.from(map.values());
+    return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name));
   }, [data]);
 
   const filtered = useMemo<PlaceFeatureCollection>(() => {
@@ -317,6 +340,27 @@ export function MapPageClient({
                   </button>
                 </div>
 
+                {allCategories.length > 0 && (
+                  <div className="mb-2 flex items-center gap-1.5">
+                    <label htmlFor="pin-category" className="text-xs text-foreground/60">
+                      Icône (optionnel) :
+                    </label>
+                    <select
+                      id="pin-category"
+                      value={pinCategoryId}
+                      onChange={(e) => setPinCategoryId(e.target.value)}
+                      className="rounded border border-line bg-ivory px-2 py-1 text-xs"
+                    >
+                      <option value="">Repère générique</option>
+                      {allCategories.map((c) => (
+                        <option key={c.id} value={c.id}>
+                          {c.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+
                 {pinError && <p className="mb-2 text-xs text-red-700">{pinError}</p>}
 
                 {addressResults && (
@@ -435,6 +479,26 @@ export function MapPageClient({
             <p className="mb-3 font-serif text-lg text-foreground">
               {personalPins.find((p) => p.id === selectedPersonalPinId)?.label}
             </p>
+            {allCategories.length > 0 && (
+              <div className="mb-3 flex items-center gap-1.5">
+                <label htmlFor="pin-category-edit" className="text-xs text-foreground/60">
+                  Icône :
+                </label>
+                <select
+                  id="pin-category-edit"
+                  value={personalPins.find((p) => p.id === selectedPersonalPinId)?.categoryId ?? ""}
+                  onChange={(e) => updatePinCategory(selectedPersonalPinId, e.target.value || null)}
+                  className="rounded border border-line bg-ivory px-2 py-1 text-xs"
+                >
+                  <option value="">Repère générique</option>
+                  {allCategories.map((c) => (
+                    <option key={c.id} value={c.id}>
+                      {c.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
             <button
               type="button"
               onClick={() => deletePersonalPin(selectedPersonalPinId)}
