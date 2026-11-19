@@ -36,7 +36,7 @@ export function PlaceDetail({ place }: { place: GuidePlace }) {
         {place.categories.map((c) => (
           <span
             key={c.categoryId}
-            className="rounded-full px-3 py-1 text-xs text-ivory"
+            className="rounded-full px-3 py-1 text-xs text-sage-dark"
             style={{ backgroundColor: c.category.color }}
           >
             {c.category.name}

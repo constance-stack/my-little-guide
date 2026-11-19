@@ -18,8 +18,10 @@ function categoryIconImageData(icon: string, size = 48): ImageData {
   canvas.width = size;
   canvas.height = size;
   const ctx = canvas.getContext("2d")!;
-  ctx.fillStyle = "#ffffff";
-  ctx.strokeStyle = "#ffffff";
+  // Navy, not white — category colors are now light pastels (see
+  // prisma/seed.ts), and a white glyph would vanish against them.
+  ctx.fillStyle = "#0f2a4a";
+  ctx.strokeStyle = "#0f2a4a";
   drawCategoryIcon(ctx, icon, size);
   return ctx.getImageData(0, 0, size, size);
 }
@@ -173,8 +175,11 @@ export function InteractiveMap({
         paint: {
           "circle-color": ["get", "color"],
           "circle-radius": 8,
-          "circle-stroke-width": 2,
-          "circle-stroke-color": "#ffffff",
+          // Navy, not white — a white outline on a light pastel fill (see
+          // prisma/seed.ts) would nearly vanish against the map's own pale
+          // background, leaving markers with no definition.
+          "circle-stroke-width": 1.5,
+          "circle-stroke-color": "#0f2a4a",
         },
       });
 

@@ -72,7 +72,7 @@ export function PlaceSheet({ slug, onClose, demo = false }: { slug: string; onCl
 
           <div className="mb-3 flex flex-wrap gap-1">
             {place.categories.map((c) => (
-              <span key={c.slug} className="rounded-full px-2 py-0.5 text-[10px] text-ivory" style={{ backgroundColor: c.color }}>
+              <span key={c.slug} className="rounded-full px-2 py-0.5 text-[10px] text-sage-dark" style={{ backgroundColor: c.color }}>
                 {c.name}
               </span>
             ))}

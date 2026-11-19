@@ -5,20 +5,20 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 
 const CATEGORY_COLORS: Record<string, string> = {
-  incontournables: "#e8a816",
-  "temples-patrimoine": "#e8622e",
-  "quartiers-balades": "#2eb84f",
-  "experiences-insolites": "#c23fe8",
-  "activites-famille": "#2e97e8",
-  restaurants: "#e8213f",
-  "street-food": "#f28c1e",
-  "cafes-brunchs": "#a8672e",
-  "bars-rooftops": "#5c4de8",
-  marches: "#a8c91e",
-  shopping: "#8c3fe8",
-  excursions: "#2e5ee8",
-  "bien-etre-spas": "#2ec98a",
-  "points-de-vue": "#1ecaca",
+  incontournables: "#f5d896",
+  "temples-patrimoine": "#f5bea0",
+  "quartiers-balades": "#a8e8b8",
+  "experiences-insolites": "#e8acd8",
+  "activites-famille": "#a8d4e8",
+  restaurants: "#f5a8bc",
+  "street-food": "#f9cb9a",
+  "cafes-brunchs": "#cfab8c",
+  "bars-rooftops": "#b8acec",
+  marches: "#e0e89a",
+  shopping: "#caace8",
+  excursions: "#adc0ec",
+  "bien-etre-spas": "#a8e8ce",
+  "points-de-vue": "#a8e4e8",
 };
 
 const isRemote = !process.env.DATABASE_URL?.includes("localhost");

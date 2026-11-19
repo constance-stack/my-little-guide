@@ -83,7 +83,7 @@ export async function PlaceCardPrint({ place, accentColor }: { place: GuidePlace
           {place.categories.map((c) => (
             <span
               key={c.categoryId}
-              className="rounded-full px-2 py-0.5 text-[9px] text-ivory"
+              className="rounded-full px-2 py-0.5 text-[9px] text-sage-dark"
               style={{ backgroundColor: c.category.color }}
             >
               {c.category.name}
