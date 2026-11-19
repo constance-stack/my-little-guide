@@ -560,6 +560,18 @@ const PLACES: PlaceDef[] = [
     littleTip: "C'est un bon point de départ pour une balade continue vers La Grange et les Eaux-Vives en longeant le lac.",
     indicativeDuration: "30 min",
   },
+  {
+    slug: "oh-martine",
+    name: "Oh Martine !",
+    zone: "eaux-vives",
+    categories: ["cafes-brunchs"],
+    lat: 46.1998671, lng: 6.1627199,
+    description: "Un café au décor rétro et kitsch assumé, façon salon de grand-mère revisité, route de Chêne aux Eaux-Vives — l'une des adresses brunch les plus courues du quartier.",
+    whyVisit: "Un décor très photogénique et une ambiance décontractée, prisée pour les brunchs du week-end.",
+    littleTip: "Mieux vaut arriver tôt le week-end : les files d'attente pour le brunch peuvent être longues.",
+    indicativeDuration: "45 min à 1h",
+    indicativePrice: "$$",
+  },
 
   // ---------- Plainpalais et rive gauche ----------
   {

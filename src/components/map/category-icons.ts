@@ -107,23 +107,38 @@ function drawStar(ctx: CanvasRenderingContext2D, cx: number, cy: number, outerR:
 }
 
 function drawTemple(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
-  // A small building — pitched roof over a body, with a doorway cut out
-  // (evenodd fill) — reads plainly as "monument/museum" at marker size.
+  // A classical museum facade — pediment, entablature and columns — not
+  // a house: a plain pitched roof over a body read as "home", not
+  // "monument/museum".
   const halfW = size * 0.26;
   const roofTopY = cy - size * 0.3;
-  const roofBaseY = cy - size * 0.08;
+  const roofBaseY = cy - size * 0.12;
+  const entablatureBottomY = cy - size * 0.04;
+  const baseTopY = cy + size * 0.24;
   const baseY = cy + size * 0.3;
-  const doorW = size * 0.09;
-  const doorTopY = cy + size * 0.06;
 
+  // Pediment (triangular roof).
   ctx.beginPath();
   ctx.moveTo(cx, roofTopY);
   ctx.lineTo(cx + halfW * 1.1, roofBaseY);
   ctx.lineTo(cx - halfW * 1.1, roofBaseY);
   ctx.closePath();
-  ctx.rect(cx - halfW, roofBaseY, halfW * 2, baseY - roofBaseY);
-  ctx.rect(cx - doorW / 2, doorTopY, doorW, baseY - doorTopY);
-  ctx.fill("evenodd");
+  ctx.fill();
+
+  // Entablature (thin bar under the roof).
+  ctx.fillRect(cx - halfW, roofBaseY, halfW * 2, entablatureBottomY - roofBaseY);
+
+  // Three columns.
+  const colWidth = size * 0.07;
+  const colTopY = entablatureBottomY;
+  const gap = (halfW * 2 - colWidth * 3) / 2;
+  for (let i = 0; i < 3; i++) {
+    const x = cx - halfW + i * (colWidth + gap);
+    ctx.fillRect(x, colTopY, colWidth, baseTopY - colTopY);
+  }
+
+  // Base (thin bar).
+  ctx.fillRect(cx - halfW * 1.1, baseTopY, halfW * 2.2, baseY - baseTopY);
 }
 
 function drawWalkPath(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number) {
