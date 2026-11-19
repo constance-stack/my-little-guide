@@ -38,6 +38,43 @@ export async function POST(request: Request) {
   return NextResponse.json({ isFavorite: true });
 }
 
+// Sets or clears the user-chosen category on an existing favorite — lets
+// someone file it under whichever category they like for their own
+// organization, independent of the place's own real categories.
+export async function PATCH(request: Request) {
+  const session = await auth();
+  if (!session?.user) {
+    return NextResponse.json({ error: "Connectez-vous pour organiser vos favoris." }, { status: 401 });
+  }
+
+  const body = await request.json().catch(() => null);
+  const placeId = body?.placeId;
+  const categoryId = body?.categoryId;
+  if (typeof placeId !== "string" || (categoryId !== null && typeof categoryId !== "string")) {
+    return NextResponse.json({ error: "placeId ou categoryId invalide." }, { status: 400 });
+  }
+
+  const existing = await prisma.favorite.findUnique({
+    where: { userId_placeId: { userId: session.user.id, placeId } },
+  });
+  if (!existing) {
+    return NextResponse.json({ error: "Favori introuvable." }, { status: 404 });
+  }
+
+  if (categoryId !== null) {
+    const category = await prisma.category.findUnique({ where: { id: categoryId } });
+    if (!category) {
+      return NextResponse.json({ error: "Catégorie introuvable." }, { status: 404 });
+    }
+  }
+
+  await prisma.favorite.update({
+    where: { userId_placeId: { userId: session.user.id, placeId } },
+    data: { categoryId },
+  });
+  return NextResponse.json({ categoryId });
+}
+
 export async function GET() {
   const session = await auth();
   if (!session?.user) {

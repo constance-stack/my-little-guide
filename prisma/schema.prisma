@@ -151,7 +151,8 @@ model Category {
   // Set only for a destination-specific extra category (isGlobal = false).
   destinations Destination[] @relation("DestinationExtraCategories")
 
-  places PlaceCategory[]
+  places    PlaceCategory[]
+  favorites Favorite[]
 }
 
 model Place {
@@ -365,6 +366,13 @@ model Favorite {
   placeId   String
   place     Place    @relation(fields: [placeId], references: [id])
   createdAt DateTime @default(now())
+
+  // Optional, user-chosen — lets someone file a favorite under whichever
+  // category they like for their own organization, independent of the
+  // place's own (possibly several) real categories. Null means
+  // unclassified; the favorites page groups by this when set.
+  categoryId String?
+  category   Category? @relation(fields: [categoryId], references: [id])
 
   @@id([userId, placeId])
 }
