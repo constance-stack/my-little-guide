@@ -58,6 +58,7 @@ const PERSONAL_PIN_EMOJI = "📍";
 export function InteractiveMap({
   data,
   fitBoundsData,
+  dataLoaded,
   selectedPlaceId,
   onSelectPlace,
   centerOn,
@@ -71,6 +72,12 @@ export function InteractiveMap({
   // search filter, which only touches `data`). A new object reference
   // here means "a different destination's places just loaded".
   fitBoundsData?: PlaceFeatureCollection;
+  // True once the parent's places fetch for the current destination has
+  // actually resolved (not just "the initial empty state hasn't changed
+  // yet") — lets the map tell a still-loading destination apart from a
+  // genuinely empty one, so the hidden-until-positioned reveal below never
+  // fires early on a slow network/cold start. See `positioned` below.
+  dataLoaded: boolean;
   selectedPlaceId: string | null;
   onSelectPlace: (placeId: string) => void;
   centerOn: [number, number] | null;
@@ -386,12 +393,18 @@ export function InteractiveMap({
 
   // Safety net: a destination that's genuinely empty never gets a
   // fitBounds call above (0 features), which would otherwise leave the
-  // map hidden forever. Reveal it at the fallback view after a short
-  // grace period if nothing has positioned it by then.
+  // map hidden forever. Reveal the fallback view, but only once the
+  // parent's fetch has actually confirmed there's nothing to show — a
+  // blind timer here raced a slow network/cold start and could reveal
+  // the Bangkok fallback before the real data (and its fitBounds call)
+  // had a chance to arrive, which was the original flash bug all over
+  // again, just delayed instead of fixed.
   useEffect(() => {
-    const timer = setTimeout(() => setPositioned(true), 1200);
-    return () => clearTimeout(timer);
-  }, []);
+    if (positioned) return;
+    if (dataLoaded && (!fitBoundsData || fitBoundsData.features.length === 0)) {
+      setPositioned(true);
+    }
+  }, [dataLoaded, fitBoundsData, positioned]);
 
   // Center on a specific point (deep-link / list click) without changing
   // which place is selected.

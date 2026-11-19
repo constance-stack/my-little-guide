@@ -29,6 +29,11 @@ export function MapPageClient({
   const [destinations, setDestinations] = useState<OwnedDestination[]>([]);
   const [destinationSlug, setDestinationSlug] = useState<string | null>(initialDestinationSlug);
   const [data, setData] = useState<PlaceFeatureCollection>({ type: "FeatureCollection", features: [] });
+  // Distinguishes "places fetch hasn't resolved yet" from "resolved with
+  // zero places" — both look identical as `data`, but the map needs to
+  // tell them apart to know when it's safe to reveal its empty-destination
+  // fallback view (see InteractiveMap's `dataLoaded` prop).
+  const [placesLoaded, setPlacesLoaded] = useState(false);
   const [selectedPlaceId, setSelectedPlaceId] = useState<string | null>(null);
   const [selectedPlaceSlug, setSelectedPlaceSlug] = useState<string | null>(initialPlaceSlug);
   const [centerOn, setCenterOn] = useState<[number, number] | null>(null);
@@ -135,13 +140,19 @@ export function MapPageClient({
     if (demo) {
       fetch(`/api/places?demo=1`)
         .then((r) => r.json())
-        .then((fc: PlaceFeatureCollection) => setData(fc));
+        .then((fc: PlaceFeatureCollection) => {
+          setData(fc);
+          setPlacesLoaded(true);
+        });
       return;
     }
     if (!destinationSlug) return;
     fetch(`/api/places?destination=${destinationSlug}`)
       .then((r) => r.json())
-      .then((fc: PlaceFeatureCollection) => setData(fc));
+      .then((fc: PlaceFeatureCollection) => {
+        setData(fc);
+        setPlacesLoaded(true);
+      });
   }, [demo, destinationSlug]);
 
   // Resolve an initial place slug (from a deep-link) to its id + coordinates
@@ -391,6 +402,7 @@ export function MapPageClient({
         <InteractiveMap
           data={filtered}
           fitBoundsData={data}
+          dataLoaded={placesLoaded}
           selectedPlaceId={selectedPlaceId}
           onSelectPlace={handleSelectPlace}
           centerOn={centerOn}

@@ -18,7 +18,7 @@ async function main() {
   const browser = await chromium.launch();
   try {
     const page = await browser.newPage();
-    const response = await page.goto(`${APP_URL}/pdf/demo`, { waitUntil: "networkidle" });
+    const response = await page.goto(`${APP_URL}/pdf/demo`, { waitUntil: "networkidle", timeout: 60000 });
     if (!response || !response.ok()) {
       throw new Error(`/pdf/demo returned ${response?.status()}`);
     }
